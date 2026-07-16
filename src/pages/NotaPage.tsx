@@ -25,7 +25,6 @@ export function NotaPage() {
         const data = await fetchSubtopik(entry.fail)
         setSubtopik(data)
 
-        // Mark as sedang_belajar if belum_mula
         const prog = await getProgress(subtopikId!)
         if (!prog || prog.status === 'belum_mula') {
           await saveProgress({
@@ -56,10 +55,10 @@ export function NotaPage() {
         <AppHeader tajuk="Nota" showBack backTo="/" />
         <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
           <div className="space-y-4 animate-pulse">
-            <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-2/3" />
-            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full" />
-            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6" />
-            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-4/6" />
+            <div className="h-6 bg-baby-blue/50 dark:bg-white/10 rounded w-2/3" />
+            <div className="h-4 bg-baby-blue/50 dark:bg-white/10 rounded w-full" />
+            <div className="h-4 bg-baby-blue/50 dark:bg-white/10 rounded w-5/6" />
+            <div className="h-4 bg-baby-blue/50 dark:bg-white/10 rounded w-4/6" />
           </div>
         </main>
       </div>
@@ -71,8 +70,8 @@ export function NotaPage() {
       <div className="min-h-screen flex flex-col">
         <AppHeader tajuk="Nota" showBack backTo="/" />
         <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
-          <div className="card border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20">
-            <p className="text-red-700 dark:text-red-300">{error ?? 'Kandungan tidak dijumpai'}</p>
+          <div className="card border-soft-peach/50">
+            <p className="text-deep-charcoal/70 dark:text-soft-peach">{error ?? 'Kandungan tidak dijumpai'}</p>
           </div>
         </main>
       </div>
@@ -84,11 +83,10 @@ export function NotaPage() {
       <AppHeader tajuk={subtopik.tajuk_subtopik} showBack backTo="/" />
 
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-5">
-        {/* Sections */}
         {subtopik.nota.map((section, i) => (
-          <div key={i} className="card space-y-3">
-            <h2 className="text-base font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
-              <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+          <div key={i} className="card-white space-y-3">
+            <h2 className="text-base font-bold text-deep-charcoal dark:text-gray-100 flex items-center gap-2">
+              <span className="w-7 h-7 rounded-full bg-sky-blue text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
                 {i + 1}
               </span>
               {section.tajuk}
@@ -97,7 +95,7 @@ export function NotaPage() {
             <MarkdownRenderer kandungan={section.kandungan} />
 
             {section.imej && (
-              <div className="rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-800">
+              <div className="rounded-xl overflow-hidden bg-baby-blue/30 dark:bg-white/5">
                 <img
                   src={section.imej}
                   alt={section.tajuk}
@@ -108,8 +106,8 @@ export function NotaPage() {
             )}
 
             {section.contoh && (
-              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-xl p-4">
-                <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider mb-2">
+              <div className="bg-soft-peach-light dark:bg-soft-peach/10 border border-soft-peach/40 dark:border-soft-peach/20 rounded-xl p-5">
+                <p className="text-xs font-semibold text-deep-charcoal/60 dark:text-soft-peach uppercase tracking-wider mb-2">
                   Contoh
                 </p>
                 <MarkdownRenderer kandungan={section.contoh} />
@@ -118,12 +116,10 @@ export function NotaPage() {
           </div>
         ))}
 
-        {/* CTA — spacer so button not blocked by bottom nav */}
         <div className="h-24" />
       </main>
 
-      {/* Sticky bottom CTA */}
-      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-gray-950/95 backdrop-blur border-t border-gray-100 dark:border-gray-800 px-4 py-4">
+      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-deep-charcoal/95 backdrop-blur border-t border-baby-blue/50 dark:border-white/5 px-4 py-4">
         <div className="max-w-2xl mx-auto">
           <button
             onClick={mulaKuiz}

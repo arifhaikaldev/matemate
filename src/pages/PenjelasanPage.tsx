@@ -20,8 +20,7 @@ export function PenjelasanPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Step animation state
-  const [langkahTerpapar, setLangkahTerpapar] = useState(0) // how many steps shown (0 = none yet)
+  const [langkahTerpapar, setLangkahTerpapar] = useState(0)
   const [selesaiAnimasi, setSelesaiAnimasi] = useState(false)
 
   const navigate = useNavigate()
@@ -50,7 +49,6 @@ export function PenjelasanPage() {
 
   const currentSoalan: Soalan | undefined = subtopik?.soalan[soalanIdxNum]
 
-  // Auto-start TTS and step animation once loaded
   const startAnimation = useCallback(() => {
     if (!currentSoalan || ttsStartedRef.current) return
     ttsStartedRef.current = true
@@ -58,11 +56,9 @@ export function PenjelasanPage() {
     const langkah = currentSoalan.langkah
     let step = 0
 
-    // Show first step immediately
     setLangkahTerpapar(1)
 
     if (tersedia === false || muted) {
-      // No TTS: auto-advance steps with setTimeout
       const advance = () => {
         step++
         if (step < langkah.length) {
@@ -76,9 +72,6 @@ export function PenjelasanPage() {
       return
     }
 
-    // With TTS: use boundary events to sync steps with speech
-    // We embed step markers in the text using character positions
-    // Simpler: speak penjelasan and show steps progressively by word boundary
     const penjelasan = currentSoalan.penjelasan
     const totalLangkah = langkah.length
     const charsPerStep = Math.floor(penjelasan.length / totalLangkah)
@@ -87,7 +80,6 @@ export function PenjelasanPage() {
       penjelasan,
       currentSoalan.audio_file || undefined,
       (charIndex) => {
-        // Show next step based on how far through speech we are
         const newStep = Math.min(
           Math.floor(charIndex / charsPerStep) + 1,
           totalLangkah
@@ -95,7 +87,6 @@ export function PenjelasanPage() {
         setLangkahTerpapar((prev) => Math.max(prev, newStep))
       },
       () => {
-        // TTS ended — show all steps
         setLangkahTerpapar(totalLangkah)
         setSelesaiAnimasi(true)
       }
@@ -118,12 +109,10 @@ export function PenjelasanPage() {
     const nextIdx = soalanIdxNum + 1
 
     if (nextIdx < jumlah) {
-      // Go to next question with accumulated answers
       navigate(`/kuiz-lanjut/${subtopikId}/${nextIdx}`, {
         state: { jawapan: state.jawapan },
       })
     } else {
-      // All questions done — go to result
       navigate(`/keputusan/${subtopikId}`, {
         state: { jawapan: state.jawapan },
       })
@@ -140,14 +129,13 @@ export function PenjelasanPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Penjelasan" showBack>
-        {/* Mute toggle — only show if TTS is available */}
         {tersedia && (
           <button
             onClick={() => { toggleMute(); ttsStartedRef.current = false }}
-            className={`p-2 rounded-lg transition-colors ${
+            className={`p-2 rounded-xl transition-colors ${
               muted
-                ? 'text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                : 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50'
+                ? 'text-deep-charcoal/40 dark:text-gray-400 hover:bg-baby-blue dark:hover:bg-white/5'
+                : 'text-sky-blue bg-baby-blue dark:bg-sky-blue/20 hover:bg-sky-blue-light dark:hover:bg-sky-blue/30'
             }`}
             aria-label={muted ? 'Hidupkan suara' : 'Matikan suara'}
           >
@@ -169,16 +157,15 @@ export function PenjelasanPage() {
       </AppHeader>
 
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-5">
-        {/* Result banner */}
-        <div className={`card border-2 ${betul ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-red-500 bg-red-50 dark:bg-red-900/20'}`}>
+        <div className={`rounded-xl border-2 p-5 ${betul ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-soft-peach bg-soft-peach-light dark:bg-soft-peach/10'}`}>
           <div className="flex items-center gap-3">
-            <span className="text-3xl">{betul ? '✅' : '❌'}</span>
+            <span className="text-3xl">{betul ? '✅' : '💪'}</span>
             <div>
-              <p className={`font-bold text-lg ${betul ? 'text-green-700 dark:text-green-300' : 'text-red-700 dark:text-red-300'}`}>
+              <p className={`font-bold text-lg ${betul ? 'text-green-700 dark:text-green-300' : 'text-deep-charcoal/70 dark:text-soft-peach'}`}>
                 {betul ? 'Jawapan Betul!' : 'Jawapan Salah'}
               </p>
               {!betul && (
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-deep-charcoal/60 dark:text-gray-400">
                   Jawapan betul: <strong>{currentSoalan.pilihan[currentSoalan.jawapan_betul]}</strong>
                 </p>
               )}
@@ -186,24 +173,22 @@ export function PenjelasanPage() {
           </div>
         </div>
 
-        {/* Question recap */}
-        <div className="card">
-          <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Soalan</p>
-          <p className="text-sm text-gray-700 dark:text-gray-300">{currentSoalan.soalan}</p>
+        <div className="card-white">
+          <p className="text-xs font-semibold text-deep-charcoal/50 dark:text-gray-500 uppercase tracking-wider mb-2">Soalan</p>
+          <p className="text-sm text-deep-charcoal/70 dark:text-gray-300">{currentSoalan.soalan}</p>
         </div>
 
-        {/* Step-by-step animation */}
-        <div className="card space-y-3">
+        <div className="card-white space-y-3">
           <div className="flex items-center justify-between">
-            <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
+            <p className="text-xs font-semibold text-sky-blue-dark dark:text-sky-blue uppercase tracking-wider">
               Langkah Penyelesaian
             </p>
             {tersedia && !muted && !selesaiAnimasi && (
-              <div className="flex items-center gap-1.5 text-xs text-blue-600 dark:text-blue-400">
+              <div className="flex items-center gap-1.5 text-xs text-sky-blue dark:text-sky-blue">
                 <span className="flex gap-0.5">
-                  <span className="w-1 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                  <span className="w-1 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                  <span className="w-1 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <span className="w-1 h-3 bg-sky-blue rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="w-1 h-3 bg-sky-blue rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="w-1 h-3 bg-sky-blue rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </span>
                 <span>Sedang membaca...</span>
               </div>
@@ -222,13 +207,12 @@ export function PenjelasanPage() {
               >
                 <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${
                   i < langkahTerpapar
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-400'
+                    ? 'bg-sky-blue text-white'
+                    : 'bg-baby-blue/50 dark:bg-white/10 text-deep-charcoal/40 dark:text-gray-400'
                 }`}>
                   {i + 1}
                 </span>
-                <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed flex-1">
-                  {/* Render bold markers */}
+                <p className="text-sm text-deep-charcoal/80 dark:text-gray-200 leading-relaxed flex-1">
                   {langkah.split(/(\*\*[^*]+\*\*)/).map((part, j) =>
                     part.startsWith('**') && part.endsWith('**') ? (
                       <strong key={j}>{part.slice(2, -2)}</strong>
@@ -241,7 +225,6 @@ export function PenjelasanPage() {
             ))}
           </div>
 
-          {/* Manual advance button while animating */}
           {!selesaiAnimasi && (
             <button
               onClick={() => {
@@ -263,8 +246,7 @@ export function PenjelasanPage() {
         <div className="h-24" />
       </main>
 
-      {/* Sticky CTA */}
-      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-gray-950/95 backdrop-blur border-t border-gray-100 dark:border-gray-800 px-4 py-4">
+      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-deep-charcoal/95 backdrop-blur border-t border-baby-blue/50 dark:border-white/5 px-4 py-4">
         <div className="max-w-2xl mx-auto">
           <button
             onClick={handleTeruskan}
@@ -297,8 +279,8 @@ function LoadingState() {
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Penjelasan" showBack />
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 animate-pulse space-y-4">
-        <div className="h-20 bg-gray-200 dark:bg-gray-700 rounded-2xl" />
-        <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded-2xl" />
+        <div className="h-20 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
+        <div className="h-32 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
       </main>
     </div>
   )
@@ -310,8 +292,8 @@ function ErrorState({ error }: { error: string | null }) {
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Penjelasan" showBack />
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
-        <div className="card border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20">
-          <p className="text-red-700 dark:text-red-300 mb-3">{error ?? 'Ralat'}</p>
+        <div className="card border-soft-peach/50">
+          <p className="text-deep-charcoal/70 dark:text-soft-peach mb-3">{error ?? 'Ralat'}</p>
           <button onClick={() => navigate(-1)} className="btn-secondary">Kembali</button>
         </div>
       </main>

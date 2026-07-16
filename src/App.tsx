@@ -30,9 +30,9 @@ export function App() {
 function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="text-center space-y-3">
-        <p className="text-5xl font-black text-gray-200 dark:text-gray-800">404</p>
-        <p className="text-gray-600 dark:text-gray-400">Halaman tidak dijumpai.</p>
+      <div className="text-center space-y-4">
+        <p className="text-5xl font-black text-baby-blue dark:text-white/10">404</p>
+        <p className="text-deep-charcoal/60 dark:text-gray-400">Halaman tidak dijumpai.</p>
         <a href="/" className="btn-primary inline-flex">Kembali ke Halaman Utama</a>
       </div>
     </div>

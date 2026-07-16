@@ -1,8 +1,3 @@
-/**
- * KuizLanjutPage — resumes the quiz from a given question index,
- * carrying forward accumulated answers from previous questions.
- * This page has the same structure as KuizPage but reads semasaIdx & jawapan from route state.
- */
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { fetchIndex, fetchSubtopik } from '../lib/content'
@@ -28,7 +23,6 @@ export function KuizLanjutPage() {
   const navigate = useNavigate()
   const semasaIdx = parseInt(soalanIdx ?? '0', 10)
 
-  // Prevent double-load on StrictMode
   const loadedRef = useRef(false)
 
   useEffect(() => {
@@ -81,29 +75,29 @@ export function KuizLanjutPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk={subtopik.tajuk_subtopik} showBack>
-        <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+        <span className="text-sm text-deep-charcoal/50 dark:text-gray-400 font-medium">
           {semasaIdx + 1}/{jumlah}
         </span>
       </AppHeader>
 
-      <div className="h-1.5 bg-gray-100 dark:bg-gray-800">
-        <div className="h-full bg-blue-600 transition-all duration-500" style={{ width: `${progress}%` }} />
+      <div className="h-1.5 bg-baby-blue/50 dark:bg-white/10">
+        <div className="h-full bg-sky-blue transition-all duration-500" style={{ width: `${progress}%` }} />
       </div>
 
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-5">
         <div className="flex items-center gap-2">
-          <span className="badge badge-blue">Soalan {semasaIdx + 1}</span>
+          <span className="badge-sky">Soalan {semasaIdx + 1}</span>
           {currentSoalan.sub_kemahiran && (
-            <span className="badge badge-gray">{currentSoalan.sub_kemahiran.replace(/_/g, ' ')}</span>
+            <span className="badge-gray">{currentSoalan.sub_kemahiran.replace(/_/g, ' ')}</span>
           )}
         </div>
 
-        <div className="card">
-          <p className="text-base font-medium text-gray-900 dark:text-gray-100 leading-relaxed">
+        <div className="card-white">
+          <p className="text-base font-medium text-deep-charcoal dark:text-gray-100 leading-relaxed">
             {currentSoalan.soalan}
           </p>
           {currentSoalan.imej && (
-            <div className="mt-3 rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-800">
+            <div className="mt-3 rounded-xl overflow-hidden bg-baby-blue/30 dark:bg-white/5">
               <img src={currentSoalan.imej} alt="Rajah soalan" className="w-full object-contain max-h-48" />
             </div>
           )}
@@ -117,22 +111,22 @@ export function KuizLanjutPage() {
             let cls = 'w-full text-left px-4 py-3.5 rounded-xl border-2 font-medium text-sm transition-all duration-150 '
             if (!showResult) {
               cls += isSelected
-                ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-50/50 dark:hover:bg-blue-900/10'
+                ? 'border-sky-blue bg-baby-blue dark:bg-sky-blue/10 text-sky-blue-dark dark:text-sky-blue'
+                : 'border-baby-blue/50 dark:border-white/10 bg-white dark:bg-deep-charcoal hover:border-sky-blue-light dark:hover:border-sky-blue/30 hover:bg-baby-blue/30 dark:hover:bg-sky-blue/5'
             } else {
               if (isBetul) cls += 'border-green-500 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300'
               else if (isSelected && !isBetul) cls += 'border-red-500 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300'
-              else cls += 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 opacity-50'
+              else cls += 'border-baby-blue/30 dark:border-white/5 bg-white dark:bg-deep-charcoal opacity-50'
             }
             return (
               <button key={i} onClick={() => handlePilih(i)} disabled={answered} className={cls}>
                 <div className="flex items-center gap-3">
                   <span className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold ${
                     !showResult
-                      ? isSelected ? 'border-blue-500 bg-blue-500 text-white' : 'border-gray-300 dark:border-gray-600 text-gray-400'
+                      ? isSelected ? 'border-sky-blue bg-sky-blue text-white' : 'border-baby-blue/60 dark:border-white/20 text-deep-charcoal/40 dark:text-gray-400'
                       : isBetul ? 'border-green-500 bg-green-500 text-white'
                       : isSelected ? 'border-red-500 bg-red-500 text-white'
-                      : 'border-gray-300 dark:border-gray-600 text-gray-400'
+                      : 'border-baby-blue/60 dark:border-white/20 text-deep-charcoal/40 dark:text-gray-400'
                   }`}>
                     {showResult && isBetul ? '✓' : showResult && isSelected && !isBetul ? '✗' : String.fromCharCode(65 + i)}
                   </span>
@@ -144,22 +138,22 @@ export function KuizLanjutPage() {
         </div>
 
         {answered && (
-          <div className={`card border-2 ${betul ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-red-500 bg-red-50 dark:bg-red-900/20'}`}>
+          <div className={`rounded-xl border-2 p-5 ${betul ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-soft-peach bg-soft-peach-light dark:bg-soft-peach/10'}`}>
             <div className="flex items-center gap-2 mb-1">
               {betul ? (
                 <><span className="text-2xl">✅</span><span className="font-bold text-green-700 dark:text-green-300">Betul! Bagus!</span></>
               ) : (
-                <><span className="text-2xl">❌</span><span className="font-bold text-red-700 dark:text-red-300">Salah. Jangan risau!</span></>
+                <><span className="text-2xl">💪</span><span className="font-bold text-deep-charcoal/70 dark:text-soft-peach">Salah. Jangan risau!</span></>
               )}
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Tekan "Lihat Penjelasan" untuk faham cara selesaikan soalan ini.</p>
+            <p className="text-sm text-deep-charcoal/60 dark:text-gray-400">Tekan "Lihat Penjelasan" untuk faham cara selesaikan soalan ini.</p>
           </div>
         )}
 
         <div className="h-24" />
       </main>
 
-      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-gray-950/95 backdrop-blur border-t border-gray-100 dark:border-gray-800 px-4 py-4">
+      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-deep-charcoal/95 backdrop-blur border-t border-baby-blue/50 dark:border-white/5 px-4 py-4">
         <div className="max-w-2xl mx-auto">
           {!answered ? (
             <button onClick={handleSemak} disabled={pilihan === null} className="btn-primary w-full">
@@ -184,9 +178,9 @@ function LoadingState() {
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Kuiz" showBack />
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 animate-pulse space-y-4">
-        <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-1/4" />
-        <div className="h-24 bg-gray-200 dark:bg-gray-700 rounded-2xl" />
-        {[1,2,3,4].map(i => <div key={i} className="h-14 bg-gray-200 dark:bg-gray-700 rounded-xl" />)}
+        <div className="h-5 bg-baby-blue/50 dark:bg-white/10 rounded w-1/4" />
+        <div className="h-24 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
+        {[1,2,3,4].map(i => <div key={i} className="h-14 bg-baby-blue/50 dark:bg-white/10 rounded-xl" />)}
       </main>
     </div>
   )
@@ -198,8 +192,8 @@ function ErrorState({ error }: { error: string | null }) {
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Kuiz" showBack />
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
-        <div className="card border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20">
-          <p className="text-red-700 dark:text-red-300 mb-3">{error ?? 'Ralat'}</p>
+        <div className="card border-soft-peach/50">
+          <p className="text-deep-charcoal/70 dark:text-soft-peach mb-3">{error ?? 'Ralat'}</p>
           <button onClick={() => navigate(-1)} className="btn-secondary">Kembali</button>
         </div>
       </main>

@@ -35,11 +35,9 @@ export function KeputusanPage() {
         const data = await fetchSubtopik(entry.fail)
         setSubtopik(data)
 
-        // Next subtopik
         const next = idx.subtopik[entryIdx + 1]
         if (next) setSubtopikSeterusnyaId(next.id)
 
-        // Compute score and save progress
         const jawapanData = (location.state as LocationState | null)?.jawapan ?? {}
         const skor = kiraSkor(data.soalan, jawapanData)
         const prog = await getProgress(subtopikId!)
@@ -83,20 +81,19 @@ export function KeputusanPage() {
 
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-5">
         {/* Score card */}
-        <div className="card text-center space-y-4">
-          <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{subtopik.tajuk_subtopik}</p>
+        <div className="card-white text-center space-y-5">
+          <p className="text-sm text-deep-charcoal/50 dark:text-gray-400 font-medium">{subtopik.tajuk_subtopik}</p>
           <div className="flex flex-col items-center gap-1">
             <span className={`text-6xl font-black ${skorColor}`}>{skor}%</span>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-deep-charcoal/60 dark:text-gray-400">
               {betulCount} betul daripada {jumlah} soalan
             </p>
           </div>
           <ProgressBar nilai={skor} warna={skorBarColor} />
 
-          {/* Emoji feedback */}
-          <div className={`text-sm font-medium px-4 py-2 rounded-xl ${
+          <div className={`text-sm font-medium px-5 py-3 rounded-xl ${
             skor >= 80 ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300'
-            : skor >= 50 ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300'
+            : skor >= 50 ? 'bg-soft-peach-light dark:bg-soft-peach/10 text-deep-charcoal/70 dark:text-soft-peach'
             : 'bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300'
           }`}>
             {skor >= 80 ? '🎉 Cemerlang! Anda faham subtopik ini.' : skor >= 50 ? '👍 Usaha yang baik! Ada ruang untuk penambahbaikan.' : '💪 Jangan putus asa. Cuba semula selepas baca nota.'}
@@ -105,8 +102,8 @@ export function KeputusanPage() {
 
         {/* Sub-skill breakdown */}
         {Object.keys(subStats).length > 0 && (
-          <div className="card space-y-4">
-            <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">Prestasi Mengikut Sub-Kemahiran</h2>
+          <div className="card-white space-y-4">
+            <h2 className="text-sm font-bold text-deep-charcoal dark:text-gray-100">Prestasi Mengikut Sub-Kemahiran</h2>
             <div className="space-y-3">
               {Object.entries(subStats).map(([sk, { betul, jumlah: jml }]) => {
                 const skSkor = Math.round((betul / jml) * 100)
@@ -116,10 +113,10 @@ export function KeputusanPage() {
                   <div key={sk} className="space-y-1">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-700 dark:text-gray-300 capitalize">
+                        <span className="text-sm text-deep-charcoal/70 dark:text-gray-300 capitalize">
                           {sk.replace(/_/g, ' ')}
                         </span>
-                        {isLemah && <span className="badge bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">Lemah</span>}
+                        {isLemah && <span className="badge bg-soft-peach-light dark:bg-soft-peach/20 text-deep-charcoal/60 dark:text-soft-peach">Lemah</span>}
                       </div>
                       <span className={`text-sm font-bold ${warna === 'green' ? 'text-green-600 dark:text-green-400' : warna === 'yellow' ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'}`}>
                         {betul}/{jml}
@@ -134,27 +131,27 @@ export function KeputusanPage() {
         )}
 
         {/* Recommendation */}
-        <div className={`card border-2 space-y-3 ${
+        <div className={`rounded-xl border-2 p-5 space-y-3 ${
           cadangan.jenis === 'teruskan' ? 'border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-900/10'
-          : cadangan.jenis === 'latihan_fokus' ? 'border-yellow-300 dark:border-yellow-700 bg-yellow-50 dark:bg-yellow-900/10'
-          : 'border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/10'
+          : cadangan.jenis === 'latihan_fokus' ? 'border-soft-peach dark:border-soft-peach/30 bg-soft-peach-light dark:bg-soft-peach/10'
+          : 'border-baby-blue dark:border-sky-blue/30 bg-baby-blue/30 dark:bg-sky-blue/10'
         }`}>
           <div className="flex items-start gap-3">
             <span className="text-2xl">
               {cadangan.jenis === 'teruskan' ? '🚀' : cadangan.jenis === 'latihan_fokus' ? '🎯' : '📖'}
             </span>
             <div>
-              <h3 className="font-bold text-gray-900 dark:text-gray-100 text-sm">Cadangan Seterusnya</h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mt-0.5">{cadangan.mesej}</p>
+              <h3 className="font-bold text-deep-charcoal dark:text-gray-100 text-sm">Cadangan Seterusnya</h3>
+              <p className="text-sm text-deep-charcoal/70 dark:text-gray-300 mt-0.5">{cadangan.mesej}</p>
             </div>
           </div>
 
           {cadangan.kemahiran_lemah.length > 0 && (
             <div className="pl-9">
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Sub-kemahiran perlu diperbaiki:</p>
+              <p className="text-xs text-deep-charcoal/50 dark:text-gray-400 mb-1">Sub-kemahiran perlu diperbaiki:</p>
               <div className="flex flex-wrap gap-1.5">
                 {cadangan.kemahiran_lemah.map((k) => (
-                  <span key={k} className="badge badge-yellow capitalize">{k.replace(/_/g, ' ')}</span>
+                  <span key={k} className="badge bg-soft-peach-light dark:bg-soft-peach/20 text-deep-charcoal/60 dark:text-soft-peach capitalize">{k.replace(/_/g, ' ')}</span>
                 ))}
               </div>
             </div>
@@ -162,19 +159,19 @@ export function KeputusanPage() {
         </div>
 
         {/* Per-question summary */}
-        <div className="card space-y-3">
-          <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">Ringkasan Soalan</h2>
+        <div className="card-white space-y-3">
+          <h2 className="text-sm font-bold text-deep-charcoal dark:text-gray-100">Ringkasan Soalan</h2>
           <div className="space-y-2">
             {subtopik.soalan.map((s, i) => {
               const pelajarJawapan = jawapan[s.id]
               const isBetul = pelajarJawapan === s.jawapan_betul
               return (
-                <div key={s.id} className={`flex items-start gap-3 p-3 rounded-xl ${isBetul ? 'bg-green-50 dark:bg-green-900/10' : 'bg-red-50 dark:bg-red-900/10'}`}>
-                  <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${isBetul ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>
+                <div key={s.id} className={`flex items-start gap-3 p-3 rounded-xl ${isBetul ? 'bg-green-50 dark:bg-green-900/10' : 'bg-soft-peach-light dark:bg-soft-peach/10'}`}>
+                  <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${isBetul ? 'bg-green-500 text-white' : 'bg-soft-peach text-deep-charcoal/60'}`}>
                     {isBetul ? '✓' : '✗'}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-800 dark:text-gray-200 font-medium">S{i + 1}: {s.soalan}</p>
+                    <p className="text-sm text-deep-charcoal/80 dark:text-gray-200 font-medium">S{i + 1}: {s.soalan}</p>
                     {!isBetul && (
                       <div className="mt-1 text-xs space-y-0.5">
                         <p className="text-red-600 dark:text-red-400">
@@ -196,7 +193,7 @@ export function KeputusanPage() {
       </main>
 
       {/* Action buttons */}
-      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-gray-950/95 backdrop-blur border-t border-gray-100 dark:border-gray-800 px-4 py-4">
+      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-deep-charcoal/95 backdrop-blur border-t border-baby-blue/50 dark:border-white/5 px-4 py-4">
         <div className="max-w-2xl mx-auto flex gap-3">
           <button
             onClick={() => navigate(`/kuiz/${subtopikId}`)}
@@ -233,8 +230,8 @@ function LoadingState() {
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Keputusan" showBack backTo="/" />
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 animate-pulse space-y-4">
-        <div className="h-48 bg-gray-200 dark:bg-gray-700 rounded-2xl" />
-        <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded-2xl" />
+        <div className="h-48 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
+        <div className="h-32 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
       </main>
     </div>
   )
@@ -246,8 +243,8 @@ function ErrorState({ error }: { error: string | null }) {
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Keputusan" showBack backTo="/" />
       <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
-        <div className="card border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20">
-          <p className="text-red-700 dark:text-red-300 mb-3">{error ?? 'Ralat memuat keputusan'}</p>
+        <div className="card border-soft-peach/50">
+          <p className="text-deep-charcoal/70 dark:text-soft-peach mb-3">{error ?? 'Ralat memuat keputusan'}</p>
           <button onClick={() => navigate('/')} className="btn-secondary">Halaman Utama</button>
         </div>
       </main>
