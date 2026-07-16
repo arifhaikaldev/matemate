@@ -1,0 +1,125 @@
+{
+  "id": "subtopik-07",
+  "tajuk_subtopik": "Praktis 1.1e — Menentukan Punca Persamaan Kuadratik",
+  "nota": [
+    {
+      "tajuk": "Apa itu Punca Persamaan Kuadratik?",
+      "kandungan": "**Punca** (atau penyelesaian) bagi persamaan kuadratik ax² + bx + c = 0 adalah nilai x yang **memenuhi** persamaan tersebut, iaitu yang menjadikan persamaan benar.\n\nPersamaan kuadratik boleh mempunyai:\n- **Dua punca berbeza** (graf memotong paksi-x di dua titik)\n- **Satu punca berulang** (graf menyentuh paksi-x di satu titik sahaja)\n- **Tiada punca nyata** (graf tidak bersilang dengan paksi-x)\n\n**Cara menentukan sama ada x = k ialah punca:**\nGantikan x = k ke dalam persamaan. Jika hasilnya = 0, maka x = k adalah punca.",
+      "imej": "",
+      "contoh": "Adakah x = 3 punca bagi x² – 5x + 6 = 0?\n\nGantikan x = 3:\n(3)² – 5(3) + 6 = 9 – 15 + 6 = 0 ✓\n\n**Ya, x = 3 adalah punca.**\n\nAdakah x = 2 punca?\n(2)² – 5(2) + 6 = 4 – 10 + 6 = 0 ✓\n\n**Ya, x = 2 juga adalah punca.**"
+    },
+    {
+      "tajuk": "Menentukan Punca daripada Graf",
+      "kandungan": "Punca persamaan f(x) = 0 adalah **nilai x di mana grafnya memotong atau menyentuh paksi-x** (di mana y = 0).\n\n- Jika graf memotong paksi-x di dua titik → dua punca\n- Jika graf menyentuh paksi-x di satu titik → satu punca berulang\n- Jika graf tidak bersilang paksi-x → tiada punca nyata",
+      "imej": "",
+      "contoh": "Graf f(x) = 3x² – 5x – 2 memotong paksi-x di x = –1/3 dan x = 2.\n\nMaka punca persamaan 3x² – 5x – 2 = 0 ialah **x = –1/3** dan **x = 2**."
+    }
+  ],
+  "soalan": [
+    {
+      "id": "s1",
+      "soalan": "Graf fungsi kuadratik f(x) = 3x² – 5x – 2 memotong paksi-x. Berapakah bilangan punca persamaan 3x² – 5x – 2 = 0 berdasarkan keadaan ini?",
+      "pilihan": [
+        "Dua punca, kerana graf memotong paksi-x di dua titik",
+        "Satu punca, kerana persamaan kuadratik hanya ada satu penyelesaian",
+        "Tiada punca, kerana a > 0",
+        "Tiga punca, kerana darjah persamaan ialah 2"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Punca persamaan kuadratik f(x) = 0 ialah nilai-nilai x di mana graf memotong atau menyentuh paksi-x. Jika graf memotong paksi-x di dua titik berbeza, maka persamaan tersebut mempunyai dua punca yang berbeza. Persamaan kuadratik tidak boleh mempunyai tiga punca.",
+      "langkah": [
+        "Punca f(x) = 0 = nilai x apabila graf menyentuh paksi-x",
+        "Graf memotong paksi-x di **dua titik** berbeza",
+        "Oleh itu, persamaan mempunyai **dua punca berbeza**",
+        "Persamaan kuadratik maksimum ada **2** punca sahaja"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "kenal_pasti_punca",
+      "imej": ""
+    },
+    {
+      "id": "s2",
+      "soalan": "Adakah x = 3 dan x = 2 punca bagi persamaan x² – 5x + 6 = 0?",
+      "pilihan": [
+        "Ya, kedua-duanya adalah punca",
+        "Hanya x = 3 adalah punca",
+        "Hanya x = 2 adalah punca",
+        "Kedua-duanya bukan punca"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk menentukan sama ada x = 3 dan x = 2 adalah punca, kita gantikan setiap nilai ke dalam persamaan. Untuk x = 3: 9 tolak 15 tambah 6 = 0. Betul! Untuk x = 2: 4 tolak 10 tambah 6 = 0. Betul juga! Kedua-dua nilai menjadikan persamaan benar, jadi kedua-duanya adalah punca.",
+      "langkah": [
+        "Gantikan x = 3: (3)² – 5(3) + 6 = 9 – 15 + 6 = **0** ✓ → x = 3 adalah punca",
+        "Gantikan x = 2: (2)² – 5(2) + 6 = 4 – 10 + 6 = **0** ✓ → x = 2 adalah punca",
+        "**Kedua-dua x = 3 dan x = 2 adalah punca** bagi persamaan ini"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "semak_punca",
+      "imej": ""
+    },
+    {
+      "id": "s3",
+      "soalan": "Adakah x = 1 merupakan punca bagi persamaan 2x² – x – 1 = 0?",
+      "pilihan": [
+        "Ya, kerana 2(1)² – (1) – 1 = 0",
+        "Tidak, kerana 2(1)² – (1) – 1 ≠ 0",
+        "Ya, tetapi hanya punca kedua",
+        "Tidak, kerana persamaan tiada punca nyata"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Gantikan x = 1 ke dalam 2x kuasa dua tolak x tolak 1. Hasilnya: 2 kali 1 tolak 1 tolak 1 = 2 tolak 1 tolak 1 = 0. Oleh kerana hasilnya adalah 0, maka x = 1 memenuhi persamaan dan ia adalah punca.",
+      "langkah": [
+        "Gantikan x = 1 ke dalam 2x² – x – 1:",
+        "= 2(1)² – (1) – 1",
+        "= 2 – 1 – 1 = **0** ✓",
+        "Hasil = 0 → **x = 1 adalah punca** bagi 2x² – x – 1 = 0"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "semak_punca",
+      "imej": ""
+    },
+    {
+      "id": "s4",
+      "soalan": "Bagi persamaan (x – 1)(x + 4) = 0, manakah antara berikut merupakan punca?",
+      "pilihan": [
+        "x = 1 dan x = –4",
+        "x = –1 dan x = 4",
+        "x = –4 dan x = 2",
+        "x = 1 dan x = 4"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Persamaan (x − 1)(x + 4) = 0 menggunakan prinsip hasil darab sifar: jika hasil darab dua faktor = 0, maka salah satu atau kedua-dua faktor = 0. Faktor pertama x − 1 = 0 memberikan x = 1. Faktor kedua x + 4 = 0 memberikan x = negatif 4.",
+      "langkah": [
+        "Gunakan prinsip hasil darab sifar: jika AB = 0, maka A = 0 atau B = 0",
+        "Faktor 1: x – 1 = 0 → **x = 1**",
+        "Faktor 2: x + 4 = 0 → **x = –4**",
+        "Punca persamaan: **x = 1** dan **x = –4**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "kenal_pasti_punca",
+      "imej": ""
+    },
+    {
+      "id": "s5",
+      "soalan": "Adakah x = 5 merupakan punca bagi persamaan f(x) = x² – 8x + 15 = 0?",
+      "pilihan": [
+        "Ya, kerana f(5) = 25 – 40 + 15 = 0",
+        "Tidak, kerana f(5) = 25 – 40 + 15 = –10",
+        "Ya, kerana x = 5 membuat graf menyentuh paksi-y",
+        "Tidak, kerana persamaan ini tiada punca nyata"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Gantikan x = 5 ke dalam f(x) = x kuasa dua tolak 8x tambah 15. f(5) = 25 tolak 40 tambah 15 = 0. Oleh kerana hasilnya sifar, x = 5 adalah punca bagi persamaan ini.",
+      "langkah": [
+        "Gantikan x = 5 ke dalam f(x) = x² – 8x + 15:",
+        "f(5) = (5)² – 8(5) + 15",
+        "= 25 – 40 + 15 = **0** ✓",
+        "f(5) = 0 → graf menyentuh paksi-x pada x = 5",
+        "**x = 5 adalah punca** bagi f(x) = 0"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "semak_punca",
+      "imej": ""
+    }
+  ]
+}

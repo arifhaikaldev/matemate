@@ -1,0 +1,122 @@
+{
+  "id": "subtopik-02",
+  "tajuk_subtopik": "Graf Fungsi (Graphs of Functions)",
+  "nota": [
+    {
+      "tajuk": "Graf Fungsi Linear",
+      "kandungan": "Fungsi linear berbentuk **f(x) = mx + c** menghasilkan graf garis lurus.\n\n- **m** — kecerunan (gradient): positif = menanjak ke kanan, negatif = menurun ke kanan\n- **c** — pintasan-y (y-intercept): titik di mana garis memotong paksi-y\n\n**Cara melukis graf linear:**\n1. Buat jadual nilai (sekurang-kurangnya 3 titik)\n2. Plot titik-titik tersebut\n3. Sambungkan dengan garis lurus",
+      "imej": "",
+      "contoh": "Lukis graf f(x) = 2x − 1 untuk −2 ≤ x ≤ 2\n\n| x | −2 | −1 | 0 | 1 | 2 |\n|---|---|---|---|---|---|\n| f(x) | −5 | −3 | −1 | 1 | 3 |\n\nPlot titik (−2,−5), (−1,−3), (0,−1), (1,1), (2,3) dan sambungkan."
+    },
+    {
+      "tajuk": "Graf Fungsi Kuadratik",
+      "kandungan": "Fungsi kuadratik berbentuk **f(x) = ax² + bx + c** menghasilkan graf berbentuk **parabola**.\n\n- Jika **a > 0**: parabola menghadap ke atas (bentuk U)\n- Jika **a < 0**: parabola menghadap ke bawah (bentuk ∩)\n- **Paksi simetri**: x = −b/(2a)\n- **Titik puncak (vertex)**: titik tertinggi/terendah parabola",
+      "imej": "",
+      "contoh": "f(x) = x² − 4x + 3\n\n- a = 1 > 0 → bentuk U\n- Paksi simetri: x = −(−4)/(2×1) = 4/2 = **2**\n- Puncak: f(2) = 4 − 8 + 3 = **−1** → titik puncak (2, −1)\n- Pintasan-x: selesaikan x² − 4x + 3 = 0 → (x−1)(x−3) = 0 → x = 1 atau x = 3"
+    },
+    {
+      "tajuk": "Ciri-Ciri Graf",
+      "kandungan": "**Pintasan (Intercepts):**\n- **Pintasan-y**: nilai f(0) — gantikan x = 0\n- **Pintasan-x (punca/roots)**: nilai x apabila f(x) = 0\n\n**Nilai Minimum/Maksimum:**\n- Fungsi kuadratik dengan a > 0: mempunyai **nilai minimum**\n- Fungsi kuadratik dengan a < 0: mempunyai **nilai maksimum**\n- Nilai ini berlaku pada titik puncak.",
+      "imej": "",
+      "contoh": "Untuk f(x) = −x² + 4\n\n- **Pintasan-y**: f(0) = 4 → titik (0, 4)\n- **Pintasan-x**: −x² + 4 = 0 → x² = 4 → x = ±2 → titik (−2,0) dan (2,0)\n- **Nilai maksimum** = 4 (berlaku pada x = 0)"
+    }
+  ],
+  "soalan": [
+    {
+      "id": "s1",
+      "soalan": "Graf fungsi f(x) = −2x² + 3 menghadap ke arah manakah?",
+      "pilihan": ["Ke bawah (bentuk ∩)", "Ke atas (bentuk U)", "Ke kanan", "Ke kiri"],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk fungsi kuadratik f(x) = ax kuasa 2 + bx + c, jika nilai a adalah negatif, parabola menghadap ke bawah atau berbentuk topi. Di sini a = negatif 2, iaitu negatif, jadi graf menghadap ke bawah.",
+      "langkah": [
+        "Fungsi: f(x) = −2x² + 3",
+        "Kenal pasti nilai a: a = **−2**",
+        "Peraturan: a < 0 → graf menghadap **ke bawah (bentuk ∩)**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "bentuk_graf",
+      "imej": ""
+    },
+    {
+      "id": "s2",
+      "soalan": "Apakah pintasan-y bagi fungsi f(x) = 3x² − 2x + 5?",
+      "pilihan": ["5", "3", "−2", "6"],
+      "jawapan_betul": 0,
+      "penjelasan": "Pintasan-y ialah nilai f(0), iaitu kita gantikan x = 0 ke dalam fungsi. f(0) = 3 kali 0 kuasa 2 tolak 2 kali 0 tambah 5 = 0 tolak 0 tambah 5 = 5.",
+      "langkah": [
+        "Pintasan-y = f(0)",
+        "f(0) = 3(0)² − 2(0) + 5",
+        "= 0 − 0 + 5 = **5**",
+        "Titik pintasan-y: **(0, 5)**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pintasan",
+      "imej": ""
+    },
+    {
+      "id": "s3",
+      "soalan": "Paksi simetri bagi f(x) = x² − 6x + 8 ialah?",
+      "pilihan": ["x = 3", "x = −3", "x = 6", "x = −6"],
+      "jawapan_betul": 0,
+      "penjelasan": "Formula paksi simetri ialah x = negatif b dibahagi 2a. Untuk f(x) = x kuasa 2 tolak 6x tambah 8, nilai a = 1 dan b = negatif 6. Maka paksi simetri = negatif (negatif 6) dibahagi 2 kali 1 = 6 dibahagi 2 = 3.",
+      "langkah": [
+        "f(x) = x² − 6x + 8: a = 1, b = −6",
+        "Formula paksi simetri: x = −b / (2a)",
+        "x = −(−6) / (2 × 1) = 6 / 2 = **3**",
+        "Paksi simetri: **x = 3**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "paksi_simetri_puncak",
+      "imej": ""
+    },
+    {
+      "id": "s4",
+      "soalan": "Untuk f(x) = 2x − 4, pada nilai x berapakah grafnya memotong paksi-x?",
+      "pilihan": ["x = 2", "x = −2", "x = 4", "x = −4"],
+      "jawapan_betul": 0,
+      "penjelasan": "Pintasan-x berlaku apabila f(x) = 0. Maka kita selesaikan 2x tolak 4 = 0. 2x = 4, x = 2.",
+      "langkah": [
+        "Pintasan-x: f(x) = 0",
+        "2x − 4 = 0",
+        "2x = 4",
+        "x = **2**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pintasan",
+      "imej": ""
+    },
+    {
+      "id": "s5",
+      "soalan": "Fungsi f(x) = x² − 2x − 3 mempunyai pintasan-x pada?",
+      "pilihan": ["x = 3 dan x = −1", "x = −3 dan x = 1", "x = 3 dan x = 1", "x = −3 dan x = −1"],
+      "jawapan_betul": 0,
+      "penjelasan": "Pintasan-x berlaku apabila f(x) = 0. Kita selesaikan x kuasa 2 tolak 2x tolak 3 = 0. Dengan memfaktorkan: (x tolak 3)(x + 1) = 0. Maka x = 3 atau x = negatif 1.",
+      "langkah": [
+        "f(x) = 0: x² − 2x − 3 = 0",
+        "Faktorkan: (x − 3)(x + 1) = 0",
+        "x − 3 = 0 → x = **3**",
+        "x + 1 = 0 → x = **−1**",
+        "Pintasan-x: **(3, 0)** dan **(−1, 0)**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pintasan",
+      "imej": ""
+    },
+    {
+      "id": "s6",
+      "soalan": "Titik puncak (vertex) bagi f(x) = x² − 4x + 1 ialah?",
+      "pilihan": ["(2, −3)", "(−2, −3)", "(2, 3)", "(−2, 3)"],
+      "jawapan_betul": 0,
+      "penjelasan": "Paksi simetri adalah x = negatif b dibahagi 2a = 4 dibahagi 2 = 2. Kemudian f(2) = 4 tolak 8 tambah 1 = negatif 3. Maka titik puncak ialah (2, negatif 3).",
+      "langkah": [
+        "a = 1, b = −4, c = 1",
+        "Paksi simetri: x = −(−4)/(2×1) = 4/2 = **2**",
+        "f(2) = (2)² − 4(2) + 1 = 4 − 8 + 1 = **−3**",
+        "Titik puncak: **(2, −3)**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "paksi_simetri_puncak",
+      "imej": ""
+    }
+  ]
+}

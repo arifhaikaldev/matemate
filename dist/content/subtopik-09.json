@@ -1,0 +1,126 @@
+{
+  "id": "subtopik-09",
+  "tajuk_subtopik": "Praktis 1.1g — Melukis Graf Fungsi Kuadratik",
+  "nota": [
+    {
+      "tajuk": "Ciri-Ciri yang Perlu Ditentukan Sebelum Melukis Graf",
+      "kandungan": "Untuk melukis graf fungsi kuadratik f(x) = ax² + bx + c, tentukan:\n\n1. **Bentuk graf** — ∪ (a > 0) atau ∩ (a < 0)\n2. **Pintasan-y** — gantikan x = 0: f(0) = c\n3. **Pintasan-x** — selesaikan f(x) = 0 (boleh ada 0, 1, atau 2 pintasan)\n4. **Paksi simetri** — x = –b/(2a)\n5. **Titik puncak (minimum/maksimum)** — gantikan nilai paksi simetri ke dalam f(x)",
+      "imej": "",
+      "contoh": "f(x) = 2x² + 2x – 24\n\n1. a = 2 > 0 → bentuk **∪**\n2. Pintasan-y: f(0) = –24 → titik **(0, –24)**\n3. Pintasan-x: 2x² + 2x – 24 = 0 → x² + x – 12 = 0 → (x+4)(x–3) = 0 → **x = –4** dan **x = 3**\n4. Paksi simetri: x = –1/2\n5. Titik minimum: f(–1/2) = 2(1/4) + 2(–1/2) – 24 = 0.5 – 1 – 24 = –24.5"
+    },
+    {
+      "tajuk": "Graf dengan Satu Pintasan-x (Punca Berulang)",
+      "kandungan": "Apabila diskriminan b² – 4ac = 0, graf **menyentuh** paksi-x di satu titik sahaja (bukan memotong).\n\nIni berlaku apabila persamaan f(x) = 0 mempunyai **punca berulang** (dua punca yang sama).\n\n**Contoh:** f(x) = x² – 8x + 16 = (x – 4)²\n- Pintasan-x: (x – 4)² = 0 → x = 4 (punca berulang)\n- Graf menyentuh paksi-x pada **(4, 0)** sahaja",
+      "imej": "",
+      "contoh": "f(x) = x² – 8x + 16\n- a = 1 > 0 → bentuk ∪\n- Pintasan-y: f(0) = 16 → **(0, 16)**\n- Pintasan-x: (x–4)² = 0 → **x = 4** (menyentuh, bukan memotong)\n- Titik minimum = titik pintasan-x = **(4, 0)**"
+    }
+  ],
+  "soalan": [
+    {
+      "id": "s1",
+      "soalan": "Bagi graf f(x) = 2x² + 2x – 24, apakah pintasan-x graf tersebut?",
+      "pilihan": [
+        "x = –4 dan x = 3",
+        "x = 4 dan x = –3",
+        "x = –4 dan x = –3",
+        "x = 4 dan x = 3"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Pintasan-x berlaku apabila f(x) = 0. Selesaikan 2x² + 2x − 24 = 0. Bahagi semua dengan 2: x² + x − 12 = 0. Faktorkan: cari dua nombor dengan hasil = negatif 12 dan jumlah = 1. Nombor itu ialah 4 dan negatif 3. Jadi (x + 4)(x − 3) = 0, yang memberi x = negatif 4 atau x = 3.",
+      "langkah": [
+        "Pintasan-x: f(x) = 0 → 2x² + 2x – 24 = 0",
+        "Bahagi dengan 2: x² + x – 12 = 0",
+        "Faktorkan: cari hasil = –12, jumlah = 1 → **4** dan **–3**",
+        "(x + 4)(x – 3) = 0",
+        "**x = –4** dan **x = 3**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pintasan_graf",
+      "imej": ""
+    },
+    {
+      "id": "s2",
+      "soalan": "Graf f(x) = x² – 8x + 16 mempunyai berapa pintasan-x?",
+      "pilihan": [
+        "Satu pintasan-x sahaja (graf menyentuh paksi-x)",
+        "Dua pintasan-x yang berbeza",
+        "Tiada pintasan-x",
+        "Tiga pintasan-x"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "f(x) = x² − 8x + 16 boleh difaktorkan sebagai (x − 4)². Selesaikan (x − 4)² = 0 memberikan x = 4 sebagai satu-satunya penyelesaian. Ini bermakna graf hanya menyentuh paksi-x di satu titik iaitu (4, 0), tanpa memotong. Ini dipanggil punca berulang.",
+      "langkah": [
+        "f(x) = x² – 8x + 16 = **(x – 4)²**",
+        "Pintasan-x: (x – 4)² = 0 → x = **4** (punca berulang)",
+        "Satu punca berulang → graf **menyentuh** paksi-x di satu titik",
+        "**Satu pintasan-x sahaja: titik (4, 0)**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pintasan_graf",
+      "imej": ""
+    },
+    {
+      "id": "s3",
+      "soalan": "Apakah titik maksimum bagi graf f(x) = –2x² + 8?",
+      "pilihan": [
+        "(0, 8)",
+        "(0, –8)",
+        "(2, 0)",
+        "(–2, 0)"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk f(x) = negatif 2x kuasa dua + 8, nilai a = negatif 2 yang negatif, jadi graf berbentuk ∩ dan ada titik maksimum. Paksi simetri: x = negatif b dibahagi 2a = 0 dibahagi negatif 4 = 0. Nilai maksimum: f(0) = negatif 2 kali 0 tambah 8 = 8. Jadi titik maksimum ialah (0, 8).",
+      "langkah": [
+        "f(x) = –2x² + 8: a = –2 < 0 → titik **maksimum**",
+        "Paksi simetri: x = –b/(2a) = 0/(–4) = **0**",
+        "Nilai maksimum: f(0) = –2(0)² + 8 = **8**",
+        "Titik maksimum: **(0, 8)**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "titik_puncak_graf",
+      "imej": ""
+    },
+    {
+      "id": "s4",
+      "soalan": "Bagi f(x) = x² + 5, mengapakah graf ini tidak bersilang dengan paksi-x?",
+      "pilihan": [
+        "Kerana f(x) ≥ 5 untuk semua nilai x, maka f(x) tidak pernah = 0",
+        "Kerana a = 1 < 0",
+        "Kerana pintasan-y ialah 5, graf memotong paksi-y sahaja",
+        "Kerana paksi simetri ialah x = 5"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk f(x) = x² + 5, nilai minimum x² ialah 0 (apabila x = 0). Jadi nilai minimum f(x) = 0 + 5 = 5. Ini bermakna f(x) adalah sentiasa lebih besar atau sama dengan 5 untuk semua nilai x. Oleh itu f(x) tidak pernah sama dengan 0, dan graf tidak pernah menyentuh atau memotong paksi-x.",
+      "langkah": [
+        "f(x) = x² + 5: nilai minimum x² = 0 (apabila x = 0)",
+        "Nilai minimum f(x) = 0 + 5 = **5**",
+        "f(x) ≥ 5 > 0 untuk semua x → f(x) tidak pernah = 0",
+        "Graf **tidak bersilang dengan paksi-x** ✓"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pintasan_graf",
+      "imej": ""
+    },
+    {
+      "id": "s5",
+      "soalan": "Apakah paksi simetri bagi graf f(x) = –x² + 2?",
+      "pilihan": [
+        "x = 0",
+        "x = 2",
+        "x = –2",
+        "x = 1"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk f(x) = negatif x² + 2, nilai a = negatif 1 dan b = 0. Paksi simetri = negatif b dibahagi 2a = negatif 0 dibahagi (2 kali negatif 1) = 0 dibahagi negatif 2 = 0. Jadi paksi simetri ialah x = 0, iaitu paksi-y.",
+      "langkah": [
+        "f(x) = –x² + 2: a = –1, b = 0",
+        "Paksi simetri: x = –b/(2a) = –0 / (2×–1) = 0/(–2) = **0**",
+        "Paksi simetri: **x = 0** (paksi-y)",
+        "Titik maksimum: f(0) = –0 + 2 = 2 → titik **(0, 2)**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "titik_puncak_graf",
+      "imej": ""
+    }
+  ]
+}

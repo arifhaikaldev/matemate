@@ -1,0 +1,128 @@
+{
+  "id": "subtopik-03",
+  "tajuk_subtopik": "Praktis 1.1a — Mengenal Pasti Ungkapan Kuadratik",
+  "nota": [
+    {
+      "tajuk": "Apa itu Ungkapan Kuadratik?",
+      "kandungan": "**Ungkapan kuadratik** dalam satu pemboleh ubah adalah ungkapan berbentuk:\n\n**ax² + bx + c**\n\ndi mana:\n- **a ≠ 0** (pemalar bagi sebutan kuasa dua)\n- **b** = pemalar bagi sebutan kuasa satu (boleh = 0)\n- **c** = pemalar (boleh = 0)\n- Ungkapan hanya mengandungi **satu** pemboleh ubah\n\n**Syarat penting:**\n1. Kuasa tertinggi pemboleh ubah mesti **2** (kuasa dua)\n2. Mesti hanya ada **satu** pemboleh ubah (contoh: x sahaja, atau y sahaja)",
+      "imej": "",
+      "contoh": "**Contoh ungkapan kuadratik dalam satu pemboleh ubah:**\n- x² – 5 ✓ (hanya pemboleh ubah x, kuasa tertinggi = 2)\n- 3y² + 2y – 1 ✓ (hanya pemboleh ubah y, kuasa tertinggi = 2)\n- n(n – 2) = n² – 2n ✓ (kembangkan dahulu — hanya pemboleh ubah n)\n\n**Contoh BUKAN ungkapan kuadratik dalam satu pemboleh ubah:**\n- 3y² – 3x + 1 ✗ (ada DUA pemboleh ubah: x dan y)\n- x³ + 2x ✗ (kuasa tertinggi = 3, bukan 2)\n- 5x + 3 ✗ (tiada sebutan kuasa dua — ini linear)"
+    },
+    {
+      "tajuk": "Menentukan Nilai a, b, dan c",
+      "kandungan": "Bandingkan ungkapan dengan bentuk am **ax² + bx + c**:\n\n- Nilai **a** = pekali sebutan x²\n- Nilai **b** = pekali sebutan x\n- Nilai **c** = pemalar (sebutan tanpa pemboleh ubah)\n\n**Langkah:** Kembangkan ungkapan terlebih dahulu jika perlu, kemudian bandingkan.",
+      "imej": "",
+      "contoh": "**Contoh 1:** 2x² – 5x + 1\n- a = 2, b = –5, c = 1\n\n**Contoh 2:** 2r(r – 3) = 2r² – 6r\n- Kembangkan: 2r² – 6r + 0\n- a = 2, b = –6, c = 0"
+    }
+  ],
+  "soalan": [
+    {
+      "id": "s1",
+      "soalan": "Adakah x² – 5 merupakan ungkapan kuadratik dalam satu pemboleh ubah?",
+      "pilihan": [
+        "Ya, kerana ia mengandungi satu pemboleh ubah (x) dengan kuasa tertinggi 2",
+        "Tidak, kerana tiada sebutan bx",
+        "Tidak, kerana nilai c mestilah positif",
+        "Ya, tetapi hanya jika nilai x adalah positif"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "x² − 5 adalah ungkapan kuadratik dalam satu pemboleh ubah. Sebabnya, ungkapan ini hanya mengandungi satu pemboleh ubah iaitu x, dan kuasa tertinggi bagi x ialah 2. Nilai a = 1, b = 0, dan c = negatif 5. Sebutan bx tidak wajib hadir — ia hanya menjadi 0.",
+      "langkah": [
+        "Kenal pasti bilangan pemboleh ubah: hanya **x** → satu pemboleh ubah ✓",
+        "Kenal pasti kuasa tertinggi: x mempunyai kuasa **2** ✓",
+        "Bentuk am: ax² + bx + c → **1**x² + **0**x + (**–5**)",
+        "a = 1 ≠ 0 ✓ → **Ya, x² – 5 adalah ungkapan kuadratik dalam satu pemboleh ubah**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "kenal_pasti_ungkapan_kuadratik",
+      "imej": ""
+    },
+    {
+      "id": "s2",
+      "soalan": "Adakah 3y² – 3x + 1 merupakan ungkapan kuadratik dalam satu pemboleh ubah? Mengapa?",
+      "pilihan": [
+        "Tidak, kerana ia mengandungi dua pemboleh ubah: x dan y",
+        "Ya, kerana ia mengandungi sebutan kuasa dua",
+        "Ya, kerana nilai a = 3 ≠ 0",
+        "Tidak, kerana kuasa tertinggi bukan 2"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "3y² − 3x + 1 bukan ungkapan kuadratik dalam satu pemboleh ubah. Walaupun ada sebutan y kuasa dua, ungkapan ini mengandungi DUA pemboleh ubah iaitu x dan y secara serentak. Syarat ungkapan kuadratik dalam satu pemboleh ubah ialah mesti hanya ada SATU pemboleh ubah sahaja.",
+      "langkah": [
+        "Kenal pasti semua pemboleh ubah dalam ungkapan: terdapat **y** dan **x**",
+        "Bilangan pemboleh ubah = **2** → melanggar syarat 'satu pemboleh ubah'",
+        "Walaupun ada y², syarat satu pemboleh ubah tidak dipenuhi",
+        "**Kesimpulan: BUKAN ungkapan kuadratik dalam satu pemboleh ubah** ✗"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "kenal_pasti_ungkapan_kuadratik",
+      "imej": ""
+    },
+    {
+      "id": "s3",
+      "soalan": "Adakah n(n – 2) merupakan ungkapan kuadratik dalam satu pemboleh ubah?",
+      "pilihan": [
+        "Ya, selepas dikembangkan menjadi n² – 2n",
+        "Tidak, kerana ia dalam bentuk hasil darab",
+        "Tidak, kerana tiada pemalar c",
+        "Ya, tetapi hanya jika n ≠ 0"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "n(n − 2) perlu dikembangkan dahulu. Apabila dikembangkan, kita dapat n kuasa dua tolak 2n. Ini adalah ungkapan dengan satu pemboleh ubah n, kuasa tertinggi 2, dengan a = 1, b = negatif 2, dan c = 0. Maka ia adalah ungkapan kuadratik dalam satu pemboleh ubah.",
+      "langkah": [
+        "Kembangkan: n(n – 2) = **n² – 2n**",
+        "Bandingkan dengan ax² + bx + c: **n² – 2n + 0**",
+        "a = 1, b = –2, c = 0 → a ≠ 0 ✓",
+        "Hanya satu pemboleh ubah: **n** ✓",
+        "**Ya, n(n – 2) adalah ungkapan kuadratik dalam satu pemboleh ubah**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "kenal_pasti_ungkapan_kuadratik",
+      "imej": ""
+    },
+    {
+      "id": "s4",
+      "soalan": "Tentukan nilai a, b, dan c bagi ungkapan kuadratik 2x² – 5x + 1.",
+      "pilihan": [
+        "a = 2, b = –5, c = 1",
+        "a = 2, b = 5, c = 1",
+        "a = –2, b = –5, c = 1",
+        "a = 2, b = –5, c = –1"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk mencari nilai a, b, dan c, kita bandingkan ungkapan 2x kuasa dua tolak 5x tambah 1 dengan bentuk am ax kuasa dua tambah bx tambah c. Pekali bagi x kuasa dua ialah 2, jadi a = 2. Pekali bagi x ialah negatif 5, jadi b = negatif 5. Pemalar ialah 1, jadi c = 1.",
+      "langkah": [
+        "Bentuk am: ax² + bx + c",
+        "Ungkapan: **2**x² + (**–5**)x + **1**",
+        "Pekali x²: **a = 2**",
+        "Pekali x: **b = –5**",
+        "Pemalar: **c = 1**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "nilai_a_b_c",
+      "imej": ""
+    },
+    {
+      "id": "s5",
+      "soalan": "Tentukan nilai a, b, dan c bagi ungkapan kuadratik 2r(r – 3).",
+      "pilihan": [
+        "a = 2, b = –6, c = 0",
+        "a = 2, b = –3, c = 0",
+        "a = 2, b = 6, c = 0",
+        "a = 1, b = –6, c = 0"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Kita perlu kembangkan 2r(r − 3) dahulu. 2r kali r = 2r kuasa dua. 2r kali negatif 3 = negatif 6r. Jadi ungkapannya ialah 2r kuasa dua tolak 6r. Dalam bentuk am, a = 2, b = negatif 6, dan c = 0 kerana tiada pemalar.",
+      "langkah": [
+        "Kembangkan: 2r(r – 3) = 2r² – 6r",
+        "Tulis dalam bentuk am: **2**r² + (**–6**)r + **0**",
+        "Pekali r²: **a = 2**",
+        "Pekali r: **b = –6**",
+        "Pemalar: **c = 0**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "nilai_a_b_c",
+      "imej": ""
+    }
+  ]
+}

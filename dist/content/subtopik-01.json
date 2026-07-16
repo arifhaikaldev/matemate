@@ -1,0 +1,169 @@
+{
+  "id": "subtopik-01",
+  "tajuk_subtopik": "Fungsi (Functions)",
+  "nota": [
+    {
+      "tajuk": "Definisi Fungsi",
+      "kandungan": "**Fungsi** adalah satu hubungan di mana setiap nilai dalam **domain** dipetakan kepada **tepat satu** nilai dalam julat (range).\n\n- **Domain** — set nilai input (x)\n- **Kodomain** — set semua nilai yang mungkin untuk output\n- **Julat (Range)** — set nilai output yang sebenar dihasilkan\n\nNotasi: **f(x)** dibaca sebagai \"f bagi x\" atau \"fungsi f pada x\".",
+      "imej": "",
+      "contoh": "Diberi f(x) = 2x + 1\n\n- f(1) = 2(1) + 1 = **3**\n- f(3) = 2(3) + 1 = **7**\n- f(0) = 2(0) + 1 = **1**"
+    },
+    {
+      "tajuk": "Cara Menentukan Domain dan Julat",
+      "kandungan": "**Langkah menentukan domain:**\n1. Fungsi linear (contoh: f(x) = 3x − 2) → domain boleh semua nombor nyata.\n2. Fungsi dengan penyebut (contoh: f(x) = 1/(x−2)) → domain adalah semua x **kecuali** nilai yang menjadikan penyebut = 0.\n3. Fungsi dengan punca kuasa dua (contoh: f(x) = √x) → domain adalah x ≥ 0.\n\n**Langkah menentukan julat:**\n- Gantikan nilai domain ke dalam fungsi dan lihat nilai-nilai output yang terhasil.",
+      "imej": "",
+      "contoh": "Diberi f(x) = x² dan domain = {−2, −1, 0, 1, 2}\n\nJulat = {f(−2), f(−1), f(0), f(1), f(2)} = {4, 1, 0, 1, 4} = **{0, 1, 4}**\n\n(Perhatikan: nilai 1 dan 4 muncul dua kali tetapi dalam set, ditulis sekali sahaja)"
+    },
+    {
+      "tajuk": "Fungsi Gubahan (Composite Function)",
+      "kandungan": "**Fungsi gubahan** ialah fungsi yang dibentuk dengan menggabungkan dua fungsi.\n\nJika f dan g adalah dua fungsi, maka:\n- **fg(x) = f(g(x))** — apply g dahulu, kemudian f\n- **gf(x) = g(f(x))** — apply f dahulu, kemudian g\n\n> Perhatikan urutan: fg bermaksud g dilakukan dahulu, kemudian f.",
+      "imej": "",
+      "contoh": "Diberi f(x) = 2x + 1 dan g(x) = x²\n\n**fg(x) = f(g(x)) = f(x²) = 2(x²) + 1 = 2x² + 1**\n\n**gf(x) = g(f(x)) = g(2x+1) = (2x+1)² = 4x² + 4x + 1**\n\nCuba: fg(3) = 2(3²) + 1 = 2(9) + 1 = **19**"
+    },
+    {
+      "tajuk": "Fungsi Songsangan (Inverse Function)",
+      "kandungan": "**Fungsi songsangan** f⁻¹(x) adalah fungsi yang \"membatalkan\" kesan f(x).\n\n**Cara mencari f⁻¹(x):**\n1. Tulis y = f(x)\n2. Ungkapkan x dalam sebutan y\n3. Gantikan y dengan x untuk mendapatkan f⁻¹(x)\n\n**Sifat penting:**\n- ff⁻¹(x) = x\n- f⁻¹f(x) = x",
+      "imej": "",
+      "contoh": "Diberi f(x) = 3x − 2, cari f⁻¹(x)\n\n**Langkah 1:** y = 3x − 2\n\n**Langkah 2:** 3x = y + 2 → x = (y + 2) / 3\n\n**Langkah 3:** f⁻¹(x) = **(x + 2) / 3**\n\n**Semak:** f(f⁻¹(x)) = 3·((x+2)/3) − 2 = (x+2) − 2 = x ✓"
+    }
+  ],
+  "soalan": [
+    {
+      "id": "s1",
+      "soalan": "Diberi f(x) = 3x − 5. Apakah nilai f(4)?",
+      "pilihan": ["7", "8", "12", "17"],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk mencari f(4), kita gantikan x dengan 4 dalam fungsi f(x) = 3x minus 5. Maka f(4) = 3 kali 4 tolak 5 = 12 tolak 5 = 7.",
+      "langkah": [
+        "Tulis fungsi: f(x) = 3x − 5",
+        "Gantikan x = 4: f(4) = 3(4) − 5",
+        "Kira: f(4) = 12 − 5 = **7**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "kira_nilai_fungsi",
+      "imej": ""
+    },
+    {
+      "id": "s2",
+      "soalan": "Diberi g(x) = x² + 2x. Domain = {−1, 0, 1, 2}. Apakah julat bagi g?",
+      "pilihan": ["{−1, 0, 3, 8}", "{0, 3, 8}", "{−1, 0, 1, 8}", "{1, 3, 5, 8}"],
+      "jawapan_betul": 0,
+      "penjelasan": "Kita perlu kira g(x) untuk setiap nilai dalam domain. Untuk x = negatif 1, g = 1 tolak 2 = negatif 1. Untuk x = 0, g = 0. Untuk x = 1, g = 1 tambah 2 = 3. Untuk x = 2, g = 4 tambah 4 = 8. Maka julat ialah set yang mengandungi negatif 1, 0, 3, dan 8.",
+      "langkah": [
+        "g(−1) = (−1)² + 2(−1) = 1 − 2 = **−1**",
+        "g(0) = 0² + 2(0) = **0**",
+        "g(1) = 1² + 2(1) = 1 + 2 = **3**",
+        "g(2) = 2² + 2(2) = 4 + 4 = **8**",
+        "Julat = {−1, 0, 3, 8}"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "domain_julat",
+      "imej": ""
+    },
+    {
+      "id": "s3",
+      "soalan": "Diberi f(x) = 2x + 1 dan g(x) = x − 3. Cari fg(x).",
+      "pilihan": ["2x − 5", "2x − 3", "2x + 5", "4x − 5"],
+      "jawapan_betul": 0,
+      "penjelasan": "Fungsi gubahan fg bermaksud kita apply g dahulu kemudian f. Jadi fg(x) = f(g(x)) = f(x tolak 3) = 2 kali (x tolak 3) tambah 1 = 2x tolak 6 tambah 1 = 2x tolak 5.",
+      "langkah": [
+        "fg(x) = f(g(x)) — apply g dahulu",
+        "g(x) = x − 3",
+        "f(g(x)) = f(x − 3) = 2(x − 3) + 1",
+        "= 2x − 6 + 1 = **2x − 5**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "fungsi_gubahan",
+      "imej": ""
+    },
+    {
+      "id": "s4",
+      "soalan": "Diberi f(x) = 5x + 3. Cari f⁻¹(x).",
+      "pilihan": ["(x − 3) / 5", "(x + 3) / 5", "5x − 3", "(x − 5) / 3"],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk mencari fungsi songsangan, kita tulis y = 5x + 3, kemudian ungkapkan x. 5x = y tolak 3, maka x = (y tolak 3) dibahagi 5. Gantikan y dengan x untuk dapat f songsangan x = (x tolak 3) dibahagi 5.",
+      "langkah": [
+        "Tulis: y = 5x + 3",
+        "Ungkapkan x: 5x = y − 3",
+        "x = (y − 3) / 5",
+        "f⁻¹(x) = **(x − 3) / 5**",
+        "Semak: f(f⁻¹(x)) = 5·((x−3)/5) + 3 = (x−3) + 3 = x ✓"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "fungsi_songsangan",
+      "imej": ""
+    },
+    {
+      "id": "s5",
+      "soalan": "Jika f(x) = x/(x − 2), apakah nilai x yang perlu dikecualikan daripada domain?",
+      "pilihan": ["x = 2", "x = 0", "x = −2", "x = 1"],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk fungsi yang mempunyai penyebut, kita kecualikan nilai x yang menjadikan penyebut sama dengan 0. Di sini penyebut ialah x tolak 2. Jika x tolak 2 = 0, maka x = 2. Jadi x = 2 perlu dikecualikan.",
+      "langkah": [
+        "Fungsi: f(x) = x / (x − 2)",
+        "Syarat: penyebut ≠ 0",
+        "x − 2 ≠ 0",
+        "x ≠ **2**",
+        "Domain = semua nombor nyata kecuali x = 2"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "domain_julat",
+      "imej": ""
+    },
+    {
+      "id": "s6",
+      "soalan": "Diberi f(x) = 4 − x dan g(x) = 2x. Cari gf(3).",
+      "pilihan": ["2", "10", "8", "−2"],
+      "jawapan_betul": 0,
+      "penjelasan": "gf(3) bermaksud kita apply f dahulu pada x = 3, kemudian apply g. f(3) = 4 tolak 3 = 1. Kemudian g(1) = 2 kali 1 = 2.",
+      "langkah": [
+        "gf(3) = g(f(3)) — apply f dahulu",
+        "f(3) = 4 − 3 = **1**",
+        "g(f(3)) = g(1) = 2(1) = **2**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "fungsi_gubahan",
+      "imej": ""
+    },
+    {
+      "id": "s7",
+      "soalan": "Diberi f⁻¹(x) = 2x − 1. Apakah f(x)?",
+      "pilihan": ["(x + 1) / 2", "(x − 1) / 2", "2x + 1", "(1 − x) / 2"],
+      "jawapan_betul": 0,
+      "penjelasan": "Kita perlu cari f(x) daripada f songsangan x = 2x tolak 1. Katakan f songsangan = y, maka y = 2x tolak 1. Ungkapkan x: 2x = y + 1, x = (y + 1) / 2. Maka f(x) = (x + 1) / 2.",
+      "langkah": [
+        "f⁻¹(x) = 2x − 1",
+        "Katakan y = 2x − 1, cari x dalam sebutan y",
+        "2x = y + 1 → x = (y + 1) / 2",
+        "Maka f(x) = **(x + 1) / 2**",
+        "Semak: f(f⁻¹(x)) = (2x−1+1)/2 = 2x/2 = x ✓"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "fungsi_songsangan",
+      "imej": ""
+    },
+    {
+      "id": "s8",
+      "soalan": "Manakah antara berikut BUKAN fungsi?",
+      "pilihan": [
+        "Satu nilai x dipetakan kepada dua nilai y yang berbeza",
+        "Satu nilai x dipetakan kepada satu nilai y sahaja",
+        "Dua nilai x berbeza dipetakan kepada nilai y yang sama",
+        "Semua nilai x dalam domain mempunyai pasangan y"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Syarat fungsi ialah setiap nilai x dalam domain dipetakan kepada tepat satu nilai y. Jika satu nilai x dipetakan kepada dua nilai y yang berbeza, ia melanggar syarat ini dan tidak boleh diklasifikasikan sebagai fungsi.",
+      "langkah": [
+        "Syarat fungsi: setiap x → tepat satu y",
+        "Pilihan A: satu x → DUA nilai y ❌ (melanggar syarat fungsi)",
+        "Pilihan B: satu x → satu y ✓",
+        "Pilihan C: dua x → satu y ✓ (ini dibenarkan)",
+        "Pilihan D: semua x ada pasangan ✓",
+        "Jawapan: **Pilihan A** — bukan fungsi"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "konsep_fungsi",
+      "imej": ""
+    }
+  ]
+}

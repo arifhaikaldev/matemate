@@ -1,0 +1,54 @@
+{
+  "subtopik": [
+    {
+      "id": "subtopik-01",
+      "tajuk_subtopik": "Fungsi (Functions)",
+      "fail": "subtopik-01.json"
+    },
+    {
+      "id": "subtopik-02",
+      "tajuk_subtopik": "Graf Fungsi (Graphs of Functions)",
+      "fail": "subtopik-02.json"
+    },
+    {
+      "id": "subtopik-03",
+      "tajuk_subtopik": "1.1a — Mengenal Pasti Ungkapan Kuadratik",
+      "fail": "subtopik-03.json"
+    },
+    {
+      "id": "subtopik-04",
+      "tajuk_subtopik": "1.1b — Bentuk Graf & Paksi Simetri",
+      "fail": "subtopik-04.json"
+    },
+    {
+      "id": "subtopik-05",
+      "tajuk_subtopik": "1.1c — Menentukan Nilai c & Titik Maksimum",
+      "fail": "subtopik-05.json"
+    },
+    {
+      "id": "subtopik-06",
+      "tajuk_subtopik": "1.1d — Membentuk Persamaan Kuadratik daripada Situasi",
+      "fail": "subtopik-06.json"
+    },
+    {
+      "id": "subtopik-07",
+      "tajuk_subtopik": "1.1e — Menentukan Punca Persamaan Kuadratik",
+      "fail": "subtopik-07.json"
+    },
+    {
+      "id": "subtopik-08",
+      "tajuk_subtopik": "1.1f — Penyelesaian melalui Pemfaktoran",
+      "fail": "subtopik-08.json"
+    },
+    {
+      "id": "subtopik-09",
+      "tajuk_subtopik": "1.1g — Melukis Graf Fungsi Kuadratik",
+      "fail": "subtopik-09.json"
+    },
+    {
+      "id": "subtopik-10",
+      "tajuk_subtopik": "1.1h — Masalah Konteks & Penyelesaian Kuadratik",
+      "fail": "subtopik-10.json"
+    }
+  ]
+}

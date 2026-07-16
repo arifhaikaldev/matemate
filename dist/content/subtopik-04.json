@@ -1,0 +1,125 @@
+{
+  "id": "subtopik-04",
+  "tajuk_subtopik": "Praktis 1.1b — Bentuk Graf & Paksi Simetri",
+  "nota": [
+    {
+      "tajuk": "Bentuk Graf: ∪ atau ∩",
+      "kandungan": "Bentuk graf fungsi kuadratik f(x) = ax² + bx + c ditentukan oleh **tanda nilai a**:\n\n- Jika **a > 0** → graf berbentuk **∪** (mangkuk, membuka ke atas) → mempunyai **titik minimum**\n- Jika **a < 0** → graf berbentuk **∩** (topi, membuka ke bawah) → mempunyai **titik maksimum**\n\n**Ingatan mudah:** a positif = senyum 😊 (∪), a negatif = sedih 🙁 (∩)",
+      "imej": "",
+      "contoh": "- f(x) = x² – 4x + 1 → a = 1 > 0 → **bentuk ∪**, titik minimum\n- f(x) = –2x² + 3x → a = –2 < 0 → **bentuk ∩**, titik maksimum"
+    },
+    {
+      "tajuk": "Paksi Simetri",
+      "kandungan": "Graf fungsi kuadratik adalah simetri terhadap satu garis menegak yang dipanggil **paksi simetri**.\n\n**Formula paksi simetri:** x = –b / (2a)\n\n**Cara lain:** Jika dua titik pada graf mempunyai nilai y yang sama, paksi simetri ialah **nilai x tengah** di antara kedua-dua titik tersebut.\n\n**Titik maksimum/minimum** terletak tepat pada paksi simetri.",
+      "imej": "",
+      "contoh": "**Graf melalui (2, 5) dan (6, 5):**\n- Kedua-dua titik mempunyai y = 5 (sama)\n- Paksi simetri = nilai x tengah = (2 + 6) / 2 = **x = 4**\n\n**Graf dengan titik minimum (–4, 0):**\n- Titik minimum berada tepat pada paksi simetri\n- Paksi simetri: **x = –4**"
+    }
+  ],
+  "soalan": [
+    {
+      "id": "s1",
+      "soalan": "Apakah bentuk graf fungsi kuadratik f(x) = x² – 4x + 1?",
+      "pilihan": [
+        "Berbentuk ∪ kerana nilai a = 1 > 0",
+        "Berbentuk ∩ kerana nilai a = 1 > 0",
+        "Berbentuk ∪ kerana nilai c = 1 > 0",
+        "Berbentuk ∩ kerana nilai b = –4 < 0"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Bentuk graf fungsi kuadratik ditentukan oleh nilai a. Untuk f(x) = x kuasa dua tolak 4x tambah 1, nilai a = 1 yang merupakan positif. Apabila a lebih besar daripada 0, graf membuka ke atas dan berbentuk seperti mangkuk atau simbol U.",
+      "langkah": [
+        "Kenal pasti nilai a dalam f(x) = x² – 4x + 1",
+        "a = **1** (pekali x²)",
+        "Periksa tanda a: 1 > 0 → **positif**",
+        "a > 0 → graf berbentuk **∪** (membuka ke atas, mempunyai titik minimum)"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "bentuk_graf",
+      "imej": ""
+    },
+    {
+      "id": "s2",
+      "soalan": "Bagi graf f(x) = ax² + bx + c dengan a < 0, apakah yang boleh disimpulkan tentang grafnya?",
+      "pilihan": [
+        "Graf berbentuk ∩ dan mempunyai titik maksimum",
+        "Graf berbentuk ∪ dan mempunyai titik minimum",
+        "Graf berbentuk ∩ dan mempunyai titik minimum",
+        "Graf berbentuk ∪ dan mempunyai titik maksimum"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Apabila nilai a adalah negatif, iaitu a lebih kecil daripada 0, graf fungsi kuadratik membuka ke bawah dan berbentuk seperti topi atau simbol ∩. Graf jenis ini mempunyai titik tertinggi yang dipanggil titik maksimum.",
+      "langkah": [
+        "Diberikan: a < 0 (nilai a negatif)",
+        "Peraturan: a < 0 → graf membuka ke **bawah**",
+        "Graf yang membuka ke bawah berbentuk **∩**",
+        "Graf berbentuk ∩ mempunyai titik paling tinggi = **titik maksimum**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "bentuk_graf",
+      "imej": ""
+    },
+    {
+      "id": "s3",
+      "soalan": "Graf fungsi kuadratik melalui titik (0, 3) dan (4, 3). Di manakah terletaknya titik minimum atau maksimum graf ini?",
+      "pilihan": [
+        "Pada paksi simetri x = 2",
+        "Pada paksi simetri x = 4",
+        "Pada paksi simetri x = 0",
+        "Pada paksi simetri x = 3"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Kedua-dua titik (0, 3) dan (4, 3) mempunyai nilai y yang sama iaitu 3. Ini bermakna kedua-dua titik ini berada pada ketinggian yang sama pada graf. Oleh itu, paksi simetri berada tepat di tengah-tengah antara x = 0 dan x = 4. Nilai x tengah = (0 + 4) dibahagi 2 = 2. Titik minimum atau maksimum terletak pada paksi simetri x = 2.",
+      "langkah": [
+        "Titik (0, 3) dan (4, 3) mempunyai nilai y yang **sama** = 3",
+        "Paksi simetri = nilai x di tengah antara kedua titik",
+        "Paksi simetri: x = (0 + 4) / 2 = **x = 2**",
+        "Titik minimum/maksimum terletak pada **x = 2**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "paksi_simetri",
+      "imej": ""
+    },
+    {
+      "id": "s4",
+      "soalan": "Graf fungsi kuadratik mempunyai titik minimum pada (–4, 0). Apakah persamaan paksi simetri graf tersebut?",
+      "pilihan": [
+        "x = –4",
+        "x = 4",
+        "y = –4",
+        "x = 0"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Titik minimum terletak tepat pada paksi simetri graf. Oleh itu, jika titik minimum ialah (negatif 4, 0), maka paksi simetri adalah garis menegak yang melalui x = negatif 4. Persamaan paksi simetri ialah x = negatif 4.",
+      "langkah": [
+        "Titik minimum diberikan: **(–4, 0)**",
+        "Titik minimum/maksimum sentiasa terletak pada paksi simetri",
+        "Koordinat x bagi titik minimum = **–4**",
+        "Persamaan paksi simetri: **x = –4**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "paksi_simetri",
+      "imej": ""
+    },
+    {
+      "id": "s5",
+      "soalan": "Graf fungsi kuadratik melalui koordinat (2, 5) dan (6, 5). Apakah persamaan paksi simetrinya?",
+      "pilihan": [
+        "x = 4",
+        "x = 2",
+        "x = 6",
+        "x = 5"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Titik (2, 5) dan (6, 5) mempunyai nilai y yang sama. Ini menunjukkan kedua-dua titik adalah imej antara satu sama lain terhadap paksi simetri. Paksi simetri terletak di tengah antara x = 2 dan x = 6, iaitu (2 + 6) dibahagi 2 = 8 dibahagi 2 = 4. Maka paksi simetri ialah x = 4.",
+      "langkah": [
+        "Titik (2, 5) dan (6, 5): nilai y **sama** → kedua titik simetri",
+        "Paksi simetri = nilai x di tengah antara x = 2 dan x = 6",
+        "x tengah = (2 + 6) / 2 = 8 / 2 = **4**",
+        "Persamaan paksi simetri: **x = 4**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "paksi_simetri",
+      "imej": ""
+    }
+  ]
+}

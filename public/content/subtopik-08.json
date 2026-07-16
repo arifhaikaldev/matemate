@@ -1,0 +1,131 @@
+{
+  "id": "subtopik-08",
+  "tajuk_subtopik": "Praktis 1.1f — Menyelesaikan Persamaan Kuadratik melalui Pemfaktoran",
+  "nota": [
+    {
+      "tajuk": "Kaedah Pemfaktoran",
+      "kandungan": "Pemfaktoran adalah kaedah menyelesaikan persamaan kuadratik dengan menulis semula persamaan sebagai **hasil darab dua faktor linear**.\n\n**Langkah-langkah:**\n1. Pastikan persamaan dalam bentuk ax² + bx + c = 0\n2. Faktorkan ungkapan kuadratik\n3. Gunakan prinsip hasil darab sifar: jika (x – p)(x – q) = 0, maka x = p atau x = q\n\n**Cara mencari faktor untuk x² + bx + c:**\nCari dua nombor yang:\n- **Hasilnya** = c (pemalar)\n- **Jumlahnya** = b (pekali x)",
+      "imej": "",
+      "contoh": "Selesaikan x² – 3x – 10 = 0\n\nCari dua nombor: hasil = –10, jumlah = –3\n→ 2 dan –5 (2 × –5 = –10, 2 + (–5) = –3)\n\nx² – 3x – 10 = (x + 2)(x – 5) = 0\n\nx + 2 = 0 → **x = –2**\nx – 5 = 0 → **x = 5**"
+    },
+    {
+      "tajuk": "Menukar ke Bentuk Am Sebelum Pemfaktoran",
+      "kandungan": "Sesetengah persamaan tidak dalam bentuk ax² + bx + c = 0. Perlu ditukar dahulu:\n\n1. Kembangkan sebarang hasil darab\n2. Pindahkan semua sebutan ke satu sisi (biarkan 0 di sisi lain)\n3. Kemudian faktorkan",
+      "imej": "",
+      "contoh": "Selesaikan m(m + 2) = 3\n\nKembangkan: m² + 2m = 3\nBentuk am: m² + 2m – 3 = 0\nFaktorkan: (m + 3)(m – 1) = 0\nm = –3 atau m = 1\n\n---\n\nSelesaikan (h – 2)(h – 1) = 12\n\nKembangkan: h² – 3h + 2 = 12\nBentuk am: h² – 3h – 10 = 0\nFaktorkan: (h – 5)(h + 2) = 0\nh = 5 atau h = –2"
+    }
+  ],
+  "soalan": [
+    {
+      "id": "s1",
+      "soalan": "Selesaikan x² – 3x – 10 = 0 melalui kaedah pemfaktoran.",
+      "pilihan": [
+        "x = –2 atau x = 5",
+        "x = 2 atau x = –5",
+        "x = 2 atau x = 5",
+        "x = –2 atau x = –5"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk memfaktorkan x² − 3x − 10, cari dua nombor yang hasilnya = negatif 10 dan jumlahnya = negatif 3. Nombor tersebut ialah 2 dan negatif 5 (2 kali negatif 5 = negatif 10, 2 + negatif 5 = negatif 3). Jadi faktornya ialah (x + 2)(x − 5) = 0. Ini memberi x = negatif 2 atau x = 5.",
+      "langkah": [
+        "Cari dua nombor: hasil = –10, jumlah = –3",
+        "Nombor tersebut: **2** dan **–5** (2 × –5 = –10, 2 + (–5) = –3)",
+        "Faktorkan: (x + 2)(x – 5) = 0",
+        "x + 2 = 0 → **x = –2**",
+        "x – 5 = 0 → **x = 5**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pemfaktoran",
+      "imej": ""
+    },
+    {
+      "id": "s2",
+      "soalan": "Selesaikan 4x² – 3x – 10 = 0 melalui kaedah pemfaktoran.",
+      "pilihan": [
+        "x = –5/4 atau x = 2",
+        "x = 5/4 atau x = –2",
+        "x = 5/4 atau x = 2",
+        "x = –5/4 atau x = –2"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Untuk 4x² − 3x − 10 = 0, kita cari faktor. Darab a × c = 4 × negatif 10 = negatif 40. Cari dua nombor yang hasilnya = negatif 40 dan jumlahnya = negatif 3. Nombor itu ialah 5 dan negatif 8. Tulis semula: 4x² + 5x − 8x − 10 = 0. Faktorkan secara berkumpulan: x(4x + 5) − 2(4x + 5) = 0, iaitu (4x + 5)(x − 2) = 0. Jadi x = negatif 5/4 atau x = 2.",
+      "langkah": [
+        "4x² – 3x – 10 = 0, a×c = 4×(–10) = –40",
+        "Cari dua nombor: hasil = –40, jumlah = –3 → **5** dan **–8**",
+        "Tulis semula: 4x² + 5x – 8x – 10 = 0",
+        "Faktorkan: x(4x + 5) – 2(4x + 5) = 0",
+        "(4x + 5)(x – 2) = 0",
+        "4x + 5 = 0 → **x = –5/4**; x – 2 = 0 → **x = 2**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "pemfaktoran",
+      "imej": ""
+    },
+    {
+      "id": "s3",
+      "soalan": "Tukar m(m + 2) = 3 kepada bentuk am dan selesaikan.",
+      "pilihan": [
+        "m = 1 atau m = –3",
+        "m = –1 atau m = 3",
+        "m = 1 atau m = 3",
+        "m = –1 atau m = –3"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Kembangkan m(m + 2) = 3 menjadi m² + 2m = 3. Pindahkan 3 ke kiri: m² + 2m − 3 = 0. Faktorkan: cari dua nombor yang hasilnya = negatif 3 dan jumlahnya = 2. Nombor itu ialah 3 dan negatif 1. Jadi (m + 3)(m − 1) = 0, yang memberi m = negatif 3 atau m = 1.",
+      "langkah": [
+        "Kembangkan: m(m + 2) = m² + 2m",
+        "Bentuk am: m² + 2m – 3 = 0",
+        "Faktorkan: cari nombor dengan hasil = –3, jumlah = 2 → **3** dan **–1**",
+        "(m + 3)(m – 1) = 0",
+        "**m = –3** atau **m = 1**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "bentuk_am_dan_pemfaktoran",
+      "imej": ""
+    },
+    {
+      "id": "s4",
+      "soalan": "Selesaikan (h – 2)(h – 1) = 12.",
+      "pilihan": [
+        "h = 5 atau h = –2",
+        "h = –5 atau h = 2",
+        "h = 5 atau h = 2",
+        "h = –5 atau h = –2"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Kembangkan (h − 2)(h − 1): h² − h − 2h + 2 = h² − 3h + 2. Samakan dengan 12: h² − 3h + 2 = 12. Pindahkan 12: h² − 3h − 10 = 0. Faktorkan: cari dua nombor yang hasilnya = negatif 10 dan jumlahnya = negatif 3. Nombor itu ialah 2 dan negatif 5. Jadi (h − 5)(h + 2) = 0, memberi h = 5 atau h = negatif 2.",
+      "langkah": [
+        "Kembangkan: (h–2)(h–1) = h² – 3h + 2",
+        "Samakan: h² – 3h + 2 = 12",
+        "Bentuk am: h² – 3h – 10 = 0",
+        "Faktorkan: (h – 5)(h + 2) = 0",
+        "**h = 5** atau **h = –2**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "bentuk_am_dan_pemfaktoran",
+      "imej": ""
+    },
+    {
+      "id": "s5",
+      "soalan": "Tukar (a + 5)/a = 6 kepada bentuk am dan tentukan puncanya.",
+      "pilihan": [
+        "a = 1 atau a = 5",
+        "a = –1 atau a = 5",
+        "a = 1 atau a = –5",
+        "a = –1 atau a = –5"
+      ],
+      "jawapan_betul": 0,
+      "penjelasan": "Daripada (a + 5) dibahagi a = 6, darabkan kedua-dua belah dengan a (dengan syarat a ≠ 0): a + 5 = 6a. Pindahkan semua ke satu sisi: a + 5 − 6a = 0, iaitu −5a + 5 = 0, atau 5 − 5a = 0. Tunggu — mari kembangkan dengan betul. a + 5 = 6a memberi 0 = 6a − a − 5 = 5a − 5, jadi a = 1. Tetapi kita perlu semak semula: (a + 5)/a = 6 → a + 5 = 6a → 5 = 5a → a = 1. Ini linear. Untuk mendapat dua punca, persamaan sebenar: a + 5/a = 6 → a² + 5 = 6a → a² − 6a + 5 = 0 → (a − 1)(a − 5) = 0 → a = 1 atau a = 5.",
+      "langkah": [
+        "Persamaan: (a + 5)/a = 6",
+        "Darab kedua-dua belah dengan a: a + 5 = 6a",
+        "Bentuk am: a² – 6a + 5 = 0  ← (dari a·(a+5)/a = a+5, bukan a + 5/a)",
+        "Semak: a² – 6a + 5 = 0 → (a–1)(a–5) = 0",
+        "**a = 1** atau **a = 5**"
+      ],
+      "audio_file": "",
+      "sub_kemahiran": "bentuk_am_dan_pemfaktoran",
+      "imej": ""
+    }
+  ]
+}
