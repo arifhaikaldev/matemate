@@ -53,12 +53,12 @@ export function NotaPage() {
     return (
       <div className="min-h-screen flex flex-col">
         <AppHeader tajuk="Nota" showBack backTo="/" />
-        <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
+        <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8">
           <div className="space-y-4 animate-pulse">
-            <div className="h-6 bg-baby-blue/50 dark:bg-white/10 rounded w-2/3" />
-            <div className="h-4 bg-baby-blue/50 dark:bg-white/10 rounded w-full" />
-            <div className="h-4 bg-baby-blue/50 dark:bg-white/10 rounded w-5/6" />
-            <div className="h-4 bg-baby-blue/50 dark:bg-white/10 rounded w-4/6" />
+            <div className="h-6 bg-duo-gray-light/50 dark:bg-white/10 rounded w-2/3" />
+            <div className="h-4 bg-duo-gray-light/50 dark:bg-white/10 rounded w-full" />
+            <div className="h-4 bg-duo-gray-light/50 dark:bg-white/10 rounded w-5/6" />
+            <div className="h-4 bg-duo-gray-light/50 dark:bg-white/10 rounded w-4/6" />
           </div>
         </main>
       </div>
@@ -69,9 +69,9 @@ export function NotaPage() {
     return (
       <div className="min-h-screen flex flex-col">
         <AppHeader tajuk="Nota" showBack backTo="/" />
-        <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
-          <div className="card border-soft-peach/50">
-            <p className="text-deep-charcoal/70 dark:text-soft-peach">{error ?? 'Kandungan tidak dijumpai'}</p>
+        <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8">
+          <div className="card">
+            <p className="text-duo-charcoal/70 dark:text-duo-peach">{error ?? 'Kandungan tidak dijumpai'}</p>
           </div>
         </main>
       </div>
@@ -82,11 +82,11 @@ export function NotaPage() {
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk={subtopik.tajuk_subtopik} showBack backTo="/" />
 
-      <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-5">
+      <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8 space-y-5">
         {subtopik.nota.map((section, i) => (
-          <div key={i} className="card-white space-y-3">
-            <h2 className="text-base font-bold text-deep-charcoal dark:text-gray-100 flex items-center gap-2">
-              <span className="w-7 h-7 rounded-full bg-sky-blue text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+          <div key={i} className="card space-y-3">
+            <h2 className="text-base font-black text-duo-charcoal dark:text-gray-100 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-full bg-duo-blue text-white text-xs font-black flex items-center justify-center flex-shrink-0">
                 {i + 1}
               </span>
               {section.tajuk}
@@ -95,7 +95,7 @@ export function NotaPage() {
             <MarkdownRenderer kandungan={section.kandungan} />
 
             {section.imej && (
-              <div className="rounded-xl overflow-hidden bg-baby-blue/30 dark:bg-white/5">
+              <div className="rounded-2xl overflow-hidden bg-duo-blue-light/30 dark:bg-white/5 border-2 border-duo-gray-light dark:border-white/10">
                 <img
                   src={section.imej}
                   alt={section.tajuk}
@@ -106,8 +106,8 @@ export function NotaPage() {
             )}
 
             {section.contoh && (
-              <div className="bg-soft-peach-light dark:bg-soft-peach/10 border border-soft-peach/40 dark:border-soft-peach/20 rounded-xl p-5">
-                <p className="text-xs font-semibold text-deep-charcoal/60 dark:text-soft-peach uppercase tracking-wider mb-2">
+              <div className="bg-duo-orange-light/50 dark:bg-duo-orange/10 border-2 border-duo-orange/30 dark:border-duo-orange/20 rounded-2xl p-5">
+                <p className="text-xs font-bold text-duo-orange uppercase tracking-widest mb-2">
                   Contoh
                 </p>
                 <MarkdownRenderer kandungan={section.contoh} />
@@ -119,14 +119,14 @@ export function NotaPage() {
         <div className="h-24" />
       </main>
 
-      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-deep-charcoal/95 backdrop-blur border-t border-baby-blue/50 dark:border-white/5 px-4 py-4">
-        <div className="max-w-2xl mx-auto">
+      <div className="sticky bottom-0 z-10 bg-white dark:bg-duo-charcoal border-t-2 border-duo-gray-light dark:border-white/10 px-5 py-4">
+        <div className="max-w-lg mx-auto">
           <button
             onClick={mulaKuiz}
-            className="btn-primary w-full text-base"
+            className="btn-primary w-full text-lg"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
             Mula Kuiz ({subtopik.soalan.length} soalan)
           </button>

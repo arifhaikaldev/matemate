@@ -72,98 +72,125 @@ export function KuizLanjutPage() {
 
   const betul = pilihan !== null && pilihan === currentSoalan.jawapan_betul
 
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
   return (
     <div className="min-h-screen flex flex-col">
-      <AppHeader tajuk={subtopik.tajuk_subtopik} showBack>
-        <span className="text-sm text-deep-charcoal/50 dark:text-gray-400 font-medium">
-          {semasaIdx + 1}/{jumlah}
-        </span>
-      </AppHeader>
+      <AppHeader tajuk={subtopik.tajuk_subtopik} showBack />
 
-      <div className="h-1.5 bg-baby-blue/50 dark:bg-white/10">
-        <div className="h-full bg-sky-blue transition-all duration-500" style={{ width: `${progress}%` }} />
+      <div className="h-2 bg-duo-gray-light dark:bg-white/10">
+        <div className="h-full bg-duo-green transition-all duration-500" style={{ width: `${progress}%` }} />
       </div>
 
-      <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-5">
-        <div className="flex items-center gap-2">
-          <span className="badge-sky">Soalan {semasaIdx + 1}</span>
-          {currentSoalan.sub_kemahiran && (
-            <span className="badge-gray">{currentSoalan.sub_kemahiran.replace(/_/g, ' ')}</span>
-          )}
+      <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8 space-y-6">
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-bold text-duo-gray uppercase tracking-widest">
+            Soalan {semasaIdx + 1} / {jumlah}
+          </span>
+          <button
+            onClick={() => navigate(`/nota/${subtopikId}`)}
+            className="btn-ghost text-xs"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            Mula Semula
+          </button>
         </div>
 
-        <div className="card-white">
-          <p className="text-base font-medium text-deep-charcoal dark:text-gray-100 leading-relaxed">
+        <div className="text-center space-y-3">
+          <p className="text-lg font-bold text-duo-charcoal dark:text-gray-100 leading-relaxed">
             {currentSoalan.soalan}
           </p>
           {currentSoalan.imej && (
-            <div className="mt-3 rounded-xl overflow-hidden bg-baby-blue/30 dark:bg-white/5">
+            <div className="rounded-2xl overflow-hidden bg-duo-blue-light/50 dark:bg-white/5 border-2 border-duo-gray-light dark:border-white/10">
               <img src={currentSoalan.imej} alt="Rajah soalan" className="w-full object-contain max-h-48" />
             </div>
           )}
         </div>
 
-        <div className="space-y-3">
+        <div className="grid grid-cols-2 gap-3">
           {currentSoalan.pilihan.map((opt, i) => {
             const isSelected = pilihan === i
             const isBetul = i === currentSoalan.jawapan_betul
             const showResult = answered
-            let cls = 'w-full text-left px-4 py-3.5 rounded-xl border-2 font-medium text-sm transition-all duration-150 '
+
+            let cls = 'relative flex flex-col items-center justify-center gap-2 px-4 py-5 rounded-2xl border-2 font-bold text-sm transition-all duration-150 min-h-[100px] '
+
             if (!showResult) {
               cls += isSelected
-                ? 'border-sky-blue bg-baby-blue dark:bg-sky-blue/10 text-sky-blue-dark dark:text-sky-blue'
-                : 'border-baby-blue/50 dark:border-white/10 bg-white dark:bg-deep-charcoal hover:border-sky-blue-light dark:hover:border-sky-blue/30 hover:bg-baby-blue/30 dark:hover:bg-sky-blue/5'
+                ? 'border-duo-green bg-duo-green-light text-duo-green-dark'
+                : 'border-duo-gray-light dark:border-white/15 bg-white dark:bg-duo-charcoal text-duo-charcoal dark:text-gray-100 hover:border-duo-blue hover:bg-duo-blue-light/30 dark:hover:border-duo-blue/50'
             } else {
-              if (isBetul) cls += 'border-green-500 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300'
-              else if (isSelected && !isBetul) cls += 'border-red-500 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300'
-              else cls += 'border-baby-blue/30 dark:border-white/5 bg-white dark:bg-deep-charcoal opacity-50'
+              if (isBetul) {
+                cls += 'border-duo-green bg-duo-green-light text-duo-green-dark'
+              } else if (isSelected && !isBetul) {
+                cls += 'border-duo-red bg-duo-red-light text-duo-red'
+              } else {
+                cls += 'border-duo-gray-light/50 dark:border-white/5 bg-white dark:bg-duo-charcoal opacity-40'
+              }
             }
+
             return (
               <button key={i} onClick={() => handlePilih(i)} disabled={answered} className={cls}>
-                <div className="flex items-center gap-3">
-                  <span className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold ${
-                    !showResult
-                      ? isSelected ? 'border-sky-blue bg-sky-blue text-white' : 'border-baby-blue/60 dark:border-white/20 text-deep-charcoal/40 dark:text-gray-400'
-                      : isBetul ? 'border-green-500 bg-green-500 text-white'
-                      : isSelected ? 'border-red-500 bg-red-500 text-white'
-                      : 'border-baby-blue/60 dark:border-white/20 text-deep-charcoal/40 dark:text-gray-400'
-                  }`}>
-                    {showResult && isBetul ? '✓' : showResult && isSelected && !isBetul ? '✗' : String.fromCharCode(65 + i)}
-                  </span>
-                  <span>{opt}</span>
-                </div>
+                <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${
+                  !showResult
+                    ? isSelected
+                      ? 'bg-duo-green text-white'
+                      : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
+                    : isBetul
+                    ? 'bg-duo-green text-white'
+                    : isSelected
+                    ? 'bg-duo-red text-white'
+                    : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
+                }`}>
+                  {showResult && isBetul ? (
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  ) : showResult && isSelected && !isBetul ? (
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  ) : (
+                    alphabet[i]
+                  )}
+                </span>
+                <span className="text-center leading-snug">{opt}</span>
               </button>
             )
           })}
         </div>
 
         {answered && (
-          <div className={`rounded-xl border-2 p-5 ${betul ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-soft-peach bg-soft-peach-light dark:bg-soft-peach/10'}`}>
-            <div className="flex items-center gap-2 mb-1">
-              {betul ? (
-                <><span className="text-2xl">✅</span><span className="font-bold text-green-700 dark:text-green-300">Betul! Bagus!</span></>
-              ) : (
-                <><span className="text-2xl">💪</span><span className="font-bold text-deep-charcoal/70 dark:text-soft-peach">Salah. Jangan risau!</span></>
-              )}
+          <div className={`rounded-2xl border-2 p-5 text-center ${betul ? 'border-duo-green bg-duo-green-light' : 'border-duo-red bg-duo-red-light'}`}>
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <span className={`text-lg font-black ${betul ? 'text-duo-green-dark' : 'text-duo-red'}`}>
+                {betul ? 'Betul!' : 'Salah'}
+              </span>
             </div>
-            <p className="text-sm text-deep-charcoal/60 dark:text-gray-400">Tekan "Lihat Penjelasan" untuk faham cara selesaikan soalan ini.</p>
+            <p className={`text-sm font-medium ${betul ? 'text-duo-green-dark/70' : 'text-duo-red/70'}`}>
+              {betul
+                ? 'Bagus! Tekan "Lihat Penjelasan" untuk semak langkah.'
+                : 'Jangan risau! Tekan "Lihat Penjelasan" untuk faham cara selesaikan.'}
+            </p>
           </div>
         )}
 
         <div className="h-24" />
       </main>
 
-      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-deep-charcoal/95 backdrop-blur border-t border-baby-blue/50 dark:border-white/5 px-4 py-4">
-        <div className="max-w-2xl mx-auto">
+      <div className="sticky bottom-0 z-10 bg-white dark:bg-duo-charcoal border-t-2 border-duo-gray-light dark:border-white/10 px-5 py-4">
+        <div className="max-w-lg mx-auto">
           {!answered ? (
-            <button onClick={handleSemak} disabled={pilihan === null} className="btn-primary w-full">
-              Semak Jawapan
+            <button onClick={handleSemak} disabled={pilihan === null} className="btn-primary w-full text-lg">
+              Semak
             </button>
           ) : (
-            <button onClick={handleTeruskan} className="btn-primary w-full">
+            <button onClick={handleTeruskan} className="btn-primary w-full text-lg">
               Lihat Penjelasan
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           )}
@@ -177,10 +204,14 @@ function LoadingState() {
   return (
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Kuiz" showBack />
-      <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 animate-pulse space-y-4">
-        <div className="h-5 bg-baby-blue/50 dark:bg-white/10 rounded w-1/4" />
-        <div className="h-24 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
-        {[1,2,3,4].map(i => <div key={i} className="h-14 bg-baby-blue/50 dark:bg-white/10 rounded-xl" />)}
+      <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8 animate-pulse space-y-4">
+        <div className="h-5 bg-duo-gray-light/50 dark:bg-white/10 rounded w-1/3" />
+        <div className="h-24 bg-duo-gray-light/50 dark:bg-white/10 rounded-2xl" />
+        <div className="grid grid-cols-2 gap-3">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-28 bg-duo-gray-light/50 dark:bg-white/10 rounded-2xl" />
+          ))}
+        </div>
       </main>
     </div>
   )
@@ -191,9 +222,9 @@ function ErrorState({ error }: { error: string | null }) {
   return (
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Kuiz" showBack />
-      <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
-        <div className="card border-soft-peach/50">
-          <p className="text-deep-charcoal/70 dark:text-soft-peach mb-3">{error ?? 'Ralat'}</p>
+      <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8">
+        <div className="card">
+          <p className="text-duo-charcoal/70 dark:text-duo-peach mb-3">{error ?? 'Ralat'}</p>
           <button onClick={() => navigate(-1)} className="btn-secondary">Kembali</button>
         </div>
       </main>

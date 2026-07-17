@@ -6,7 +6,7 @@ export function DarkModeToggle() {
   return (
     <button
       onClick={toggleDark}
-      className="p-2 rounded-xl text-deep-charcoal/60 dark:text-gray-400 hover:bg-baby-blue dark:hover:bg-white/5 transition-colors"
+      className="p-2 rounded-xl text-duo-gray dark:text-gray-400 hover:bg-duo-gray-light/50 dark:hover:bg-white/10 transition-colors"
       aria-label={dark ? 'Tukar ke mod cerah' : 'Tukar ke mod gelap'}
     >
       {dark ? (

@@ -134,8 +134,8 @@ export function PenjelasanPage() {
             onClick={() => { toggleMute(); ttsStartedRef.current = false }}
             className={`p-2 rounded-xl transition-colors ${
               muted
-                ? 'text-deep-charcoal/40 dark:text-gray-400 hover:bg-baby-blue dark:hover:bg-white/5'
-                : 'text-sky-blue bg-baby-blue dark:bg-sky-blue/20 hover:bg-sky-blue-light dark:hover:bg-sky-blue/30'
+                ? 'text-duo-gray dark:text-gray-400 hover:bg-duo-gray-light/50 dark:hover:bg-white/10'
+                : 'text-duo-blue bg-duo-blue-light dark:bg-duo-blue/20 hover:bg-duo-blue-light/50 dark:hover:bg-duo-blue/30'
             }`}
             aria-label={muted ? 'Hidupkan suara' : 'Matikan suara'}
           >
@@ -156,39 +156,49 @@ export function PenjelasanPage() {
         )}
       </AppHeader>
 
-      <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-5">
-        <div className={`rounded-xl border-2 p-5 ${betul ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-soft-peach bg-soft-peach-light dark:bg-soft-peach/10'}`}>
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">{betul ? '✅' : '💪'}</span>
-            <div>
-              <p className={`font-bold text-lg ${betul ? 'text-green-700 dark:text-green-300' : 'text-deep-charcoal/70 dark:text-soft-peach'}`}>
+      <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8 space-y-5">
+        <div className={`rounded-2xl border-2 p-5 text-center ${betul ? 'border-duo-green bg-duo-green-light' : 'border-duo-red bg-duo-red-light'}`}>
+          <div className="flex items-center justify-center gap-3">
+            <div className={`w-12 h-12 rounded-full flex items-center justify-center ${betul ? 'bg-duo-green' : 'bg-duo-red'}`}>
+              {betul ? (
+                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
+              ) : (
+                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </div>
+            <div className="text-left">
+              <p className={`font-black text-lg ${betul ? 'text-duo-green-dark' : 'text-duo-red'}`}>
                 {betul ? 'Jawapan Betul!' : 'Jawapan Salah'}
               </p>
               {!betul && (
-                <p className="text-sm text-deep-charcoal/60 dark:text-gray-400">
-                  Jawapan betul: <strong>{currentSoalan.pilihan[currentSoalan.jawapan_betul]}</strong>
+                <p className="text-sm font-medium text-duo-charcoal/60 dark:text-gray-400">
+                  Jawapan betul: <strong className="text-duo-green-dark dark:text-duo-green">{currentSoalan.pilihan[currentSoalan.jawapan_betul]}</strong>
                 </p>
               )}
             </div>
           </div>
         </div>
 
-        <div className="card-white">
-          <p className="text-xs font-semibold text-deep-charcoal/50 dark:text-gray-500 uppercase tracking-wider mb-2">Soalan</p>
-          <p className="text-sm text-deep-charcoal/70 dark:text-gray-300">{currentSoalan.soalan}</p>
+        <div className="card">
+          <p className="text-xs font-bold text-duo-gray uppercase tracking-widest mb-2">Soalan</p>
+          <p className="text-sm font-semibold text-duo-charcoal/70 dark:text-gray-300">{currentSoalan.soalan}</p>
         </div>
 
-        <div className="card-white space-y-3">
+        <div className="card space-y-3">
           <div className="flex items-center justify-between">
-            <p className="text-xs font-semibold text-sky-blue-dark dark:text-sky-blue uppercase tracking-wider">
+            <p className="text-xs font-bold text-duo-blue-dark dark:text-duo-blue uppercase tracking-widest">
               Langkah Penyelesaian
             </p>
             {tersedia && !muted && !selesaiAnimasi && (
-              <div className="flex items-center gap-1.5 text-xs text-sky-blue dark:text-sky-blue">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-duo-blue dark:text-duo-blue">
                 <span className="flex gap-0.5">
-                  <span className="w-1 h-3 bg-sky-blue rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                  <span className="w-1 h-3 bg-sky-blue rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                  <span className="w-1 h-3 bg-sky-blue rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <span className="w-1 h-3 bg-duo-blue rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="w-1 h-3 bg-duo-blue rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="w-1 h-3 bg-duo-blue rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </span>
                 <span>Sedang membaca...</span>
               </div>
@@ -205,14 +215,14 @@ export function PenjelasanPage() {
                     : 'opacity-0 translate-y-2 pointer-events-none'
                 }`}
               >
-                <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${
+                <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black mt-0.5 ${
                   i < langkahTerpapar
-                    ? 'bg-sky-blue text-white'
-                    : 'bg-baby-blue/50 dark:bg-white/10 text-deep-charcoal/40 dark:text-gray-400'
+                    ? 'bg-duo-blue text-white'
+                    : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
                 }`}>
                   {i + 1}
                 </span>
-                <p className="text-sm text-deep-charcoal/80 dark:text-gray-200 leading-relaxed flex-1">
+                <p className="text-sm font-semibold text-duo-charcoal/80 dark:text-gray-200 leading-relaxed flex-1">
                   {langkah.split(/(\*\*[^*]+\*\*)/).map((part, j) =>
                     part.startsWith('**') && part.endsWith('**') ? (
                       <strong key={j}>{part.slice(2, -2)}</strong>
@@ -246,24 +256,24 @@ export function PenjelasanPage() {
         <div className="h-24" />
       </main>
 
-      <div className="sticky bottom-0 z-10 bg-white/95 dark:bg-deep-charcoal/95 backdrop-blur border-t border-baby-blue/50 dark:border-white/5 px-4 py-4">
-        <div className="max-w-2xl mx-auto">
+      <div className="sticky bottom-0 z-10 bg-white dark:bg-duo-charcoal border-t-2 border-duo-gray-light dark:border-white/10 px-5 py-4">
+        <div className="max-w-lg mx-auto">
           <button
             onClick={handleTeruskan}
-            className="btn-primary w-full"
+            className="btn-primary w-full text-lg"
           >
             {isLastSoalan ? (
               <>
                 Lihat Keputusan
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </>
             ) : (
               <>
                 Soalan Seterusnya
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </>
             )}
@@ -278,9 +288,9 @@ function LoadingState() {
   return (
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Penjelasan" showBack />
-      <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6 animate-pulse space-y-4">
-        <div className="h-20 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
-        <div className="h-32 bg-baby-blue/50 dark:bg-white/10 rounded-2xl" />
+      <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8 animate-pulse space-y-4">
+        <div className="h-20 bg-duo-gray-light/50 dark:bg-white/10 rounded-2xl" />
+        <div className="h-32 bg-duo-gray-light/50 dark:bg-white/10 rounded-2xl" />
       </main>
     </div>
   )
@@ -291,9 +301,9 @@ function ErrorState({ error }: { error: string | null }) {
   return (
     <div className="min-h-screen flex flex-col">
       <AppHeader tajuk="Penjelasan" showBack />
-      <main className="flex-1 max-w-2xl mx-auto w-full px-4 py-6">
-        <div className="card border-soft-peach/50">
-          <p className="text-deep-charcoal/70 dark:text-soft-peach mb-3">{error ?? 'Ralat'}</p>
+      <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8">
+        <div className="card">
+          <p className="text-duo-charcoal/70 dark:text-duo-peach mb-3">{error ?? 'Ralat'}</p>
           <button onClick={() => navigate(-1)} className="btn-secondary">Kembali</button>
         </div>
       </main>
