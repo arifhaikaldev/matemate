@@ -83,7 +83,8 @@ export function NumberLine({
         const x = valueToX(v, min, max)
         const isHighlighted = highlights.includes(v)
         const isZero = v === 0
-        const label = labels[v] ?? (isZero && showZero ? '0' : Number.isInteger(v) ? String(v) : null)
+        const label =
+          labels[v] ?? (isZero && showZero ? '0' : Number.isInteger(v) ? String(v) : null)
         return (
           <g key={v}>
             <line
@@ -112,9 +113,7 @@ export function NumberLine({
                 {label}
               </text>
             )}
-            {isHighlighted && (
-              <circle cx={x} cy={36} r={6} className="fill-duo-blue" />
-            )}
+            {isHighlighted && <circle cx={x} cy={36} r={6} className="fill-duo-blue" />}
           </g>
         )
       })}

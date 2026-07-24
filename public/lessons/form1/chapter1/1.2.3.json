@@ -1,0 +1,66 @@
+{
+  "lessonId": "1.2.3",
+  "chapter": 1,
+  "topic": "Operasi Asas Aritmetik yang Melibatkan Integer",
+  "title": "Tertib Operasi bagi Integer",
+  "learningGoal": "Membuat pengiraan mengikut tertib operasi (kurungan, darab/bahagi, tambah/tolak).",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Pengiraan sentiasa dilakukan dari kiri ke kanan tanpa mengira operasi",
+    "Penambahan dilakukan sebelum pendaraban",
+    "Kurungan hanya digunakan untuk mengelompokkan, bukan untuk mengutamakan operasi"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Urutan Penting!",
+      "text": "2 + 3 × 4 = ? Adakah jawapannya 20 (kira kiri ke kanan) atau 14 (kira × dahulu)? Tertib operasi menentukan jawapan yang betul."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah tertib operasi yang betul?",
+      "choices": [
+        "Tambah → Tolak → Darab → Bahagi",
+        "Kurungan → Darab/Bahagi → Tambah/Tolak",
+        "Kiri ke kanan sahaja",
+        "Darab → Bahagi → Kurungan → Tambah"
+      ],
+      "correctIndex": 1,
+      "explanation": "KDTB: Kurungan dahulu, kemudian Darab/Bahagi (kiri ke kanan), kemudian Tambah/Tolak (kiri ke kanan)."
+    },
+    {
+      "type": "workedExample",
+      "problem": "-8 × (-2 + 3) = ?",
+      "steps": [
+        "Selesaikan kurungan dahulu: -2 + 3 = 1.",
+        "Kemudian darab: -8 × 1 = -8."
+      ],
+      "answer": "-8"
+    },
+    {
+      "type": "numberInput",
+      "question": "Nilaikan: 4 + (-3) × 2",
+      "answer": "-2",
+      "hint": "Kira pendaraban dahulu: (-3) × 2 = -6. Kemudian tambah: 4 + (-6).",
+      "explanation": "4 + (-3)×2 = 4 + (-6) = 4 - 6 = -2. Darab dahulu, baru tambah."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun langkah pengiraan (5 - 8) × (-4) dalam urutan yang betul.",
+      "items": ["Selesaikan kurungan: 5 - 8 = -3", "Tulis soalan asal", "Darab: (-3) × (-4) = 12", "Tanda sama maka hasil positif"],
+      "correctOrder": ["Tulis soalan asal", "Selesaikan kurungan: 5 - 8 = -3", "Tanda sama maka hasil positif", "Darab: (-3) × (-4) = 12"]
+    },
+    {
+      "type": "reflection",
+      "text": "Ingat KDTB: (K)urangan → (D)arab/(B)ahagi → (T)ambah/(T)olak. Jangan sekali-kali kira dari kiri ke kanan sahaja tanpa mengikut tertib ini."
+    },
+    {
+      "type": "mastery",
+      "question": "Nilaikan: -3 + 12 ÷ (-4) × 2",
+      "choices": ["-9", "3", "-3", "9"],
+      "correctIndex": 0,
+      "explanation": "Darab/Bahagi kiri ke kanan dahulu: 12÷(-4) = -3, kemudian (-3)×2 = -6. Kemudian tambah/tolak: -3 + (-6) = -9."
+    }
+  ]
+}

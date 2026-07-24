@@ -1,0 +1,80 @@
+{
+  "lessonId": "1.2.1",
+  "chapter": 1,
+  "topic": "Operasi Asas Aritmetik yang Melibatkan Integer",
+  "title": "Menambah dan Menolak Integer",
+  "learningGoal": "Menambah dan menolak integer menggunakan garis nombor.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Menambah nombor negatif bermakna nilai meningkat",
+    "Menolak nombor negatif bermakna nilai berkurang",
+    "-1 - (-4) = -1 - 4 = -5"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Bergerak pada Garis Nombor",
+      "text": "Tambah integer positif = bergerak ke KANAN. Tambah integer negatif = bergerak ke KIRI. Cuba: 8 + (+3) — bermula di 8, gerak 3 langkah ke kanan.",
+      "visual": {
+        "kind": "numberLine",
+        "min": 0,
+        "max": 14,
+        "showZero": true,
+        "tickInterval": 1,
+        "highlights": [8, 11]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "8 + (+3) = ?",
+      "choices": ["5", "11", "-11", "-5"],
+      "correctIndex": 1,
+      "explanation": "8 + 3 = 11. Tambah integer positif = bergerak ke kanan sebanyak 3 langkah dari 8.",
+      "visual": {
+        "kind": "numberLine",
+        "min": 0,
+        "max": 14,
+        "showZero": true,
+        "tickInterval": 1,
+        "highlights": [8, 11]
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "-1 - (-4) = ?",
+      "steps": [
+        "Tolak integer negatif = TAMBAH integer positif.",
+        "-1 - (-4) = -1 + 4",
+        "Bermula di -1, gerak 4 langkah ke kanan.",
+        "-1 + 4 = 3"
+      ],
+      "answer": "3"
+    },
+    {
+      "type": "numberInput",
+      "question": "-5 + (-3) = ?",
+      "answer": "-8",
+      "hint": "Tambah integer negatif = bergerak ke kiri. Bermula di -5, gerak 3 langkah ke kiri.",
+      "explanation": "-5 + (-3) = -8. Bergerak 3 langkah ke kiri dari -5."
+    },
+    {
+      "type": "numberInput",
+      "question": "6 - (-2) = ?",
+      "answer": "8",
+      "hint": "Tolak negatif = tambah positif. 6 - (-2) = 6 + 2.",
+      "explanation": "6 - (-2) = 6 + 2 = 8. Tolak negatif bersamaan tambah positif."
+    },
+    {
+      "type": "reflection",
+      "text": "Dua peraturan penting: (1) + (-n) bermakna tolak n, bergerak ke kiri. (2) - (-n) bermakna tambah n, bergerak ke kanan."
+    },
+    {
+      "type": "mastery",
+      "question": "Selesaikan: -7 - (-3) = ?",
+      "choices": ["-10", "-4", "4", "10"],
+      "correctIndex": 1,
+      "explanation": "-7 - (-3) = -7 + 3 = -4. Tolak negatif = tambah positif. Bermula di -7, gerak 3 ke kanan."
+    }
+  ]
+}

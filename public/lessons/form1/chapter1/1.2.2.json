@@ -1,0 +1,62 @@
+{
+  "lessonId": "1.2.2",
+  "chapter": 1,
+  "topic": "Operasi Asas Aritmetik yang Melibatkan Integer",
+  "title": "Mendarab dan Membahagi Integer",
+  "learningGoal": "Mendarab dan membahagi integer menggunakan pola tanda hasil darab dan bahagi.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Hasil darab dua nombor negatif adalah negatif",
+    "Tanda hasil bahagi tidak bergantung kepada tanda nombor asal",
+    "(-5) x (-4) = -20"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Pola Tanda dalam Pendaraban",
+      "text": "Perhatikan pola ini: 3×2=6, 3×(-2)=-6, (-3)×2=-6, (-3)×(-2)=6. Ada pola yang tersembunyi di sini!"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Berdasarkan pola: (+) × (-) = ?",
+      "choices": ["Positif", "Negatif", "Sifar", "Bergantung kepada nilai"],
+      "correctIndex": 1,
+      "explanation": "Tanda berbeza (+ dan -) → hasil NEGATIF. Ini adalah peraturan tanda pendaraban integer."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "(-5) × (-4) = ?",
+      "choices": ["-20", "+20", "-9", "+9"],
+      "correctIndex": 1,
+      "explanation": "(-) × (-) = (+). Tanda sama → hasil POSITIF. Jadi (-5) × (-4) = +20."
+    },
+    {
+      "type": "workedExample",
+      "problem": "6 ÷ (-2) = ?",
+      "steps": [
+        "Tanda berbeza: (+) ÷ (-) = negatif.",
+        "Nilai: 6 ÷ 2 = 3.",
+        "Gabung tanda dan nilai: hasil = -3."
+      ],
+      "answer": "-3"
+    },
+    {
+      "type": "dragOrder",
+      "question": "Padankan dengan menyusun pasangan yang benar: hasil darab mana yang positif?",
+      "items": ["(+)×(+)", "(-)×(-)", "(+)×(-)", "(-)×(+)"],
+      "correctOrder": ["(+)×(+)", "(-)×(-)", "(+)×(-)", "(-)×(+)"]
+    },
+    {
+      "type": "reflection",
+      "text": "Peraturan tanda: TANDA SAMA → hasil POSITIF (+×+ atau -×-). TANDA BERBEZA → hasil NEGATIF (+×- atau -×+). Peraturan ini sama untuk pendaraban DAN pembahagian."
+    },
+    {
+      "type": "mastery",
+      "question": "Nilaikan (-3) × (-4) ÷ (-2).",
+      "choices": ["-6", "+6", "-24", "+24"],
+      "correctIndex": 0,
+      "explanation": "Langkah 1: (-3)×(-4) = +12 (tanda sama → positif). Langkah 2: +12 ÷ (-2) = -6 (tanda berbeza → negatif)."
+    }
+  ]
+}

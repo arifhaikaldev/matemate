@@ -23,8 +23,7 @@ export function DragOrderScreen({ screen, onNext }: Props) {
   const [dragging, setDragging] = useState<number | null>(null)
   const [submitted, setSubmitted] = useState(false)
 
-  const isCorrect =
-    submitted && items.every((item, i) => item === screen.correctOrder[i])
+  const isCorrect = submitted && items.every((item, i) => item === screen.correctOrder[i])
 
   const handleDragStart = (i: number) => setDragging(i)
 
@@ -128,10 +127,7 @@ export function DragOrderScreen({ screen, onNext }: Props) {
         </div>
       )}
 
-      <button
-        onClick={submitted ? handleNext : handleSubmit}
-        className="btn btn-primary w-full"
-      >
+      <button onClick={submitted ? handleNext : handleSubmit} className="btn btn-primary w-full">
         {submitted ? 'Seterusnya' : 'Semak Jawapan'}
       </button>
     </div>

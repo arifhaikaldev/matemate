@@ -1,0 +1,56 @@
+{
+  "lessonId": "1.1.1",
+  "chapter": 1,
+  "topic": "Integer",
+  "title": "Nombor Positif dan Nombor Negatif",
+  "learningGoal": "Mengenal nombor positif dan nombor negatif berdasarkan situasi sebenar.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Nombor negatif sentiasa bermaksud sesuatu yang buruk atau salah",
+    "Kiri sentiasa negatif dan kanan sentiasa positif dalam semua situasi",
+    "Nombor positif sentiasa lebih besar daripada nombor negatif dalam semua konteks"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Dua Arah Berbeza",
+      "text": "Kereta A bergerak 40 m ke kanan. Kereta B bergerak 50 m ke kiri. Kedua-duanya bergerak, tetapi dalam arah yang berbeza.",
+      "visual": { "kind": "direction", "direction": "right", "distance": 40 }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Jika kita tentukan ke kanan sebagai arah positif (+), apakah yang mewakili 40 m ke kanan?",
+      "choices": ["-40", "0", "+40", "+4"],
+      "correctIndex": 2,
+      "explanation": "Kita pilih kanan = positif. Jadi 40 m ke kanan = +40.",
+      "visual": { "kind": "direction", "direction": "right", "distance": 40 }
+    },
+    {
+      "type": "numberInput",
+      "question": "Kereta B bergerak 50 m ke kiri. Tulis nombor yang mewakili pergerakan itu.",
+      "answer": "-50",
+      "hint": "Ke kiri adalah arah bertentangan dengan positif — gunakan tanda negatif.",
+      "explanation": "50 m ke kiri = -50. Arah bertentangan diwakili dengan tanda negatif."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Suhu di Antartika ialah 30 darjah di bawah sifar. Nombor manakah yang tepat?",
+      "choices": ["30", "+30", "-30", "0"],
+      "correctIndex": 2,
+      "explanation": "Di bawah sifar bermakna negatif. Jadi 30° di bawah sifar = -30.",
+      "visual": { "kind": "temperature", "value": -30, "min": -40, "max": 10 }
+    },
+    {
+      "type": "reflection",
+      "text": "Nombor positif dan negatif digunakan untuk mewakili dua keadaan yang bertentangan — seperti kanan/kiri, naik/turun, untung/rugi. Tanda + dan - bukan menunjukkan baik atau buruk, hanya arah yang berbeza."
+    },
+    {
+      "type": "mastery",
+      "question": "Sebuah kapal selam berada 120 m di bawah paras laut. Nombor manakah yang mewakili kedudukannya?",
+      "choices": ["+120", "120", "-120", "-12"],
+      "correctIndex": 2,
+      "explanation": "Di bawah paras laut = arah negatif. Jadi kedudukan kapal selam = -120 m."
+    }
+  ]
+}

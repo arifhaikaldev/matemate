@@ -1,0 +1,64 @@
+{
+  "lessonId": "1.5.3",
+  "chapter": 1,
+  "topic": "Nombor Nisbah",
+  "title": "Menyelesaikan Masalah Nombor Nisbah",
+  "learningGoal": "Menyelesaikan masalah yang melibatkan nombor nisbah dalam situasi kewangan dan harian.",
+  "estimatedMinutes": 8,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Wang yang diderma dikira sebagai perbelanjaan biasa (bukan pecahan dari jumlah asal)",
+    "Baki = Wang asal - semua perbelanjaan sentiasa positif",
+    "3/8 daripada RM120 dikira sebagai 120 - 3/8"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Masalah Kewangan dengan Nombor Nisbah",
+      "text": "Noriah ada RM120. Dia derma 3/8 wang kepada mangsa banjir dan beli kasut RM25.60. Kita perlu cari baki wang — gabungan pecahan dan perpuluhan!"
+    },
+    {
+      "type": "workedExample",
+      "problem": "Noriah ada RM120, derma 3/8, beli kasut RM25.60. Cari baki.",
+      "steps": [
+        "Wang diderma: 3/8 × 120 = 360/8 = RM45.",
+        "Wang beli kasut: RM25.60.",
+        "Jumlah perbelanjaan: 45 + 25.60 = RM70.60.",
+        "Baki: 120 - 70.60 = RM49.40."
+      ],
+      "answer": "RM49.40"
+    },
+    {
+      "type": "numberInput",
+      "question": "3/8 × RM120 = RM?",
+      "answer": "45",
+      "hint": "3/8 × 120 = 3 × 120 ÷ 8 = 360 ÷ 8 = ?",
+      "explanation": "3/8 × 120 = 360/8 = 45. Wang yang diderma ialah RM45."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Noriah ada RM120, habis RM45 (derma) dan RM25.60 (kasut). Apakah baki?",
+      "choices": ["RM49.40", "RM70.60", "RM94.40", "RM45.00"],
+      "correctIndex": 0,
+      "explanation": "Baki = 120 - 45 - 25.60 = 120 - 70.60 = RM49.40."
+    },
+    {
+      "type": "numberInput",
+      "question": "Azhar ada RM200. Dia belanja 2/5 untuk buku dan RM35.50 untuk makanan. Berapa bakinya?",
+      "answer": "84.50",
+      "hint": "Buku: 2/5 × 200 = RM80. Baki: 200 - 80 - 35.50 = ?",
+      "explanation": "2/5 × 200 = 80. Baki: 200 - 80 - 35.50 = 200 - 115.50 = RM84.50."
+    },
+    {
+      "type": "reflection",
+      "text": "Masalah nombor nisbah campuran: (1) Selesaikan bahagian pecahan dahulu (darab). (2) Selesaikan bahagian perpuluhan. (3) Gabungkan. Ingat: 'sebahagian daripada' = pendaraban."
+    },
+    {
+      "type": "mastery",
+      "question": "Noriah ada RM120, derma 3/8, beli kasut RM25.60. Apakah baki wang Noriah?",
+      "choices": ["RM49.40", "RM70.60", "RM54.40", "RM94.40"],
+      "correctIndex": 0,
+      "explanation": "Derma: 3/8 × 120 = RM45. Baki: 120 - 45 - 25.60 = RM49.40."
+    }
+  ]
+}

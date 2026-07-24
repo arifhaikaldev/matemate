@@ -102,9 +102,7 @@ export function FractionNumberLine({ min, max, denominator, highlights = [], ari
                 {formatLabel(v)}
               </text>
             )}
-            {isHighlighted && (
-              <circle cx={x} cy={36} r={6} className="fill-duo-blue" />
-            )}
+            {isHighlighted && <circle cx={x} cy={36} r={6} className="fill-duo-blue" />}
           </g>
         )
       })}

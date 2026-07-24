@@ -5,21 +5,27 @@ import { KuizPage } from './pages/KuizPage'
 import { KuizLanjutPage } from './pages/KuizLanjutPage'
 import { PenjelasanPage } from './pages/PenjelasanPage'
 import { KeputusanPage } from './pages/KeputusanPage'
+import { Form1ChapterPage } from './pages/Form1ChapterPage'
+import { LessonPage } from './pages/LessonPage'
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Home */}
         <Route path="/" element={<HomePage />} />
+
+        {/* Tingkatan 4 — existing quiz system */}
         <Route path="/nota/:subtopikId" element={<NotaPage />} />
-        {/* First question — fresh start */}
         <Route path="/kuiz/:subtopikId" element={<KuizPage />} />
-        {/* Subsequent questions — carries accumulated answers */}
         <Route path="/kuiz-lanjut/:subtopikId/:soalanIdx" element={<KuizLanjutPage />} />
-        {/* Explanation for a question */}
         <Route path="/penjelasan/:subtopikId/:soalanIdx" element={<PenjelasanPage />} />
-        {/* Result summary */}
         <Route path="/keputusan/:subtopikId" element={<KeputusanPage />} />
+
+        {/* Tingkatan 1 — EDS lesson system */}
+        <Route path="/form1/bab1" element={<Form1ChapterPage />} />
+        <Route path="/lesson/:lessonId" element={<LessonPage />} />
+
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />
       </Routes>

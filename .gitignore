@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output (Vercel builds its own)
+dist/
+
+# TypeScript cache
+tsconfig.tsbuildinfo
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor directories
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Large source PDFs and raw research notes (not needed in repo)
+matemate source/*.pdf
+matemate source/additinal-discusision/
+matemate source/os-taxonomy/
+"matemate source/additinal-discusision/"
+"matemate source/os-taxonomy/"
+
+# Vercel
+.vercel

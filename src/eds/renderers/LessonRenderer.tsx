@@ -13,8 +13,8 @@ interface Props {
 
 export function LessonRenderer({ lesson, onComplete, onBack }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [statuses, setStatuses] = useState<ScreenStatus[]>(
-    () => lesson.screens.map(() => 'pending')
+  const [statuses, setStatuses] = useState<ScreenStatus[]>(() =>
+    lesson.screens.map(() => 'pending')
   )
   const [correctCount, setCorrectCount] = useState(0)
   const [interactiveCount, setInteractiveCount] = useState(0)
@@ -64,10 +64,7 @@ export function LessonRenderer({ lesson, onComplete, onBack }: Props) {
 
   if (finished) {
     const totalInteractive = statuses.filter((s) => ['correct', 'incorrect'].includes(s)).length
-    const score =
-      totalInteractive === 0
-        ? 100
-        : Math.round((correctCount / interactiveCount) * 100)
+    const score = totalInteractive === 0 ? 100 : Math.round((correctCount / interactiveCount) * 100)
 
     return (
       <div className="flex flex-col items-center gap-6 py-8 text-center">
@@ -105,7 +102,12 @@ export function LessonRenderer({ lesson, onComplete, onBack }: Props) {
             aria-label="Kembali"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
         )}

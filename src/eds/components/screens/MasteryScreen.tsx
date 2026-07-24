@@ -92,7 +92,9 @@ export function MasteryScreen({ screen, onNext }: Props) {
           }`}
           role="alert"
         >
-          <span className="font-black mr-1">{isCorrect ? 'Hebat! Anda faham.' : 'Belum tepat.'}</span>
+          <span className="font-black mr-1">
+            {isCorrect ? 'Hebat! Anda faham.' : 'Belum tepat.'}
+          </span>
           {screen.explanation}
         </div>
       )}

@@ -86,9 +86,49 @@ export function HomePage() {
           <span>Data kemajuan disimpan di peranti ini sahaja.</span>
         </div>
 
+        {/* ── Tingkatan 1 entry card ── */}
+        <section>
+          <h2 className="text-xs font-bold text-duo-gray uppercase tracking-widest mb-3">
+            Kursus Interaktif
+          </h2>
+          <button
+            onClick={() => navigate('/form1/bab1')}
+            className="w-full text-left rounded-2xl border-2 border-duo-green/40 bg-duo-green-light/60 dark:bg-duo-green/10 dark:border-duo-green/30 px-5 py-4 hover:border-duo-green hover:shadow-md transition-all duration-150 active:scale-[0.98] group"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-duo-green flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-black text-sm">T1</span>
+                </div>
+                <div>
+                  <p className="font-black text-sm text-duo-charcoal dark:text-gray-100 group-hover:text-duo-green-dark dark:group-hover:text-duo-green transition-colors">
+                    Tingkatan 1 — Bab 1
+                  </p>
+                  <p className="text-xs text-duo-gray mt-0.5">
+                    Nombor Nisbah · 20 pelajaran interaktif
+                  </p>
+                </div>
+              </div>
+              <svg
+                className="w-4 h-4 text-duo-green flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </button>
+        </section>
+
         <section>
           <h2 className="text-xs font-bold text-duo-gray uppercase tracking-widest mb-4">
-            Senarai Subtopik
+            Tingkatan 4 — Subtopik
           </h2>
 
           {loading && (

@@ -5,7 +5,8 @@
 
 // ---- Visuals -----------------------------------------------
 
-export type VisualKind = 'direction' | 'elevator' | 'temperature' | 'numberLine' | 'fractionNumberLine'
+export type VisualKind =
+  'direction' | 'elevator' | 'temperature' | 'numberLine' | 'fractionNumberLine'
 
 export interface DirectionVisual {
   kind: 'direction'
@@ -16,9 +17,9 @@ export interface DirectionVisual {
 
 export interface ElevatorVisual {
   kind: 'elevator'
-  floors: number          // total floors shown (e.g. 10)
-  currentFloor: number    // highlighted floor
-  groundFloor?: number    // default 0
+  floors: number // total floors shown (e.g. 10)
+  currentFloor: number // highlighted floor
+  groundFloor?: number // default 0
 }
 
 export interface TemperatureVisual {
@@ -41,18 +42,14 @@ export interface NumberLineVisual {
 
 export interface FractionNumberLineVisual {
   kind: 'fractionNumberLine'
-  min: number   // e.g. -2
-  max: number   // e.g. 2
-  denominator: number   // e.g. 4 → ticks at 1/4 intervals
+  min: number // e.g. -2
+  max: number // e.g. 2
+  denominator: number // e.g. 4 → ticks at 1/4 intervals
   highlights?: number[] // e.g. [0.5, -0.75]
 }
 
 export type Visual =
-  | DirectionVisual
-  | ElevatorVisual
-  | TemperatureVisual
-  | NumberLineVisual
-  | FractionNumberLineVisual
+  DirectionVisual | ElevatorVisual | TemperatureVisual | NumberLineVisual | FractionNumberLineVisual
 
 // ---- Screens -----------------------------------------------
 
@@ -157,5 +154,5 @@ export interface LessonProgress {
   currentScreenIndex: number
   screenStatuses: ScreenStatus[]
   completed: boolean
-  score: number   // 0–100
+  score: number // 0–100
 }

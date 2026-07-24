@@ -91,7 +91,9 @@ export function NumberInputScreen({ screen, onNext }: Props) {
           }`}
           role="alert"
         >
-          <span className="font-black mr-1">{isCorrect ? 'Betul!' : `Jawapan: ${screen.answer}.`}</span>
+          <span className="font-black mr-1">
+            {isCorrect ? 'Betul!' : `Jawapan: ${screen.answer}.`}
+          </span>
           {screen.explanation}
         </div>
       )}

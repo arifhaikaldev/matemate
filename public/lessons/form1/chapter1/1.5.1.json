@@ -1,0 +1,62 @@
+{
+  "lessonId": "1.5.1",
+  "chapter": 1,
+  "topic": "Nombor Nisbah",
+  "title": "Apakah Nombor Nisbah?",
+  "learningGoal": "Mengenal dan memerihalkan nombor nisbah sebagai nombor yang boleh ditulis dalam bentuk p/q.",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Hanya pecahan adalah nombor nisbah",
+    "Integer seperti -9 bukan nombor nisbah",
+    "Perpuluhan tidak boleh ditulis sebagai pecahan p/q"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Semua Boleh Jadi Pecahan",
+      "text": "Nombor nisbah ialah mana-mana nombor yang boleh ditulis sebagai p/q, di mana p dan q adalah integer dan q ≠ 0. Ini termasuk integer, pecahan, dan perpuluhan!"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Bolehkah integer -9 ditulis sebagai p/q?",
+      "choices": [
+        "Tidak, integer bukan pecahan",
+        "Ya: -9 = -9/1",
+        "Ya, tetapi hanya jika q > 0",
+        "Tidak, hanya nombor positif boleh jadi p/q"
+      ],
+      "correctIndex": 1,
+      "explanation": "-9 = -9/1. Setiap integer boleh ditulis sebagai integer itu dibahagi 1. Jadi semua integer adalah nombor nisbah."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "3.5 — adakah ini nombor nisbah?",
+      "choices": [
+        "Tidak, sebab ia perpuluhan",
+        "Ya: 3.5 = 7/2",
+        "Hanya jika nilainya positif",
+        "Tidak, sebab ia bukan integer"
+      ],
+      "correctIndex": 1,
+      "explanation": "3.5 = 7/2. Perpuluhan terhingga sentiasa boleh ditulis sebagai p/q. Jadi ia adalah nombor nisbah."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun nombor-nombor ini: kenal pasti yang BUKAN nombor nisbah (tiada dalam senarai), susun yang lain dari kecil ke besar.",
+      "items": ["1 4/5", "3/4", "-9", "3.5"],
+      "correctOrder": ["-9", "3/4", "1 4/5", "3.5"]
+    },
+    {
+      "type": "reflection",
+      "text": "Nombor nisbah: semua nombor yang boleh ditulis sebagai p/q (p, q integer, q≠0). Ini termasuk: semua integer, semua pecahan, semua perpuluhan terhingga. Contoh: -9 = -9/1, 3.5 = 7/2, 1 4/5 = 9/5."
+    },
+    {
+      "type": "mastery",
+      "question": "Antara 1 4/5, 3/4, -9, dan 3.5 — berapakah bilangan nombor nisbah?",
+      "choices": ["1", "2", "3", "4"],
+      "correctIndex": 3,
+      "explanation": "Semua empat nombor adalah nombor nisbah: 1 4/5=9/5, 3/4, -9=-9/1, 3.5=7/2. Kesemuanya boleh ditulis sebagai p/q."
+    }
+  ]
+}

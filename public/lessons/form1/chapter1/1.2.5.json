@@ -1,0 +1,66 @@
+{
+  "lessonId": "1.2.5",
+  "chapter": 1,
+  "topic": "Operasi Asas Aritmetik yang Melibatkan Integer",
+  "title": "Menyelesaikan Masalah Integer",
+  "learningGoal": "Menyelesaikan masalah harian yang melibatkan integer.",
+  "estimatedMinutes": 8,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Perbelanjaan sentiasa ditolak, walaupun soal sudah menyatakan tanda negatif",
+    "Tunggakan kad kredit bermakna baki positif",
+    "Tidak perlu memahami konteks untuk menyelesaikan masalah integer"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Masalah Dunia Sebenar",
+      "text": "Luqman ada tunggakan kad kredit RM230. Ini bermaksud -230. Beliau kemudian membeli barangan dan membuat bayaran. Kita perlu jejaki semua perubahan ini."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Tunggakan kad kredit RM230 diwakili oleh nombor?",
+      "choices": ["+230", "-230", "230", "0"],
+      "correctIndex": 1,
+      "explanation": "Tunggakan = hutang = negatif. Jadi tunggakan RM230 = -230."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Tunggakan -RM230. Beli 3 buku RM120 setiap satu (+faedah RM3). Bayar balik RM400. Cari baki.",
+      "steps": [
+        "Mulakan: -230",
+        "Beli 3 buku: 3 × (-120) = -360. Jumlah: -230 + (-360) = -590.",
+        "Faedah: -590 + (-3) = -593.",
+        "Bayaran: -593 + 400 = -193."
+      ],
+      "answer": "-193 (masih ada tunggakan RM193)"
+    },
+    {
+      "type": "numberInput",
+      "question": "Suhu pagi di bandar ialah -4°C. Pada tengah hari, suhu naik 11°C. Apakah suhu tengah hari?",
+      "answer": "7",
+      "hint": "Mulakan di -4, tambah 11: -4 + 11 = ?",
+      "explanation": "-4 + 11 = 7. Suhu tengah hari ialah 7°C.",
+      "visual": { "kind": "temperature", "value": 7, "min": -10, "max": 15 }
+    },
+    {
+      "type": "numberInput",
+      "question": "Satu syarikat rugi RM5000 pada bulan Januari dan untung RM3200 pada bulan Februari. Apakah jumlah untung/rugi?",
+      "answer": "-1800",
+      "hint": "Rugi = negatif. -5000 + 3200 = ?",
+      "explanation": "-5000 + 3200 = -1800. Syarikat masih rugi RM1800."
+    },
+    {
+      "type": "reflection",
+      "text": "Strategi masalah integer: (1) Kenal pasti makna positif/negatif dalam konteks. (2) Tukar perkataan kepada operasi (+, -, ×, ÷). (3) Ikut tertib operasi. (4) Semak jawapan dengan konteks asal."
+    },
+    {
+      "type": "mastery",
+      "question": "Lif berada di tingkat -3 (bawah tanah). Naik 8 tingkat, kemudian turun 5 tingkat. Di mana lif sekarang?",
+      "choices": ["Tingkat 0", "Tingkat 5", "Tingkat -5", "Tingkat 3"],
+      "correctIndex": 0,
+      "explanation": "-3 + 8 = 5. Kemudian 5 - 5 = 0. Lif berada di aras tanah (tingkat 0).",
+      "visual": { "kind": "elevator", "floors": 6, "currentFloor": 0, "groundFloor": 0 }
+    }
+  ]
+}

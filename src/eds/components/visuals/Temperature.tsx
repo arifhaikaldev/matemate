@@ -49,13 +49,7 @@ export function Temperature({ value, min = -20, max = 50, unit = 'C', ariaLabel 
       />
 
       {/* Fill */}
-      <rect
-        x={31}
-        y={fillY}
-        width={stemW}
-        height={fillHeight + stemW / 2}
-        className={fillClass}
-      />
+      <rect x={31} y={fillY} width={stemW} height={fillHeight + stemW / 2} className={fillClass} />
 
       {/* Bulb */}
       <circle cx={40} cy={stemBottom + bulbR + 2} r={bulbR} className={fillClass} />
@@ -84,7 +78,9 @@ export function Temperature({ value, min = -20, max = 50, unit = 'C', ariaLabel 
               x={58}
               y={y + 4}
               fontSize={9}
-              className={t === 0 ? 'fill-duo-charcoal dark:fill-gray-100 font-bold' : 'fill-duo-gray'}
+              className={
+                t === 0 ? 'fill-duo-charcoal dark:fill-gray-100 font-bold' : 'fill-duo-gray'
+              }
             >
               {t}°
             </text>

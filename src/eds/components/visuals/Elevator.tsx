@@ -1,9 +1,9 @@
 // Elevator visual — shows a building cross-section with a highlighted floor
 
 interface Props {
-  floors: number        // total floors above ground (e.g. 5)
-  currentFloor: number  // highlighted floor (negative = below ground)
-  groundFloor?: number  // default 0
+  floors: number // total floors above ground (e.g. 5)
+  currentFloor: number // highlighted floor (negative = below ground)
+  groundFloor?: number // default 0
   ariaLabel?: string
 }
 
@@ -67,7 +67,13 @@ export function Elevator({ floors, currentFloor, groundFloor = 0, ariaLabel }: P
             </text>
             {/* Ground marker */}
             {isGround && (
-              <text x={10} y={y + floorH / 2 + 4} textAnchor="middle" fontSize={8} className="fill-duo-gray">
+              <text
+                x={10}
+                y={y + floorH / 2 + 4}
+                textAnchor="middle"
+                fontSize={8}
+                className="fill-duo-gray"
+              >
                 G
               </text>
             )}

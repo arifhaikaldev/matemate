@@ -70,12 +70,7 @@ const FourChoicesSchema = z.tuple([
   z.string().min(1),
 ])
 
-const CorrectIndexSchema = z.union([
-  z.literal(0),
-  z.literal(1),
-  z.literal(2),
-  z.literal(3),
-])
+const CorrectIndexSchema = z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)])
 
 const MultipleChoiceScreenSchema = z.object({
   type: z.literal('multipleChoice'),

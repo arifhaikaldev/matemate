@@ -18,7 +18,9 @@ export function ObservationScreen({ screen, onNext }: Props) {
       )}
       <div className="space-y-2">
         <h2 className="text-lg font-black text-duo-charcoal dark:text-gray-100">{screen.title}</h2>
-        <p className="text-base text-duo-charcoal dark:text-gray-300 leading-relaxed">{screen.text}</p>
+        <p className="text-base text-duo-charcoal dark:text-gray-300 leading-relaxed">
+          {screen.text}
+        </p>
       </div>
       <button onClick={onNext} className="btn btn-primary w-full mt-2">
         Teruskan

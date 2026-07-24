@@ -27,7 +27,9 @@ function main() {
   const failFast = process.argv.includes('--fail-fast')
 
   if (args.length === 0) {
-    console.log('Usage: tsx src/compiler/cli.ts <lesson.json> [lesson2.json ...] [--verbose] [--fail-fast]')
+    console.log(
+      'Usage: tsx src/compiler/cli.ts <lesson.json> [lesson2.json ...] [--verbose] [--fail-fast]'
+    )
     console.log('')
     console.log('Options:')
     console.log('  --verbose    Show full per-lesson reports including info messages')

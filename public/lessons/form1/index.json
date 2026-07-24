@@ -1,0 +1,57 @@
+{
+  "chapter": 1,
+  "tajuk": "Nombor Nisbah",
+  "tingkatan": 1,
+  "subtopik": [
+    {
+      "no": "1.1",
+      "tajuk": "Integer",
+      "lessons": [
+        { "lessonId": "1.1.1", "tajuk": "Nombor Positif dan Nombor Negatif", "fail": "form1/chapter1/1.1.1.json", "difficulty": "easy", "estimatedMinutes": 5 },
+        { "lessonId": "1.1.2", "tajuk": "Apakah Integer?", "fail": "form1/chapter1/1.1.2.json", "difficulty": "easy", "estimatedMinutes": 5 },
+        { "lessonId": "1.1.3", "tajuk": "Integer pada Garis Nombor", "fail": "form1/chapter1/1.1.3.json", "difficulty": "easy", "estimatedMinutes": 6 },
+        { "lessonId": "1.1.4", "tajuk": "Membanding dan Menyusun Integer", "fail": "form1/chapter1/1.1.4.json", "difficulty": "medium", "estimatedMinutes": 6 }
+      ]
+    },
+    {
+      "no": "1.2",
+      "tajuk": "Operasi Asas Aritmetik yang Melibatkan Integer",
+      "lessons": [
+        { "lessonId": "1.2.1", "tajuk": "Menambah dan Menolak Integer", "fail": "form1/chapter1/1.2.1.json", "difficulty": "medium", "estimatedMinutes": 7 },
+        { "lessonId": "1.2.2", "tajuk": "Mendarab dan Membahagi Integer", "fail": "form1/chapter1/1.2.2.json", "difficulty": "medium", "estimatedMinutes": 7 },
+        { "lessonId": "1.2.3", "tajuk": "Tertib Operasi bagi Integer", "fail": "form1/chapter1/1.2.3.json", "difficulty": "medium", "estimatedMinutes": 7 },
+        { "lessonId": "1.2.4", "tajuk": "Hukum-Hukum Aritmetik", "fail": "form1/chapter1/1.2.4.json", "difficulty": "medium", "estimatedMinutes": 8 },
+        { "lessonId": "1.2.5", "tajuk": "Menyelesaikan Masalah Integer", "fail": "form1/chapter1/1.2.5.json", "difficulty": "hard", "estimatedMinutes": 8 }
+      ]
+    },
+    {
+      "no": "1.3",
+      "tajuk": "Pecahan Positif dan Pecahan Negatif",
+      "lessons": [
+        { "lessonId": "1.3.1", "tajuk": "Pecahan pada Garis Nombor", "fail": "form1/chapter1/1.3.1.json", "difficulty": "easy", "estimatedMinutes": 6 },
+        { "lessonId": "1.3.2", "tajuk": "Membanding dan Menyusun Pecahan", "fail": "form1/chapter1/1.3.2.json", "difficulty": "medium", "estimatedMinutes": 7 },
+        { "lessonId": "1.3.3", "tajuk": "Pengiraan Gabungan Operasi Pecahan", "fail": "form1/chapter1/1.3.3.json", "difficulty": "hard", "estimatedMinutes": 8 },
+        { "lessonId": "1.3.4", "tajuk": "Menyelesaikan Masalah Pecahan", "fail": "form1/chapter1/1.3.4.json", "difficulty": "hard", "estimatedMinutes": 8 }
+      ]
+    },
+    {
+      "no": "1.4",
+      "tajuk": "Perpuluhan Positif dan Perpuluhan Negatif",
+      "lessons": [
+        { "lessonId": "1.4.1", "tajuk": "Perpuluhan pada Garis Nombor", "fail": "form1/chapter1/1.4.1.json", "difficulty": "easy", "estimatedMinutes": 5 },
+        { "lessonId": "1.4.2", "tajuk": "Membanding dan Menyusun Perpuluhan", "fail": "form1/chapter1/1.4.2.json", "difficulty": "easy", "estimatedMinutes": 5 },
+        { "lessonId": "1.4.3", "tajuk": "Pengiraan Gabungan Operasi Perpuluhan", "fail": "form1/chapter1/1.4.3.json", "difficulty": "medium", "estimatedMinutes": 7 },
+        { "lessonId": "1.4.4", "tajuk": "Menyelesaikan Masalah Perpuluhan", "fail": "form1/chapter1/1.4.4.json", "difficulty": "hard", "estimatedMinutes": 7 }
+      ]
+    },
+    {
+      "no": "1.5",
+      "tajuk": "Nombor Nisbah",
+      "lessons": [
+        { "lessonId": "1.5.1", "tajuk": "Apakah Nombor Nisbah?", "fail": "form1/chapter1/1.5.1.json", "difficulty": "medium", "estimatedMinutes": 6 },
+        { "lessonId": "1.5.2", "tajuk": "Pengiraan Gabungan Operasi Nombor Nisbah", "fail": "form1/chapter1/1.5.2.json", "difficulty": "hard", "estimatedMinutes": 8 },
+        { "lessonId": "1.5.3", "tajuk": "Menyelesaikan Masalah Nombor Nisbah", "fail": "form1/chapter1/1.5.3.json", "difficulty": "hard", "estimatedMinutes": 8 }
+      ]
+    }
+  ]
+}

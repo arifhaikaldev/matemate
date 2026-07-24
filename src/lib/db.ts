@@ -1,20 +1,37 @@
 import Dexie, { type Table } from 'dexie'
 import type { SubtopikProgress } from '../types'
+import type { LessonProgress } from '../eds/types'
+
+// ── EDS lesson progress record (stored per lessonId) ─────────────────────────
+
+export interface LessonProgressRecord {
+  lessonId: string
+  score: number // 0–100
+  completed: boolean
+  attempt: number
+  masa_kemaskini: number // unix ms
+}
 
 class MateMateDB extends Dexie {
   progress!: Table<SubtopikProgress, string>
+  lessonProgress!: Table<LessonProgressRecord, string>
 
   constructor() {
     super('MateMateDB')
     this.version(1).stores({
       progress: 'id, status, masa_kemaskini',
     })
+    // Version 2 adds EDS lesson progress table
+    this.version(2).stores({
+      progress: 'id, status, masa_kemaskini',
+      lessonProgress: 'lessonId, completed, masa_kemaskini',
+    })
   }
 }
 
 export const db = new MateMateDB()
 
-// --- CRUD helpers ---
+// ── Subtopik (T4) CRUD helpers ────────────────────────────────────────────────
 
 export async function getProgress(id: string): Promise<SubtopikProgress | undefined> {
   return db.progress.get(id)
@@ -35,6 +52,29 @@ export async function resetProgress(id: string): Promise<void> {
     skor_terakhir: null,
     attempt: 0,
     jawapan: {},
+    masa_kemaskini: Date.now(),
+  })
+}
+
+// ── EDS Lesson (T1) CRUD helpers ──────────────────────────────────────────────
+
+export async function getLessonProgress(
+  lessonId: string
+): Promise<LessonProgressRecord | undefined> {
+  return db.lessonProgress.get(lessonId)
+}
+
+export async function getAllLessonProgress(): Promise<LessonProgressRecord[]> {
+  return db.lessonProgress.toArray()
+}
+
+export async function saveLessonProgress(lessonProgress: LessonProgress): Promise<void> {
+  const existing = await db.lessonProgress.get(lessonProgress.lessonId)
+  await db.lessonProgress.put({
+    lessonId: lessonProgress.lessonId,
+    score: lessonProgress.score,
+    completed: lessonProgress.completed,
+    attempt: (existing?.attempt ?? 0) + 1,
     masa_kemaskini: Date.now(),
   })
 }

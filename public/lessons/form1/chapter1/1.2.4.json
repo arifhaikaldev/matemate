@@ -1,0 +1,78 @@
+{
+  "lessonId": "1.2.4",
+  "chapter": 1,
+  "topic": "Operasi Asas Aritmetik yang Melibatkan Integer",
+  "title": "Hukum-Hukum Aritmetik",
+  "learningGoal": "Menghuraikan Hukum Identiti, Hukum Kalis Tukar Tertib, Hukum Kalis Sekutuan, dan Hukum Kalis Agihan.",
+  "estimatedMinutes": 8,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Hukum Kalis Tukar Tertib berlaku untuk semua operasi termasuk tolak dan bahagi",
+    "a - b = b - a adalah benar",
+    "Hukum Kalis Agihan hanya berlaku untuk pendaraban sahaja"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Empat Hukum Aritmetik",
+      "text": "Empat hukum membantu kita membuat pengiraan lebih cepat: (1) Identiti, (2) Kalis Tukar Tertib, (3) Kalis Sekutuan, (4) Kalis Agihan."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Hukum Kalis Tukar Tertib: a + b = b + a. Adakah ini betul untuk tolak?",
+      "choices": [
+        "Ya, a - b = b - a selalu benar",
+        "Tidak, contoh: 5 - 3 ≠ 3 - 5",
+        "Ya, tetapi hanya untuk integer positif",
+        "Tidak kerana tolak bukan operasi asas"
+      ],
+      "correctIndex": 1,
+      "explanation": "5 - 3 = 2 tetapi 3 - 5 = -2. Jadi a - b ≠ b - a. Hukum Kalis Tukar Tertib hanya berlaku untuk TAMBAH dan DARAB."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Gunakan hukum untuk kira 2 × 24 × 5 dengan cepat.",
+      "steps": [
+        "Hukum Kalis Tukar Tertib: susun semula → 24 × (2 × 5).",
+        "Hukum Kalis Sekutuan: kira kurungan dahulu → 2 × 5 = 10.",
+        "24 × 10 = 240."
+      ],
+      "answer": "240"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Hukum Kalis Agihan: a × (b + c) = ?",
+      "choices": [
+        "a × b + c",
+        "a × b + a × c",
+        "(a × b) + c",
+        "a + b × a + c"
+      ],
+      "correctIndex": 1,
+      "explanation": "Hukum Kalis Agihan: a × (b + c) = a×b + a×c. Pendaraban diagihkan kepada setiap sebutan dalam kurungan."
+    },
+    {
+      "type": "numberInput",
+      "question": "Gunakan Hukum Kalis Agihan: 6 × (10 - 3) = 6 × 10 - 6 × __",
+      "answer": "3",
+      "hint": "a × (b - c) = a×b - a×c. Nilai c ialah 3.",
+      "explanation": "6 × (10 - 3) = 6×10 - 6×3 = 60 - 18 = 42."
+    },
+    {
+      "type": "reflection",
+      "text": "Empat hukum: (1) Identiti: a+0=a, a×1=a. (2) Kalis Tukar Tertib: a+b=b+a, a×b=b×a. (3) Kalis Sekutuan: (a+b)+c=a+(b+c). (4) Kalis Agihan: a×(b+c)=ab+ac. Hukum 2 dan 3 TIDAK berlaku untuk tolak dan bahagi."
+    },
+    {
+      "type": "mastery",
+      "question": "Pilih penggunaan hukum yang betul: 4 × (25 + 3) menggunakan Hukum Kalis Agihan.",
+      "choices": [
+        "4×25 + 3",
+        "4×25 + 4×3",
+        "(4+25) × 3",
+        "4 + 25 × 4 + 3"
+      ],
+      "correctIndex": 1,
+      "explanation": "Hukum Kalis Agihan: 4×(25+3) = 4×25 + 4×3 = 100 + 12 = 112."
+    }
+  ]
+}

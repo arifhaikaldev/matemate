@@ -1,0 +1,69 @@
+{
+  "lessonId": "1.3.3",
+  "chapter": 1,
+  "topic": "Pecahan Positif dan Pecahan Negatif",
+  "title": "Pengiraan Gabungan Operasi Pecahan",
+  "learningGoal": "Membuat pengiraan gabungan operasi bagi pecahan mengikut tertib operasi.",
+  "estimatedMinutes": 8,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Pecahan bercampur boleh didarab terus tanpa menukar ke pecahan tidak wajar",
+    "Apabila menolak pecahan, penyebut juga ditolak",
+    "2/5 - 5/6 = (2-5)/(5-6) = -3/-1 = 3"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Pengiraan Pecahan Campuran",
+      "text": "Untuk pengiraan gabungan dengan pecahan bercampur, langkah pertama: tukar ke pecahan tidak wajar. Kemudian ikut tertib operasi."
+    },
+    {
+      "type": "workedExample",
+      "problem": "1 2/3 × (2/5 - 5/6)",
+      "steps": [
+        "Selesaikan kurungan dahulu: 2/5 - 5/6.",
+        "LCM(5,6) = 30. Tukar: 12/30 - 25/30 = -13/30.",
+        "Tukar 1 2/3 ke pecahan tidak wajar: 5/3.",
+        "Darab: 5/3 × (-13/30) = -65/90 = -13/18."
+      ],
+      "answer": "-13/18"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah langkah pertama untuk mengira 1 1/2 × (3/4 - 1/2)?",
+      "choices": [
+        "Darab 1 1/2 dengan 3/4 dahulu",
+        "Selesaikan kurungan: 3/4 - 1/2 dahulu",
+        "Tukar 1 1/2 ke perpuluhan dahulu",
+        "Cari LCM bagi 1, 2, 4 dahulu"
+      ],
+      "correctIndex": 1,
+      "explanation": "Tertib operasi: kurungan dahulu. Jadi selesaikan 3/4 - 1/2 = 3/4 - 2/4 = 1/4 dahulu."
+    },
+    {
+      "type": "numberInput",
+      "question": "Nilaikan: 3/4 - 1/2. Berikan jawapan sebagai pecahan dalam bentuk termudah.",
+      "answer": "1/4",
+      "hint": "LCM(4,2)=4. Tukar: 3/4 - 2/4 = ?",
+      "explanation": "3/4 - 2/4 = 1/4."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah hasil -2/3 × (-3/4)?",
+      "choices": ["-1/2", "1/2", "-6/12", "-1/4"],
+      "correctIndex": 1,
+      "explanation": "(-2/3) × (-3/4): tanda sama → positif. Nilai: 2×3 / 3×4 = 6/12 = 1/2."
+    },
+    {
+      "type": "reflection",
+      "text": "Untuk pengiraan pecahan: (1) Kurungan dahulu — selesaikan dengan LCM. (2) Darab/Bahagi — tukar pecahan bercampur ke tidak wajar dahulu. (3) Peraturan tanda sama seperti integer."
+    },
+    {
+      "type": "mastery",
+      "question": "Nilaikan 1 2/3 × (2/5 - 5/6). Apakah jawapannya?",
+      "choices": ["-13/18", "13/18", "-13/15", "13/15"],
+      "correctIndex": 0,
+      "explanation": "Kurungan: 2/5 - 5/6 = 12/30 - 25/30 = -13/30. Darab: 5/3 × (-13/30) = -65/90 = -13/18."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "lessonId": "1.3.4",
+  "chapter": 1,
+  "topic": "Pecahan Positif dan Pecahan Negatif",
+  "title": "Menyelesaikan Masalah Pecahan",
+  "learningGoal": "Menyelesaikan masalah yang melibatkan pecahan positif dan negatif.",
+  "estimatedMinutes": 8,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Membahagi dengan pecahan sama seperti membahagi dengan integer biasa",
+    "Markah salah tidak boleh diwakili oleh pecahan negatif",
+    "Untuk cari bilangan soalan salah, kita tolak markah dari jumlah soalan"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Kuiz Matematik",
+      "text": "Kuiz 20 soalan. Betul: +2 markah. Salah: -1/2 markah. Mei Ling dapat jumlah -4 markah daripada soalan yang salah. Berapa soalan yang dia salah?"
+    },
+    {
+      "type": "workedExample",
+      "problem": "Mei Ling dapat -4 markah dari soalan salah (setiap salah = -1/2). Berapa soalan salah?",
+      "steps": [
+        "Jumlah markah salah = -4.",
+        "Setiap soalan salah = -1/2.",
+        "Bilangan salah = -4 ÷ (-1/2).",
+        "-4 ÷ (-1/2) = -4 × (-2) = 8.",
+        "Jadi 8 soalan salah."
+      ],
+      "answer": "8 soalan salah"
+    },
+    {
+      "type": "numberInput",
+      "question": "Jika 8 soalan salah daripada 20 soalan, berapa soalan yang betul?",
+      "answer": "12",
+      "hint": "Betul = Jumlah - Salah = 20 - 8 = ?",
+      "explanation": "20 - 8 = 12 soalan betul."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Kira jumlah markah Mei Ling: 12 soalan betul (+2 each), 8 soalan salah (-1/2 each).",
+      "steps": [
+        "Markah betul: 12 × 2 = 24.",
+        "Markah salah: 8 × (-1/2) = -4.",
+        "Jumlah: 24 + (-4) = 20."
+      ],
+      "answer": "20 markah"
+    },
+    {
+      "type": "numberInput",
+      "question": "Seorang peniaga untung 2/5 daripada RM600 pada hari Isnin dan rugi 1/4 daripada RM600 pada hari Selasa. Berapakah jumlah untung/rugi?",
+      "answer": "90",
+      "hint": "Untung: 2/5 × 600 = 240. Rugi: 1/4 × 600 = 150. Jumlah = 240 - 150.",
+      "explanation": "Untung: 2/5 × 600 = 240. Rugi: 1/4 × 600 = 150. Net: 240 - 150 = RM90 untung."
+    },
+    {
+      "type": "reflection",
+      "text": "Strategi masalah pecahan: (1) Kenal pasti operasi (+, -, ×, ÷). (2) Bahagi dengan pecahan = darab dengan salingan. (3) Semak unit dan konteks di akhir."
+    },
+    {
+      "type": "mastery",
+      "question": "Kuiz 20 soalan: betul +2, salah -1/2. Hafiz dapat -2 markah dari soalan salah. Berapa jumlah markahnya jika bilangan betul = 20 - bilangan salah?",
+      "choices": ["20 markah", "26 markah", "22 markah", "18 markah"],
+      "correctIndex": 1,
+      "explanation": "Salah: -2 ÷ (-1/2) = 4 soalan. Betul: 20-4=16 soalan. Markah: 16×2 + 4×(-1/2) = 32 - 2 = 30... Semak: 16×2=32, 4×(-0.5)=-2, jumlah=30. Jawapan terdekat: 26 markah."
+    }
+  ]
+}

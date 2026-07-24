@@ -12,7 +12,12 @@ export function ReflectionScreen({ screen, onNext }: Props) {
   return (
     <div className="flex flex-col gap-6 items-center text-center">
       <div className="w-16 h-16 rounded-full bg-duo-blue-light dark:bg-duo-blue/20 flex items-center justify-center">
-        <svg className="w-8 h-8 text-duo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg
+          className="w-8 h-8 text-duo-blue"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"

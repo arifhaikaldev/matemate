@@ -32,10 +32,25 @@ export function Direction({ direction, distance, label, ariaLabel }: Props) {
       aria-label={ariaLabel ?? `Moving ${direction} by ${distance}`}
     >
       {/* Road */}
-      <rect x={20} y={midY - 6} width={w - 40} height={12} rx={6} className="fill-duo-gray-light dark:fill-white/10" />
+      <rect
+        x={20}
+        y={midY - 6}
+        width={w - 40}
+        height={12}
+        rx={6}
+        className="fill-duo-gray-light dark:fill-white/10"
+      />
       {/* Dashes */}
       {[60, 100, 140, 180, 220].map((x) => (
-        <rect key={x} x={x} y={midY - 1} width={16} height={2} rx={1} className="fill-white dark:fill-white/40" />
+        <rect
+          key={x}
+          x={x}
+          y={midY - 1}
+          width={16}
+          height={2}
+          rx={1}
+          className="fill-white dark:fill-white/40"
+        />
       ))}
 
       {/* Arrow line */}

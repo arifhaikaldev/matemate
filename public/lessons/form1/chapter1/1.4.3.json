@@ -1,0 +1,74 @@
+{
+  "lessonId": "1.4.3",
+  "chapter": 1,
+  "topic": "Perpuluhan Positif dan Perpuluhan Negatif",
+  "title": "Pengiraan Gabungan Operasi Perpuluhan",
+  "learningGoal": "Membuat pengiraan gabungan operasi bagi perpuluhan mengikut tertib operasi.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": [
+    "3.5 - (-6.5) × 0.2 dikira dari kiri ke kanan: (3.5 - (-6.5)) × 0.2",
+    "Perpuluhan negatif tidak mengikut peraturan tanda integer",
+    "-6.5 × 0.2 = 1.3 (terlupa tanda negatif)"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Tertib Operasi dengan Perpuluhan",
+      "text": "3.5 - (-6.5) × 0.2. Ikut KDTB: darab dahulu, kemudian tolak. Jangan buat dari kiri ke kanan!"
+    },
+    {
+      "type": "workedExample",
+      "problem": "3.5 - (-6.5) × 0.2",
+      "steps": [
+        "Darab dahulu (sebelum tolak): (-6.5) × 0.2.",
+        "Tanda: (-) × (+) = negatif. Nilai: 6.5 × 0.2 = 1.3.",
+        "Jadi (-6.5) × 0.2 = -1.3.",
+        "Kemudian: 3.5 - (-1.3) = 3.5 + 1.3 = 4.8."
+      ],
+      "answer": "4.8"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah langkah pertama untuk mengira -2.4 + 3 × (-1.5)?",
+      "choices": [
+        "Kira -2.4 + 3 = 0.6 dahulu",
+        "Kira 3 × (-1.5) = -4.5 dahulu",
+        "Kira -2.4 × (-1.5) dahulu",
+        "Kira dari kiri ke kanan"
+      ],
+      "correctIndex": 1,
+      "explanation": "Tertib operasi: darab/bahagi dahulu. Jadi 3 × (-1.5) = -4.5 dilakukan sebelum penambahan."
+    },
+    {
+      "type": "numberInput",
+      "question": "Nilaikan: -2.4 + 3 × (-1.5)",
+      "answer": "-6.9",
+      "hint": "Darab dahulu: 3 × (-1.5) = -4.5. Kemudian: -2.4 + (-4.5) = ?",
+      "explanation": "3 × (-1.5) = -4.5. -2.4 + (-4.5) = -6.9."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Selesaikan (-0.8 + 0.3) × (-5). Apakah langkah pertama yang betul?",
+      "choices": [
+        "Darab -0.8 × (-5) dahulu",
+        "Selesaikan kurungan: -0.8 + 0.3 = -0.5 dahulu",
+        "Bahagi (-5) dengan 0.3 dahulu",
+        "Tukar semua kepada integer dahulu"
+      ],
+      "correctIndex": 1,
+      "explanation": "Kurungan dahulu (KDTB): -0.8 + 0.3 = -0.5. Kemudian (-0.5)×(-5) = +2.5."
+    },
+    {
+      "type": "reflection",
+      "text": "Perpuluhan mengikut SEMUA peraturan integer: tertib operasi KDTB, peraturan tanda (sama→+, beza→-), dan cara pengiraan. Hanya ketepatan titik perpuluhan yang berbeza."
+    },
+    {
+      "type": "mastery",
+      "question": "Nilaikan: 3.5 - (-6.5) × 0.2",
+      "choices": ["2.2", "4.8", "-4.8", "20"],
+      "correctIndex": 1,
+      "explanation": "Darab dahulu: (-6.5)×0.2 = -1.3. Kemudian: 3.5-(-1.3) = 3.5+1.3 = 4.8."
+    }
+  ]
+}

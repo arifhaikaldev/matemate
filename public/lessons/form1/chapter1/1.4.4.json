@@ -1,0 +1,64 @@
+{
+  "lessonId": "1.4.4",
+  "chapter": 1,
+  "topic": "Perpuluhan Positif dan Perpuluhan Negatif",
+  "title": "Menyelesaikan Masalah Perpuluhan",
+  "learningGoal": "Menyelesaikan masalah yang melibatkan perpuluhan positif dan negatif.",
+  "estimatedMinutes": 7,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Penurunan harga bermakna nilai akhir sentiasa negatif",
+    "3 jam × penurunan = penurunan sekali sahaja, bukan tiga kali",
+    "Harga akhir dikira dengan menambah semua perubahan kepada harga asal"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Perubahan Harga Saham",
+      "text": "Harga saham RM2.05. Melonjak RM0.32 pagi ini. Kemudian menyusut RM0.28 setiap jam selama 3 jam. Berapakah harga akhir?"
+    },
+    {
+      "type": "workedExample",
+      "problem": "Harga asal RM2.05, lonjak +0.32, susut -0.28 per jam × 3 jam.",
+      "steps": [
+        "Selepas lonjak: 2.05 + 0.32 = 2.37.",
+        "Penyusutan 3 jam: 3 × (-0.28) = -0.84.",
+        "Harga akhir: 2.37 + (-0.84) = 2.37 - 0.84 = 1.53."
+      ],
+      "answer": "RM1.53"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Suhu pada waktu pagi ialah -3.5°C. Pada tengah hari, suhu naik 8.2°C. Apakah suhu tengah hari?",
+      "choices": ["4.7°C", "-4.7°C", "11.7°C", "-11.7°C"],
+      "correctIndex": 0,
+      "explanation": "-3.5 + 8.2 = 4.7°C. Naik bermakna tambah.",
+      "visual": { "kind": "temperature", "value": 4.7, "min": -5, "max": 10 }
+    },
+    {
+      "type": "numberInput",
+      "question": "Bank mempunyai baki RM1,250.50. Wang RM875.25 ditarik keluar. Berapakah baki baru?",
+      "answer": "375.25",
+      "hint": "1250.50 - 875.25 = ?",
+      "explanation": "1250.50 - 875.25 = 375.25. Baki baru ialah RM375.25."
+    },
+    {
+      "type": "numberInput",
+      "question": "Harga saham jatuh RM0.15 setiap hari selama 4 hari. Harga asal RM5.80. Apakah harga akhir?",
+      "answer": "5.20",
+      "hint": "Penurunan: 4 × (-0.15) = -0.60. Harga akhir: 5.80 + (-0.60) = ?",
+      "explanation": "4 × (-0.15) = -0.60. 5.80 + (-0.60) = 5.20."
+    },
+    {
+      "type": "reflection",
+      "text": "Dalam masalah perpuluhan: (+) = kenaikan/keuntungan/naik. (-) = penurunan/kerugian/turun. Pastikan bilangan ulangan (×) diambil kira dengan betul."
+    },
+    {
+      "type": "mastery",
+      "question": "Harga saham RM2.05, lonjak RM0.32, susut RM0.28/jam selama 3 jam. Apakah harga akhir?",
+      "choices": ["RM1.53", "RM2.09", "RM1.49", "RM2.37"],
+      "correctIndex": 0,
+      "explanation": "2.05 + 0.32 = 2.37. 3×(-0.28) = -0.84. Harga akhir: 2.37 - 0.84 = RM1.53."
+    }
+  ]
+}

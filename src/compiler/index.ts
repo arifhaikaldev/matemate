@@ -76,8 +76,7 @@ export function compileLesson(raw: unknown, options: CompilerOptions = {}): Comp
   // Re-parse to get typed data (schema validator already confirmed it's valid)
   const lesson = LessonSchema.parse(raw)
 
-  const knownLessonIds =
-    options.knownLessonIds ?? new Set<string>([lessonId]) // at minimum, know itself
+  const knownLessonIds = options.knownLessonIds ?? new Set<string>([lessonId]) // at minimum, know itself
   const dependencyMap = options.dependencyMap ?? DEFAULT_DEPENDENCY_MAP
 
   // Stages 2–10

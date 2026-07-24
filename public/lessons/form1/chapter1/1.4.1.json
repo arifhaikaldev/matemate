@@ -1,0 +1,80 @@
+{
+  "lessonId": "1.4.1",
+  "chapter": 1,
+  "topic": "Perpuluhan Positif dan Perpuluhan Negatif",
+  "title": "Perpuluhan pada Garis Nombor",
+  "learningGoal": "Mewakilkan perpuluhan positif dan negatif pada garis nombor.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Perpuluhan negatif tidak boleh diletakkan pada garis nombor",
+    "-0.8 adalah lebih besar daripada -0.5",
+    "0.7 dan -0.7 berada di tempat yang sama pada garis nombor"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Perpuluhan pada Garis Nombor",
+      "text": "Perpuluhan diletakkan antara integer pada garis nombor. 0.7 berada antara 0 dan 1. -0.5 berada antara -1 dan 0.",
+      "visual": {
+        "kind": "numberLine",
+        "min": -2,
+        "max": 2,
+        "showZero": true,
+        "tickInterval": 0.5,
+        "highlights": [0.7, -0.5]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Di manakah -0.8 pada garis nombor?",
+      "choices": [
+        "Antara 0 dan 1, lebih dekat ke 1",
+        "Antara -1 dan 0, lebih dekat ke -1",
+        "Antara -1 dan 0, lebih dekat ke 0",
+        "Di sebelah kanan -0.5"
+      ],
+      "correctIndex": 1,
+      "explanation": "-0.8 berada antara -1 dan 0. Ia 0.8 unit dari sifar, jadi lebih dekat ke -1 (yang 1 unit dari sifar).",
+      "visual": {
+        "kind": "numberLine",
+        "min": -2,
+        "max": 1,
+        "showZero": true,
+        "tickInterval": 0.5,
+        "highlights": [-0.8]
+      }
+    },
+    {
+      "type": "dragNumberLine",
+      "question": "Letakkan -0.5 pada garis nombor.",
+      "range": { "min": -2, "max": 2 },
+      "target": -1,
+      "tickInterval": 1
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun mengikut tertib MENAIK.",
+      "items": ["0.7", "-0.5", "-0.8", "0.2", "-1.3"],
+      "correctOrder": ["-1.3", "-0.8", "-0.5", "0.2", "0.7"]
+    },
+    {
+      "type": "reflection",
+      "text": "Perpuluhan negatif di KIRI sifar, positif di KANAN. Semakin kiri = semakin kecil. Contoh: -1.3 < -0.8 < -0.5 < 0 < 0.2 < 0.7.",
+      "visual": {
+        "kind": "numberLine",
+        "min": -2,
+        "max": 1,
+        "showZero": true,
+        "tickInterval": 0.5
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Susun -1.6, 0.5, -0.3, 1.4, -0.7 mengikut tertib MENURUN. Apakah nilai kedua?",
+      "choices": ["-1.6", "0.5", "-0.3", "1.4"],
+      "correctIndex": 1,
+      "explanation": "Tertib menurun: 1.4, 0.5, -0.3, -0.7, -1.6. Nilai kedua ialah 0.5."
+    }
+  ]
+}

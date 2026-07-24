@@ -70,8 +70,7 @@ export function DragNumberLineScreen({ screen, onNext }: Props) {
           ) : (
             <>
               <span className="font-black">Belum tepat. </span>
-              Kedudukan betul ialah{' '}
-              <span className="font-black">{screen.target}</span>.
+              Kedudukan betul ialah <span className="font-black">{screen.target}</span>.
             </>
           )}
         </div>

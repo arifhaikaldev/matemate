@@ -1,0 +1,68 @@
+{
+  "lessonId": "1.4.2",
+  "chapter": 1,
+  "topic": "Perpuluhan Positif dan Perpuluhan Negatif",
+  "title": "Membanding dan Menyusun Perpuluhan",
+  "learningGoal": "Membanding dan menyusun perpuluhan positif dan negatif mengikut tertib.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "-1.6 lebih besar daripada -0.3 kerana 1.6 > 0.3",
+    "Lebih banyak angka perpuluhan = lebih besar nilai",
+    "Tertib menurun bermakna dari negatif ke positif"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Peraturan Mudah",
+      "text": "Untuk membanding perpuluhan: letakkan pada garis nombor. Kanan = lebih besar. -0.3 berada di kanan -1.6, jadi -0.3 > -1.6.",
+      "visual": {
+        "kind": "numberLine",
+        "min": -2,
+        "max": 1,
+        "showZero": true,
+        "tickInterval": 0.5,
+        "highlights": [-1.6, -0.3]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Antara -0.7 dan -0.3, yang manakah lebih kecil?",
+      "choices": ["-0.3", "Sama", "-0.7", "Tidak boleh dibandingkan"],
+      "correctIndex": 2,
+      "explanation": "-0.7 berada lebih jauh ke kiri berbanding -0.3 pada garis nombor. Jadi -0.7 < -0.3.",
+      "visual": {
+        "kind": "numberLine",
+        "min": -1,
+        "max": 0,
+        "showZero": true,
+        "tickInterval": 0.1,
+        "highlights": [-0.7, -0.3]
+      }
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun mengikut tertib MENURUN (terbesar ke terkecil).",
+      "items": ["-1.6", "0.5", "-0.3", "1.4", "-0.7"],
+      "correctOrder": ["1.4", "0.5", "-0.3", "-0.7", "-1.6"]
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Susun -0.2, 1.3, -0.8, 0.4 mengikut tertib menaik. Apakah nilai pertama?",
+      "choices": ["-0.2", "0.4", "-0.8", "1.3"],
+      "correctIndex": 2,
+      "explanation": "Tertib menaik: -0.8, -0.2, 0.4, 1.3. Nilai pertama (terkecil) ialah -0.8."
+    },
+    {
+      "type": "reflection",
+      "text": "Membanding perpuluhan: bandingkan bahagian integer dahulu, kemudian bahagian perpuluhan. Perpuluhan negatif: magnitud lebih besar = nilai lebih kecil."
+    },
+    {
+      "type": "mastery",
+      "question": "Benar atau salah: -2.5 > -1.8?",
+      "choices": ["Benar, sebab 2.5 > 1.8", "Salah, -2.5 < -1.8", "Benar, sebab kedua-duanya negatif", "Salah, -2.5 = -1.8"],
+      "correctIndex": 1,
+      "explanation": "Pada garis nombor, -2.5 berada di KIRI -1.8. Kiri = lebih kecil. Jadi -2.5 < -1.8, bukan lebih besar."
+    }
+  ]
+}

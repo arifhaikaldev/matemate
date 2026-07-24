@@ -44,7 +44,9 @@ export function WorkedExampleScreen({ screen, onNext }: Props) {
         <div className="bg-duo-green-light dark:bg-duo-green/20 rounded-2xl px-4 py-3 flex items-center gap-3">
           <span className="text-2xl">✓</span>
           <div>
-            <p className="text-xs text-duo-green-dark font-semibold uppercase tracking-wide">Jawapan</p>
+            <p className="text-xs text-duo-green-dark font-semibold uppercase tracking-wide">
+              Jawapan
+            </p>
             <p className="text-xl font-black text-duo-green-dark">{screen.answer}</p>
           </div>
         </div>
@@ -54,7 +56,11 @@ export function WorkedExampleScreen({ screen, onNext }: Props) {
         onClick={allRevealed ? onNext : () => setRevealed((r) => r + 1)}
         className="btn btn-primary w-full"
       >
-        {allRevealed ? 'Seterusnya' : revealed === 0 ? 'Tunjukkan Langkah 1' : `Langkah ${revealed + 1}`}
+        {allRevealed
+          ? 'Seterusnya'
+          : revealed === 0
+            ? 'Tunjukkan Langkah 1'
+            : `Langkah ${revealed + 1}`}
       </button>
     </div>
   )

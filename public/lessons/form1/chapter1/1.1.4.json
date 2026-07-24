@@ -1,0 +1,67 @@
+{
+  "lessonId": "1.1.4",
+  "chapter": 1,
+  "topic": "Integer",
+  "title": "Membanding dan Menyusun Integer",
+  "learningGoal": "Membanding dan menyusun integer mengikut tertib menaik dan menurun.",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "-9 adalah lebih besar daripada -2 kerana 9 lebih besar daripada 2",
+    "Tertib menaik bermakna dari positif ke negatif",
+    "Nilai mutlak yang besar bermakna integer itu lebih besar"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Siapa Lebih Besar?",
+      "text": "Bandingkan -5 dan -1. Pada garis nombor, -1 berada di sebelah kanan -5. Ini bermakna -1 > -5.",
+      "visual": {
+        "kind": "numberLine",
+        "min": -7,
+        "max": 2,
+        "showZero": true,
+        "tickInterval": 1,
+        "highlights": [-5, -1]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Antara -9 dan -2, yang manakah lebih besar?",
+      "choices": ["-9 lebih besar", "Sama besar", "-2 lebih besar", "Tidak boleh dibandingkan"],
+      "correctIndex": 2,
+      "explanation": "Pada garis nombor, -2 berada di sebelah kanan -9. Nombor di kanan sentiasa lebih besar. Jadi -2 > -9.",
+      "visual": {
+        "kind": "numberLine",
+        "min": -10,
+        "max": 0,
+        "showZero": true,
+        "tickInterval": 1,
+        "highlights": [-9, -2]
+      }
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun integer berikut mengikut tertib MENAIK (dari terkecil ke terbesar).",
+      "items": ["-3", "4", "0", "-5", "2"],
+      "correctOrder": ["-5", "-3", "0", "2", "4"]
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun integer berikut mengikut tertib MENURUN (dari terbesar ke terkecil).",
+      "items": ["-3", "4", "2", "-5", "6", "0", "-1"],
+      "correctOrder": ["6", "4", "2", "0", "-1", "-3", "-5"]
+    },
+    {
+      "type": "reflection",
+      "text": "Tertib MENAIK: kecil → besar (kiri → kanan pada garis nombor). Tertib MENURUN: besar → kecil. Jangan terkeliru: -9 < -2 walaupun magnitud 9 > 2."
+    },
+    {
+      "type": "mastery",
+      "question": "Susun -3, 4, 2, -5, 6, 0, -1 mengikut tertib MENAIK. Apakah integer kedua dalam senarai?",
+      "choices": ["-5", "-3", "-1", "0"],
+      "correctIndex": 1,
+      "explanation": "Tertib menaik: -5, -3, -1, 0, 2, 4, 6. Integer kedua ialah -3."
+    }
+  ]
+}

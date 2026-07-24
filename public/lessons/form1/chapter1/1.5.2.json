@@ -1,0 +1,70 @@
+{
+  "lessonId": "1.5.2",
+  "chapter": 1,
+  "topic": "Nombor Nisbah",
+  "title": "Pengiraan Gabungan Operasi Nombor Nisbah",
+  "learningGoal": "Membuat pengiraan gabungan operasi bagi nombor nisbah mengikut tertib operasi.",
+  "estimatedMinutes": 8,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Perpuluhan dan pecahan tidak boleh dicampur dalam satu pengiraan",
+    "-0.4 tidak boleh ditukar kepada pecahan untuk mengira",
+    "1 1/2 × (-1/8) dikira sebagai 1 × (-1/8) + 1/2 × (-1/8)"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Campuran Perpuluhan dan Pecahan",
+      "text": "-0.4 + 1 1/2 × (-1/8). Nombor nisbah boleh bercampur bentuk. Strategi terbaik: tukar semua ke bentuk yang sama (pecahan atau perpuluhan) sebelum mengira."
+    },
+    {
+      "type": "workedExample",
+      "problem": "-0.4 + 1 1/2 × (-1/8)",
+      "steps": [
+        "Tukar -0.4 ke pecahan: -0.4 = -4/10 = -2/5.",
+        "Tukar 1 1/2 ke pecahan tidak wajar: 3/2.",
+        "Darab dahulu (KDTB): 3/2 × (-1/8) = -3/16.",
+        "LCM(5,16) = 80. Tukar: -2/5 = -32/80, -3/16 = -15/80.",
+        "-32/80 + (-15/80) = -47/80."
+      ],
+      "answer": "-47/80"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Untuk mengira -0.25 + 3/4, apakah cara paling mudah?",
+      "choices": [
+        "Kira terus tanpa menukar",
+        "Tukar -0.25 ke -1/4, kemudian kira -1/4 + 3/4",
+        "Tukar 3/4 ke 0.75, kemudian kira -0.25 + 0.75",
+        "Kedua-dua B dan C betul"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kedua-dua cara betul. B: -1/4 + 3/4 = 2/4 = 1/2. C: -0.25 + 0.75 = 0.5 = 1/2. Pilih cara yang lebih mudah."
+    },
+    {
+      "type": "numberInput",
+      "question": "Nilaikan: -0.25 + 3/4",
+      "answer": "0.5",
+      "hint": "-0.25 = -1/4. Jadi -1/4 + 3/4 = 2/4 = 1/2 = 0.5.",
+      "explanation": "-0.25 + 3/4 = -1/4 + 3/4 = 2/4 = 1/2 = 0.5."
+    },
+    {
+      "type": "numberInput",
+      "question": "Nilaikan: 2.5 × (-2/5). Berikan jawapan perpuluhan.",
+      "answer": "-1",
+      "hint": "2.5 = 5/2. Darab: 5/2 × (-2/5) = -10/10 = -1.",
+      "explanation": "2.5 × (-2/5) = (5/2) × (-2/5) = -10/10 = -1. Tanda beza → negatif."
+    },
+    {
+      "type": "reflection",
+      "text": "Strategi nombor nisbah campuran: (1) Tukar semua ke pecahan ATAU semua ke perpuluhan. (2) Ikut KDTB. (3) Sederhanakan jawapan akhir."
+    },
+    {
+      "type": "mastery",
+      "question": "Nilaikan -0.4 + 1 1/2 × (-1/8).",
+      "choices": ["-47/80", "47/80", "-13/40", "-7/80"],
+      "correctIndex": 0,
+      "explanation": "-0.4 = -2/5. 1 1/2 = 3/2. Darab: 3/2 × (-1/8) = -3/16. Tambah: -2/5 + (-3/16) = -32/80 - 15/80 = -47/80."
+    }
+  ]
+}

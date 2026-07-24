@@ -1,0 +1,52 @@
+{
+  "lessonId": "1.1.2",
+  "chapter": 1,
+  "topic": "Integer",
+  "title": "Apakah Integer?",
+  "learningGoal": "Mengenal dan memerihalkan integer sebagai nombor bulat positif, negatif, dan sifar.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Perpuluhan negatif seperti -3.4 adalah integer",
+    "Sifar bukan integer",
+    "Pecahan boleh menjadi integer jika nilainya kecil"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Pelbagai Jenis Nombor",
+      "text": "Lihat nombor-nombor ini: 15, -3, 0, -3.4, 1/2, 7. Setengahnya adalah integer, setengahnya bukan. Boleh teka mana satu?"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Antara nombor berikut, yang manakah BUKAN integer?",
+      "choices": ["-5", "0", "1/2", "100"],
+      "correctIndex": 2,
+      "explanation": "Integer ialah nombor bulat (positif, negatif, atau sifar). Pecahan 1/2 bukan nombor bulat, jadi ia bukan integer."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "-3.4 — adakah ini integer?",
+      "choices": ["Ya, sebab ia negatif", "Ya, sebab ia mempunyai nilai", "Tidak, sebab ia perpuluhan", "Tidak, sebab ia terlalu kecil"],
+      "correctIndex": 2,
+      "explanation": "Integer mestilah nombor BULAT. -3.4 mempunyai bahagian perpuluhan (.4), jadi ia bukan integer."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun nombor-nombor ini: ketepikan yang bukan integer, susun yang lain dari kecil ke besar.",
+      "items": ["-8", "0", "5", "-3", "12"],
+      "correctOrder": ["-8", "-3", "0", "5", "12"]
+    },
+    {
+      "type": "reflection",
+      "text": "Integer ialah semua nombor bulat: ..., -3, -2, -1, 0, 1, 2, 3, ... Perpuluhan (-3.4) dan pecahan (1/2) BUKAN integer. Sifar (0) ADALAH integer."
+    },
+    {
+      "type": "mastery",
+      "question": "Antara 15, -3.4, 0, dan 1/2 — berapakah bilangan integer?",
+      "choices": ["1", "2", "3", "4"],
+      "correctIndex": 1,
+      "explanation": "15 dan 0 adalah integer (nombor bulat). -3.4 adalah perpuluhan dan 1/2 adalah pecahan — kedua-duanya bukan integer. Jadi ada 2 integer."
+    }
+  ]
+}

@@ -96,7 +96,9 @@ export function formatBatchReport(reports: CompilerReport[]): string {
   for (const r of reports) {
     const ready = r.productionReady ? '✅' : '❌'
     const title = r.title.slice(0, 30).padEnd(30)
-    lines.push(`  ${r.lessonId.padEnd(12)} ${String(r.totalScore).padStart(3)}/100  ${ready}    ${title}`)
+    lines.push(
+      `  ${r.lessonId.padEnd(12)} ${String(r.totalScore).padStart(3)}/100  ${ready}    ${title}`
+    )
   }
 
   lines.push('  ' + '─'.repeat(56))

@@ -4,12 +4,7 @@
 import type { Issue, StageResult } from './types'
 import type { ValidatedLesson } from './stage1-schema'
 
-const INTERACTIVE_TYPES = new Set([
-  'multipleChoice',
-  'numberInput',
-  'dragOrder',
-  'dragNumberLine',
-])
+const INTERACTIVE_TYPES = new Set(['multipleChoice', 'numberInput', 'dragOrder', 'dragNumberLine'])
 
 export function validatePedagogy(lesson: ValidatedLesson): StageResult {
   const issues: Issue[] = []
@@ -33,8 +28,7 @@ export function validatePedagogy(lesson: ValidatedLesson): StageResult {
       stage: 'Pedagogy',
       severity: 'error',
       lessonId,
-      message:
-        'Last screen must be "mastery". Found: ' + types[types.length - 1],
+      message: 'Last screen must be "mastery". Found: ' + types[types.length - 1],
     })
   }
 

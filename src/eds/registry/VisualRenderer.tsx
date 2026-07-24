@@ -19,11 +19,7 @@ export function VisualRenderer({ visual, interactive, dragTarget, onDrag }: Visu
   switch (visual.kind) {
     case 'direction':
       return (
-        <Direction
-          direction={visual.direction}
-          distance={visual.distance}
-          label={visual.label}
-        />
+        <Direction direction={visual.direction} distance={visual.distance} label={visual.label} />
       )
     case 'elevator':
       return (
@@ -35,12 +31,7 @@ export function VisualRenderer({ visual, interactive, dragTarget, onDrag }: Visu
       )
     case 'temperature':
       return (
-        <Temperature
-          value={visual.value}
-          min={visual.min}
-          max={visual.max}
-          unit={visual.unit}
-        />
+        <Temperature value={visual.value} min={visual.min} max={visual.max} unit={visual.unit} />
       )
     case 'numberLine':
       return (
