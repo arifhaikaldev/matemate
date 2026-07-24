@@ -43,10 +43,10 @@ export type SubtopikStatus = 'belum_mula' | 'sedang_belajar' | 'selesai'
 export interface SubtopikProgress {
   id: string
   status: SubtopikStatus
-  skor_terakhir: number | null          // 0–100
+  skor_terakhir: number | null // 0–100
   attempt: number
-  jawapan: Record<string, number>       // soalan_id -> pilihan index
-  masa_kemaskini: number                // unix ms
+  jawapan: Record<string, number> // soalan_id -> pilihan index
+  masa_kemaskini: number // unix ms
 }
 
 export interface AppProgress {
@@ -57,8 +57,8 @@ export interface AppProgress {
 
 export interface KuizSession {
   subtopikId: string
-  jawapan: Record<string, number>   // soalan_id -> pilihan
-  semasa: number                     // index soalan semasa
+  jawapan: Record<string, number> // soalan_id -> pilihan
+  semasa: number // index soalan semasa
 }
 
 // Recommendation result

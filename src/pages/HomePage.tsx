@@ -62,14 +62,26 @@ export function HomePage() {
                   style={{ width: `${progressKeseluruhan}%` }}
                 />
               </div>
-              <p className="text-white/70 text-xs font-medium">{selesai} daripada {jumlahSubtopik} subtopik selesai</p>
+              <p className="text-white/70 text-xs font-medium">
+                {selesai} daripada {jumlahSubtopik} subtopik selesai
+              </p>
             </div>
           )}
         </div>
 
         <div className="flex items-start gap-2.5 px-5 py-3.5 bg-duo-orange-light/50 dark:bg-duo-orange/10 border-2 border-duo-orange/30 dark:border-duo-orange/20 rounded-2xl text-sm font-medium text-duo-charcoal/70 dark:text-duo-orange">
-          <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg
+            className="w-4 h-4 mt-0.5 flex-shrink-0"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2.5}
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
           <span>Data kemajuan disimpan di peranti ini sahaja.</span>
         </div>
@@ -136,15 +148,25 @@ export function HomePage() {
                               skor >= 80
                                 ? 'text-duo-green-dark dark:text-duo-green'
                                 : skor >= 50
-                                ? 'text-duo-orange'
-                                : 'text-duo-red'
+                                  ? 'text-duo-orange'
+                                  : 'text-duo-red'
                             }`}
                           >
                             {skor}%
                           </span>
                         )}
-                        <svg className="w-4 h-4 text-duo-gray group-hover:text-duo-blue transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        <svg
+                          className="w-4 h-4 text-duo-gray group-hover:text-duo-blue transition-colors"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </div>
                     </div>

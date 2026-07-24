@@ -1,0 +1,178 @@
+
+{
+  "Bab": {
+    "Tajuk": "Nombor Nisbah",
+    "Subtopik": [
+      {
+        "No": "1.1",
+        "Tajuk": "Integer",
+        "Persoalan_Utama": [
+          {
+            "Persoalan": "Apakah nombor positif dan nombor negatif?",
+            "Standard_Pembelajaran": "Mengenal nombor positif dan nombor negatif berdasarkan situasi sebenar.",
+            "Aktiviti": "Mengenal pasti situasi bertentangan dalam kehidupan harian seperti arah pergerakan (kanan/kiri), kedudukan tingkat lif (naik/turun), dan suhu (gurun/glasier).",
+            "Contoh_Soalan": "Kereta A bergerak 40 m ke kanan manakala kereta B bergerak 50 m ke kiri. Wakilkan pergerakan tersebut dengan nombor positif atau negatif.",
+            "Langkah_Penyelesaian": "Andaikan kanan sebagai positif (+) dan kiri sebagai negatif (–). Maka, kereta A = +40 atau 40; kereta B = –50."
+          },
+          {
+            "Persoalan": "Apakah integer?",
+            "Standard_Pembelajaran": "Mengenal dan memerihalkan integer.",
+            "Aktiviti": "Aktiviti Penerokaan 1: Mengkaji gambar rajah untuk membezakan integer positif, integer negatif, dan sifar daripada nombor lain seperti perpuluhan atau pecahan.",
+            "Contoh_Soalan": "Tentukan sama ada 15, –3.4, 0, dan 1/2 ialah integer atau bukan.",
+            "Langkah_Penyelesaian": "Integer ialah nombor bulat positif, negatif, dan sifar. Jawapan: 15 dan 0 ialah integer; –3.4 dan 1/2 bukan integer."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda mewakilkan integer pada garis nombor?",
+            "Standard_Pembelajaran": "Mewakilkan integer pada garis nombor dan membuat perkaitan antara nilai dengan kedudukan integer.",
+            "Aktiviti": "Aktiviti Penerokaan 2: Menggunakan perisian GeoGebra untuk memerhati kedudukan integer berbanding sifar.",
+            "Contoh_Soalan": "Lengkapkan garis nombor dengan nombor: –30, 6, –6, –36.",
+            "Langkah_Penyelesaian": "Susun mengikut kedudukan: –36 paling kiri (terkecil), diikuti –30, –12 (diberi), –6, dan 6 di paling kanan (terbesar)."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda membanding dan menyusun integer mengikut tertib?",
+            "Standard_Pembelajaran": "Membanding dan menyusun integer mengikut tertib.",
+            "Aktiviti": "Membandingkan kedudukan integer pada garis nombor; nombor di sebelah kanan sentiasa lebih besar daripada nombor di sebelah kiri.",
+            "Contoh_Soalan": "Susun –3, 4, 2, –5, 6, 0, –1 mengikut tertib menaik.",
+            "Langkah_Penyelesaian": "Tentukan kedudukan dari kiri ke kanan pada garis nombor: –5, –3, –1, 0, 2, 4, 6."
+          }
+        ]
+      },
+      {
+        "No": "1.2",
+        "Tajuk": "Operasi Asas Aritmetik yang Melibatkan Integer",
+        "Persoalan_Utama": [
+          {
+            "Persoalan": "Bagaimanakah anda menambah dan menolak integer?",
+            "Standard_Pembelajaran": "Menambah dan menolak integer menggunakan garis nombor atau kaedah lain.",
+            "Aktiviti": "Aktiviti Penerokaan 3: Meneroka pergerakan pada garis nombor menggunakan GeoGebra; tambah integer positif (ke kanan), tambah integer negatif (ke kiri).",
+            "Contoh_Soalan": "Selesaikan 8 + (+3) dan –1 – (–4).",
+            "Langkah_Penyelesaian": "8 + 3 = 11 (3 unit ke kanan); –1 + 4 = 3 (4 unit ke kanan)."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda mendarab dan membahagi integer?",
+            "Standard_Pembelajaran": "Mendarab dan membahagi integer menggunakan pelbagai kaedah serta membuat generalisasi.",
+            "Aktiviti": "Aktiviti Penerokaan 4: Melengkapkan jadual pendaraban untuk melihat pola tanda hasil darab dan bahagi.",
+            "Contoh_Soalan": "Nilaikan –5 × (–4) dan 6 ÷ (–2).",
+            "Langkah_Penyelesaian": "Hasil darab tanda sama adalah positif: –5 × –4 = +20. Hasil bahagi tanda berlainan adalah negatif: 6 ÷ –2 = –3."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda membuat pengiraan yang melibatkan gabungan operasi bagi integer?",
+            "Standard_Pembelajaran": "Membuat pengiraan mengikut tertib operasi.",
+            "Aktiviti": "Melaksanakan pengiraan mengikut urutan: Tanda kurung (), Darab/Bahagi, Tambah/Tolak (dari kiri ke kanan).",
+            "Contoh_Soalan": "Selesaikan –8 × (–2 + 3).",
+            "Langkah_Penyelesaian": "Selesaikan dalam kurungan dahulu: –8 × (1) = –8."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menghuraikan hukum operasi aritmetik?",
+            "Standard_Pembelajaran": "Menghuraikan Hukum Identiti, Hukum Kalis Tukar Tertib, Hukum Kalis Sekutuan dan Hukum Kalis Agihan.",
+            "Aktiviti": "Aktiviti Penerokaan 5: Melengkapkan jadual untuk mengesahkan kesahihan hukum-hukum aritmetik.",
+            "Contoh_Soalan": "Selesaikan 2 × 24 × 5 dengan pengiraan efisien.",
+            "Langkah_Penyelesaian": "Gunakan Hukum Kalis Tukar Tertib dan Sekutuan: 24 × (2 × 5) = 24 × 10 = 240."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menyelesaikan masalah?",
+            "Standard_Pembelajaran": "Menyelesaikan masalah yang melibatkan integer.",
+            "Aktiviti": "Menganalisis masalah harian seperti tunggakan kad kredit atau perubahan suhu bandar.",
+            "Contoh_Soalan": "Tunggakan kad kredit Luqman RM230. Dia beli 3 buah buku RM120 setiap satu, faedah RM3, bayar balik RM400. Cari baki hutang.",
+            "Langkah_Penyelesaian": "–230 + 3(–120) + (–3) + 400 = –230 – 360 – 3 + 400 = –193. Masih ada tunggakan RM193."
+          }
+        ]
+      },
+      {
+        "No": "1.3",
+        "Tajuk": "Pecahan Positif dan Pecahan Negatif",
+        "Persoalan_Utama": [
+          {
+            "Persoalan": "Bagaimanakah anda mewakilkan pecahan pada garis nombor?",
+            "Standard_Pembelajaran": "Mewakilkan pecahan positif dan pecahan negatif pada garis nombor.",
+            "Aktiviti": "Aktiviti Penerokaan 6: Menggunakan GeoGebra untuk menentukan kedudukan pecahan berbanding sifar.",
+            "Contoh_Soalan": "Wakilkan 1/2, 1/4, –3/4, –1/2 pada garis nombor.",
+            "Langkah_Penyelesaian": "Pecahan positif di sebelah kanan sifar, pecahan negatif di sebelah kiri sifar mengikut skala yang sesuai."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda membanding dan menyusun pecahan mengikut tertib?",
+            "Standard_Pembelajaran": "Membanding dan menyusun pecahan positif dan negatif mengikut tertib.",
+            "Aktiviti": "Menyamakan penyebut sebelum membandingkan nilai pecahan tersebut.",
+            "Contoh_Soalan": "Susun 1/8, –3/4, –1 1/4, 1/2, –1 5/8, –3/8 mengikut tertib menaik.",
+            "Langkah_Penyelesaian": "Samakan penyebut (skala 8): 1/8, –6/8, –10/8, 4/8, –13/8, –3/8. Susun: –1 5/8, –1 1/4, –3/4, –3/8, 1/8, 1/2."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda membuat pengiraan gabungan operasi pecahan?",
+            "Standard_Pembelajaran": "Membuat pengiraan gabungan operasi bagi pecahan mengikut tertib operasi.",
+            "Aktiviti": "Mengikut tertib operasi (PEMDAS) dengan menukarkan pecahan bercampur kepada pecahan tidak wajar.",
+            "Contoh_Soalan": "Selesaikan 1 2/3 × (2/5 – 5/6).",
+            "Langkah_Penyelesaian": "5/3 × (12/30 – 25/30) = 5/3 × (–13/30) = –13/18."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menyelesaikan masalah?",
+            "Standard_Pembelajaran": "Menyelesaikan masalah yang melibatkan pecahan positif dan negatif.",
+            "Aktiviti": "Menggunakan strategi memahami masalah, merancang strategi, melaksanakan strategi dan membuat refleksi.",
+            "Contoh_Soalan": "Kuiz matematik 20 soalan: Betul (+2 markah), Salah (–1/2 markah). Mei Ling dapat –4 markah bagi salah. Cari jumlah markah keseluruhan.",
+            "Langkah_Penyelesaian": "Bilangan salah: –4 ÷ (–1/2) = 8. Bilangan betul: 20 – 8 = 12. Jumlah markah: (12 × 2) + (–4) = 20 markah."
+          }
+        ]
+      },
+      {
+        "No": "1.4",
+        "Tajuk": "Perpuluhan Positif dan Perpuluhan Negatif",
+        "Persoalan_Utama": [
+          {
+            "Persoalan": "Bagaimanakah anda mewakilkan perpuluhan pada garis nombor?",
+            "Standard_Pembelajaran": "Mewakilkan perpuluhan positif dan negatif pada garis nombor.",
+            "Aktiviti": "Aktiviti Penerokaan 7: Menggunakan GeoGebra untuk menyatakan persepuluh dan perseratus pada garis nombor.",
+            "Contoh_Soalan": "Wakilkan 0.7, –0.5, –0.8, 0.2, –1.3 pada garis nombor.",
+            "Langkah_Penyelesaian": "Tentukan kedudukan perpuluhan tersebut pada skala garis nombor yang betul berbanding sifar."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda membanding dan menyusun perpuluhan mengikut tertib?",
+            "Standard_Pembelajaran": "Membanding dan menyusun perpuluhan positif dan negatif mengikut tertib.",
+            "Aktiviti": "Membandingkan nilai perpuluhan berdasarkan kedudukannya pada garis nombor.",
+            "Contoh_Soalan": "Susun –1.6, 0.5, –0.3, 1.4, –0.7 mengikut tertib menurun.",
+            "Langkah_Penyelesaian": "Cari nilai terbesar dahulu: 1.4, 0.5, –0.3, –0.7, –1.6."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda membuat pengiraan gabungan operasi perpuluhan?",
+            "Standard_Pembelajaran": "Membuat pengiraan gabungan operasi bagi perpuluhan mengikut tertib operasi.",
+            "Aktiviti": "Mengikut tertib operasi dengan mendahului pendaraban/pembahagian sebelum penambahan/penolakan.",
+            "Contoh_Soalan": "Nilaikan 3.5 – (–6.5) × 0.2.",
+            "Langkah_Penyelesaian": "3.5 – (–1.3) = 3.5 + 1.3 = 4.8."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menyelesaikan masalah?",
+            "Standard_Pembelajaran": "Menyelesaikan masalah yang melibatkan perpuluhan positif dan negatif.",
+            "Aktiviti": "Menganalisis lonjakan dan penyusutan nilai dalam konteks seperti harga saham.",
+            "Contoh_Soalan": "Harga saham RM2.05, melonjak RM0.32, menyusut RM0.28 sejam selama 3 jam. Hitung harga akhir.",
+            "Langkah_Penyelesaian": "2.05 + 0.32 + 3 × (–0.28) = 2.37 – 0.84 = RM1.53."
+          }
+        ]
+      },
+      {
+        "No": "1.5",
+        "Tajuk": "Nombor Nisbah",
+        "Persoalan_Utama": [
+          {
+            "Persoalan": "Apakah nombor nisbah?",
+            "Standard_Pembelajaran": "Mengenal dan memerihalkan nombor nisbah.",
+            "Aktiviti": "Aktiviti Penerokaan 8: Menulis pelbagai jenis nombor dalam bentuk pecahan p/q.",
+            "Contoh_Soalan": "Tentukan sama ada 1 4/5, 3/4, –9 dan 3.5 ialah nombor nisbah.",
+            "Langkah_Penyelesaian": "Semua boleh ditulis sebagai p/q: 9/5, 3/4, –9/1, 7/2. Maka, semuanya ialah nombor nisbah."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda membuat pengiraan gabungan operasi nombor nisbah?",
+            "Standard_Pembelajaran": "Membuat pengiraan gabungan operasi bagi nombor nisbah mengikut tertib operasi.",
+            "Aktiviti": "Menukarkan perpuluhan kepada pecahan (atau sebaliknya) sebelum melaksanakan pengiraan gabungan operasi.",
+            "Contoh_Soalan": "Selesaikan –0.4 + 1 1/2 × (–1/8).",
+            "Langkah_Penyelesaian": "–4/10 + (3/2 × –1/8) = –4/10 – 3/16 = –32/80 – 15/80 = –47/80."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menyelesaikan masalah?",
+            "Standard_Pembelajaran": "Menyelesaikan masalah yang melibatkan nombor nisbah.",
+            "Aktiviti": "Menggunakan pengetahuan nombor nisbah untuk membuat pengiraan efisien dalam situasi kewangan atau derma.",
+            "Contoh_Soalan": "Noriah ada RM120, derma 3/8 wang kepada mangsa banjir, beli kasut RM25.60. Hitung baki wang.",
+            "Langkah_Penyelesaian": "Wang diderma: 3/8 × 120 = RM45. Baki: 120 – 45 – 25.60 = RM49.40."
+          }
+        ]
+      }
+    ]
+  }
+}

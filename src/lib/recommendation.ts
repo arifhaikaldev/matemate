@@ -43,9 +43,7 @@ export function janaCadangan(
   }
 
   if (skor >= 50) {
-    const listKemahiran = kemahiranLemah.length
-      ? kemahiranLemah.join(', ')
-      : 'kemahiran yang lemah'
+    const listKemahiran = kemahiranLemah.length ? kemahiranLemah.join(', ') : 'kemahiran yang lemah'
     return {
       jenis: 'latihan_fokus',
       mesej: `Elok! Cuba buat semula soalan pada sub-kemahiran: ${listKemahiran}.`,

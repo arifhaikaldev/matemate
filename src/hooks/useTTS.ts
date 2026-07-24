@@ -7,16 +7,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 export function useTTS() {
-  const [tersedia, setTersedia] = useState<boolean | null>(null) // null = loading
+  const [tersedia, setTersedia] = useState<boolean | null>(() =>
+    typeof window !== 'undefined' && !('speechSynthesis' in window) ? false : null
+  )
   const [muted, setMuted] = useState(false)
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
-    if (!('speechSynthesis' in window)) {
-      setTersedia(false)
-      return
-    }
+    if (!('speechSynthesis' in window)) return // already set to false via lazy init
 
     const check = () => {
       const voices = window.speechSynthesis.getVoices()
@@ -50,18 +49,29 @@ export function useTTS() {
       onBoundary?: (charIndex: number) => void,
       onEnd?: () => void
     ) => {
-      if (muted) { onEnd?.(); return }
+      if (muted) {
+        onEnd?.()
+        return
+      }
 
       // Use pre-recorded audio if provided
       if (audioFile) {
         const audio = new Audio(audioFile)
         audioRef.current = audio
-        audio.onended = () => { onEnd?.(); audioRef.current = null }
-        audio.play().catch(() => { onEnd?.() })
+        audio.onended = () => {
+          onEnd?.()
+          audioRef.current = null
+        }
+        audio.play().catch(() => {
+          onEnd?.()
+        })
         return
       }
 
-      if (!tersedia) { onEnd?.(); return }
+      if (!tersedia) {
+        onEnd?.()
+        return
+      }
 
       window.speechSynthesis.cancel()
 
@@ -94,7 +104,12 @@ export function useTTS() {
     })
   }, [stop])
 
-  useEffect(() => () => { stop() }, [stop])
+  useEffect(
+    () => () => {
+      stop()
+    },
+    [stop]
+  )
 
   return { tersedia, muted, toggleMute, baca, stop }
 }

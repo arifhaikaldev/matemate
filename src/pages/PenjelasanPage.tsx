@@ -80,10 +80,7 @@ export function PenjelasanPage() {
       penjelasan,
       currentSoalan.audio_file || undefined,
       (charIndex) => {
-        const newStep = Math.min(
-          Math.floor(charIndex / charsPerStep) + 1,
-          totalLangkah
-        )
+        const newStep = Math.min(Math.floor(charIndex / charsPerStep) + 1, totalLangkah)
         setLangkahTerpapar((prev) => Math.max(prev, newStep))
       },
       () => {
@@ -97,8 +94,10 @@ export function PenjelasanPage() {
     if (!loading && currentSoalan && tersedia !== null) {
       startAnimation()
     }
-    return () => { stop() }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => {
+      stop()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, currentSoalan?.id, tersedia])
 
   const handleTeruskan = () => {
@@ -131,7 +130,10 @@ export function PenjelasanPage() {
       <AppHeader tajuk="Penjelasan" showBack>
         {tersedia && (
           <button
-            onClick={() => { toggleMute(); ttsStartedRef.current = false }}
+            onClick={() => {
+              toggleMute()
+              ttsStartedRef.current = false
+            }}
             className={`p-2 rounded-xl transition-colors ${
               muted
                 ? 'text-duo-gray dark:text-gray-400 hover:bg-duo-gray-light/50 dark:hover:bg-white/10'
@@ -141,15 +143,27 @@ export function PenjelasanPage() {
           >
             {muted ? (
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
+                />
               </svg>
             ) : (
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
               </svg>
             )}
           </button>
@@ -157,16 +171,40 @@ export function PenjelasanPage() {
       </AppHeader>
 
       <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8 space-y-5">
-        <div className={`rounded-2xl border-2 p-5 text-center ${betul ? 'border-duo-green bg-duo-green-light' : 'border-duo-red bg-duo-red-light'}`}>
+        <div
+          className={`rounded-2xl border-2 p-5 text-center ${betul ? 'border-duo-green bg-duo-green-light' : 'border-duo-red bg-duo-red-light'}`}
+        >
           <div className="flex items-center justify-center gap-3">
-            <div className={`w-12 h-12 rounded-full flex items-center justify-center ${betul ? 'bg-duo-green' : 'bg-duo-red'}`}>
+            <div
+              className={`w-12 h-12 rounded-full flex items-center justify-center ${betul ? 'bg-duo-green' : 'bg-duo-red'}`}
+            >
               {betul ? (
-                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                <svg
+                  className="w-7 h-7 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               ) : (
-                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-7 h-7 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               )}
             </div>
@@ -176,7 +214,10 @@ export function PenjelasanPage() {
               </p>
               {!betul && (
                 <p className="text-sm font-medium text-duo-charcoal/60 dark:text-gray-400">
-                  Jawapan betul: <strong className="text-duo-green-dark dark:text-duo-green">{currentSoalan.pilihan[currentSoalan.jawapan_betul]}</strong>
+                  Jawapan betul:{' '}
+                  <strong className="text-duo-green-dark dark:text-duo-green">
+                    {currentSoalan.pilihan[currentSoalan.jawapan_betul]}
+                  </strong>
                 </p>
               )}
             </div>
@@ -185,7 +226,9 @@ export function PenjelasanPage() {
 
         <div className="card">
           <p className="text-xs font-bold text-duo-gray uppercase tracking-widest mb-2">Soalan</p>
-          <p className="text-sm font-semibold text-duo-charcoal/70 dark:text-gray-300">{currentSoalan.soalan}</p>
+          <p className="text-sm font-semibold text-duo-charcoal/70 dark:text-gray-300">
+            {currentSoalan.soalan}
+          </p>
         </div>
 
         <div className="card space-y-3">
@@ -196,9 +239,18 @@ export function PenjelasanPage() {
             {tersedia && !muted && !selesaiAnimasi && (
               <div className="flex items-center gap-1.5 text-xs font-bold text-duo-blue dark:text-duo-blue">
                 <span className="flex gap-0.5">
-                  <span className="w-1 h-3 bg-duo-blue rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                  <span className="w-1 h-3 bg-duo-blue rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                  <span className="w-1 h-3 bg-duo-blue rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <span
+                    className="w-1 h-3 bg-duo-blue rounded-full animate-bounce"
+                    style={{ animationDelay: '0ms' }}
+                  />
+                  <span
+                    className="w-1 h-3 bg-duo-blue rounded-full animate-bounce"
+                    style={{ animationDelay: '150ms' }}
+                  />
+                  <span
+                    className="w-1 h-3 bg-duo-blue rounded-full animate-bounce"
+                    style={{ animationDelay: '300ms' }}
+                  />
                 </span>
                 <span>Sedang membaca...</span>
               </div>
@@ -215,21 +267,25 @@ export function PenjelasanPage() {
                     : 'opacity-0 translate-y-2 pointer-events-none'
                 }`}
               >
-                <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black mt-0.5 ${
-                  i < langkahTerpapar
-                    ? 'bg-duo-blue text-white'
-                    : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
-                }`}>
+                <span
+                  className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black mt-0.5 ${
+                    i < langkahTerpapar
+                      ? 'bg-duo-blue text-white'
+                      : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
+                  }`}
+                >
                   {i + 1}
                 </span>
                 <p className="text-sm font-semibold text-duo-charcoal/80 dark:text-gray-200 leading-relaxed flex-1">
-                  {langkah.split(/(\*\*[^*]+\*\*)/).map((part, j) =>
-                    part.startsWith('**') && part.endsWith('**') ? (
-                      <strong key={j}>{part.slice(2, -2)}</strong>
-                    ) : (
-                      <span key={j}>{part}</span>
-                    )
-                  )}
+                  {langkah
+                    .split(/(\*\*[^*]+\*\*)/)
+                    .map((part, j) =>
+                      part.startsWith('**') && part.endsWith('**') ? (
+                        <strong key={j}>{part.slice(2, -2)}</strong>
+                      ) : (
+                        <span key={j}>{part}</span>
+                      )
+                    )}
                 </p>
               </div>
             ))}
@@ -258,22 +314,29 @@ export function PenjelasanPage() {
 
       <div className="sticky bottom-0 z-10 bg-white dark:bg-duo-charcoal border-t-2 border-duo-gray-light dark:border-white/10 px-5 py-4">
         <div className="max-w-lg mx-auto">
-          <button
-            onClick={handleTeruskan}
-            className="btn-primary w-full text-lg"
-          >
+          <button onClick={handleTeruskan} className="btn-primary w-full text-lg">
             {isLastSoalan ? (
               <>
                 Lihat Keputusan
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </>
             ) : (
               <>
                 Soalan Seterusnya
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </>
             )}
@@ -304,7 +367,9 @@ function ErrorState({ error }: { error: string | null }) {
       <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8">
         <div className="card">
           <p className="text-duo-charcoal/70 dark:text-duo-peach mb-3">{error ?? 'Ralat'}</p>
-          <button onClick={() => navigate(-1)} className="btn-secondary">Kembali</button>
+          <button onClick={() => navigate(-1)} className="btn-secondary">
+            Kembali
+          </button>
         </div>
       </main>
     </div>

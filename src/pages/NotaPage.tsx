@@ -71,7 +71,9 @@ export function NotaPage() {
         <AppHeader tajuk="Nota" showBack backTo="/" />
         <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8">
           <div className="card">
-            <p className="text-duo-charcoal/70 dark:text-duo-peach">{error ?? 'Kandungan tidak dijumpai'}</p>
+            <p className="text-duo-charcoal/70 dark:text-duo-peach">
+              {error ?? 'Kandungan tidak dijumpai'}
+            </p>
           </div>
         </main>
       </div>
@@ -121,12 +123,14 @@ export function NotaPage() {
 
       <div className="sticky bottom-0 z-10 bg-white dark:bg-duo-charcoal border-t-2 border-duo-gray-light dark:border-white/10 px-5 py-4">
         <div className="max-w-lg mx-auto">
-          <button
-            onClick={mulaKuiz}
-            className="btn-primary w-full text-lg"
-          >
+          <button onClick={mulaKuiz} className="btn-primary w-full text-lg">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              />
             </svg>
             Mula Kuiz ({subtopik.soalan.length} soalan)
           </button>

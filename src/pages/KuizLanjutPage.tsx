@@ -52,7 +52,9 @@ export function KuizLanjutPage() {
   const currentSoalan: Soalan = soalan[semasaIdx]
   const progress = Math.round((semasaIdx / jumlah) * 100)
 
-  const handlePilih = (idx: number) => { if (!answered) setPilihan(idx) }
+  const handlePilih = (idx: number) => {
+    if (!answered) setPilihan(idx)
+  }
 
   const handleSemak = () => {
     if (pilihan === null) return
@@ -79,7 +81,10 @@ export function KuizLanjutPage() {
       <AppHeader tajuk={subtopik.tajuk_subtopik} showBack />
 
       <div className="h-2 bg-duo-gray-light dark:bg-white/10">
-        <div className="h-full bg-duo-green transition-all duration-500" style={{ width: `${progress}%` }} />
+        <div
+          className="h-full bg-duo-green transition-all duration-500"
+          style={{ width: `${progress}%` }}
+        />
       </div>
 
       <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8 space-y-6">
@@ -87,12 +92,14 @@ export function KuizLanjutPage() {
           <span className="text-xs font-bold text-duo-gray uppercase tracking-widest">
             Soalan {semasaIdx + 1} / {jumlah}
           </span>
-          <button
-            onClick={() => navigate(`/nota/${subtopikId}`)}
-            className="btn-ghost text-xs"
-          >
+          <button onClick={() => navigate(`/nota/${subtopikId}`)} className="btn-ghost text-xs">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              />
             </svg>
             Mula Semula
           </button>
@@ -104,7 +111,11 @@ export function KuizLanjutPage() {
           </p>
           {currentSoalan.imej && (
             <div className="rounded-2xl overflow-hidden bg-duo-blue-light/50 dark:bg-white/5 border-2 border-duo-gray-light dark:border-white/10">
-              <img src={currentSoalan.imej} alt="Rajah soalan" className="w-full object-contain max-h-48" />
+              <img
+                src={currentSoalan.imej}
+                alt="Rajah soalan"
+                className="w-full object-contain max-h-48"
+              />
             </div>
           )}
         </div>
@@ -115,7 +126,8 @@ export function KuizLanjutPage() {
             const isBetul = i === currentSoalan.jawapan_betul
             const showResult = answered
 
-            let cls = 'relative flex flex-col items-center justify-center gap-2 px-4 py-5 rounded-2xl border-2 font-bold text-sm transition-all duration-150 min-h-[100px] '
+            let cls =
+              'relative flex flex-col items-center justify-center gap-2 px-4 py-5 rounded-2xl border-2 font-bold text-sm transition-all duration-150 min-h-[100px] '
 
             if (!showResult) {
               cls += isSelected
@@ -127,30 +139,43 @@ export function KuizLanjutPage() {
               } else if (isSelected && !isBetul) {
                 cls += 'border-duo-red bg-duo-red-light text-duo-red'
               } else {
-                cls += 'border-duo-gray-light/50 dark:border-white/5 bg-white dark:bg-duo-charcoal opacity-40'
+                cls +=
+                  'border-duo-gray-light/50 dark:border-white/5 bg-white dark:bg-duo-charcoal opacity-40'
               }
             }
 
             return (
               <button key={i} onClick={() => handlePilih(i)} disabled={answered} className={cls}>
-                <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${
-                  !showResult
-                    ? isSelected
-                      ? 'bg-duo-green text-white'
-                      : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
-                    : isBetul
-                    ? 'bg-duo-green text-white'
-                    : isSelected
-                    ? 'bg-duo-red text-white'
-                    : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
-                }`}>
+                <span
+                  className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${
+                    !showResult
+                      ? isSelected
+                        ? 'bg-duo-green text-white'
+                        : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
+                      : isBetul
+                        ? 'bg-duo-green text-white'
+                        : isSelected
+                          ? 'bg-duo-red text-white'
+                          : 'bg-duo-gray-light dark:bg-white/10 text-duo-gray dark:text-gray-400'
+                  }`}
+                >
                   {showResult && isBetul ? (
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={3}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   ) : showResult && isSelected && !isBetul ? (
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={3}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
                     </svg>
                   ) : (
                     alphabet[i]
@@ -163,13 +188,19 @@ export function KuizLanjutPage() {
         </div>
 
         {answered && (
-          <div className={`rounded-2xl border-2 p-5 text-center ${betul ? 'border-duo-green bg-duo-green-light' : 'border-duo-red bg-duo-red-light'}`}>
+          <div
+            className={`rounded-2xl border-2 p-5 text-center ${betul ? 'border-duo-green bg-duo-green-light' : 'border-duo-red bg-duo-red-light'}`}
+          >
             <div className="flex items-center justify-center gap-2 mb-1">
-              <span className={`text-lg font-black ${betul ? 'text-duo-green-dark' : 'text-duo-red'}`}>
+              <span
+                className={`text-lg font-black ${betul ? 'text-duo-green-dark' : 'text-duo-red'}`}
+              >
                 {betul ? 'Betul!' : 'Salah'}
               </span>
             </div>
-            <p className={`text-sm font-medium ${betul ? 'text-duo-green-dark/70' : 'text-duo-red/70'}`}>
+            <p
+              className={`text-sm font-medium ${betul ? 'text-duo-green-dark/70' : 'text-duo-red/70'}`}
+            >
               {betul
                 ? 'Bagus! Tekan "Lihat Penjelasan" untuk semak langkah.'
                 : 'Jangan risau! Tekan "Lihat Penjelasan" untuk faham cara selesaikan.'}
@@ -183,14 +214,23 @@ export function KuizLanjutPage() {
       <div className="sticky bottom-0 z-10 bg-white dark:bg-duo-charcoal border-t-2 border-duo-gray-light dark:border-white/10 px-5 py-4">
         <div className="max-w-lg mx-auto">
           {!answered ? (
-            <button onClick={handleSemak} disabled={pilihan === null} className="btn-primary w-full text-lg">
+            <button
+              onClick={handleSemak}
+              disabled={pilihan === null}
+              className="btn-primary w-full text-lg"
+            >
               Semak
             </button>
           ) : (
             <button onClick={handleTeruskan} className="btn-primary w-full text-lg">
               Lihat Penjelasan
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           )}
@@ -225,7 +265,9 @@ function ErrorState({ error }: { error: string | null }) {
       <main className="flex-1 max-w-lg mx-auto w-full px-5 py-8">
         <div className="card">
           <p className="text-duo-charcoal/70 dark:text-duo-peach mb-3">{error ?? 'Ralat'}</p>
-          <button onClick={() => navigate(-1)} className="btn-secondary">Kembali</button>
+          <button onClick={() => navigate(-1)} className="btn-secondary">
+            Kembali
+          </button>
         </div>
       </main>
     </div>

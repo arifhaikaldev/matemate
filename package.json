@@ -6,22 +6,40 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src --max-warnings 0",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "compile": "tsx src/compiler/cli.ts",
+    "compile:all": "tsx src/compiler/cli.ts public/lessons/**/*.json --verbose"
   },
   "dependencies": {
     "dexie": "^4.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
-    "react-router-dom": "^6.28.0"
+    "react-router-dom": "^6.28.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^26.1.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.65.0",
+    "@typescript-eslint/parser": "^8.65.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4.1.11",
+    "tsx": "^4.23.1",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-pwa": "^0.21.1"

@@ -33,7 +33,9 @@ function NotFound() {
       <div className="text-center space-y-4">
         <p className="text-5xl font-black text-duo-gray-light dark:text-white/10">404</p>
         <p className="text-duo-charcoal/60 dark:text-gray-400">Halaman tidak dijumpai.</p>
-        <a href="/" className="btn-primary inline-flex">Kembali ke Halaman Utama</a>
+        <a href="/" className="btn-primary inline-flex">
+          Kembali ke Halaman Utama
+        </a>
       </div>
     </div>
   )
