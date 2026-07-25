@@ -27,6 +27,9 @@ const ChapterIndexSchema = z.object({
   subtopik: z.array(SubtopikIndexSchema),
 })
 
+// Root index is now an array of chapters
+const IndexFileSchema = z.array(ChapterIndexSchema)
+
 export type LessonIndexItem = z.infer<typeof LessonIndexItemSchema>
 export type SubtopikIndex = z.infer<typeof SubtopikIndexSchema>
 export type ChapterIndex = z.infer<typeof ChapterIndexSchema>
@@ -39,12 +42,19 @@ export async function fetchChapterIndex(tingkatan: number, chapter: number): Pro
   const res = await fetch(`${BASE}/form${tingkatan}/index.json`)
   if (!res.ok) throw new Error(`Gagal muatkan indeks bab ${chapter} Tingkatan ${tingkatan}`)
   const raw: unknown = await res.json()
-  const result = ChapterIndexSchema.safeParse(raw)
+
+  // index.json is now an array of chapters — find the one matching `chapter`
+  const result = IndexFileSchema.safeParse(raw)
   if (!result.success) {
     console.error('[lessons] index.json tidak sah:', result.error.format())
     throw new Error('Format indeks bab tidak sah')
   }
-  return result.data
+
+  const found = result.data.find((c) => c.chapter === chapter)
+  if (!found) {
+    throw new Error(`Bab ${chapter} tidak dijumpai dalam indeks Tingkatan ${tingkatan}`)
+  }
+  return found
 }
 
 export async function fetchLesson(fail: string): Promise<Lesson> {

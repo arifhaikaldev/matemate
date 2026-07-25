@@ -1,0 +1,66 @@
+{
+  "lessonId": "2.2.1",
+  "chapter": 2,
+  "topic": "Gandaan, Gandaan Sepunya dan Gandaan Sepunya Terkecil (GSTK)",
+  "title": "Gandaan Sepunya",
+  "learningGoal": "Menerang dan menentukan gandaan sepunya bagi dua atau tiga nombor bulat.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Gandaan suatu nombor mestilah lebih besar daripada nombor itu",
+    "Dua nombor hanya mempunyai satu gandaan sepunya",
+    "Gandaan sepunya adalah sama dengan hasil darab dua nombor sahaja"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Gandaan Suatu Nombor",
+      "text": "Gandaan bagi 4: 4, 8, 12, 16, 20, 24 ... (darab 4 dengan 1, 2, 3, 4, 5, 6 ...). Gandaan bagi 6: 6, 12, 18, 24, 30 ... Perhatikan nombor yang muncul dalam KEDUA-DUA senarai.",
+      "visual": { "kind": "numberLine", "min": 0, "max": 24, "highlights": [12, 24] }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah gandaan sepunya pertama bagi 4 dan 6?",
+      "choices": ["4", "6", "12", "24"],
+      "correctIndex": 2,
+      "explanation": "Gandaan 4: 4, 8, 12, ... Gandaan 6: 6, 12, ... Nombor terkecil yang sama ialah 12. Ini ialah Gandaan Sepunya Terkecil (GSTK)."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Senaraikan lima gandaan sepunya pertama bagi 2, 3 dan 4.",
+      "steps": [
+        "Gandaan 2: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 ...",
+        "Gandaan 3: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 ...",
+        "Gandaan 4: 4, 8, 12, 16, 20, 24, 28 ...",
+        "Gandaan sepunya pertama: 12",
+        "Lima gandaan sepunya: 12, 24, 36, 48, 60 (iaitu gandaan bagi 12)"
+      ],
+      "answer": "12, 24, 36, 48, 60"
+    },
+    {
+      "type": "numberInput",
+      "question": "Apakah gandaan sepunya pertama (GSTK) bagi 4 dan 6?",
+      "answer": "12",
+      "hint": "Senaraikan gandaan 4 (4, 8, 12...) dan gandaan 6 (6, 12...). Cari yang terkecil dan sama.",
+      "explanation": "Gandaan 4: 4, 8, 12. Gandaan 6: 6, 12. Nombor pertama yang sama ialah 12."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Gandaan sepunya bagi dua nombor ialah gandaan bagi:",
+      "choices": ["Mana-mana satu nombor sahaja", "Jumlah kedua-dua nombor", "GSTK nombor tersebut", "Perbezaan antara dua nombor"],
+      "correctIndex": 2,
+      "explanation": "Semua gandaan sepunya adalah gandaan bagi GSTK. Contoh: GSTK(4,6) = 12, dan gandaan sepunya ialah 12, 24, 36 ... — semuanya gandaan 12."
+    },
+    {
+      "type": "reflection",
+      "text": "Gandaan sepunya ialah nombor yang merupakan gandaan bagi setiap nombor dalam suatu kumpulan. Cara paling mudah: senaraikan gandaan setiap nombor, kemudian kenal pasti nombor yang terdapat dalam semua senarai."
+    },
+    {
+      "type": "mastery",
+      "question": "Apakah gandaan sepunya ketiga bagi 3 dan 5?",
+      "choices": ["15", "30", "45", "60"],
+      "correctIndex": 2,
+      "explanation": "GSTK(3, 5) = 15. Gandaan sepunya: 15, 30, 45, 60 ... Gandaan sepunya KETIGA ialah 45."
+    }
+  ]
+}

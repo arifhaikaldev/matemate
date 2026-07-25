@@ -1,0 +1,67 @@
+{
+  "lessonId": "2.2.3",
+  "chapter": 2,
+  "topic": "Gandaan, Gandaan Sepunya dan Gandaan Sepunya Terkecil (GSTK)",
+  "title": "Menyelesaikan Masalah GSTK",
+  "learningGoal": "Menyelesaikan masalah harian yang melibatkan Gandaan Sepunya Terkecil (GSTK).",
+  "estimatedMinutes": 7,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Masalah putaran atau jadual berulang memerlukan FSTB, bukan GSTK",
+    "GSTK dua nombor sentiasa ialah hasil darab nombor tersebut",
+    "Masalah GSTK hanya melibatkan dua nilai sahaja"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Kitaran Berulang",
+      "text": "Kopi dijual dalam kotak 6 tin. Teh dijual dalam kotak 9 tin. Ainun ingin membeli bilangan tin yang sama bagi setiap jenis minuman. Berapakah bilangan tin yang paling SEDIKIT yang perlu dibeli?",
+      "visual": { "kind": "numberLine", "min": 0, "max": 18, "highlights": [6, 9, 18] }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Untuk mendapatkan bilangan tin yang SAMA dengan kotak paling SEDIKIT, kita perlu mencari:",
+      "choices": ["FSTB bagi 6 dan 9", "GSTK bagi 6 dan 9", "Hasil darab 6 × 9", "Jumlah 6 + 9"],
+      "correctIndex": 1,
+      "explanation": "Apabila kita ingin tahu bilangan MINIMUM yang boleh dibahagikan dengan tepat oleh beberapa nombor, kita gunakan GSTK."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Kopi (6 tin/kotak) dan Teh (9 tin/kotak). Berapakah bilangan kotak minimum bagi setiap jenis supaya bilangan tin sama?",
+      "steps": [
+        "Cari GSTK(6, 9):",
+        "Gandaan 6: 6, 12, 18, 24...",
+        "Gandaan 9: 9, 18, 27...",
+        "GSTK = 18",
+        "Kotak kopi = 18 ÷ 6 = 3 kotak",
+        "Kotak teh = 18 ÷ 9 = 2 kotak"
+      ],
+      "answer": "3 kotak kopi dan 2 kotak teh"
+    },
+    {
+      "type": "numberInput",
+      "question": "Lampu A berkelip setiap 4 saat. Lampu B berkelip setiap 6 saat. Kedua-duanya berkelip serentak pada saat ke-0. Bilakah kali berikutnya kedua-duanya berkelip serentak?",
+      "answer": "12",
+      "hint": "Cari GSTK(4, 6). Gandaan 4: 4, 8, 12 ... Gandaan 6: 6, 12 ...",
+      "explanation": "GSTK(4, 6) = 12. Kedua-dua lampu akan berkelip serentak semula pada saat ke-12."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Bas P berlepas setiap 15 minit. Bas Q berlepas setiap 20 minit. Kedua-duanya berlepas pada pukul 8.00 pagi. Pukul berapa kali berikutnya mereka berlepas serentak?",
+      "choices": ["8.20 pagi", "8.30 pagi", "9.00 pagi", "8.45 pagi"],
+      "correctIndex": 2,
+      "explanation": "GSTK(15, 20): 15 = 3 × 5, 20 = 2² × 5. GSTK = 2² × 3 × 5 = 60 minit. 8.00 pagi + 60 minit = 9.00 pagi."
+    },
+    {
+      "type": "reflection",
+      "text": "GSTK digunakan apabila kita ingin mencari masa atau kuantiti MINIMUM apabila dua atau lebih peristiwa berlaku serentak semula. Kata kunci: 'paling sedikit', 'kali berikutnya', 'serentak', 'kitaran'."
+    },
+    {
+      "type": "mastery",
+      "question": "Ali melawat datuknya setiap 4 hari. Siti melawat datuknya setiap 6 hari. Hari ini kedua-duanya melawat. Berapa harikah lagi mereka akan melawat serentak?",
+      "choices": ["4 hari", "6 hari", "10 hari", "12 hari"],
+      "correctIndex": 3,
+      "explanation": "GSTK(4, 6) = 12. Mereka akan melawat serentak semula selepas 12 hari."
+    }
+  ]
+}

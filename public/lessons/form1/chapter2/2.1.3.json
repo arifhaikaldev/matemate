@@ -1,0 +1,66 @@
+{
+  "lessonId": "2.1.3",
+  "chapter": 2,
+  "topic": "Faktor, Faktor Perdana dan Faktor Sepunya Terbesar (FSTB)",
+  "title": "Faktor Sepunya",
+  "learningGoal": "Menerang dan menentukan faktor sepunya bagi dua atau lebih nombor bulat.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Faktor sepunya dua nombor hanya boleh ada satu",
+    "Faktor sepunya mesti lebih besar daripada setiap nombor",
+    "Setiap pasangan nombor tidak semestinya ada faktor sepunya selain 1"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Faktor Bersama",
+      "text": "Faktor bagi 18: {1, 2, 3, 6, 9, 18}. Faktor bagi 24: {1, 2, 3, 4, 6, 8, 12, 24}. Perhatikan nombor-nombor yang muncul dalam KEDUA-DUA senarai.",
+      "visual": { "kind": "numberLine", "min": 0, "max": 24, "highlights": [1, 2, 3, 6] }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Berdasarkan senarai faktor 18 dan 24 di atas, apakah faktor sepunya mereka?",
+      "choices": ["1, 2, 3, 6", "1, 2, 4, 6", "2, 3, 9", "1, 3, 6, 9"],
+      "correctIndex": 0,
+      "explanation": "Faktor sepunya ialah nombor yang terdapat dalam kedua-dua senarai faktor. 18 dan 24 berkongsi faktor: 1, 2, 3, dan 6."
+    },
+    {
+      "type": "numberInput",
+      "question": "Berapa banyak faktor sepunya yang dimiliki oleh 18 dan 24?",
+      "answer": "4",
+      "hint": "Kira berapa banyak nombor yang terdapat dalam kedua-dua senarai faktor.",
+      "explanation": "Faktor sepunya 18 dan 24 ialah {1, 2, 3, 6} — iaitu 4 faktor sepunya."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Senaraikan semua faktor sepunya bagi 20, 44, 56 dan 64.",
+      "steps": [
+        "Faktor 20: 1, 2, 4, 5, 10, 20",
+        "Faktor 44: 1, 2, 4, 11, 22, 44",
+        "Faktor 56: 1, 2, 4, 7, 8, 14, 28, 56",
+        "Faktor 64: 1, 2, 4, 8, 16, 32, 64",
+        "Nombor yang terdapat dalam semua empat senarai: 1, 2, 4"
+      ],
+      "answer": "Faktor sepunya: 1, 2, 4"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Manakah antara berikut adalah faktor sepunya bagi 12 dan 18?",
+      "choices": ["4", "9", "6", "8"],
+      "correctIndex": 2,
+      "explanation": "Faktor 12: 1, 2, 3, 4, 6, 12. Faktor 18: 1, 2, 3, 6, 9, 18. Faktor sepunya: 1, 2, 3, 6. Maka 6 adalah faktor sepunya."
+    },
+    {
+      "type": "reflection",
+      "text": "Faktor sepunya ialah nombor yang merupakan faktor bagi setiap nombor dalam satu kumpulan. Untuk mencarinya, senaraikan faktor setiap nombor, kemudian kenal pasti nombor yang terdapat dalam semua senarai."
+    },
+    {
+      "type": "mastery",
+      "question": "Apakah faktor sepunya terbesar bagi 8 dan 12?",
+      "choices": ["2", "4", "6", "8"],
+      "correctIndex": 1,
+      "explanation": "Faktor 8: 1, 2, 4, 8. Faktor 12: 1, 2, 3, 4, 6, 12. Faktor sepunya: 1, 2, 4. Yang terbesar ialah 4."
+    }
+  ]
+}

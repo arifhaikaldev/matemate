@@ -1,0 +1,72 @@
+{
+  "lessonId": "2.1.2",
+  "chapter": 2,
+  "topic": "Faktor, Faktor Perdana dan Faktor Sepunya Terbesar (FSTB)",
+  "title": "Faktor Perdana dan Pemfaktoran Perdana",
+  "learningGoal": "Menentukan faktor perdana bagi suatu nombor dan mengungkapkannya dalam bentuk pemfaktoran perdana.",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Nombor 1 ialah nombor perdana",
+    "Nombor perdana mesti ganjil",
+    "Semua nombor boleh difaktorkan perdana dengan cara yang berbeza-beza"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Nombor Perdana",
+      "text": "Nombor 7 hanya boleh dibahagikan tepat oleh 1 dan 7 sahaja. Nombor sebegini dipanggil nombor perdana. Tetapi 6 boleh dibahagikan oleh 1, 2, 3, dan 6 — jadi 6 bukan perdana.",
+      "visual": { "kind": "numberLine", "min": 1, "max": 10, "highlights": [2, 3, 5, 7] }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Manakah antara berikut BUKAN nombor perdana?",
+      "choices": ["2", "3", "9", "5"],
+      "correctIndex": 2,
+      "explanation": "9 = 3 × 3, jadi 9 mempunyai faktor selain 1 dan 9 sendiri. Maka 9 bukan nombor perdana."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah faktor perdana bagi 12?",
+      "choices": ["1, 2, 3", "2, 3", "2, 3, 6", "1, 12"],
+      "correctIndex": 1,
+      "explanation": "Faktor perdana 12 ialah faktor yang juga nombor perdana: 2 dan 3. Walaupun 1, 4, 6, 12 adalah faktor, mereka bukan nombor perdana."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Ungkapkan 60 dalam bentuk pemfaktoran perdana.",
+      "steps": [
+        "Bahagi 60 dengan nombor perdana terkecil: 60 ÷ 2 = 30",
+        "30 ÷ 2 = 15",
+        "15 ÷ 3 = 5",
+        "5 ÷ 5 = 1 (selesai)",
+        "60 = 2 × 2 × 3 × 5 = 2² × 3 × 5"
+      ],
+      "answer": "60 = 2² × 3 × 5"
+    },
+    {
+      "type": "numberInput",
+      "question": "Ungkapkan 12 dalam bentuk pemfaktoran perdana. Berapa banyak faktor 2 yang terdapat? (12 = 2^? × 3)",
+      "answer": "2",
+      "hint": "12 ÷ 2 = 6, kemudian 6 ÷ 2 = 3. Kira berapa kali anda bahagi dengan 2.",
+      "explanation": "12 = 2 × 2 × 3 = 2² × 3. Terdapat dua faktor 2."
+    },
+    {
+      "type": "reflection",
+      "text": "Setiap nombor bulat lebih daripada 1 boleh dinyatakan sebagai hasil darab faktor-faktor perdana. Cara ini unik untuk setiap nombor — dipanggil pemfaktoran perdana atau Teorem Asas Aritmetik."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun langkah pembahagian berulang untuk mengungkapkan 18 dalam bentuk pemfaktoran perdana.",
+      "items": ["18 ÷ 2 = 9", "9 ÷ 3 = 3", "3 ÷ 3 = 1", "18 = 2 × 3 × 3"],
+      "correctOrder": ["18 ÷ 2 = 9", "9 ÷ 3 = 3", "3 ÷ 3 = 1", "18 = 2 × 3 × 3"]
+    },
+    {
+      "type": "mastery",
+      "question": "Apakah pemfaktoran perdana bagi 36?",
+      "choices": ["2 × 18", "2² × 3²", "4 × 9", "2 × 3 × 6"],
+      "correctIndex": 1,
+      "explanation": "36 = 2 × 2 × 3 × 3 = 2² × 3². Semua faktor mesti nombor perdana. 4, 6, 9, dan 18 bukan nombor perdana."
+    }
+  ]
+}

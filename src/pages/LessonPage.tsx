@@ -25,7 +25,9 @@ export function LessonPage() {
 
     async function load() {
       try {
-        const index = await fetchChapterIndex(1, 1)
+        // lessonId format: "2.1.3" → chapter 2
+        const chapterNum = parseInt(id.split('.')[0], 10)
+        const index = await fetchChapterIndex(1, chapterNum)
         const allLessons = index.subtopik.flatMap((s) => s.lessons)
         const meta = allLessons.find((l) => l.lessonId === id)
         if (!meta) throw new Error(`Lesson ${id} tidak dijumpai dalam indeks.`)
@@ -62,16 +64,18 @@ export function LessonPage() {
   }, [])
 
   const handleBack = useCallback(() => {
-    navigate('/form1/bab1')
-  }, [navigate])
+    const chapterNum = lessonId ? parseInt(lessonId.split('.')[0], 10) : 1
+    navigate(`/form1/bab${chapterNum}`)
+  }, [navigate, lessonId])
 
   const handleNext = useCallback(() => {
     if (nextLessonId) {
       navigate(`/lesson/${nextLessonId}`)
     } else {
-      navigate('/form1/bab1')
+      const chapterNum = lessonId ? parseInt(lessonId.split('.')[0], 10) : 1
+      navigate(`/form1/bab${chapterNum}`)
     }
-  }, [navigate, nextLessonId])
+  }, [navigate, nextLessonId, lessonId])
 
   // ── Loading state ──────────────────────────────────────────────────────────
   if (loading) {

@@ -6,6 +6,7 @@ import { KuizLanjutPage } from './pages/KuizLanjutPage'
 import { PenjelasanPage } from './pages/PenjelasanPage'
 import { KeputusanPage } from './pages/KeputusanPage'
 import { Form1ChapterPage } from './pages/Form1ChapterPage'
+import { Form1Bab2Page } from './pages/Form1Bab2Page'
 import { LessonPage } from './pages/LessonPage'
 
 export function App() {
@@ -24,6 +25,7 @@ export function App() {
 
         {/* Tingkatan 1 — EDS lesson system */}
         <Route path="/form1/bab1" element={<Form1ChapterPage />} />
+        <Route path="/form1/bab2" element={<Form1Bab2Page />} />
         <Route path="/lesson/:lessonId" element={<LessonPage />} />
 
         {/* 404 fallback */}

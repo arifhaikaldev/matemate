@@ -1,0 +1,65 @@
+{
+  "lessonId": "2.2.2",
+  "chapter": 2,
+  "topic": "Gandaan, Gandaan Sepunya dan Gandaan Sepunya Terkecil (GSTK)",
+  "title": "Menentukan GSTK",
+  "learningGoal": "Menentukan Gandaan Sepunya Terkecil (GSTK) bagi dua dan tiga nombor bulat menggunakan pelbagai kaedah.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": [
+    "GSTK sentiasa sama dengan hasil darab dua nombor",
+    "GSTK lebih kecil daripada setiap nombor yang diberi",
+    "Kaedah pembahagian berulang tidak boleh digunakan untuk tiga nombor"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Gandaan Sepunya Terkecil",
+      "text": "Untuk mencari GSTK bagi 3, 6 dan 9 menggunakan pembahagian berulang: bahagi semua nombor secara serentak dengan nombor perdana sepunya, teruskan sehingga tiada faktor perdana sepunya.",
+      "visual": { "kind": "numberLine", "min": 0, "max": 18, "highlights": [9, 18] }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Tentukan GSTK bagi 3, 6 dan 9 menggunakan pembahagian berulang.",
+      "steps": [
+        "3, 6, 9 ÷ 3 → 1, 2, 3",
+        "1, 2, 3 ÷ 2 → (1 kekal), 1, (3 kekal) → tulis 1, 1, 3",
+        "1, 1, 3 ÷ 3 → 1, 1, 1 (selesai)",
+        "GSTK = 3 × 2 × 3 = 18"
+      ],
+      "answer": "GSTK(3, 6, 9) = 18"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Menggunakan pemfaktoran perdana: 4 = 2² dan 6 = 2 × 3. Apakah GSTK bagi 4 dan 6?",
+      "choices": ["2", "4", "12", "24"],
+      "correctIndex": 2,
+      "explanation": "GSTK menggunakan pemfaktoran perdana: ambil kuasa TERTINGGI bagi setiap faktor perdana. Untuk 2: max(2,1)=2, untuk 3: max(0,1)=1. GSTK = 2² × 3 = 4 × 3 = 12."
+    },
+    {
+      "type": "numberInput",
+      "question": "Tentukan GSTK bagi 6 dan 8 menggunakan senarai gandaan. (Gandaan 6: 6,12,18,24... Gandaan 8: 8,16,24...)",
+      "answer": "24",
+      "hint": "Cari nombor terkecil yang muncul dalam kedua-dua senarai.",
+      "explanation": "Gandaan 6: 6, 12, 18, 24. Gandaan 8: 8, 16, 24. Nombor terkecil yang sama ialah 24. GSTK(6, 8) = 24."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "GSTK bagi dua nombor sentiasa _____ setiap nombor tersebut.",
+      "choices": ["lebih kecil daripada", "sama dengan", "lebih besar daripada atau sama dengan", "separuh daripada"],
+      "correctIndex": 2,
+      "explanation": "GSTK mesti merupakan gandaan bagi setiap nombor. Jadi ia mesti lebih besar daripada atau sama dengan nombor yang terbesar. Contoh: GSTK(6,6) = 6, GSTK(4,6) = 12 > 6."
+    },
+    {
+      "type": "reflection",
+      "text": "GSTK (Gandaan Sepunya Terkecil) ialah nombor terkecil yang merupakan gandaan bagi semua nombor yang diberi. Tiga kaedah: senarai gandaan, pembahagian berulang, atau pemfaktoran perdana (ambil kuasa tertinggi)."
+    },
+    {
+      "type": "mastery",
+      "question": "Apakah GSTK bagi 4, 6 dan 10?",
+      "choices": ["20", "30", "60", "120"],
+      "correctIndex": 2,
+      "explanation": "4 = 2², 6 = 2 × 3, 10 = 2 × 5. GSTK = 2² × 3 × 5 = 4 × 3 × 5 = 60."
+    }
+  ]
+}

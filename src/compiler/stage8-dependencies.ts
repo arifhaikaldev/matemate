@@ -31,6 +31,16 @@ export const DEFAULT_DEPENDENCY_MAP: DependencyMap = {
   '1.5.1': ['1.3.4', '1.4.4'],
   '1.5.2': ['1.5.1'],
   '1.5.3': ['1.5.2'],
+
+  // Bab 2 — Faktor dan Gandaan
+  '2.1.2': ['2.1.1'],
+  '2.1.3': ['2.1.2'],
+  '2.1.4': ['2.1.3'],
+  '2.1.5': ['2.1.4'],
+  // first of 2.2 depends on last of 2.1
+  '2.2.1': ['2.1.5'],
+  '2.2.2': ['2.2.1'],
+  '2.2.3': ['2.2.2'],
 }
 
 export function validateDependencies(

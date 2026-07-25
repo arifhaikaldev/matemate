@@ -1,0 +1,71 @@
+{
+  "lessonId": "2.1.1",
+  "chapter": 2,
+  "topic": "Faktor, Faktor Perdana dan Faktor Sepunya Terbesar (FSTB)",
+  "title": "Apakah Faktor?",
+  "learningGoal": "Menentukan dan menyenaraikan faktor bagi nombor bulat serta membuat generalisasi tentang faktor.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Faktor suatu nombor mesti lebih kecil daripada nombor itu",
+    "Setiap nombor hanya mempunyai dua faktor sahaja",
+    "1 bukan faktor bagi sebarang nombor"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Pembahagian Tepat",
+      "text": "12 biji gula-gula boleh dibahagikan sama rata kepada 3 orang — setiap orang mendapat 4 biji. Tiada gula-gula berbaki. Ini bermakna 3 membahagi 12 dengan tepat.",
+      "visual": { "kind": "numberLine", "min": 0, "max": 12, "highlights": [3, 4, 12] }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "12 ÷ 4 = 3 tanpa baki. Ini bermakna 4 ialah _____ bagi 12.",
+      "choices": ["gandaan", "faktor", "hasil tambah", "perbezaan"],
+      "correctIndex": 1,
+      "explanation": "Apabila suatu nombor membahagikan nombor lain dengan tepat (tanpa baki), nombor itu dipanggil faktor."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Adakah 12 ialah faktor bagi 36?",
+      "choices": ["Ya, kerana 36 ÷ 12 = 3 (tiada baki)", "Tidak, kerana 12 < 36", "Ya, kerana 12 + 24 = 36", "Tidak, kerana 36 bukan gandaan 12"],
+      "correctIndex": 0,
+      "explanation": "36 ÷ 12 = 3 tepat. Maka 12 ialah faktor bagi 36. Faktor boleh lebih kecil atau sama dengan nombor tersebut."
+    },
+    {
+      "type": "numberInput",
+      "question": "9 ÷ 9 = 1 tanpa baki. Apakah nilai 9 ÷ 9?",
+      "answer": "1",
+      "hint": "Bahagikan 9 dengan 9.",
+      "explanation": "9 ÷ 9 = 1, tiada baki. Ini bermakna 9 ialah faktor bagi dirinya sendiri. Setiap nombor adalah faktor bagi dirinya sendiri."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Adakah 9 ialah faktor bagi 30?",
+      "choices": ["Ya, kerana 9 < 30", "Tidak, kerana 30 ÷ 9 = 3 berbaki 3", "Ya, kerana 3 × 9 = 27", "Tidak, kerana 9 nombor ganjil"],
+      "correctIndex": 1,
+      "explanation": "30 ÷ 9 = 3 berbaki 3. Pembahagian tidak tepat, jadi 9 bukan faktor bagi 30."
+    },
+    {
+      "type": "reflection",
+      "text": "Faktor ialah nombor yang membahagikan nombor lain dengan tepat tanpa baki. Setiap nombor bulat mempunyai sekurang-kurangnya dua faktor: 1 dan nombor itu sendiri."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Tentukan sama ada 12 ialah faktor bagi 36.",
+      "steps": [
+        "Bahagikan 36 dengan 12: 36 ÷ 12 = 3",
+        "Tiada baki — pembahagian tepat.",
+        "Maka, 12 ialah faktor bagi 36."
+      ],
+      "answer": "12 ialah faktor bagi 36"
+    },
+    {
+      "type": "mastery",
+      "question": "Manakah antara berikut ialah faktor bagi 48?",
+      "choices": ["7", "9", "8", "11"],
+      "correctIndex": 2,
+      "explanation": "48 ÷ 8 = 6 (tepat). Maka 8 ialah faktor bagi 48. 48 ÷ 7 = 6 baki 6, 48 ÷ 9 = 5 baki 3, 48 ÷ 11 = 4 baki 4."
+    }
+  ]
+}

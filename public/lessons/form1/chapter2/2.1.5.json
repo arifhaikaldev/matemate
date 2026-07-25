@@ -1,0 +1,67 @@
+{
+  "lessonId": "2.1.5",
+  "chapter": 2,
+  "topic": "Faktor, Faktor Perdana dan Faktor Sepunya Terbesar (FSTB)",
+  "title": "Menyelesaikan Masalah FSTB",
+  "learningGoal": "Menyelesaikan masalah harian yang melibatkan Faktor Sepunya Terbesar (FSTB).",
+  "estimatedMinutes": 7,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Masalah pembahagian sama rata sentiasa memerlukan penambahan, bukan FSTB",
+    "FSTB hanya berguna untuk dua nombor sahaja",
+    "Jawapan masalah FSTB sentiasa ialah salah satu daripada nombor yang diberi"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Masalah Pembahagian Sama Rata",
+      "text": "252 baju, 180 seluar dan 108 stoking perlu dibahagikan sama rata ke dalam bungkusan. Setiap bungkusan mesti mengandungi bilangan baju, seluar, dan stoking yang sama — tanpa lebihan. Kita mahu paling banyak bungkusan.",
+      "visual": { "kind": "numberLine", "min": 0, "max": 252, "highlights": [36, 108, 180, 252] }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Untuk mendapatkan bungkusan paling BANYAK dengan pembahagian sama rata, kita perlu mencari:",
+      "choices": ["GSTK bagi 252, 180 dan 108", "FSTB bagi 252, 180 dan 108", "Jumlah 252 + 180 + 108", "Perbezaan 252 - 108"],
+      "correctIndex": 1,
+      "explanation": "Apabila kita ingin membahagi item-item ke dalam bilangan bungkusan yang MAKSIMUM dengan setiap bungkusan mengandungi jumlah sama, kita gunakan FSTB."
+    },
+    {
+      "type": "workedExample",
+      "problem": "252 baju, 180 seluar, 108 stoking. Berapakah bungkusan paling banyak?",
+      "steps": [
+        "Cari FSTB(252, 180, 108) menggunakan pemfaktoran perdana:",
+        "252 = 2² × 3² × 7",
+        "180 = 2² × 3² × 5",
+        "108 = 2² × 3³",
+        "FSTB = 2² × 3² = 4 × 9 = 36",
+        "Bilangan bungkusan = 36"
+      ],
+      "answer": "36 bungkusan"
+    },
+    {
+      "type": "numberInput",
+      "question": "Jika FSTB(252, 180, 108) = 36, berapa baju dalam setiap bungkusan?",
+      "answer": "7",
+      "hint": "Bahagikan 252 dengan 36.",
+      "explanation": "252 ÷ 36 = 7. Setiap bungkusan mengandungi 7 baju."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Seutas tali 120 cm dan seutas tali 80 cm dipotong kepada kepingan yang sama panjang. Apakah panjang kepingan terpanjang yang boleh dipotong?",
+      "choices": ["10 cm", "20 cm", "40 cm", "80 cm"],
+      "correctIndex": 2,
+      "explanation": "Kita cari FSTB(120, 80). 120 = 2³ × 3 × 5, 80 = 2⁴ × 5. FSTB = 2³ × 5 = 40. Panjang kepingan terpanjang ialah 40 cm."
+    },
+    {
+      "type": "reflection",
+      "text": "FSTB digunakan apabila kita ingin membahagi atau memotong sesuatu kepada bahagian yang sama besar dengan bilangan bahagian yang paling banyak (atau saiz bahagian yang paling besar). Kata kunci: 'paling banyak', 'sama rata', 'paling besar'."
+    },
+    {
+      "type": "mastery",
+      "question": "60 pen merah dan 84 pen biru diagihkan sama rata dalam beg. Berapakah bilangan beg paling banyak yang boleh disediakan?",
+      "choices": ["6", "12", "4", "24"],
+      "correctIndex": 1,
+      "explanation": "FSTB(60, 84): 60 = 2² × 3 × 5, 84 = 2² × 3 × 7. FSTB = 2² × 3 = 12. Maka 12 beg boleh disediakan, setiap beg mengandungi 5 pen merah dan 7 pen biru."
+    }
+  ]
+}
