@@ -1,0 +1,84 @@
+{
+  "lessonId": "3.1.3",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Hubungan Kuasa Dua dan Punca Kuasa Dua",
+  "learningGoal": "Menyatakan hubungan antara kuasa dua dan punca kuasa dua sebagai operasi songsangan.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Punca kuasa dua adalah setengah daripada nombor",
+    "√81 = 40.5 (bahagi 2 bukan punca)",
+    "Punca kuasa dua hanya ada untuk nombor besar"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Grid Segi Empat Sama — Dua Hala",
+      "text": "Grid 9×9 menunjukkan 9² = 81. Sebaliknya, jika luas segi empat sama ialah 81, apakah panjang sisinya? Ini ialah punca kuasa dua!",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 9,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Jika 9 × 9 = 81, maka √81 = ?",
+      "choices": ["40.5", "9", "18", "3"],
+      "correctIndex": 1,
+      "explanation": "Punca kuasa dua ialah operasi songsangan bagi kuasa dua. Kerana 9² = 81, maka √81 = 9.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 9,
+        "showProduct": true
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Lengkapkan: Jika 7 × 7 = 49, maka √49 = ?",
+      "choices": ["4.9", "14", "7", "24.5"],
+      "correctIndex": 2,
+      "explanation": "7² = 49, maka √49 = 7. Punca kuasa dua dan kuasa dua adalah operasi songsangan.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 7,
+        "showProduct": true
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Jika 12² = 144, berapakah √144?",
+      "answer": "12",
+      "hint": "Jika n² = 144, maka √144 = n.",
+      "explanation": "12² = 144, maka √144 = 12. Punca kuasa dua adalah songsangan kepada kuasa dua."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Padankan: susun pasangan yang betul mengikut urutan (dari kecil ke besar nilai punca).",
+      "items": ["√25", "√64", "√4", "√100", "√16"],
+      "correctOrder": ["√4", "√16", "√25", "√64", "√100"]
+    },
+    {
+      "type": "reflection",
+      "text": "Kuasa dua dan punca kuasa dua adalah operasi songsangan. n² = m bermaksud √m = n. Operasi ini seperti darab dan bahagi — satu membuat, satu membatalkan.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 6,
+        "showProduct": true
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Sisi sebuah segi empat sama ialah 11 cm. Berapakah luasnya? Kemudian, jika luas ialah 121 cm², berapakah sisinya?",
+      "choices": [
+        "Luas = 22 cm², sisi = 11 cm",
+        "Luas = 121 cm², sisi = 11 cm",
+        "Luas = 121 cm², sisi = 12 cm",
+        "Luas = 110 cm², sisi = 10 cm"
+      ],
+      "correctIndex": 1,
+      "explanation": "11² = 121 cm². Maka sisi = √121 = 11 cm. Kuasa dua dan punca kuasa dua saling songsang."
+    }
+  ]
+}

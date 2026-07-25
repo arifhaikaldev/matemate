@@ -1,0 +1,84 @@
+{
+  "lessonId": "3.2.3",
+  "chapter": 3,
+  "topic": "Kuasa Tiga dan Punca Kuasa Tiga",
+  "title": "Hubungan Kuasa Tiga dan Punca Kuasa Tiga",
+  "learningGoal": "Menyatakan hubungan antara kuasa tiga dan punca kuasa tiga sebagai operasi songsangan.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Punca kuasa tiga bermaksud bahagi 3",
+    "³√27 = 27/3 = 9",
+    "Punca kuasa tiga dan punca kuasa dua menghasilkan jawapan yang sama"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Isi Padu Kubus dan Panjang Tepi",
+      "text": "Kubus berukuran 4×4×4 mempunyai isi padu 4³ = 64 unit padu. Jika kita tahu isi padu = 64, kita boleh cari panjang tepi dengan ³√64. Ini ialah operasi songsangan!",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 4,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Jika 4 × 4 × 4 = 64, maka ³√64 = ?",
+      "choices": ["21.3", "8", "4", "16"],
+      "correctIndex": 2,
+      "explanation": "Punca kuasa tiga ialah operasi songsangan bagi kuasa tiga. Kerana 4³ = 64, maka ³√64 = 4.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 4,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Lengkapkan: Jika 5 × 5 × 5 = 125, maka ³√125 = ?",
+      "choices": ["25", "5", "15", "41.7"],
+      "correctIndex": 1,
+      "explanation": "5³ = 125, maka ³√125 = 5. Punca kuasa tiga dan kuasa tiga saling songsang.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 5,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Jika 10³ = 1000, berapakah ³√1000?",
+      "answer": "10",
+      "hint": "Jika n³ = 1000, maka ³√1000 = n.",
+      "explanation": "10³ = 1000, maka ³√1000 = 10."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun pasangan ini mengikut urutan nilai punca kuasa tiga (dari kecil ke besar).",
+      "items": ["³√27", "³√8", "³√125", "³√1", "³√64"],
+      "correctOrder": ["³√1", "³√8", "³√27", "³√64", "³√125"]
+    },
+    {
+      "type": "reflection",
+      "text": "Kuasa tiga dan punca kuasa tiga adalah operasi songsangan: n³ = V → ³√V = n. Dalam geometri: isi padu kubus = tepi³, dan tepi = ³√(isi padu).",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 3,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Isi padu sebuah kubus ialah 512 cm³. Berapakah panjang tepinya? (Petunjuk: 8³ = 512)",
+      "choices": ["64 cm", "8 cm", "170.7 cm", "512 cm"],
+      "correctIndex": 1,
+      "explanation": "Tepi = ³√512 = ³√8³ = 8 cm.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 8,
+        "highlightFace": false
+      }
+    }
+  ]
+}

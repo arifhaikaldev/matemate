@@ -1,0 +1,80 @@
+{
+  "lessonId": "3.2.4",
+  "chapter": 3,
+  "topic": "Kuasa Tiga dan Punca Kuasa Tiga",
+  "title": "Menentukan Kuasa Tiga Suatu Nombor",
+  "learningGoal": "Menentukan kuasa tiga suatu nombor tanpa dan dengan menggunakan alat teknologi.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "4³ = 4 × 3 = 12 (darab dengan 3 bukan dengan dirinya tiga kali)",
+    "Kuasa tiga sentiasa lebih besar daripada kuasa dua",
+    "Butang x³ sama dengan butang ×3"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Kuasa Tiga: n × n × n",
+      "text": "Mencari kuasa tiga bermaksud darab nombor itu dengan dirinya sebanyak tiga kali. 4³ = 4 × 4 × 4. Bayangkan ini sebagai kubus 4×4×4.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 4,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari nilai 4³ tanpa kalkulator. (4 × 4 × 4 = ?)",
+      "answer": "64",
+      "hint": "4 × 4 = 16, kemudian 16 × 4 = ?",
+      "explanation": "4³ = 4 × 4 × 4 = 16 × 4 = 64.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 4,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari nilai 5³. (5 × 5 × 5 = ?)",
+      "answer": "125",
+      "hint": "5 × 5 = 25, kemudian 25 × 5 = ?",
+      "explanation": "5³ = 5 × 5 × 5 = 25 × 5 = 125."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Cari nilai 18³ menggunakan kalkulator.",
+      "steps": [
+        "Tekan: 1, 8",
+        "Tekan butang x³ (atau ^3)",
+        "Paparan: 5832"
+      ],
+      "answer": "18³ = 5832"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah nilai 10³?",
+      "choices": ["30", "100", "1000", "300"],
+      "correctIndex": 2,
+      "explanation": "10³ = 10 × 10 × 10 = 1000."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun nilai kuasa tiga berikut mengikut tertib menaik.",
+      "items": ["3³", "1³", "5³", "2³", "4³"],
+      "correctOrder": ["1³", "2³", "3³", "4³", "5³"]
+    },
+    {
+      "type": "mastery",
+      "question": "Sebuah kotak berbentuk kubus dengan tepi 6 cm. Berapakah isi padunya?",
+      "choices": ["18 cm³", "36 cm³", "216 cm³", "180 cm³"],
+      "correctIndex": 2,
+      "explanation": "Isi padu = tepi³ = 6³ = 6 × 6 × 6 = 216 cm³.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 6,
+        "highlightFace": false
+      }
+    }
+  ]
+}

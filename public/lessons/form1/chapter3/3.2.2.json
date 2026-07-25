@@ -1,0 +1,114 @@
+{
+  "lessonId": "3.2.2",
+  "chapter": 3,
+  "topic": "Kuasa Tiga dan Punca Kuasa Tiga",
+  "title": "Menentukan Kuasa Tiga Sempurna dengan Pemfaktoran Perdana",
+  "learningGoal": "Menentukan sama ada suatu nombor adalah kuasa tiga sempurna menggunakan kaedah pemfaktoran perdana.",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Syarat kuasa tiga sempurna sama dengan kuasa dua sempurna (dua kumpulan sama)",
+    "Faktor perdana mesti tiga berbeza",
+    "Nombor besar tidak boleh diuji dengan pemfaktoran perdana"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Pokok Faktor untuk 64",
+      "text": "64 = 2 × 2 × 2 × 2 × 2 × 2 = 2⁶. Kita boleh kumpulkan dalam TIGA kumpulan sama: (2×2), (2×2), (2×2). Jadi 64 ialah kuasa tiga sempurna!",
+      "visual": {
+        "kind": "factorTree",
+        "number": 64,
+        "branches": [[32, 2], [16, 2], [8, 2], [4, 2], [2, 2]]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "64 = 2⁶. Bolehkah faktor perdana dibahagi kepada TIGA kumpulan yang sama?",
+      "choices": [
+        "Ya — (2²) dan (2²) dan (2²) = 4 dan 4 dan 4",
+        "Tidak — perlu genap",
+        "Ya — tetapi hanya jika kita tambah faktor",
+        "Tidak — 2⁶ terlalu besar"
+      ],
+      "correctIndex": 0,
+      "explanation": "64 = (2×2) × (2×2) × (2×2) = 4 × 4 × 4. Tiga kumpulan sama ✓. Jadi 64 ialah kuasa tiga sempurna.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 64,
+        "branches": [[32, 2], [16, 2], [8, 2], [4, 2], [2, 2]]
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Tentukan sama ada 216 ialah kuasa tiga sempurna.",
+      "steps": [
+        "216 ÷ 2 = 108",
+        "108 ÷ 2 = 54",
+        "54 ÷ 2 = 27",
+        "27 ÷ 3 = 9",
+        "9 ÷ 3 = 3",
+        "3 ÷ 3 = 1",
+        "216 = 2³ × 3³",
+        "Kumpulkan: (2×3), (2×3), (2×3) = 6, 6, 6",
+        "Tiga kumpulan sama ✓"
+      ],
+      "answer": "216 = 6³. Ya, 216 ialah kuasa tiga sempurna.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 216,
+        "branches": [[108, 2], [54, 2], [27, 2], [9, 3], [3, 3]]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "72 = 2³ × 3². Bolehkah ia dibahagi kepada tiga kumpulan faktor perdana yang sama?",
+      "choices": [
+        "Ya — (2×3), (2×3), (2)",
+        "Tidak — faktor 3 hanya ada 2 (perlu 3 kali ganda)",
+        "Ya — 72 ialah kuasa tiga sempurna",
+        "Tidak — semua eksponen perlu sama"
+      ],
+      "correctIndex": 1,
+      "explanation": "72 = 2³ × 3². Eksponen bagi 3 ialah 2, bukan gandaan 3. Kita tidak boleh buat tiga kumpulan sama. 72 bukan kuasa tiga sempurna.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 72,
+        "branches": [[36, 2], [18, 2], [9, 2], [3, 3]]
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Diberi 1000 = 2³ × 5³. Apakah ³√1000? (Kumpulkan: (2×5), (2×5), (2×5) = ?)",
+      "answer": "10",
+      "hint": "2 × 5 = 10",
+      "explanation": "1000 = (2×5)³ = 10³. Maka ³√1000 = 10."
+    },
+    {
+      "type": "reflection",
+      "text": "Untuk kuasa tiga sempurna: SETIAP faktor perdana mesti muncul sebilangan kali yang merupakan GANDAAN 3. Contoh: 2⁶ (ok), 3³ (ok), 2³ × 5³ (ok). Tetapi 2² (tidak ok).",
+      "visual": {
+        "kind": "factorTree",
+        "number": 64,
+        "branches": [[32, 2], [16, 2], [8, 2], [4, 2], [2, 2]]
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "125 = 5³. Adakah 125 kuasa tiga sempurna?",
+      "choices": [
+        "Ya — kerana 5³ bermaksud tiga kumpulan faktor 5 yang sama",
+        "Tidak — kerana 125 terlalu besar",
+        "Ya — tetapi hanya kerana 125 adalah nombor ganjil",
+        "Tidak — kita perlukan lebih daripada satu faktor perdana"
+      ],
+      "correctIndex": 0,
+      "explanation": "125 = 5 × 5 × 5 = (5), (5), (5). Tiga kumpulan sama ✓. 125 = 5³ ialah kuasa tiga sempurna.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 125,
+        "branches": [[25, 5], [5, 5]]
+      }
+    }
+  ]
+}

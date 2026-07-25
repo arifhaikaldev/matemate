@@ -82,5 +82,41 @@
         ]
       }
     ]
+  },
+  {
+    "chapter": 3,
+    "tajuk": "Kuasa Dua, Punca Kuasa Dua, Kuasa Tiga dan Punca Kuasa Tiga",
+    "tingkatan": 1,
+    "subtopik": [
+      {
+        "no": "3.1",
+        "tajuk": "Kuasa Dua dan Punca Kuasa Dua",
+        "lessons": [
+          { "lessonId": "3.1.1", "tajuk": "Apakah Kuasa Dua Sempurna?", "fail": "form1/chapter3/3.1.1.json", "difficulty": "easy", "estimatedMinutes": 5 },
+          { "lessonId": "3.1.2", "tajuk": "Menentukan Kuasa Dua Sempurna dengan Pemfaktoran Perdana", "fail": "form1/chapter3/3.1.2.json", "difficulty": "medium", "estimatedMinutes": 6 },
+          { "lessonId": "3.1.3", "tajuk": "Hubungan Kuasa Dua dan Punca Kuasa Dua", "fail": "form1/chapter3/3.1.3.json", "difficulty": "easy", "estimatedMinutes": 5 },
+          { "lessonId": "3.1.4", "tajuk": "Menentukan Kuasa Dua Suatu Nombor", "fail": "form1/chapter3/3.1.4.json", "difficulty": "easy", "estimatedMinutes": 5 },
+          { "lessonId": "3.1.5", "tajuk": "Menentukan Punca Kuasa Dua Tanpa Teknologi", "fail": "form1/chapter3/3.1.5.json", "difficulty": "medium", "estimatedMinutes": 7 },
+          { "lessonId": "3.1.6", "tajuk": "Menentukan Punca Kuasa Dua dengan Kalkulator", "fail": "form1/chapter3/3.1.6.json", "difficulty": "easy", "estimatedMinutes": 4 },
+          { "lessonId": "3.1.7", "tajuk": "Menganggar Kuasa Dua dan Punca Kuasa Dua", "fail": "form1/chapter3/3.1.7.json", "difficulty": "medium", "estimatedMinutes": 6 },
+          { "lessonId": "3.1.8", "tajuk": "Pendaraban yang Melibatkan Punca Kuasa Dua", "fail": "form1/chapter3/3.1.8.json", "difficulty": "medium", "estimatedMinutes": 6 },
+          { "lessonId": "3.1.9", "tajuk": "Menyelesaikan Masalah Kuasa Dua dan Punca Kuasa Dua", "fail": "form1/chapter3/3.1.9.json", "difficulty": "hard", "estimatedMinutes": 7 }
+        ]
+      },
+      {
+        "no": "3.2",
+        "tajuk": "Kuasa Tiga dan Punca Kuasa Tiga",
+        "lessons": [
+          { "lessonId": "3.2.1", "tajuk": "Apakah Kuasa Tiga Sempurna?", "fail": "form1/chapter3/3.2.1.json", "difficulty": "easy", "estimatedMinutes": 5 },
+          { "lessonId": "3.2.2", "tajuk": "Menentukan Kuasa Tiga Sempurna dengan Pemfaktoran Perdana", "fail": "form1/chapter3/3.2.2.json", "difficulty": "medium", "estimatedMinutes": 6 },
+          { "lessonId": "3.2.3", "tajuk": "Hubungan Kuasa Tiga dan Punca Kuasa Tiga", "fail": "form1/chapter3/3.2.3.json", "difficulty": "easy", "estimatedMinutes": 5 },
+          { "lessonId": "3.2.4", "tajuk": "Menentukan Kuasa Tiga Suatu Nombor", "fail": "form1/chapter3/3.2.4.json", "difficulty": "easy", "estimatedMinutes": 5 },
+          { "lessonId": "3.2.5", "tajuk": "Menentukan Punca Kuasa Tiga Tanpa Teknologi", "fail": "form1/chapter3/3.2.5.json", "difficulty": "medium", "estimatedMinutes": 7 },
+          { "lessonId": "3.2.6", "tajuk": "Menentukan Punca Kuasa Tiga dengan Kalkulator", "fail": "form1/chapter3/3.2.6.json", "difficulty": "easy", "estimatedMinutes": 5 },
+          { "lessonId": "3.2.7", "tajuk": "Menganggar Kuasa Tiga dan Punca Kuasa Tiga", "fail": "form1/chapter3/3.2.7.json", "difficulty": "medium", "estimatedMinutes": 6 },
+          { "lessonId": "3.2.8", "tajuk": "Menyelesaikan Masalah dan Operasi Gabungan", "fail": "form1/chapter3/3.2.8.json", "difficulty": "hard", "estimatedMinutes": 8 }
+        ]
+      }
+    ]
   }
 ]

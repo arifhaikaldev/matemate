@@ -1,0 +1,100 @@
+{
+  "lessonId": "3.1.8",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Pendaraban yang Melibatkan Punca Kuasa Dua",
+  "learningGoal": "Membuat generalisasi tentang pendaraban yang melibatkan punca kuasa dua: √a × √a = a dan √a × √b = √(ab).",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "√a × √b = √a + √b",
+    "√4 × √9 = √4×9 sahaja apabila 4 dan 9 sama",
+    "√a × √a = 2a"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "√a × √a = ?",
+      "text": "Cuba fikirkan: √4 × √4 = 2 × 2 = 4. Perhatikan hasilnya sama dengan nombor asal! Mari kita generalisasikan.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 4,
+        "showProduct": true
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "√9 × √9 = ?",
+      "choices": ["18", "9", "81", "3"],
+      "correctIndex": 1,
+      "explanation": "√9 × √9 = 3 × 3 = 9. Atau dengan rumus: √a × √a = a. Maka √9 × √9 = 9.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 9,
+        "showProduct": true
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Gunakan corak yang sama: √a × √b = √(ab). Maka √4 × √9 = ?",
+      "choices": [
+        "√13",
+        "√36 = 6",
+        "2 + 3 = 5",
+        "√2"
+      ],
+      "correctIndex": 1,
+      "explanation": "√4 × √9 = √(4×9) = √36 = 6. Atau: 2 × 3 = 6.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 4,
+        "b": 9,
+        "showProduct": true
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Permudahkan: √25 × √16 = √? (Darabkan nombor dalam punca terlebih dahulu.)",
+      "answer": "400",
+      "hint": "√25 × √16 = √(25 × 16) = √?",
+      "explanation": "√25 × √16 = √(25×16) = √400 = 20. Jadi nombor dalam punca ialah 400."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Permudahkan √3 × √3 dan √5 × √20.",
+      "steps": [
+        "√3 × √3 = 3 (gunakan √a × √a = a)",
+        "√5 × √20 = √(5×20) = √100 = 10 (gunakan √a × √b = √ab)"
+      ],
+      "answer": "√3 × √3 = 3 dan √5 × √20 = 10"
+    },
+    {
+      "type": "reflection",
+      "text": "Dua hukum penting: (1) √a × √a = a — punca didarab dengan dirinya menghasilkan nombor asal. (2) √a × √b = √(ab) — dua punca yang didarab boleh digabungkan.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 5,
+        "b": 5,
+        "showProduct": true
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Permudahkan √2 × √8.",
+      "choices": [
+        "√10",
+        "4",
+        "2√2",
+        "16"
+      ],
+      "correctIndex": 1,
+      "explanation": "√2 × √8 = √(2×8) = √16 = 4.",
+      "visual": {
+        "kind": "squareRootProduct",
+        "a": 2,
+        "b": 8,
+        "showProduct": true
+      }
+    }
+  ]
+}

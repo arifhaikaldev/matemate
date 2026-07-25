@@ -1,0 +1,95 @@
+{
+  "lessonId": "3.1.2",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Menentukan Kuasa Dua Sempurna dengan Pemfaktoran Perdana",
+  "learningGoal": "Menentukan sama ada suatu nombor ialah kuasa dua sempurna menggunakan kaedah pemfaktoran perdana.",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Jika nombor genap, ia pasti kuasa dua sempurna",
+    "Pemfaktoran perdana hanya untuk nombor besar",
+    "Dua kumpulan sama bermaksud hanya dua faktor"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Pokok Faktor untuk 36",
+      "text": "Kita pecahkan 36 kepada faktor perdananya: 36 = 2 × 2 × 3 × 3. Faktor ini boleh dikumpulkan dalam DUA kumpulan yang sama: (2×3) dan (2×3).",
+      "visual": {
+        "kind": "factorTree",
+        "number": 36,
+        "branches": [[18, 2], [9, 2], [3, 3]]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "36 = 2 × 2 × 3 × 3. Bolehkah faktor perdana ini dibahagi kepada DUA kumpulan yang sama?",
+      "choices": [
+        "Ya — (2×3) dan (2×3)",
+        "Tidak — jumlah faktor ganjil",
+        "Ya — tetapi hanya jika kita buang satu faktor",
+        "Tidak — ada terlalu banyak faktor"
+      ],
+      "correctIndex": 0,
+      "explanation": "36 = (2×3) × (2×3) = 6 × 6. Kerana boleh dibahagi kepada dua kumpulan sama, 36 ialah kuasa dua sempurna.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 36,
+        "branches": [[18, 2], [9, 2], [3, 3]]
+      }
+    },
+    {
+      "type": "observation",
+      "title": "Pokok Faktor untuk 54",
+      "text": "54 = 2 × 3 × 3 × 3. Cuba bahagikan kepada dua kumpulan yang sama — anda tidak boleh! Ada tiga faktor 3 tetapi hanya satu faktor 2.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 54,
+        "branches": [[27, 2], [9, 3], [3, 3]]
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "54 = 2 × 3 × 3 × 3. Bolehkah ia dibahagi kepada dua kumpulan faktor perdana yang SAMA?",
+      "choices": [
+        "Ya",
+        "Tidak — bilangan faktor 3 ganjil",
+        "Ya — jika kita pilih (2×3) dan (3×3)",
+        "Tidak — nombor terlalu besar"
+      ],
+      "correctIndex": 1,
+      "explanation": "54 = 2 × 3³. Faktor 3 muncul 3 kali (ganjil) dan faktor 2 muncul 1 kali (ganjil). Tidak boleh dibahagi sama. Jadi 54 BUKAN kuasa dua sempurna.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 54,
+        "branches": [[27, 2], [9, 3], [3, 3]]
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Tentukan sama ada 100 ialah kuasa dua sempurna.",
+      "steps": [
+        "100 = 2 × 50 = 2 × 2 × 25 = 2 × 2 × 5 × 5",
+        "Faktor perdana: 2² × 5²",
+        "Bahagikan: (2×5) dan (2×5) = 10 dan 10",
+        "Dua kumpulan sama ✓"
+      ],
+      "answer": "100 = 10². Ya, 100 ialah kuasa dua sempurna."
+    },
+    {
+      "type": "numberInput",
+      "question": "Jika 144 = 2 × 2 × 2 × 2 × 3 × 3, apakah punca kuasa duanya? (Kumpulkan: (2×2×3) dan (2×2×3))",
+      "answer": "12",
+      "hint": "2 × 2 × 3 = ?",
+      "explanation": "144 = (2×2×3) × (2×2×3) = 12 × 12. Maka √144 = 12."
+    },
+    {
+      "type": "mastery",
+      "question": "Antara berikut, yang manakah BUKAN kuasa dua sempurna? (Guna pemfaktoran perdana untuk mengesahkan.)",
+      "choices": ["81", "72", "121", "169"],
+      "correctIndex": 1,
+      "explanation": "72 = 2³ × 3². Faktor 2 muncul 3 kali (ganjil) — tidak boleh dibahagi sama. Jadi 72 bukan kuasa dua sempurna. 81 = 9², 121 = 11², 169 = 13²."
+    }
+  ]
+}

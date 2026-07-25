@@ -10,6 +10,11 @@ const SUPPORTED_VISUAL_KINDS = new Set([
   'temperature',
   'numberLine',
   'fractionNumberLine',
+  'squareGrid',
+  'factorTree',
+  'cubeBlock',
+  'numberBracket',
+  'squareRootProduct',
 ])
 
 const SUPPORTED_SCREEN_TYPES = new Set([

@@ -1,0 +1,84 @@
+{
+  "lessonId": "3.1.9",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Menyelesaikan Masalah Kuasa Dua dan Punca Kuasa Dua",
+  "learningGoal": "Mengemuka dan menyelesaikan masalah yang melibatkan kuasa dua dan punca kuasa dua dalam kehidupan harian.",
+  "estimatedMinutes": 7,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Luas segi empat sama = 4 × sisi (bukan sisi²)",
+    "Punca kuasa dua sentiasa memberi jawapan yang lebih kecil daripada nombor asal",
+    "Masalah harian tidak memerlukan punca kuasa dua"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Foto di atas Kadbod",
+      "text": "Sebuah foto berbentuk segi empat sama yang diletakkan di atas kadbod. Luas foto ialah 90.25 cm². Untuk mencari panjang sisi foto, kita perlu mencari punca kuasa dua luas.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 5,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Luas foto ialah 90.25 cm². Cari panjang sisi foto.",
+      "steps": [
+        "Luas = sisi²",
+        "sisi = √luas = √90.25",
+        "90.25 = 9.5 × 9.5",
+        "√90.25 = 9.5"
+      ],
+      "answer": "Panjang sisi foto = 9.5 cm"
+    },
+    {
+      "type": "numberInput",
+      "question": "Sebuah taman berbentuk segi empat sama dengan luas 256 m². Berapakah panjang sisinya? (√256 = ?)",
+      "answer": "16",
+      "hint": "256 = 16 × 16",
+      "explanation": "√256 = 16. Jadi panjang sisi taman = 16 m."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Papan catur berbentuk segi empat sama dengan 64 kotak sama besar. Berapakah bilangan kotak dalam satu baris?",
+      "choices": ["8", "32", "16", "6"],
+      "correctIndex": 0,
+      "explanation": "64 kotak dalam grid segi empat sama: sisi = √64 = 8. Satu baris mempunyai 8 kotak.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 8,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Sisi sebuah bilik berbentuk segi empat sama ialah 5.5 m. Berapakah luas lantainya?",
+      "choices": [
+        "11 m²",
+        "22 m²",
+        "30.25 m²",
+        "25 m²"
+      ],
+      "correctIndex": 2,
+      "explanation": "Luas = 5.5² = 5.5 × 5.5 = 30.25 m²."
+    },
+    {
+      "type": "reflection",
+      "text": "Dalam masalah segi empat sama: Jika kita tahu sisi → Luas = sisi². Jika kita tahu luas → sisi = √luas. Kuasa dua dan punca kuasa dua saling songsang dalam masalah nyata.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 6,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Luas sekeping jubin segi empat sama ialah 0.25 m². Berapakah panjang sisi jubin itu?",
+      "choices": ["0.5 m", "0.125 m", "1.25 m", "2.5 m"],
+      "correctIndex": 0,
+      "explanation": "√0.25 = 0.5 m. Semak: 0.5 × 0.5 = 0.25 ✓"
+    }
+  ]
+}

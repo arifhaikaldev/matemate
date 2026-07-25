@@ -7,6 +7,7 @@
 
 export type VisualKind =
   'direction' | 'elevator' | 'temperature' | 'numberLine' | 'fractionNumberLine'
+  | 'squareGrid' | 'factorTree' | 'cubeBlock' | 'numberBracket' | 'squareRootProduct'
 
 export interface DirectionVisual {
   kind: 'direction'
@@ -48,8 +49,52 @@ export interface FractionNumberLineVisual {
   highlights?: number[] // e.g. [0.5, -0.75]
 }
 
+export interface SquareGridVisual {
+  kind: 'squareGrid'
+  n: number
+  highlightBorder?: boolean
+}
+
+export interface FactorTreeVisual {
+  kind: 'factorTree'
+  number: number
+  branches: [number, number][]
+}
+
+export interface CubeBlockVisual {
+  kind: 'cubeBlock'
+  n: number
+  highlightFace?: boolean
+}
+
+export interface NumberBracketVisual {
+  kind: 'numberBracket'
+  value: number
+  lowerPerfect: number
+  upperPerfect: number
+  lowerRoot: number
+  upperRoot: number
+  operation: 'sqrt' | 'cbrt'
+}
+
+export interface SquareRootProductVisual {
+  kind: 'squareRootProduct'
+  a: number
+  b?: number
+  showProduct?: boolean
+}
+
 export type Visual =
-  DirectionVisual | ElevatorVisual | TemperatureVisual | NumberLineVisual | FractionNumberLineVisual
+  | DirectionVisual
+  | ElevatorVisual
+  | TemperatureVisual
+  | NumberLineVisual
+  | FractionNumberLineVisual
+  | SquareGridVisual
+  | FactorTreeVisual
+  | CubeBlockVisual
+  | NumberBracketVisual
+  | SquareRootProductVisual
 
 // ---- Screens -----------------------------------------------
 

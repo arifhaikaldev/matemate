@@ -1,0 +1,152 @@
+
+{
+  "Bab": {
+    "Tajuk": "Kuasa Dua, Punca Kuasa Dua, Kuasa Tiga dan Punca Kuasa Tiga",
+    "Subtopik": [
+      {
+        "Kod": "3.1",
+        "Tajuk": "Kuasa Dua dan Punca Kuasa Dua",
+        "Persoalan_Utama": [
+          {
+            "Persoalan": "Apakah kuasa dua dan kuasa dua sempurna?",
+            "Standard_Pembelajaran": "Menerangkan maksud kuasa dua dan kuasa dua sempurna.",
+            "Aktiviti": [
+              "Aktiviti Penerokaan 1: Meneroka pembentukan kuasa dua menggunakan perisian GeoGebra.",
+              "Aktiviti Penerokaan 2: Menerangkan maksud kuasa dua sempurna dengan menyusun kepingan grid 1 unit x 1 unit."
+            ],
+            "Contoh_Soalan": "Tiada soalan spesifik di bahagian pengenalan ini, namun aktiviti membimbing murid mengenal pasti nombor seperti 1, 4, 9, 16 sebagai kuasa dua sempurna.",
+            "Langkah_Penyelesaian": "Melalui susunan objek dalam baris dan lajur yang sama (segi empat sama) atau mendarabkan nombor dengan dirinya sendiri."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan sama ada suatu nombor ialah kuasa dua sempurna?",
+            "Standard_Pembelajaran": "Menentukan sama ada suatu nombor ialah kuasa dua sempurna.",
+            "Aktiviti": "Menggunakan kaedah pemfaktoran perdana.",
+            "Contoh_Soalan": "Tentukan sama ada (a) 36 dan (b) 54 ialah kuasa dua sempurna.",
+            "Langkah_Penyelesaian": "(a) 36 = 2 x 3 x 2 x 3. Faktor perdana boleh dikumpulkan dalam dua kumpulan yang sama (2x3 dan 2x3), maka 36 ialah kuasa dua sempurna. (b) 54 = 2 x 3 x 3 x 3. Faktor perdana tidak boleh dikumpulkan dalam dua kumpulan yang sama, maka 54 bukan kuasa dua sempurna."
+          },
+          {
+            "Persoalan": "Apakah hubungan antara kuasa dua dengan punca kuasa dua?",
+            "Standard_Pembelajaran": "Menyatakan hubungan antara kuasa dua dan punca kuasa dua.",
+            "Aktiviti": "Aktiviti Penerokaan 3: Menyatakan hubungan luas segi empat sama dengan panjang sisinya menggunakan GeoGebra.",
+            "Contoh_Soalan": "Lengkapkan: Jika 9 x 9 = 81, maka punca kuasa dua bagi 81 ialah...",
+            "Langkah_Penyelesaian": "Punca kuasa dua ialah operasi songsangan bagi kuasa dua. Maka, √81 = 9."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan kuasa dua suatu nombor?",
+            "Standard_Pembelajaran": "Menentukan kuasa dua suatu nombor tanpa dan dengan menggunakan alat teknologi.",
+            "Aktiviti": "Pendaraban berulang dan penggunaan kalkulator (tekan butang x²).",
+            "Contoh_Soalan": "Cari nilai bagi (a) 6² (b) 43².",
+            "Langkah_Penyelesaian": "(a) Tanpa kalkulator: 6 x 6 = 36. (b) Dengan kalkulator: Tekan 4, 3, x², = hasil 1849."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan punca kuasa dua suatu nombor?",
+            "Standard_Pembelajaran": "Menentukan punca kuasa dua suatu nombor tanpa menggunakan alat teknologi.",
+            "Aktiviti": "Kaedah pemfaktoran perdana atau pengungkapan sebagai kuasa dua perpuluhan/pecahan yang lain.",
+            "Contoh_Soalan": "Cari nilai √441.",
+            "Langkah_Penyelesaian": "441 = 3 x 3 x 7 x 7 = (3x7) x (3x7) = 21 x 21. Maka √441 = 21."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan punca kuasa dua suatu nombor positif dengan bantuan teknologi?",
+            "Standard_Pembelajaran": "Menentukan punca kuasa dua suatu nombor positif dengan menggunakan alat teknologi.",
+            "Aktiviti": "Penggunaan kalkulator (tekan butang √).",
+            "Contoh_Soalan": "Hitung √89 betul kepada dua tempat perpuluhan.",
+            "Langkah_Penyelesaian": "Tekan √, 8, 9, = hasil 9.43."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menganggarkan kuasa dua dan punca kuasa dua suatu nombor?",
+            "Standard_Pembelajaran": "Menganggar kuasa dua dan punca kuasa dua suatu nombor.",
+            "Aktiviti": "Menentukan kedudukan nombor di antara dua kuasa dua sempurna yang berturutan.",
+            "Contoh_Soalan": "Anggarkan nilai bagi (a) 27.5² (b) √54.",
+            "Langkah_Penyelesaian": "(a) 27.5 di antara 20 dan 30, maka 27.5² di antara 400 dan 900. (b) 54 di antara kuasa dua sempurna 49 dan 64, maka √54 di antara 7 dan 8. √54 ≈ 7."
+          },
+          {
+            "Persoalan": "Apakah generalisasi yang dapat dibuat apabila dua punca kuasa dua didarabkan?",
+            "Standard_Pembelajaran": "Membuat generalisasi tentang pendaraban yang melibatkan punca kuasa dua.",
+            "Aktiviti": "Aktiviti Penerokaan 4: Melakukan pendaraban yang melibatkan punca kuasa dua nombor yang sama dan berbeza.",
+            "Contoh_Soalan": "Permudahkan √a x √a dan √a x √b.",
+            "Langkah_Penyelesaian": "√a x √a = a; √a x √b = √ab."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menyelesaikan masalah?",
+            "Standard_Pembelajaran": "Mengemuka dan menyelesaikan masalah yang melibatkan kuasa dua dan punca kuasa dua.",
+            "Aktiviti": "Aplikasi dalam situasi harian seperti mencari panjang sisi foto di atas kadbod.",
+            "Contoh_Soalan": "Luas foto ialah 90.25 cm². Cari panjang sisinya.",
+            "Langkah_Penyelesaian": "Panjang foto = √90.25 = 9.5 cm."
+          }
+        ]
+      },
+      {
+        "Kod": "3.2",
+        "Tajuk": "Kuasa Tiga dan Punca Kuasa Tiga",
+        "Persoalan_Utama": [
+          {
+            "Persoalan": "Apakah kuasa tiga dan kuasa tiga sempurna?",
+            "Standard_Pembelajaran": "Menerangkan maksud kuasa tiga dan kuasa tiga sempurna.",
+            "Aktiviti": [
+              "Aktiviti Penerokaan 5: Meneroka pembentukan kubus menggunakan kubus unit.",
+              "Aktiviti Penerokaan 6: Membina kubus menggunakan blok unit untuk mengenal pasti kuasa tiga sempurna."
+            ],
+            "Contoh_Soalan": "Kenali nombor 1, 8, 27 sebagai kuasa tiga sempurna.",
+            "Langkah_Penyelesaian": "Pendaraban berulang nombor yang sama sebanyak tiga kali (n x n x n)."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan sama ada suatu nombor adalah kuasa tiga sempurna?",
+            "Standard_Pembelajaran": "Menentukan sama ada suatu nombor adalah kuasa tiga sempurna.",
+            "Aktiviti": "Kaedah pemfaktoran perdana.",
+            "Contoh_Soalan": "Tentukan sama ada 64 ialah kuasa tiga sempurna.",
+            "Langkah_Penyelesaian": "64 = (2 x 2) x (2 x 2) x (2 x 2). Faktor perdana boleh dikumpulkan dalam tiga kumpulan yang sama, maka 64 ialah kuasa tiga sempurna."
+          },
+          {
+            "Persoalan": "Apakah hubungan antara kuasa tiga dan punca kuasa tiga?",
+            "Standard_Pembelajaran": "Menyatakan hubungan antara kuasa tiga dan punca kuasa tiga.",
+            "Aktiviti": "Aktiviti Penerokaan 7: Hubungan isi padu kubus dengan panjang tepinya.",
+            "Contoh_Soalan": "Lengkapkan: Jika 4 x 4 x 4 = 64, maka punca kuasa tiga bagi 64 ialah...",
+            "Langkah_Penyelesaian": "Punca kuasa tiga ialah operasi songsangan bagi kuasa tiga. Maka, ³√64 = 4."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan kuasa tiga suatu nombor?",
+            "Standard_Pembelajaran": "Menentukan kuasa tiga suatu nombor tanpa dan dengan menggunakan alat teknologi.",
+            "Aktiviti": "Pendaraban berulang tiga kali dan penggunaan kalkulator (tekan butang x³).",
+            "Contoh_Soalan": "Cari nilai bagi (a) 4³ (b) 18³.",
+            "Langkah_Penyelesaian": "(a) Tanpa kalkulator: 4 x 4 x 4 = 64. (b) Dengan kalkulator: Tekan 1, 8, x³, = hasil 5832."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan punca kuasa tiga suatu nombor?",
+            "Standard_Pembelajaran": "Menentukan punca kuasa tiga suatu nombor tanpa menggunakan alat teknologi.",
+            "Aktiviti": "Pemfaktoran perdana.",
+            "Contoh_Soalan": "Cari nilai ³√216.",
+            "Langkah_Penyelesaian": "216 = (3 x 2) x (3 x 2) x (3 x 2) = 6 x 6 x 6. Maka ³√216 = 6."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menentukan punca kuasa tiga suatu nombor dengan menggunakan teknologi?",
+            "Standard_Pembelajaran": "Menentukan punca kuasa tiga suatu nombor dengan menggunakan alat teknologi.",
+            "Aktiviti": "Penggunaan kalkulator (tekan butang ³√).",
+            "Contoh_Soalan": "Hitung ³√-104.8 betul kepada dua tempat perpuluhan.",
+            "Langkah_Penyelesaian": "Tekan ³√, (-), 1, 0, 4, ., 8, = hasil -4.71."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menganggar kuasa tiga dan punca kuasa tiga suatu nombor?",
+            "Standard_Pembelajaran": "Menganggar kuasa tiga dan punca kuasa tiga suatu nombor.",
+            "Aktiviti": "Menentukan kedudukan nombor di antara dua kuasa tiga sempurna yang berturutan.",
+            "Contoh_Soalan": "Anggarkan nilai (a) 4.2³ (b) ³√180.",
+            "Langkah_Penyelesaian": "(a) 4.2 di antara 4 dan 5, maka 4.2³ di antara 64 dan 125. (b) 180 di antara 125 dan 216, maka ³√180 di antara 5 dan 6. ³√180 ≈ 6."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menyelesaikan masalah?",
+            "Standard_Pembelajaran": "Menyelesaikan masalah yang melibatkan kuasa tiga dan punca kuasa tiga.",
+            "Aktiviti": "Aplikasi mencari panjang tepi kubus kecil yang dikeluarkan daripada sebuah blok kayu.",
+            "Contoh_Soalan": "Isi padu kayu tinggal ialah 189 cm³ daripada kubus asal sisi 6 cm. Cari sisi kubus kecil yang dibuang.",
+            "Langkah_Penyelesaian": "Isi padu kubus kecil = 6³ - 189 = 27. Sisi kubus kecil = ³√27 = 3 cm."
+          },
+          {
+            "Persoalan": "Bagaimanakah anda menjalankan pengiraan yang melibatkan pelbagai operasi?",
+            "Standard_Pembelajaran": "Menjalankan pengiraan yang melibatkan gabungan operasi ke atas kuasa dua, punca kuasa dua, kuasa tiga dan punca kuasa tiga.",
+            "Aktiviti": "Menyelesaikan operasi mengikut tertib (kurungan, darab/bahagi, tambah/tolak).",
+            "Contoh_Soalan": "Cari nilai 0.5² + ³√1000.",
+            "Langkah_Penyelesaian": "0.25 + 10 = 10.25."
+          }
+        ]
+      }
+    ]
+  }
+}

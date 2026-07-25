@@ -1,0 +1,135 @@
+{
+  "lessonId": "3.1.7",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Menganggar Kuasa Dua dan Punca Kuasa Dua",
+  "learningGoal": "Menganggar kuasa dua dan punca kuasa dua suatu nombor dengan meletakkannya antara dua kuasa dua sempurna berturutan.",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Anggaran punca kuasa dua bermaksud jawapan tidak tepat (tidak berguna)",
+    "Punca kuasa dua nombor antara 49 dan 64 mestilah antara 49 dan 64",
+    "Kuasa dua nombor antara dua nilai mesti antara kuasa dua nilai itu juga"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Menganggar √54",
+      "text": "54 terletak antara dua kuasa dua sempurna: 49 = 7² dan 64 = 8². Jadi √54 mesti antara 7 dan 8.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 54,
+        "lowerPerfect": 49,
+        "upperPerfect": 64,
+        "lowerRoot": 7,
+        "upperRoot": 8,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "54 berada antara 49 dan 64. Maka √54 berada antara?",
+      "choices": [
+        "49 dan 64",
+        "7 dan 8",
+        "6 dan 7",
+        "8 dan 9"
+      ],
+      "correctIndex": 1,
+      "explanation": "Kerana √49 = 7 dan √64 = 8, dan 49 < 54 < 64, maka 7 < √54 < 8.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 54,
+        "lowerPerfect": 49,
+        "upperPerfect": 64,
+        "lowerRoot": 7,
+        "upperRoot": 8,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Anggarkan √30. Antara kuasa dua sempurna yang mana 30 terletak?",
+      "choices": [
+        "25 dan 36 → antara 5 dan 6",
+        "16 dan 25 → antara 4 dan 5",
+        "36 dan 49 → antara 6 dan 7",
+        "9 dan 16 → antara 3 dan 4"
+      ],
+      "correctIndex": 0,
+      "explanation": "25 < 30 < 36, maka 5 < √30 < 6. √30 ≈ 5.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 30,
+        "lowerPerfect": 25,
+        "upperPerfect": 36,
+        "lowerRoot": 5,
+        "upperRoot": 6,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Anggarkan nilai 27.5²",
+      "steps": [
+        "27.5 terletak antara 20 dan 30",
+        "20² = 400",
+        "30² = 900",
+        "Maka 27.5² terletak antara 400 dan 900",
+        "Lebih tepat: 27² = 729, 28² = 784",
+        "27.5² ≈ 756 (antara 729 dan 784)"
+      ],
+      "answer": "27.5² ≈ 756 (antara 400 dan 900)"
+    },
+    {
+      "type": "numberInput",
+      "question": "√120 terletak antara dua integer berturutan. Berapakah integer yang LEBIH KECIL? (Cari kuasa dua sempurna yang lebih kecil daripada 120.)",
+      "answer": "10",
+      "hint": "100 = 10², 121 = 11². Di manakah 120?",
+      "explanation": "100 < 120 < 121, jadi 10 < √120 < 11. Integer lebih kecil ialah 10.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 120,
+        "lowerPerfect": 100,
+        "upperPerfect": 121,
+        "lowerRoot": 10,
+        "upperRoot": 11,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "reflection",
+      "text": "Untuk menganggar punca kuasa dua: (1) Cari dua kuasa dua sempurna berturutan yang men挟 nombor itu. (2) Punca mesti antara akar dua sempurna tersebut. (3) Anggar lebih tepat berdasarkan kedekatan.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 54,
+        "lowerPerfect": 49,
+        "upperPerfect": 64,
+        "lowerRoot": 7,
+        "upperRoot": 8,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Anggarkan √80. Jawapan yang paling tepat ialah?",
+      "choices": [
+        "Antara 8 dan 9, lebih dekat kepada 9",
+        "Antara 7 dan 8, lebih dekat kepada 8",
+        "Antara 9 dan 10, lebih dekat kepada 9",
+        "Tepat 8"
+      ],
+      "correctIndex": 0,
+      "explanation": "64 < 80 < 81, jadi 8 < √80 < 9. Kerana 80 sangat dekat dengan 81, √80 ≈ 8.9, lebih dekat kepada 9.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 80,
+        "lowerPerfect": 64,
+        "upperPerfect": 81,
+        "lowerRoot": 8,
+        "upperRoot": 9,
+        "operation": "sqrt"
+      }
+    }
+  ]
+}

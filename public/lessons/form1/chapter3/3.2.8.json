@@ -1,0 +1,99 @@
+{
+  "lessonId": "3.2.8",
+  "chapter": 3,
+  "topic": "Kuasa Tiga dan Punca Kuasa Tiga",
+  "title": "Menyelesaikan Masalah dan Operasi Gabungan",
+  "learningGoal": "Menyelesaikan masalah yang melibatkan kuasa tiga dan punca kuasa tiga, termasuk pengiraan gabungan operasi.",
+  "estimatedMinutes": 8,
+  "difficulty": "hard",
+  "misconceptions": [
+    "Dalam 0.5² + ³√1000, perlu tambah semuanya dulu sebelum kira kuasa",
+    "Isi padu kubus kecil = isi padu besar - sisi kecil",
+    "Tertib operasi tidak penting jika ada campuran kuasa dua dan kuasa tiga"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Masalah Isi Padu: Kubus dalam Kubus",
+      "text": "Sebuah blok kayu berbentuk kubus dengan sisi 6 cm. Sebahagian kayu dibuang dalam bentuk kubus kecil. Isi padu kayu tinggal ialah 189 cm³. Cari sisi kubus kecil yang dibuang.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 6,
+        "highlightFace": true
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Isi padu kayu tinggal ialah 189 cm³ daripada kubus asal sisi 6 cm. Cari sisi kubus kecil yang dibuang.",
+      "steps": [
+        "Isi padu kubus asal = 6³ = 6 × 6 × 6 = 216 cm³",
+        "Isi padu kubus kecil = 216 - 189 = 27 cm³",
+        "Sisi kubus kecil = ³√27 = 3 cm"
+      ],
+      "answer": "Sisi kubus kecil = 3 cm",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 3,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Sebuah bekas kubus mengandungi air setinggi 5 cm (tepi bekas = 5 cm). Berapa cm³ lagi air boleh diisi sehingga penuh jika sudah ada 75 cm³ air?",
+      "answer": "50",
+      "hint": "Isi padu penuh = 5³ = 125 cm³. Tolak 75.",
+      "explanation": "5³ = 125. 125 - 75 = 50 cm³ lagi.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 5,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Cari nilai 0.5² + ³√1000",
+      "steps": [
+        "Tertib operasi: kira kuasa dahulu",
+        "0.5² = 0.5 × 0.5 = 0.25",
+        "³√1000 = 10 (kerana 10³ = 1000)",
+        "0.25 + 10 = 10.25"
+      ],
+      "answer": "0.5² + ³√1000 = 10.25"
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari nilai: 3² + ³√8. Kira kuasa dahulu, kemudian tambah.",
+      "answer": "11",
+      "hint": "3² = 9, ³√8 = 2. Kemudian tambah.",
+      "explanation": "3² = 9, ³√8 = 2. 9 + 2 = 11."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Cari nilai: ³√125 × √16",
+      "choices": ["80", "20", "9", "45"],
+      "correctIndex": 1,
+      "explanation": "³√125 = 5 dan √16 = 4. 5 × 4 = 20."
+    },
+    {
+      "type": "reflection",
+      "text": "Dalam pengiraan gabungan: (1) Kira punca kuasa dua dan kuasa tiga dahulu. (2) Kemudian lakukan operasi lain (×, ÷, +, −) mengikut tertib BODMAS. Kuasa dua dan kuasa tiga tidak saling songsang antara satu sama lain.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 3,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Cari nilai: 4² − ³√64 + √36",
+      "choices": ["10", "22", "18", "14"],
+      "correctIndex": 2,
+      "explanation": "4² = 16, ³√64 = 4, √36 = 6. 16 − 4 + 6 = 18.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 4,
+        "highlightBorder": true
+      }
+    }
+  ]
+}

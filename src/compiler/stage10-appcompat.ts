@@ -21,6 +21,11 @@ const RENDERABLE_VISUAL_KINDS = new Set([
   'temperature',
   'numberLine',
   'fractionNumberLine',
+  'squareGrid',
+  'factorTree',
+  'cubeBlock',
+  'numberBracket',
+  'squareRootProduct',
 ])
 
 export function validateAppCompatibility(lesson: ValidatedLesson): StageResult {

@@ -1,0 +1,94 @@
+{
+  "lessonId": "3.2.1",
+  "chapter": 3,
+  "topic": "Kuasa Tiga dan Punca Kuasa Tiga",
+  "title": "Apakah Kuasa Tiga Sempurna?",
+  "learningGoal": "Menerangkan maksud kuasa tiga dan kuasa tiga sempurna melalui model kubus unit.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Kuasa tiga bermaksud darab dengan 3 (bukan n×n×n)",
+    "Kuasa tiga sempurna pasti nombor besar",
+    "1 bukan kuasa tiga sempurna"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Kubus 3×3×3",
+      "text": "Bayangkan menyusun kubus kecil menjadi kubus besar berukuran 3×3×3. Jumlah kubus kecil = 3 × 3 × 3 = 27. Kita tulis 3³ = 27.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 3,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Kubus 3×3×3 mengandungi 27 unit padu. Dalam matematik, kita tulis 3³ = 27. Apakah maksud '³' dalam 3³?",
+      "choices": [
+        "Darab dengan 3",
+        "Tambah 3",
+        "Nombor didarab dengan dirinya sebanyak tiga kali",
+        "Bahagi dengan 3"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kuasa tiga bermaksud n × n × n. 3³ = 3 × 3 × 3 = 27.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 3,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari nilai 2³. (2 × 2 × 2 = ?)",
+      "answer": "8",
+      "hint": "2 × 2 = 4, kemudian 4 × 2 = ?",
+      "explanation": "2³ = 2 × 2 × 2 = 8.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 2,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Antara berikut, yang manakah kuasa tiga sempurna?",
+      "choices": ["6", "8", "9", "12"],
+      "correctIndex": 1,
+      "explanation": "8 = 2³ = 2 × 2 × 2. Ia ialah kuasa tiga sempurna. 6, 9, dan 12 bukan.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 2,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun kuasa tiga sempurna berikut mengikut tertib menaik.",
+      "items": ["27", "1", "125", "8", "64"],
+      "correctOrder": ["1", "8", "27", "64", "125"]
+    },
+    {
+      "type": "reflection",
+      "text": "Kuasa tiga sempurna ialah hasil n × n × n untuk integer positif n. Contoh: 1, 8, 27, 64, 125, 216... Ia boleh divisualisasikan sebagai kubus 3D.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 4,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Antara berikut, yang manakah kuasa tiga sempurna?",
+      "choices": ["16", "27", "36", "50"],
+      "correctIndex": 1,
+      "explanation": "27 = 3³ = 3 × 3 × 3. Ia ialah kuasa tiga sempurna. 16 = 4², 36 = 6² (kuasa dua, bukan tiga), 50 bukan keduanya.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 3,
+        "highlightFace": false
+      }
+    }
+  ]
+}

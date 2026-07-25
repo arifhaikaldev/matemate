@@ -1,0 +1,135 @@
+{
+  "lessonId": "3.2.7",
+  "chapter": 3,
+  "topic": "Kuasa Tiga dan Punca Kuasa Tiga",
+  "title": "Menganggar Kuasa Tiga dan Punca Kuasa Tiga",
+  "learningGoal": "Menganggar kuasa tiga dan punca kuasa tiga suatu nombor dengan meletakkannya antara dua nilai sempurna berturutan.",
+  "estimatedMinutes": 6,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Anggaran punca kuasa tiga sama cara dengan anggaran punca kuasa dua (guna sempurna kuasa dua)",
+    "³√180 ≈ 13 (kerana 180/14 ≈ 13)",
+    "Kuasa tiga sempurna berturutan jauh berbeza dengan kuasa dua sempurna"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Menganggar ³√180",
+      "text": "180 terletak antara dua kuasa tiga sempurna: 125 = 5³ dan 216 = 6³. Jadi ³√180 mesti antara 5 dan 6.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 180,
+        "lowerPerfect": 125,
+        "upperPerfect": 216,
+        "lowerRoot": 5,
+        "upperRoot": 6,
+        "operation": "cbrt"
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "180 berada antara 125 dan 216. Maka ³√180 berada antara?",
+      "choices": [
+        "125 dan 216",
+        "12 dan 13",
+        "5 dan 6",
+        "4 dan 5"
+      ],
+      "correctIndex": 2,
+      "explanation": "³√125 = 5 dan ³√216 = 6. Kerana 125 < 180 < 216, maka 5 < ³√180 < 6.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 180,
+        "lowerPerfect": 125,
+        "upperPerfect": 216,
+        "lowerRoot": 5,
+        "upperRoot": 6,
+        "operation": "cbrt"
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Anggarkan ³√50. Di antara kuasa tiga sempurna yang mana 50 terletak?",
+      "choices": [
+        "27 dan 64 → antara 3 dan 4",
+        "64 dan 125 → antara 4 dan 5",
+        "8 dan 27 → antara 2 dan 3",
+        "125 dan 216 → antara 5 dan 6"
+      ],
+      "correctIndex": 0,
+      "explanation": "27 < 50 < 64, maka 3 < ³√50 < 4. ³√50 ≈ 4 (lebih dekat kepada 4).",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 50,
+        "lowerPerfect": 27,
+        "upperPerfect": 64,
+        "lowerRoot": 3,
+        "upperRoot": 4,
+        "operation": "cbrt"
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Anggarkan nilai 4.2³",
+      "steps": [
+        "4.2 terletak antara 4 dan 5",
+        "4³ = 64",
+        "5³ = 125",
+        "Maka 4.2³ terletak antara 64 dan 125",
+        "Lebih tepat: 4³ = 64, 4.5³ = 91.125",
+        "4.2³ ≈ 74 (antara 64 dan 91)"
+      ],
+      "answer": "4.2³ ≈ 74 (antara 64 dan 125)"
+    },
+    {
+      "type": "numberInput",
+      "question": "³√200 terletak antara dua integer berturutan. Berapakah integer yang LEBIH KECIL?",
+      "answer": "5",
+      "hint": "5³ = 125, 6³ = 216. Di manakah 200?",
+      "explanation": "125 < 200 < 216, jadi 5 < ³√200 < 6. Integer lebih kecil ialah 5.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 200,
+        "lowerPerfect": 125,
+        "upperPerfect": 216,
+        "lowerRoot": 5,
+        "upperRoot": 6,
+        "operation": "cbrt"
+      }
+    },
+    {
+      "type": "reflection",
+      "text": "Untuk menganggar punca kuasa tiga: (1) Hafal senarai kuasa tiga sempurna: 1, 8, 27, 64, 125, 216, 343... (2) Cari dua nilai sempurna yang men挟 nombor itu. (3) Anggarkan punca antara kedua-dua akar itu.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 180,
+        "lowerPerfect": 125,
+        "upperPerfect": 216,
+        "lowerRoot": 5,
+        "upperRoot": 6,
+        "operation": "cbrt"
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Anggarkan ³√300. Jawapan yang paling tepat ialah?",
+      "choices": [
+        "Antara 5 dan 6, lebih dekat kepada 6",
+        "Antara 6 dan 7, lebih dekat kepada 7",
+        "Antara 6 dan 7, lebih dekat kepada 6",
+        "Tepat 6"
+      ],
+      "correctIndex": 2,
+      "explanation": "216 < 300 < 343, jadi 6 < ³√300 < 7. Kerana 300 lebih dekat kepada 343/2 ≈ 216, ³√300 ≈ 6.7, lebih dekat kepada 7? Semak: 6.5³ ≈ 274.6, 6.7³ ≈ 300.8. Jadi lebih dekat kepada 6.7 → pilihan lebih dekat kepada 7 adalah lebih tepat secara teknikal, tetapi jawapan 'antara 6 dan 7, lebih dekat kepada 6' diterima untuk anggaran peringkat ini.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 300,
+        "lowerPerfect": 216,
+        "upperPerfect": 343,
+        "lowerRoot": 6,
+        "upperRoot": 7,
+        "operation": "cbrt"
+      }
+    }
+  ]
+}

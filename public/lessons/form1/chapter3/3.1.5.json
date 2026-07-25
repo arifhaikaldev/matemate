@@ -1,0 +1,86 @@
+{
+  "lessonId": "3.1.5",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Menentukan Punca Kuasa Dua Tanpa Teknologi",
+  "learningGoal": "Menentukan punca kuasa dua suatu nombor menggunakan kaedah pemfaktoran perdana.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": [
+    "Punca kuasa dua boleh dicari dengan bahagi 2",
+    "Pemfaktoran perdana hanya digunakan untuk nombor komposit mudah",
+    "Hasil punca kuasa dua mesti nombor genap"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Mencari √441 dengan Pokok Faktor",
+      "text": "Untuk cari √441 tanpa kalkulator, kita gunakan pemfaktoran perdana. Pecahkan 441 kepada faktor perdana, kemudian kumpulkan dalam pasangan.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 441,
+        "branches": [[147, 3], [49, 3], [7, 7]]
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Cari √441 menggunakan pemfaktoran perdana.",
+      "steps": [
+        "441 ÷ 3 = 147",
+        "147 ÷ 3 = 49",
+        "49 ÷ 7 = 7",
+        "441 = 3 × 3 × 7 × 7",
+        "Kumpulkan: (3×7) dan (3×7) = 21 dan 21",
+        "√441 = 21"
+      ],
+      "answer": "√441 = 21",
+      "visual": {
+        "kind": "factorTree",
+        "number": 441,
+        "branches": [[147, 3], [49, 3], [7, 7]]
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Diberi 196 = 2 × 2 × 7 × 7. Apakah √196? (Kumpulkan pasangan: (2×7) dan (2×7))",
+      "answer": "14",
+      "hint": "2 × 7 = 14",
+      "explanation": "196 = (2×7) × (2×7) = 14 × 14. Maka √196 = 14."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "729 = 3 × 3 × 3 × 3 × 3 × 3. Apakah √729?",
+      "choices": ["27", "81", "9", "243"],
+      "correctIndex": 0,
+      "explanation": "729 = 3⁶ = (3³)² = 27². Kumpulkan: (3×3×3) dan (3×3×3) = 27 dan 27. √729 = 27.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 729,
+        "branches": [[243, 3], [81, 3], [27, 3], [9, 3], [3, 3]]
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari √576. (576 = 2 × 2 × 2 × 2 × 2 × 2 × 3 × 3)",
+      "answer": "24",
+      "hint": "Kumpulkan: (2×2×2×3) dan (2×2×2×3) = ?",
+      "explanation": "576 = 2⁶ × 3² = (2³×3)² = 24². Maka √576 = 24."
+    },
+    {
+      "type": "reflection",
+      "text": "Langkah mencari punca kuasa dua dengan pemfaktoran perdana: (1) Pecahkan ke faktor perdana. (2) Kumpulkan dalam dua kumpulan yang sama. (3) Darabkan faktor dalam satu kumpulan.",
+      "visual": {
+        "kind": "factorTree",
+        "number": 36,
+        "branches": [[18, 2], [9, 2], [3, 3]]
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Cari √900 menggunakan pemfaktoran perdana. (900 = 2² × 3² × 5²)",
+      "choices": ["30", "45", "25", "60"],
+      "correctIndex": 0,
+      "explanation": "900 = (2×3×5) × (2×3×5) = 30 × 30. Maka √900 = 30."
+    }
+  ]
+}

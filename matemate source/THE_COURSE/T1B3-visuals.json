@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "squareGrid",
+    "schema": {
+      "kind": "squareGrid",
+      "n": 6,
+      "highlightBorder": true
+    },
+    "concept": "Kuasa dua sebagai susunan segi empat sama unit",
+    "usedIn": ["3.1.1", "3.1.3", "3.1.4"],
+    "description": "A grid of n×n unit cells rendered as a filled square, illustrating that n² equals the area of a square with side n."
+  },
+  {
+    "kind": "factorTree",
+    "schema": {
+      "kind": "factorTree",
+      "number": 36,
+      "branches": [[2, 18], [2, 9], [3, 3]]
+    },
+    "concept": "Pemfaktoran perdana untuk menentukan kuasa dua / kuasa tiga sempurna",
+    "usedIn": ["3.1.2", "3.1.5", "3.2.2", "3.2.5"],
+    "description": "A branching factor tree that breaks a number down to its prime factors, showing paired or tripled groups to identify perfect squares or cubes."
+  },
+  {
+    "kind": "cubeBlock",
+    "schema": {
+      "kind": "cubeBlock",
+      "n": 3,
+      "highlightFace": false
+    },
+    "concept": "Kuasa tiga sebagai isi padu kubus unit",
+    "usedIn": ["3.2.1", "3.2.3", "3.2.4"],
+    "description": "An isometric drawing of an n×n×n stack of unit cubes, illustrating that n³ equals the volume of a cube with edge length n."
+  },
+  {
+    "kind": "numberBracket",
+    "schema": {
+      "kind": "numberBracket",
+      "value": 54,
+      "lowerPerfect": 49,
+      "upperPerfect": 64,
+      "lowerRoot": 7,
+      "upperRoot": 8,
+      "operation": "sqrt"
+    },
+    "concept": "Menganggar punca kuasa dua atau punca kuasa tiga dengan meletakkan nombor di antara dua nilai sempurna berturutan",
+    "usedIn": ["3.1.7", "3.2.7"],
+    "description": "A horizontal bracket diagram showing a value sandwiched between two perfect squares (or cubes) with their roots labelled, helping students estimate the root by bounding."
+  },
+  {
+    "kind": "squareRootProduct",
+    "schema": {
+      "kind": "squareRootProduct",
+      "a": 4,
+      "b": 9,
+      "showProduct": true
+    },
+    "concept": "Generalisasi pendaraban punca kuasa dua: √a × √a = a dan √a × √b = √(ab)",
+    "usedIn": ["3.1.8"],
+    "description": "A visual pairing of two root expressions with an equals sign, showing √a × √a collapsing to a, or √a × √b combining into √(ab)."
+  }
+]

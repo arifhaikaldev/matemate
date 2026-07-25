@@ -1,0 +1,75 @@
+{
+  "lessonId": "3.1.4",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Menentukan Kuasa Dua Suatu Nombor",
+  "learningGoal": "Menentukan kuasa dua suatu nombor tanpa dan dengan menggunakan alat teknologi.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "6² = 6 × 2 = 12 (darab dengan 2 bukan dengan dirinya sendiri)",
+    "Kalkulator mengira secara automatik tanpa menekan butang yang betul",
+    "Kuasa dua hanya untuk nombor kecil"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Kuasa Dua: n × n",
+      "text": "Mencari kuasa dua nombor bermaksud darab nombor itu dengan dirinya sendiri. 6² = 6 × 6. Kita boleh gambarkan ini sebagai grid 6×6.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 6,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari nilai 6² tanpa kalkulator. (6 × 6 = ?)",
+      "answer": "36",
+      "hint": "6 × 6 = 6 + 6 + 6 + 6 + 6 + 6",
+      "explanation": "6² = 6 × 6 = 36. Grid 6×6 mempunyai 36 unit."
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari nilai 13². (13 × 13 = ?)",
+      "answer": "169",
+      "hint": "13 × 13: (10+3)(10+3) = 100 + 30 + 30 + 9 = 169",
+      "explanation": "13² = 13 × 13 = 169."
+    },
+    {
+      "type": "workedExample",
+      "problem": "Cari nilai 43² menggunakan kalkulator.",
+      "steps": [
+        "Tekan: 4, 3",
+        "Tekan butang x² (atau × → 4 → 3 → =)",
+        "Paparan: 1849"
+      ],
+      "answer": "43² = 1849"
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah nilai 25²?",
+      "choices": ["50", "250", "525", "625"],
+      "correctIndex": 3,
+      "explanation": "25² = 25 × 25 = 625. (25 × 25: 20×25=500, 5×25=125, jumlah=625)"
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun nilai kuasa dua berikut mengikut tertib menaik.",
+      "items": ["8²", "3²", "10²", "6²", "1²"],
+      "correctOrder": ["1²", "3²", "6²", "8²", "10²"]
+    },
+    {
+      "type": "mastery",
+      "question": "Sebuah taman berbentuk segi empat sama dengan sisi 15 m. Berapakah luas taman itu?",
+      "choices": ["30 m²", "60 m²", "150 m²", "225 m²"],
+      "correctIndex": 3,
+      "explanation": "Luas = sisi² = 15² = 15 × 15 = 225 m².",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 5,
+        "highlightBorder": true
+      }
+    }
+  ]
+}

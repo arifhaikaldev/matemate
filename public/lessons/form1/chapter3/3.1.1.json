@@ -1,0 +1,84 @@
+{
+  "lessonId": "3.1.1",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Apakah Kuasa Dua Sempurna?",
+  "learningGoal": "Menerangkan maksud kuasa dua dan kuasa dua sempurna melalui susunan unit segi empat sama.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Kuasa dua bermaksud darab dengan 2 (bukan n×n)",
+    "Semua nombor genap adalah kuasa dua sempurna",
+    "Kuasa dua sempurna mesti nombor besar"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Menyusun Unit Segi Empat Sama",
+      "text": "Bayangkan anda menyusun 9 jubin kecil menjadi segi empat sama. Setiap baris ada 3 jubin, setiap lajur ada 3 jubin. Jumlah = 3 × 3 = 9.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 3,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Grid di atas menunjukkan 3 × 3 = 9. Dalam matematik, kita tulis 3² = 9. Apakah maksud '²' dalam 3²?",
+      "choices": [
+        "Darab dengan 2",
+        "Tambah 2",
+        "Darab nombor itu dengan dirinya sendiri",
+        "Bahagi dengan 2"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kuasa dua bermaksud nombor didarab dengan dirinya sendiri. 3² = 3 × 3 = 9.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 3,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Grid 4×4 mempunyai berapa jubin kecil? Pilih nilai 4².",
+      "choices": ["8", "12", "16", "20"],
+      "correctIndex": 2,
+      "explanation": "4² = 4 × 4 = 16. Grid 4×4 mempunyai 16 jubin.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 4,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari nilai 5². (Hint: 5 × 5)",
+      "answer": "25",
+      "hint": "Darab 5 dengan dirinya sendiri.",
+      "explanation": "5² = 5 × 5 = 25. Grid 5×5 mempunyai 25 jubin."
+    },
+    {
+      "type": "dragOrder",
+      "question": "Susun nombor-nombor berikut sebagai kuasa dua sempurna mengikut tertib menaik.",
+      "items": ["25", "1", "16", "9", "4"],
+      "correctOrder": ["1", "4", "9", "16", "25"]
+    },
+    {
+      "type": "reflection",
+      "text": "Nombor kuasa dua sempurna ialah hasil daripada n × n. Contoh: 1, 4, 9, 16, 25, 36... Ia boleh digambarkan sebagai grid segi empat sama yang sempurna.",
+      "visual": {
+        "kind": "squareGrid",
+        "n": 5,
+        "highlightBorder": true
+      }
+    },
+    {
+      "type": "mastery",
+      "question": "Antara berikut, manakah BUKAN kuasa dua sempurna?",
+      "choices": ["36", "49", "50", "64"],
+      "correctIndex": 2,
+      "explanation": "50 bukan kuasa dua sempurna kerana tiada nombor bulat n dengan n² = 50. 36 = 6², 49 = 7², 64 = 8²."
+    }
+  ]
+}

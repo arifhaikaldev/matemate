@@ -1,0 +1,106 @@
+{
+  "lessonId": "3.1.6",
+  "chapter": 3,
+  "topic": "Kuasa Dua dan Punca Kuasa Dua",
+  "title": "Menentukan Punca Kuasa Dua dengan Kalkulator",
+  "learningGoal": "Menentukan punca kuasa dua suatu nombor positif dengan menggunakan alat teknologi.",
+  "estimatedMinutes": 4,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Kalkulator saintifik dan biasa mempunyai butang yang sama",
+    "√ bermaksud bahagi",
+    "Punca kuasa dua sentiasa menghasilkan nombor bulat"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Butang √ pada Kalkulator",
+      "text": "Kalkulator saintifik mempunyai butang √ (punca kuasa dua). Untuk cari √89, tekan: √ → 8 → 9 → = dan baca jawapan.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 89,
+        "lowerPerfect": 81,
+        "upperPerfect": 100,
+        "lowerRoot": 9,
+        "upperRoot": 10,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "√89 betul kepada dua tempat perpuluhan ialah 9.43. Mengapa hasilnya bukan nombor bulat?",
+      "choices": [
+        "Kerana 89 ialah nombor perdana",
+        "Kerana 89 bukan kuasa dua sempurna",
+        "Kerana kalkulator rosak",
+        "Kerana kita tekan butang yang salah"
+      ],
+      "correctIndex": 1,
+      "explanation": "89 bukan kuasa dua sempurna (tiada n bulat dengan n²=89), jadi √89 adalah perpuluhan tidak berulang.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 89,
+        "lowerPerfect": 81,
+        "upperPerfect": 100,
+        "lowerRoot": 9,
+        "upperRoot": 10,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "numberInput",
+      "question": "Gunakan kalkulator: Berapakah √144? (Jawapan mestilah nombor bulat.)",
+      "answer": "12",
+      "hint": "144 ialah kuasa dua sempurna.",
+      "explanation": "√144 = 12 kerana 12² = 144."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "√200 betul kepada dua tempat perpuluhan ialah?",
+      "choices": ["14.00", "14.14", "100.00", "15.00"],
+      "correctIndex": 1,
+      "explanation": "√200 ≈ 14.14 (betul kepada 2 d.p.). 14² = 196, 15² = 225, jadi √200 adalah antara 14 dan 15.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 200,
+        "lowerPerfect": 196,
+        "upperPerfect": 225,
+        "lowerRoot": 14,
+        "upperRoot": 15,
+        "operation": "sqrt"
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Hitung √50 betul kepada dua tempat perpuluhan.",
+      "steps": [
+        "Tekan butang √ pada kalkulator",
+        "Taip 5, 0",
+        "Tekan =",
+        "Paparan: 7.07106...",
+        "Bundarkan kepada 2 d.p.: 7.07"
+      ],
+      "answer": "√50 ≈ 7.07"
+    },
+    {
+      "type": "reflection",
+      "text": "Punca kuasa dua nombor yang bukan kuasa dua sempurna menghasilkan perpuluhan panjang. Kalkulator memberi anggaran yang tepat. Ingat: tekan √ dahulu, kemudian nombor."
+    },
+    {
+      "type": "mastery",
+      "question": "Hitung √75 betul kepada dua tempat perpuluhan.",
+      "choices": ["8.66", "7.50", "9.00", "8.33"],
+      "correctIndex": 0,
+      "explanation": "√75 ≈ 8.66 (betul kepada 2 d.p.). 8² = 64, 9² = 81, jadi √75 adalah antara 8 dan 9, lebih dekat kepada 9.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": 75,
+        "lowerPerfect": 64,
+        "upperPerfect": 81,
+        "lowerRoot": 8,
+        "upperRoot": 9,
+        "operation": "sqrt"
+      }
+    }
+  ]
+}

@@ -46,12 +46,52 @@ const FractionNumberLineVisualSchema = z.object({
   highlights: z.array(z.number()).optional(),
 })
 
+const SquareGridVisualSchema = z.object({
+  kind: z.literal('squareGrid'),
+  n: z.number().int().positive(),
+  highlightBorder: z.boolean().optional(),
+})
+
+const FactorTreeVisualSchema = z.object({
+  kind: z.literal('factorTree'),
+  number: z.number().int().positive(),
+  branches: z.array(z.tuple([z.number(), z.number()])),
+})
+
+const CubeBlockVisualSchema = z.object({
+  kind: z.literal('cubeBlock'),
+  n: z.number().int().positive(),
+  highlightFace: z.boolean().optional(),
+})
+
+const NumberBracketVisualSchema = z.object({
+  kind: z.literal('numberBracket'),
+  value: z.number(),
+  lowerPerfect: z.number(),
+  upperPerfect: z.number(),
+  lowerRoot: z.number(),
+  upperRoot: z.number(),
+  operation: z.enum(['sqrt', 'cbrt']),
+})
+
+const SquareRootProductVisualSchema = z.object({
+  kind: z.literal('squareRootProduct'),
+  a: z.number().int().positive(),
+  b: z.number().int().positive().optional(),
+  showProduct: z.boolean().optional(),
+})
+
 const VisualSchema = z.discriminatedUnion('kind', [
   DirectionVisualSchema,
   ElevatorVisualSchema,
   TemperatureVisualSchema,
   NumberLineVisualSchema,
   FractionNumberLineVisualSchema,
+  SquareGridVisualSchema,
+  FactorTreeVisualSchema,
+  CubeBlockVisualSchema,
+  NumberBracketVisualSchema,
+  SquareRootProductVisualSchema,
 ])
 
 // ── Screen schemas ───────────────────────────────────────────────────────────

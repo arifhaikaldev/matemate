@@ -1,0 +1,100 @@
+{
+  "lessonId": "3.2.6",
+  "chapter": 3,
+  "topic": "Kuasa Tiga dan Punca Kuasa Tiga",
+  "title": "Menentukan Punca Kuasa Tiga dengan Kalkulator",
+  "learningGoal": "Menentukan punca kuasa tiga suatu nombor termasuk nombor negatif dengan menggunakan alat teknologi.",
+  "estimatedMinutes": 5,
+  "difficulty": "easy",
+  "misconceptions": [
+    "Punca kuasa tiga nombor negatif tidak wujud",
+    "³√(-104.8) = -√104.8 (bukan cara yang betul)",
+    "Butang ³√ sama dengan butang √"
+  ],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Punca Kuasa Tiga Nombor Negatif",
+      "text": "Tidak seperti punca kuasa dua, punca kuasa tiga BOLEH ditentukan untuk nombor negatif! Kerana (-4) × (-4) × (-4) = -64, maka ³√(-64) = -4.",
+      "visual": {
+        "kind": "numberBracket",
+        "value": -64,
+        "lowerPerfect": -125,
+        "upperPerfect": -27,
+        "lowerRoot": -5,
+        "upperRoot": -3,
+        "operation": "cbrt"
+      }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Mengapa ³√(-64) = -4 wujud tetapi √(-64) tidak wujud?",
+      "choices": [
+        "Kerana -64 lebih besar daripada -64",
+        "Kerana nombor negatif × negatif × negatif = negatif, tetapi negatif × negatif = positif",
+        "Kerana kalkulator lebih berkuasa sekarang",
+        "Kerana punca kuasa tiga dan dua menggunakan butang berbeza"
+      ],
+      "correctIndex": 1,
+      "explanation": "(-4)×(-4)×(-4) = -64 ✓ (negatif × negatif × negatif = negatif). Tetapi tiada nombor nyata yang apabila dikuasaduakan memberi negatif.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 4,
+        "highlightFace": false
+      }
+    },
+    {
+      "type": "workedExample",
+      "problem": "Hitung ³√(-104.8) betul kepada dua tempat perpuluhan.",
+      "steps": [
+        "Tekan butang ³√ pada kalkulator",
+        "Tekan (-) untuk negatif",
+        "Taip 1, 0, 4, ., 8",
+        "Tekan =",
+        "Paparan: -4.7066...",
+        "Bundarkan kepada 2 d.p.: -4.71"
+      ],
+      "answer": "³√(-104.8) ≈ -4.71"
+    },
+    {
+      "type": "numberInput",
+      "question": "Cari ³√(-27) tanpa kalkulator. (Petunjuk: (-3)³ = ?)",
+      "answer": "-3",
+      "hint": "(-3) × (-3) × (-3) = ?",
+      "explanation": "(-3)³ = (-3) × (-3) × (-3) = -27. Maka ³√(-27) = -3."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "³√(-125) = ?",
+      "choices": [
+        "-5",
+        "5",
+        "-25",
+        "Tidak wujud"
+      ],
+      "correctIndex": 0,
+      "explanation": "(-5)³ = (-5)×(-5)×(-5) = -125. Maka ³√(-125) = -5."
+    },
+    {
+      "type": "reflection",
+      "text": "Punca kuasa tiga berbeza daripada punca kuasa dua: ia wujud untuk nombor negatif. ³√(nombor negatif) = nombor negatif. Gunakan butang ³√ pada kalkulator saintifik."
+    },
+    {
+      "type": "mastery",
+      "question": "Hitung ³√(-8) = ?",
+      "choices": [
+        "2",
+        "-2",
+        "Tidak wujud",
+        "-4"
+      ],
+      "correctIndex": 1,
+      "explanation": "(-2)³ = (-2)×(-2)×(-2) = -8. Maka ³√(-8) = -2.",
+      "visual": {
+        "kind": "cubeBlock",
+        "n": 2,
+        "highlightFace": false
+      }
+    }
+  ]
+}
