@@ -15,6 +15,7 @@ export interface LessonProgressRecord {
 class MateMateDB extends Dexie {
   progress!: Table<SubtopikProgress, string>
   lessonProgress!: Table<LessonProgressRecord, string>
+  animasiProgress!: Table<AnimasiProgressRecord, string>
 
   constructor() {
     super('MateMateDB')
@@ -26,7 +27,22 @@ class MateMateDB extends Dexie {
       progress: 'id, status, masa_kemaskini',
       lessonProgress: 'lessonId, completed, masa_kemaskini',
     })
+    // Version 3 adds animasi progress table
+    this.version(3).stores({
+      progress: 'id, status, masa_kemaskini',
+      lessonProgress: 'lessonId, completed, masa_kemaskini',
+      animasiProgress: 'momentId, subtopic, completed, masa_kemaskini',
+    })
   }
+}
+
+export interface AnimasiProgressRecord {
+  momentId: string
+  subtopic: string
+  completed: boolean
+  correct: boolean | null
+  hintsUsed: number
+  masa_kemaskini: number
 }
 
 export const db = new MateMateDB()

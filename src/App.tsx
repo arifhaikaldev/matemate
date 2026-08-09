@@ -10,6 +10,7 @@ import { Form1Bab2Page } from './pages/Form1Bab2Page'
 import { Form1Bab3Page } from './pages/Form1Bab3Page'
 import { Form1Bab6Page } from './pages/Form1Bab6Page'
 import { LessonPage } from './pages/LessonPage'
+import { AnimasiBab6Page } from './pages/AnimasiBab6Page'
 
 export function App() {
   return (
@@ -31,6 +32,7 @@ export function App() {
 <Route path="/form1/bab3" element={<Form1Bab3Page />} />
 <Route path="/form1/bab6" element={<Form1Bab6Page />} />
 <Route path="/lesson/:lessonId" element={<LessonPage />} />
+<Route path="/animasi/bab6" element={<AnimasiBab6Page />} />
 
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />

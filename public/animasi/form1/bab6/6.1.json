@@ -1,0 +1,405 @@
+{
+  "id": "6.1",
+  "title": "Persamaan Linear dalam Satu Pemboleh Ubah",
+  "gate": { "requiredScore": 80, "requiredAnswered": 4 },
+  "moments": [
+    {
+      "id": "6.1.1",
+      "type": "observation",
+      "title": "Apa Maksud '='?",
+      "objective": "Memahami bahawa = bermaksud kedua-dua belah mempunyai nilai yang sama.",
+      "visual": {
+        "kind": "balanceScale",
+        "data": {
+          "leftValue": 5,
+          "rightValue": 5,
+          "showValues": true,
+          "animations": [
+            { "action": "show", "label": "5 kg = 5 kg" },
+            { "action": "addLeft", "value": 3, "label": "Tambah 3 kg pada kiri" },
+            { "action": "tilt", "direction": "left", "label": "8 kg ≠ 5 kg" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Tanda '=' bermaksud kedua-dua belah mempunyai nilai yang sama. Perhatikan penimbang di bawah.",
+        "narration": "Apabila kedua-dua belah sama berat, penimbang seimbang.",
+        "notation": ["5 = 5", "5 + 3 ≠ 5"]
+      },
+      "interaction": {
+        "question": "Kalau kita tambah 3 kg pada bekas kiri sahaja, apa jadi?",
+        "choices": [
+          { "label": "Tetap seimbang", "correct": false },
+          { "label": "Senget ke kiri", "correct": true },
+          { "label": "Senget ke kanan", "correct": false }
+        ],
+        "hints": [
+          "Bekas mana menjadi lebih berat?",
+          "Bahagian yang lebih berat akan turun."
+        ]
+      }
+    },
+    {
+      "id": "6.1.2",
+      "type": "observation",
+      "title": "Apa Itu Persamaan Linear?",
+      "objective": "Mengenal pasti persamaan linear dalam satu pemboleh ubah.",
+      "visual": {
+        "kind": "comparisonBlock",
+        "data": {
+          "left": { "equation": "3x + 2 = 5", "label": "Linear" },
+          "right": { "equation": "5y × y = 20", "label": "Bukan Linear" },
+          "highlightTerms": [
+            { "term": "3x", "note": "x¹ — kuasa 1", "isLinear": true },
+            { "term": "y × y", "note": "y² — kuasa 2", "isLinear": false }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Lihat dua persamaan di bawah. Cuba lihat perbezaannya.",
+        "narration": "Persamaan linear mempunyai pemboleh ubah berkuasa 1.",
+        "notation": ["x¹ → linear", "x² → bukan linear", "x³ → bukan linear"]
+      },
+      "interaction": {
+        "question": "'5y × y = 20' ialah persamaan linear?",
+        "choices": [
+          { "label": "Ya", "correct": false },
+          { "label": "Bukan, kerana terdapat y × y", "correct": true }
+        ],
+        "hints": [
+          "y × y sama dengan y².",
+          "Persamaan linear hanya ada pemboleh ubah berkuasa 1."
+        ]
+      }
+    },
+    {
+      "id": "6.1.3",
+      "type": "observation",
+      "title": "Membentuk Persamaan daripada Ayat",
+      "objective": "Membentuk persamaan linear daripada pernyataan verbal.",
+      "visual": {
+        "kind": "semanticBlock",
+        "data": {
+          "steps": [
+            { "text": "Satu nombor yang tidak diketahui", "symbol": "x" },
+            { "text": "ditolak 8", "symbol": "x - 8" },
+            { "text": "bakinya ialah 2", "symbol": "x - 8 = 2" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Tukarkan ayat berikut kepada persamaan: 'Satu nombor ditolak 8, bakinya ialah 2.'",
+        "notation": ["x - 8 = 2"]
+      },
+      "interaction": {
+        "question": "Antara berikut, yang manakah persamaan yang betul?",
+        "choices": [
+          { "label": "8 - x = 2", "correct": false },
+          { "label": "x - 8 = 2", "correct": true },
+          { "label": "x = 8 - 2", "correct": false },
+          { "label": "x + 8 = 2", "correct": false }
+        ],
+        "hints": [
+          "'Satu nombor' menjadi x.",
+          "'ditolak 8' menjadi x - 8.",
+          "'bakinya 2' menjadi = 2."
+        ]
+      }
+    },
+    {
+      "id": "6.1.4",
+      "type": "observation",
+      "title": "Persamaan Satu Langkah: Tambah / Tolak",
+      "objective": "Menyelesaikan persamaan satu langkah menggunakan kaedah cuba jaya dan pematahbalikan.",
+      "visual": {
+        "kind": "equationBlock",
+        "data": {
+          "equation": "x + 5 = 12",
+          "steps": [
+            { "type": "trial", "value": 5, "result": "10", "correct": false },
+            { "type": "trial", "value": 6, "result": "11", "correct": false },
+            { "type": "trial", "value": 7, "result": "12", "correct": true },
+            { "type": "inverse", "operation": "tolak 5", "result": "x = 7" },
+            { "type": "balance", "operation": "x + 5 - 5 = 12 - 5", "result": "x = 7" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan persamaan x + 5 = 12.",
+        "narration": "Kita boleh guna cuba jaya atau operasi songsang.",
+        "notation": ["x + 5 = 12", "x + 5 - 5 = 12 - 5", "x = 7"]
+      },
+      "interaction": {
+        "question": "x + 5 = 12. Apakah nilai x?",
+        "correctAnswer": 7,
+        "hints": [
+          "Cuba gantikan nilai x dengan nombor yang mungkin.",
+          "Operasi songsang bagi tambah ialah tolak.",
+          "Tolak 5 pada kedua-dua belah."
+        ]
+      }
+    },
+    {
+      "id": "6.1.5",
+      "type": "observation",
+      "title": "Persamaan Satu Langkah: Darab",
+      "objective": "Menyelesaikan persamaan darab satu langkah.",
+      "visual": {
+        "kind": "algebraTile",
+        "data": {
+          "equation": "3x = 15",
+          "total": 15,
+          "groups": 3,
+          "steps": [
+            { "action": "showTotal", "label": "15 objek" },
+            { "action": "divide", "label": "Bahagi kepada 3 kumpulan" },
+            { "action": "result", "label": "5 setiap kumpulan → x = 5" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan 3x = 15.",
+        "narration": "3x bermaksud 3 kumpulan x, sama dengan 15.",
+        "notation": ["3x = 15", "x = 15 ÷ 3", "x = 5"]
+      },
+      "interaction": {
+        "question": "3x = 15. Apakah nilai x?",
+        "correctAnswer": 5,
+        "hints": [
+          "3x bermaksud 3 darab x.",
+          "Operasi songsang bagi darab ialah bahagi.",
+          "Bahagi 15 dengan 3."
+        ]
+      }
+    },
+    {
+      "id": "6.1.A",
+      "type": "gate",
+      "title": "Gate 6.1-A — Masteri Satu Langkah",
+      "objective": "Menguasai persamaan satu langkah (tambah/tolak dan darab).",
+      "visual": null,
+      "content": {
+        "instruction": "Jawab soalan-soalan berikut untuk membuka kunci subtopik seterusnya.",
+        "notation": []
+      },
+      "interaction": {
+        "question": "",
+        "hints": []
+      }
+    },
+    {
+      "id": "6.1.6",
+      "type": "observation",
+      "title": "Gabungkan Jadi Dua Langkah",
+      "objective": "Menyelesaikan persamaan dua langkah dengan menggabungkan kemahiran satu langkah.",
+      "visual": {
+        "kind": "algebraTile",
+        "data": {
+          "equation": "2x + 1 = 7",
+          "total": 7,
+          "groups": 2,
+          "constant": 1,
+          "steps": [
+            { "action": "show", "label": "2x + 1 = 7" },
+            { "action": "removeConstant", "label": "Buang 1 daripada kedua-dua belah → 2x = 6" },
+            { "action": "divide", "label": "Bahagi kedua-dua belah dengan 2 → x = 3" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan 2x + 1 = 7.",
+        "narration": "Dua langkah ini bukan kemahiran baharu. Kita cuma gabungkan dua kemahiran satu langkah.",
+        "notation": ["2x + 1 = 7", "2x = 6", "x = 3"]
+      },
+      "interaction": {
+        "question": "2x + 1 = 7. Apakah nilai x?",
+        "correctAnswer": 3,
+        "hints": [
+          "Langkah 1: Buang +1 dengan tolak 1 pada kedua-dua belah.",
+          "2x = 6",
+          "Langkah 2: Bahagi kedua-dua belah dengan 2."
+        ]
+      }
+    },
+    {
+      "id": "6.1.7",
+      "type": "observation",
+      "title": "Nombor Negatif pada Garis Nombor",
+      "objective": "Memahami operasi tolak yang menghasilkan nombor negatif.",
+      "visual": {
+        "kind": "numberLine",
+        "data": {
+          "min": -10,
+          "max": 10,
+          "operations": [
+            { "from": 1, "to": -8, "jump": -9, "label": "1 - 9 = -8" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Kira 1 - 9 menggunakan garis nombor.",
+        "narration": "Apabila kita tolak lebih daripada yang ada, jawapan menjadi negatif.",
+        "notation": ["1 - 9 = -8"]
+      },
+      "interaction": {
+        "question": "1 - 9 = ?",
+        "correctAnswer": -8,
+        "hints": [
+          "Mula dari 1 pada garis nombor.",
+          "Gerak 9 langkah ke kiri.",
+          "Akhirnya di -8."
+        ]
+      }
+    },
+    {
+      "id": "6.1.8",
+      "type": "observation",
+      "title": "Persamaan dengan Jawapan Negatif",
+      "objective": "Menyelesaikan persamaan linear yang menghasilkan jawapan negatif.",
+      "visual": {
+        "kind": "equationBlock",
+        "data": {
+          "equation": "4x + 10 = 2",
+          "steps": [
+            { "type": "step", "operation": "4x + 10 = 2", "result": "" },
+            { "type": "step", "operation": "4x = 2 - 10", "result": "4x = -8" },
+            { "type": "numberLine", "operation": "2 - 10", "result": "-8" },
+            { "type": "step", "operation": "x = -8 ÷ 4", "result": "x = -2" },
+            { "type": "verify", "operation": "4(-2) + 10", "result": "-8 + 10 = 2 ✓" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan 4x + 10 = 2.",
+        "narration": "Jawapan boleh menjadi nombor negatif. Semak semula dengan menggantikan x.",
+        "notation": ["4x + 10 = 2", "4x = 2 - 10", "4x = -8", "x = -2", "4(-2) + 10 = 2 ✓"]
+      },
+      "interaction": {
+        "question": "4x + 10 = 2. Apakah nilai x?",
+        "correctAnswer": -2,
+        "hints": [
+          "Tolak 10 daripada kedua-dua belah.",
+          "4x = -8",
+          "Bahagi kedua-dua belah dengan 4."
+        ]
+      }
+    },
+    {
+      "id": "6.1.9",
+      "type": "observation",
+      "title": "I Do → We Do → You Do",
+      "objective": "Menguasai persamaan dua langkah melalui gradual release of responsibility.",
+      "visual": {
+        "kind": "visualStep",
+        "data": {
+          "steps": [
+            {
+              "phase": "I Do",
+              "equation": "5x + 3 = 18",
+              "solution": ["5x = 15", "x = 3"],
+              "teacherLed": true
+            },
+            {
+              "phase": "We Do",
+              "equation": "4x + 9 = 1",
+              "solution": ["4x = -8", "x = -2"],
+              "teacherLed": false,
+              "prompt": "1 - 9 = ?"
+            },
+            {
+              "phase": "You Do",
+              "equation": "6x - 5 = 13",
+              "solution": ["6x = 18", "x = 3"],
+              "teacherLed": false
+            }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan setiap persamaan langkah demi langkah.",
+        "narration": "Mula dengan saya tunjuk, kemudian kita buat sama-sama, akhirnya awak buat sendiri.",
+        "notation": ["I Do: 5x + 3 = 18", "We Do: 4x + 9 = 1", "You Do: 6x - 5 = 13"]
+      },
+      "interaction": {
+        "question": "6x - 5 = 13. Apakah nilai x?",
+        "correctAnswer": 3,
+        "hints": [
+          "Tambah 5 pada kedua-dua belah.",
+          "6x = 18",
+          "Bahagi kedua-dua belah dengan 6."
+        ]
+      }
+    },
+    {
+      "id": "6.1.10",
+      "type": "observation",
+      "title": "Kesan Kesilapan",
+      "objective": "Mengenal dan membetulkan kesilapan lazim dalam menyelesaikan persamaan.",
+      "visual": {
+        "kind": "balanceScale",
+        "data": {
+          "leftValue": 8,
+          "rightValue": 7,
+          "showValues": true,
+          "animations": [
+            { "action": "show", "label": "2x + 1 = 7" },
+            { "action": "wrongRemove", "label": "SALAH: Buang 1 sebelah sahaja → 2x = 7" },
+            { "action": "tilt", "direction": "left", "label": "Penimbang senget!" },
+            { "action": "correction", "label": "BETUL: Tolak 1 pada kedua-dua belah → 2x = 6" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Lihat kesilapan ini. Apakah yang salah?",
+        "narration": "Apa-apa operasi mesti dilakukan pada kedua-dua belah persamaan.",
+        "notation": ["2x + 1 = 7", "❌ 2x = 7", "✅ 2x + 1 - 1 = 7 - 1"]
+      },
+      "interaction": {
+        "question": "Dalam 2x + 1 = 7, apakah kesilapan jika seseorang tulis 2x = 7?",
+        "choices": [
+          { "label": "Tanda operasi salah", "correct": false },
+          { "label": "Tolak 1 hanya pada sebelah kiri", "correct": true },
+          { "label": "x sepatutnya bernilai 3", "correct": false }
+        ],
+        "hints": [
+          "Apa jadi pada belah kanan jika kita tolak 1?",
+          "Operasi mesti seimbang pada kedua-dua belah."
+        ]
+      }
+    },
+    {
+      "id": "6.1.11",
+      "type": "observation",
+      "title": "Masalah Umur",
+      "objective": "Menyelesaikan masalah harian yang melibatkan persamaan linear.",
+      "visual": {
+        "kind": "equationBlock",
+        "data": {
+          "equation": "x + 10 = 3x",
+          "steps": [
+            { "type": "context", "operation": "Umur sekarang = x", "result": "" },
+            { "type": "context", "operation": "10 tahun kemudian = x + 10", "result": "" },
+            { "type": "context", "operation": "Tiga kali umur sekarang = 3x", "result": "" },
+            { "type": "step", "operation": "x + 10 = 3x", "result": "" },
+            { "type": "step", "operation": "10 = 2x", "result": "x = 5" },
+            { "type": "verify", "operation": "Semakan: 5 + 10 = 15, 3 × 5 = 15", "result": "✓" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan masalah: 10 tahun kemudian, umur Ali adalah tiga kali umurnya sekarang. Berapa umur Ali sekarang?",
+        "narration": "Gunakan x untuk mewakili umur sekarang, kemudian bentuk persamaan.",
+        "notation": ["x + 10 = 3x", "10 = 2x", "x = 5"]
+      },
+      "interaction": {
+        "question": "Berapakah umur Ali sekarang?",
+        "correctAnswer": 5,
+        "hints": [
+          "Katakan umur sekarang = x.",
+          "10 tahun kemudian: x + 10.",
+          "Tiga kali umur sekarang: 3x. Maka x + 10 = 3x."
+        ]
+      }
+    }
+  ]
+}

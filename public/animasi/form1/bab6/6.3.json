@@ -1,0 +1,338 @@
+{
+  "id": "6.3",
+  "title": "Persamaan Linear Serentak",
+  "gate": { "requiredScore": 80, "requiredAnswered": 5 },
+  "moments": [
+    {
+      "id": "6.3.1",
+      "type": "observation",
+      "title": "Satu Situasi, Dua Syarat",
+      "objective": "Memahami bahawa persamaan serentak melibatkan dua syarat untuk situasi yang sama.",
+      "visual": {
+        "kind": "semanticBlock",
+        "data": {
+          "steps": [
+            { "text": "Faizah mempunyai ayam dan itik", "symbol": "" },
+            { "text": "Jumlah haiwan = 7", "symbol": "ayam + itik = 7" },
+            { "text": "Katakan ayam = x, itik = y", "symbol": "x + y = 7" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Faizah mempunyai ayam dan itik. Jumlah haiwan ialah 7. Bentuk persamaan.",
+        "narration": "Gunakan x untuk ayam dan y untuk itik.",
+        "notation": ["x + y = 7"]
+      },
+      "interaction": {
+        "question": "Jika ayam = x dan itik = y, apakah persamaan untuk 'jumlah haiwan ialah 7'?",
+        "choices": [
+          { "label": "x + y = 7", "correct": true },
+          { "label": "x - y = 7", "correct": false },
+          { "label": "xy = 7", "correct": false },
+          { "label": "x = 7y", "correct": false }
+        ],
+        "hints": [
+          "'Jumlah' bermaksud tambah.",
+          "Ayam tambah itik sama dengan 7."
+        ]
+      }
+    },
+    {
+      "id": "6.3.2",
+      "type": "observation",
+      "title": "Syarat Kedua",
+      "objective": "Membentuk persamaan kedua daripada situasi yang sama.",
+      "visual": {
+        "kind": "semanticBlock",
+        "data": {
+          "steps": [
+            { "text": "Kos ayam = RM2", "symbol": "" },
+            { "text": "Kos itik = RM1", "symbol": "" },
+            { "text": "Jumlah kos = RM12", "symbol": "2x + y = 12" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Ayam berharga RM2 setiap ekor dan itik RM1. Jumlah kos ialah RM12. Bentuk persamaan.",
+        "narration": "Sekarang kita ada dua syarat untuk situasi yang sama.",
+        "notation": ["Syarat 1: x + y = 7", "Syarat 2: 2x + y = 12"]
+      },
+      "interaction": {
+        "question": "Apakah persamaan untuk jumlah kos?",
+        "choices": [
+          { "label": "x + y = 12", "correct": false },
+          { "label": "2x + y = 12", "correct": true },
+          { "label": "x + 2y = 12", "correct": false },
+          { "label": "2x + 2y = 12", "correct": false }
+        ],
+        "hints": [
+          "Ayam = x, kos ayam = 2x.",
+          "Itik = y, kos itik = 1y = y.",
+          "Jumlah kos = 2x + y = 12."
+        ]
+      }
+    },
+    {
+      "id": "6.3.3",
+      "type": "observation",
+      "title": "Maksud 'Serentak'",
+      "objective": "Memahami bahawa penyelesaian persamaan serentak ialah titik yang memenuhi kedua-dua persamaan.",
+      "visual": {
+        "kind": "intersection",
+        "data": {
+          "equation1": "x + y = 7",
+          "equation2": "2x + y = 12",
+          "xMin": -1,
+          "xMax": 8,
+          "yMin": -1,
+          "yMax": 14,
+          "intersection": { "x": 5, "y": 2 },
+          "animateLines": true,
+          "animatePoint": true
+        }
+      },
+      "content": {
+        "instruction": "Perhatikan dua garis ini. Di manakah mereka bertemu?",
+        "narration": "Titik persilangan memenuhi kedua-dua persamaan serentak.",
+        "notation": ["x + y = 7", "2x + y = 12", "(5,2)", "5 + 2 = 7 ✓", "2(5) + 2 = 12 ✓"]
+      },
+      "interaction": {
+        "question": "Apakah titik persilangan bagi dua garis ini?",
+        "choices": [
+          { "label": "(2,5)", "correct": false },
+          { "label": "(5,2)", "correct": true },
+          { "label": "(3,4)", "correct": false },
+          { "label": "(7,0)", "correct": false }
+        ],
+        "hints": [
+          "Titik persilangan terletak pada kedua-dua garis.",
+          "Cari titik yang memenuhi x + y = 7 DAN 2x + y = 12."
+        ]
+      }
+    },
+    {
+      "id": "6.3.4",
+      "type": "observation",
+      "title": "Tiga Kemungkinan Penyelesaian",
+      "objective": "Membezakan antara satu penyelesaian, tiada penyelesaian, dan penyelesaian tak terhingga.",
+      "visual": {
+        "kind": "intersection",
+        "data": {
+          "cases": [
+            {
+              "label": "Satu penyelesaian",
+              "equation1": "x + y = 7",
+              "equation2": "2x + y = 12",
+              "type": "intersecting"
+            },
+            {
+              "label": "Tiada penyelesaian",
+              "equation1": "x + y = 7",
+              "equation2": "x + y = 10",
+              "type": "parallel"
+            },
+            {
+              "label": "Penyelesaian tak terhingga",
+              "equation1": "x + y = 7",
+              "equation2": "2x + 2y = 14",
+              "type": "coincident"
+            }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Lihat tiga jenis graf ini. Apakah perbezaannya?",
+        "narration": "Garis bersilang → satu jawapan. Garis selari → tiada jawapan. Garis bertindih → tak terhingga jawapan.",
+        "notation": ["Bersilang → satu", "Selari → tiada", "Bertindih → tak terhingga"]
+      },
+      "interaction": {
+        "question": "Apabila dua garis adalah selari, berapa banyak penyelesaian?",
+        "choices": [
+          { "label": "Satu", "correct": false },
+          { "label": "Tiada", "correct": true },
+          { "label": "Tak terhingga", "correct": false }
+        ],
+        "hints": [
+          "Garis selari tidak akan bertemu.",
+          "Jika mereka tidak bertemu, tiada titik yang memenuhi kedua-duanya."
+        ]
+      }
+    },
+    {
+      "id": "6.3.5",
+      "type": "observation",
+      "title": "Daripada Graf kepada Kaedah Algebra",
+      "objective": "Beralih daripada visual graf kepada kaedah algebra untuk menyelesaikan persamaan serentak.",
+      "visual": {
+        "kind": "equationBlock",
+        "data": {
+          "equation": "x - 3y = 7\n5x + 2y = 1",
+          "steps": [
+            { "type": "context", "operation": "Kita sudah lihat secara visual. Sekarang cara algebra.", "result": "" },
+            { "type": "context", "operation": "Dua kaedah: Penggantian dan Penghapusan", "result": "" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Kita akan belajar dua kaedah algebra untuk menyelesaikan persamaan serentak.",
+        "narration": "Kaedah penggantian dan kaedah penghapusan.",
+        "notation": ["x - 3y = 7", "5x + 2y = 1"]
+      },
+      "interaction": null
+    },
+    {
+      "id": "6.3.6",
+      "type": "observation",
+      "title": "Kaedah Penggantian",
+      "objective": "Menyelesaikan persamaan serentak menggunakan kaedah penggantian.",
+      "visual": {
+        "kind": "substitutionGroup",
+        "data": {
+          "equation1": "x - 3y = 7",
+          "equation2": "5x + 2y = 1",
+          "steps": [
+            { "action": "rearrange", "from": "x - 3y = 7", "to": "x = 7 + 3y" },
+            { "action": "substitute", "text": "Ganti x dalam persamaan kedua", "equation": "5(7 + 3y) + 2y = 1" },
+            { "action": "solve", "equation": "35 + 15y + 2y = 1", "result": "17y = -34" },
+            { "action": "result", "equation": "y = -2" },
+            { "action": "backSubstitute", "equation": "x = 7 + 3(-2)", "result": "x = 1" },
+            { "action": "verify", "equation": "x = 1, y = -2", "result": "✓" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan persamaan serentak menggunakan kaedah penggantian.",
+        "narration": "Ungkapkan satu pemboleh ubah dalam sebutan yang lain, kemudian gantikan.",
+        "notation": ["x = 7 + 3y", "5(7 + 3y) + 2y = 1", "17y = -34", "y = -2", "x = 1"]
+      },
+      "interaction": {
+        "question": "Daripada x - 3y = 7, apakah ungkapan untuk x?",
+        "choices": [
+          { "label": "x = 7 + 3y", "correct": true },
+          { "label": "x = 7 - 3y", "correct": false },
+          { "label": "x = 3y - 7", "correct": false },
+          { "label": "x = -7 - 3y", "correct": false }
+        ],
+        "hints": [
+          "Pindahkan -3y ke sebelah kanan.",
+          "x = 7 + 3y"
+        ]
+      }
+    },
+    {
+      "id": "6.3.7",
+      "type": "observation",
+      "title": "Kaedah Penghapusan",
+      "objective": "Menyelesaikan persamaan serentak menggunakan kaedah penghapusan.",
+      "visual": {
+        "kind": "eliminationGroup",
+        "data": {
+          "equation1": "x + y = 7",
+          "equation2": "2x + y = 12",
+          "steps": [
+            { "action": "align", "equations": ["x + y = 7", "2x + y = 12"] },
+            { "action": "highlightTerms", "terms": ["+y", "+y"], "note": "Istilah y sama — boleh hapuskan" },
+            { "action": "subtract", "equation": "(2x + y) - (x + y) = 12 - 7", "result": "x = 5" },
+            { "action": "backSubstitute", "equation": "5 + y = 7", "result": "y = 2" },
+            { "action": "verify", "equation": "x = 5, y = 2", "result": "✓" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Selesaikan persamaan serentak menggunakan kaedah penghapusan.",
+        "narration": "Hapuskan satu pemboleh ubah dengan menolak atau menambah dua persamaan.",
+        "notation": ["x + y = 7", "2x + y = 12", "x = 5", "y = 2"]
+      },
+      "interaction": {
+        "question": "Apabila hapuskan y, apakah persamaan yang tinggal?",
+        "choices": [
+          { "label": "x = 5", "correct": true },
+          { "label": "3x = 19", "correct": false },
+          { "label": "x = 19", "correct": false },
+          { "label": "x = 7", "correct": false }
+        ],
+        "hints": [
+          "Tolak persamaan pertama daripada persamaan kedua.",
+          "(2x - x) + (y - y) = 12 - 7",
+          "x = 5"
+        ]
+      }
+    },
+    {
+      "id": "6.3.8",
+      "type": "observation",
+      "title": "Memilih Kaedah",
+      "objective": "Memilih kaedah yang sesuai berdasarkan struktur persamaan.",
+      "visual": {
+        "kind": "visualStep",
+        "data": {
+          "steps": [
+            {
+              "phase": "Pilih Kaedah",
+              "equation": "",
+              "decision": {
+                "question": "Ada pemboleh ubah yang mudah diasingkan?",
+                "ifYes": "Guna Penggantian",
+                "ifNo": "Ada istilah yang mudah dihapuskan?",
+                "ifNoYes": "Guna Penghapusan"
+              }
+            }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Cara memilih kaedah yang sesuai.",
+        "narration": "Lihat struktur persamaan, kemudian pilih kaedah.",
+        "notation": ["Mudah diasingkan → Penggantian", "Mudah dihapuskan → Penghapusan"]
+      },
+      "interaction": {
+        "question": "Untuk persamaan x + y = 7 dan 2x + y = 12, kaedah mana paling sesuai?",
+        "choices": [
+          { "label": "Penghapusan (y boleh dihapuskan)", "correct": true },
+          { "label": "Penggantian (x mudah diasingkan)", "correct": false },
+          { "label": "Kedua-duanya sama sesuai", "correct": false }
+        ],
+        "hints": [
+          "Perhatikan istilah yang sama dalam kedua-dua persamaan.",
+          "+y dan +y — boleh dihapuskan."
+        ]
+      }
+    },
+    {
+      "id": "6.3.9",
+      "type": "observation",
+      "title": "Masalah Harga Tiket",
+      "objective": "Menyelesaikan masalah harian yang melibatkan persamaan linear serentak.",
+      "visual": {
+        "kind": "equationBlock",
+        "data": {
+          "equation": "2x + 3y = 97\n4x + y = 139",
+          "steps": [
+            { "type": "context", "operation": "Dewasa = x, Kanak-kanak = y", "result": "" },
+            { "type": "context", "operation": "2 tiket dewasa + 3 tiket kanak-kanak = RM97", "result": "2x + 3y = 97" },
+            { "type": "context", "operation": "4 tiket dewasa + 1 tiket kanak-kanak = RM139", "result": "4x + y = 139" },
+            { "type": "step", "operation": "Guna penghapusan: darab persamaan kedua dengan 3", "result": "12x + 3y = 417" },
+            { "type": "step", "operation": "Tolak: (12x + 3y) - (2x + 3y) = 417 - 97", "result": "10x = 320" },
+            { "type": "step", "operation": "x = 32", "result": "Harga dewasa = RM32" },
+            { "type": "step", "operation": "Ganti x = 32: 4(32) + y = 139", "result": "y = 11" },
+            { "type": "verify", "operation": "2(32) + 3(11) = 64 + 33 = 97 ✓, 4(32) + 11 = 139 ✓", "result": "✓" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "2 tiket dewasa + 3 tiket kanak-kanak = RM97. 4 tiket dewasa + 1 tiket kanak-kanak = RM139. Cari harga satu tiket dewasa dan satu tiket kanak-kanak.",
+        "narration": "Bentuk dua persamaan, kemudian selesaikan serentak.",
+        "notation": ["2x + 3y = 97", "4x + y = 139", "x = RM32", "y = RM11"]
+      },
+      "interaction": {
+        "question": "Berapakah harga satu tiket dewasa?",
+        "correctAnswer": 32,
+        "hints": [
+          "Guna kaedah penghapusan: samakan pekali y.",
+          "Darab persamaan kedua dengan 3: 12x + 3y = 417.",
+          "Tolak: 10x = 320, maka x = 32."
+        ]
+      }
+    }
+  ]
+}

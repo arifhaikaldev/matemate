@@ -223,6 +223,35 @@ export function HomePage() {
               </svg>
             </div>
           </button>
+          <button
+            onClick={() => navigate('/animasi/bab6')}
+            className="w-full text-left rounded-2xl border-2 border-duo-orange/40 bg-gradient-to-r from-duo-orange/5 to-duo-peach/5 dark:from-duo-orange/10 dark:to-duo-peach/10 dark:border-duo-orange/30 px-5 py-4 hover:border-duo-orange hover:shadow-md transition-all duration-150 active:scale-[0.98] group relative overflow-hidden"
+          >
+            <span className="absolute -top-1 -right-1 bg-duo-orange text-white text-[10px] font-black px-2 py-0.5 rounded-bl-xl rounded-tr-xl">
+              BARU
+            </span>
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-duo-orange to-duo-peach flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-black text-sm text-duo-charcoal dark:text-gray-100 group-hover:text-duo-orange-dark dark:group-hover:text-duo-orange transition-colors">
+                    Bab 6 — Animasi Interaktif
+                  </p>
+                  <p className="text-xs text-duo-gray mt-0.5">
+                    Persamaan Linear · Belajar melalui animasi SVG
+                  </p>
+                </div>
+              </div>
+              <svg className="w-4 h-4 text-duo-orange flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </button>
         </section>
 
         <section>

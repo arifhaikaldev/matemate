@@ -1,0 +1,339 @@
+{
+  "id": "6.2",
+  "title": "Persamaan Linear dalam Dua Pemboleh Ubah",
+  "gate": { "requiredScore": 80, "requiredAnswered": 4 },
+  "moments": [
+    {
+      "id": "6.2.1",
+      "type": "observation",
+      "title": "Daripada Satu x Kepada x dan y",
+      "objective": "Memahami perbezaan antara persamaan satu pemboleh ubah dan dua pemboleh ubah.",
+      "visual": {
+        "kind": "comparisonBlock",
+        "data": {
+          "left": { "equation": "x + 2 = 5", "label": "Satu pemboleh ubah" },
+          "right": { "equation": "x + y = 5", "label": "Dua pemboleh ubah" },
+          "highlightTerms": [
+            { "term": "x + 2 = 5", "note": "Satu jawapan: x = 3", "isLinear": true },
+            { "term": "x + y = 5", "note": "Banyak pasangan!", "isLinear": true }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Bandingkan dua persamaan ini. Apakah perbezaannya?",
+        "narration": "Apabila ada dua pemboleh ubah, terdapat banyak pasangan nilai yang memenuhi persamaan.",
+        "notation": ["x + y = 5", "(0,5) (1,4) (2,3) (3,2) (4,1) (5,0)"]
+      },
+      "interaction": {
+        "question": "Berapa banyak pasangan (x, y) yang memenuhi x + y = 5?",
+        "choices": [
+          { "label": "Satu sahaja", "correct": false },
+          { "label": "Banyak pasangan", "correct": true },
+          { "label": "Tiada pasangan", "correct": false }
+        ],
+        "hints": [
+          "Cuba x = 0, berapa nilai y?",
+          "Cuba x = 1, berapa nilai y?",
+          "Banyak kemungkinan!"
+        ]
+      }
+    },
+    {
+      "id": "6.2.2",
+      "type": "observation",
+      "title": "Kenal Persamaan Linear Dua Pemboleh Ubah",
+      "objective": "Mengenal pasti sama ada persamaan adalah linear dalam dua pemboleh ubah.",
+      "visual": {
+        "kind": "comparisonBlock",
+        "data": {
+          "left": { "equation": "3p - q = 6", "label": "Linear ✓" },
+          "right": { "equation": "p² + q = 6", "label": "Bukan Linear ✗" },
+          "highlightTerms": [
+            { "term": "3p - q", "note": "p¹, q¹", "isLinear": true },
+            { "term": "p² + q", "note": "p² — kuasa 2", "isLinear": false }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Tentukan sama ada setiap persamaan berikut adalah linear dalam dua pemboleh ubah.",
+        "narration": "Kedua-dua pemboleh ubah mesti berkuasa 1.",
+        "notation": ["3p - q = 6  ✓", "p² + q = 6  ✗ (p berkuasa 2)", "pq = 6  ✗ (pq = darab)"]
+      },
+      "interaction": {
+        "question": "Antara berikut, yang manakah persamaan linear dalam dua pemboleh ubah?",
+        "choices": [
+          { "label": "3p - q = 6", "correct": true },
+          { "label": "p² + q = 6", "correct": false },
+          { "label": "pq = 6", "correct": false },
+          { "label": "p + 5 = 10", "correct": false }
+        ],
+        "hints": [
+          "Semua pemboleh ubah mesti berkuasa 1.",
+          "p² bermaksud p × p — bukan linear.",
+          "pq bermaksud p × q — bukan linear."
+        ]
+      }
+    },
+    {
+      "id": "6.2.3",
+      "type": "observation",
+      "title": "Membentuk Persamaan Dua Pemboleh Ubah",
+      "objective": "Membentuk persamaan linear dalam dua pemboleh ubah daripada situasi.",
+      "visual": {
+        "kind": "semanticBlock",
+        "data": {
+          "steps": [
+            { "text": "Nombor pertama", "symbol": "p" },
+            { "text": "Nombor kedua", "symbol": "q" },
+            { "text": "Beza antara dua nombor", "symbol": "p - q" },
+            { "text": "Nilai beza ialah 18", "symbol": "p - q = 18" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Tukarkan kepada persamaan: Beza antara dua nombor ialah 18.",
+        "narration": "Pilih huruf untuk mewakil setiap nombor yang tidak diketahui.",
+        "notation": ["p - q = 18"]
+      },
+      "interaction": {
+        "question": "Antara berikut, yang manakah persamaan yang betul?",
+        "choices": [
+          { "label": "p + q = 18", "correct": false },
+          { "label": "p - q = 18", "correct": true },
+          { "label": "q - p = 18", "correct": false },
+          { "label": "p = 18 - q", "correct": false }
+        ],
+        "hints": [
+          "'Beza' bermaksud tolak.",
+          "Nombor pertama tolak nombor kedua sama dengan 18."
+        ]
+      }
+    },
+    {
+      "id": "6.2.4",
+      "type": "observation",
+      "title": "Pasangan Penyelesaian",
+      "objective": "Menentukan pasangan tertib yang memenuhi persamaan linear dalam dua pemboleh ubah.",
+      "visual": {
+        "kind": "orderedPair",
+        "data": {
+          "equation": "2x + y = 6",
+          "pairs": [
+            { "x": 0, "y": 6, "work": "2(0) + y = 6 → y = 6" },
+            { "x": 1, "y": 4, "work": "2(1) + y = 6 → y = 4" },
+            { "x": 2, "y": 2, "work": "2(2) + y = 6 → y = 2" }
+          ]
+        }
+      },
+      "content": {
+        "instruction": "Cari nilai y bagi setiap nilai x yang diberikan untuk persamaan 2x + y = 6.",
+        "narration": "Pilih nilai x, gantikan ke dalam persamaan untuk cari nilai y.",
+        "notation": ["(0,6)", "(1,4)", "(2,2)"]
+      },
+      "interaction": {
+        "question": "Untuk persamaan 2x + y = 6, jika x = 3, apakah nilai y?",
+        "correctAnswer": 0,
+        "hints": [
+          "Gantikan x = 3 ke dalam persamaan.",
+          "2(3) + y = 6",
+          "6 + y = 6, maka y = 0."
+        ]
+      }
+    },
+    {
+      "id": "6.2.5",
+      "type": "observation",
+      "title": "Jadual Nilai",
+      "objective": "Melengkapkan jadual nilai untuk persamaan linear dalam dua pemboleh ubah.",
+      "visual": {
+        "kind": "tableOfValues",
+        "data": {
+          "equation": "2x + y = 6",
+          "columns": [
+            { "header": "x", "values": [0, 1, 2] },
+            { "header": "y", "values": [6, 4, 2] }
+          ],
+          "connection": "nilai x → persamaan → nilai y → pasangan tertib"
+        }
+      },
+      "content": {
+        "instruction": "Lengkapkan jadual nilai untuk persamaan 2x + y = 6.",
+        "narration": "Setiap nilai x memberikan satu nilai y melalui persamaan.",
+        "notation": ["x | y", "--|--", "0 | 6", "1 | 4", "2 | 2"]
+      },
+      "interaction": {
+        "question": "Untuk 2x + y = 6, jika x = 3, apakah nilai y dalam jadual?",
+        "correctAnswer": 0,
+        "hints": [
+          "Gantikan x = 3 ke dalam persamaan.",
+          "2(3) + y = 6",
+          "y = 0"
+        ]
+      }
+    },
+    {
+      "id": "6.2.6",
+      "type": "observation",
+      "title": "Pasangan Tertib ke Graf",
+      "objective": "Memplot pasangan tertib pada satah Cartes.",
+      "visual": {
+        "kind": "coordinateGrid",
+        "data": {
+          "equation": "2x + y = 6",
+          "xMin": -1,
+          "xMax": 6,
+          "yMin": -1,
+          "yMax": 7,
+          "points": [
+            { "x": 0, "y": 6, "label": "(0,6)" },
+            { "x": 1, "y": 4, "label": "(1,4)" },
+            { "x": 2, "y": 2, "label": "(2,2)" }
+          ],
+          "animatePlot": true,
+          "showGrid": true
+        }
+      },
+      "content": {
+        "instruction": "Plot titik-titik (0,6), (1,4) dan (2,2) pada satah Cartes.",
+        "narration": "Gerak ke kanan pada paksi-x, kemudian ke atas pada paksi-y.",
+        "notation": ["(0,6)", "(1,4)", "(2,2)"]
+      },
+      "interaction": {
+        "question": "Apakah koordinat bagi titik yang terletak 2 unit ke kanan dan 2 unit ke atas?",
+        "choices": [
+          { "label": "(2,2)", "correct": true },
+          { "label": "(0,2)", "correct": false },
+          { "label": "(2,0)", "correct": false },
+          { "label": "(1,1)", "correct": false }
+        ],
+        "hints": [
+          "Paksi-x: gerak ke kanan 2 unit.",
+          "Kemudian paksi-y: gerak ke atas 2 unit."
+        ]
+      }
+    },
+    {
+      "id": "6.2.7",
+      "type": "observation",
+      "title": "Daripada Titik ke Garis",
+      "objective": "Memahami bahawa titik-titik yang memenuhi persamaan membentuk satu garis lurus.",
+      "visual": {
+        "kind": "coordinateGrid",
+        "data": {
+          "equation": "2x + y = 6",
+          "xMin": -1,
+          "xMax": 6,
+          "yMin": -1,
+          "yMax": 7,
+          "points": [
+            { "x": 0, "y": 6 },
+            { "x": 1, "y": 4 },
+            { "x": 2, "y": 2 },
+            { "x": 3, "y": 0 }
+          ],
+          "drawLine": true,
+          "animatePlot": true
+        }
+      },
+      "content": {
+        "instruction": "Perhatikan bagaimana titik-titik membentuk satu garis lurus.",
+        "narration": "Semua titik yang terletak pada garis ini memenuhi persamaan yang sama.",
+        "notation": ["PERSAMAAN", "↕", "PASANGAN TERTIB", "↕", "TITIK", "↕", "GARIS"]
+      },
+      "interaction": {
+        "question": "Jika satu titik terletak pada garis 2x + y = 6, apakah yang benar tentang titik itu?",
+        "choices": [
+          { "label": "Titik itu memenuhi persamaan", "correct": true },
+          { "label": "Titik itu berada di paksi-x", "correct": false },
+          { "label": "Titik itu berada di paksi-y", "correct": false }
+        ],
+        "hints": [
+          "Setiap titik pada garis mewakili satu pasangan (x,y).",
+          "Pasangan itu menjadikan persamaan benar."
+        ]
+      }
+    },
+    {
+      "id": "6.2.8",
+      "type": "observation",
+      "title": "Graf x - y = -2",
+      "objective": "Melukis graf bagi persamaan linear dalam dua pemboleh ubah.",
+      "visual": {
+        "kind": "coordinateGrid",
+        "data": {
+          "equation": "x - y = -2",
+          "form": "y = x + 2",
+          "xMin": -3,
+          "xMax": 3,
+          "yMin": -1,
+          "yMax": 5,
+          "points": [
+            { "x": -2, "y": 0, "label": "(-2,0)" },
+            { "x": -1, "y": 1, "label": "(-1,1)" },
+            { "x": 0, "y": 2, "label": "(0,2)" },
+            { "x": 1, "y": 3, "label": "(1,3)" }
+          ],
+          "drawLine": true,
+          "animatePlot": true,
+          "showGrid": true
+        }
+      },
+      "content": {
+        "instruction": "Lukis graf bagi x - y = -2 (tukar kepada y = x + 2).",
+        "narration": "Susun semula persamaan untuk mendapatkan y.",
+        "notation": ["x - y = -2", "y = x + 2", "(-2,0) (-1,1) (0,2) (1,3)"]
+      },
+      "interaction": {
+        "question": "Apakah nilai y apabila x = 2 dalam y = x + 2?",
+        "correctAnswer": 4,
+        "hints": [
+          "Gantikan x = 2 ke dalam persamaan.",
+          "y = 2 + 2",
+          "y = 4"
+        ]
+      }
+    },
+    {
+      "id": "6.2.9",
+      "type": "observation",
+      "title": "Interaksi Graf",
+      "objective": "Mengenal pasti titik yang memenuhi persamaan dengan melihat graf.",
+      "visual": {
+        "kind": "coordinateGrid",
+        "data": {
+          "equation": "2x + y = 6",
+          "xMin": -1,
+          "xMax": 4,
+          "yMin": -1,
+          "yMax": 7,
+          "points": [
+            { "x": 0, "y": 6 },
+            { "x": 1, "y": 4 },
+            { "x": 2, "y": 2 }
+          ],
+          "drawLine": true,
+          "showGrid": true
+        }
+      },
+      "content": {
+        "instruction": "Pilih titik yang memenuhi persamaan 2x + y = 6.",
+        "narration": "Titik pada garis memenuhi persamaan. Titik di luar garis tidak.",
+        "notation": ["2x + y = 6"]
+      },
+      "interaction": {
+        "question": "Antara berikut, yang manakah memenuhi 2x + y = 6?",
+        "choices": [
+          { "label": "(0,6)", "correct": true },
+          { "label": "(1,6)", "correct": false },
+          { "label": "(2,6)", "correct": false },
+          { "label": "(3,6)", "correct": false }
+        ],
+        "hints": [
+          "Gantikan nilai x dan y ke dalam persamaan.",
+          "2(0) + 6 = 6 → betul",
+          "2(1) + 6 = 8 → salah"
+        ]
+      }
+    }
+  ]
+}
