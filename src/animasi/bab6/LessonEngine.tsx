@@ -45,7 +45,12 @@ export function LessonEngine() {
           title: 'Persamaan Linear',
           subtopics: [s1, s2, s3],
         })
-      } catch {
+        const firstMoment = s1.moments[0]
+        if (firstMoment) {
+          setScreenState({ type: 'moment', moment: firstMoment, subtopicId: '6.1' })
+        }
+      } catch (e) {
+        console.error('Failed to load Bab 6 content:', e)
         setScreenState({ type: 'completed' })
       }
     }
