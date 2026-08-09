@@ -28,8 +28,8 @@ export function NumberInputScreen({ moment, onAnswer }: Props) {
   }
 
   return (
-    <div className="h-full flex flex-col px-5 py-4 space-y-3 overflow-y-auto">
-      <div className="flex-shrink-0">
+    <div className="min-h-full w-full bg-white dark:bg-white/5 rounded-3xl p-5 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-4">
+      <div>
         <h2 className="text-sm font-bold text-duo-gray uppercase tracking-widest">
           {moment.title}
         </h2>
@@ -37,84 +37,67 @@ export function NumberInputScreen({ moment, onAnswer }: Props) {
       </div>
 
       {moment.visual && (
-        <div className="flex-shrink-0">
+        <div>
           <VisualArea>
             <VisualRenderer visual={moment.visual} />
           </VisualArea>
         </div>
       )}
 
-      <p className="text-sm font-bold text-duo-charcoal dark:text-gray-200 flex-shrink-0">
+      <p className="text-base font-bold text-duo-charcoal dark:text-gray-100 leading-snug">
         {question}
       </p>
 
-      <div className="flex items-center gap-2 flex-shrink-0">
-        <input
-          type="number"
-          value={value}
-          onChange={(e) => !submitted && setValue(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
-          disabled={submitted}
-          placeholder="Masukkan jawapan..."
-          className={`flex-1 px-4 py-3 rounded-xl border-2 bg-white dark:bg-gray-800 font-bold text-lg text-center outline-none transition-all ${
-            submitted
-              ? isCorrect
-                ? 'border-duo-green dark:border-duo-green'
-                : 'border-duo-red dark:border-duo-red'
-              : 'border-gray-200 dark:border-gray-700 focus:border-duo-purple'
-          }`}
-        />
-      </div>
+      <input
+        type="number"
+        value={value}
+        onChange={(e) => !submitted && setValue(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && !submitted && handleSubmit()}
+        disabled={submitted}
+        placeholder="Taip jawapan..."
+        className={`w-full rounded-2xl border-2 px-4 py-3 text-lg font-bold text-center bg-white dark:bg-white/5 transition-colors outline-none ${
+          submitted
+            ? isCorrect
+              ? 'border-duo-green text-duo-green-dark'
+              : 'border-duo-red text-duo-red'
+            : 'border-duo-gray-light dark:border-white/15 text-duo-charcoal dark:text-gray-100 focus:border-duo-blue'
+        }`}
+        aria-label="Masukkan jawapan"
+      />
 
-      {/* Explanation panel */}
       <AnimatePresence>
         {submitted && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`flex-shrink-0 p-4 rounded-xl ${
+            className={`rounded-2xl px-4 py-3 text-sm font-semibold ${
               isCorrect
-                ? 'bg-duo-green-light/50 dark:bg-duo-green/10 border border-duo-green/40'
-                : 'bg-duo-red/10 border border-duo-red/30'
+                ? 'bg-duo-green-light dark:bg-duo-green/20 text-duo-green-dark'
+                : 'bg-duo-red-light dark:bg-duo-red/20 text-duo-red'
             }`}
+            role="alert"
           >
-            <div className="flex items-start gap-2">
-              <span className={`text-lg font-black flex-shrink-0 ${isCorrect ? 'text-duo-green' : 'text-duo-red'}`}>
-                {isCorrect ? '✓' : '✗'}
-              </span>
-              <div>
-                <p className={`text-sm font-bold ${isCorrect ? 'text-duo-green-dark dark:text-duo-green' : 'text-duo-red'}`}>
-                  {isCorrect ? 'Betul!' : 'Maaf, tidak tepat.'}
-                </p>
-                {!isCorrect && (
-                  <p className="text-xs text-duo-charcoal/70 dark:text-gray-300 mt-1">
-                    Jawapan betul: <span className="font-bold">{correctAnswer}</span>
-                  </p>
-                )}
-                {hints.length > 0 && (
-                  <p className="text-xs text-duo-charcoal/60 dark:text-gray-400 mt-1 italic">
-                    {hints[hints.length - 1]}
-                  </p>
-                )}
-              </div>
-            </div>
+            <span className="font-black mr-1">
+              {isCorrect ? 'Betul!' : `Jawapan: ${correctAnswer}.`}
+            </span>
+            {!isCorrect && hints.length > 0 && (
+              <p className="text-xs text-duo-charcoal/60 dark:text-gray-400 mt-1 italic">
+                {hints[hints.length - 1]}
+              </p>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="flex-shrink-0">
+      <div>
         {!submitted ? (
           <motion.button
             onClick={handleSubmit}
             disabled={!value.trim()}
             whileTap={{ scale: 0.97 }}
-            className={`w-full py-3 rounded-xl font-bold text-sm transition-all ${
-              value.trim()
-                ? 'bg-duo-purple text-white shadow-md'
-                : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
-            }`}
+            className="btn btn-primary w-full disabled:opacity-40"
           >
-            Semak
+            Semak Jawapan
           </motion.button>
         ) : (
           <p className="text-center text-xs text-duo-gray font-medium">

@@ -15,7 +15,7 @@ export function ObservationScreen({ moment, onComplete }: Props) {
       key={moment.id}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="space-y-3"
+      className="min-h-full w-full bg-white dark:bg-white/5 rounded-3xl p-5 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-3"
     >
       <div>
         <h2 className="text-lg font-black text-duo-charcoal dark:text-gray-100">
@@ -43,7 +43,7 @@ export function ObservationScreen({ moment, onComplete }: Props) {
           <motion.button
             onClick={onComplete}
             whileTap={{ scale: 0.97 }}
-            className="w-full py-3 rounded-xl bg-duo-purple text-white font-bold shadow-md hover:bg-duo-purple/90 transition-all"
+            className="btn btn-primary w-full"
           >
             Seterusnya
           </motion.button>

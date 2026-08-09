@@ -13,7 +13,7 @@ export function GateResult({ passed, score, requiredScore, onRetry, onContinue }
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="text-center space-y-4 py-6"
+      className="min-h-full w-full bg-white dark:bg-white/5 rounded-3xl p-6 shadow-sm border border-duo-gray-light dark:border-white/10 text-center space-y-4"
     >
       {passed ? (
         <>
@@ -32,7 +32,7 @@ export function GateResult({ passed, score, requiredScore, onRetry, onContinue }
             <motion.button
               onClick={onContinue}
               whileTap={{ scale: 0.97 }}
-              className="px-8 py-3 rounded-xl bg-duo-green text-white font-bold shadow-md hover:bg-duo-green/90 transition-all"
+              className="btn btn-primary"
             >
               Teruskan ke Topik Seterusnya
             </motion.button>
@@ -58,7 +58,7 @@ export function GateResult({ passed, score, requiredScore, onRetry, onContinue }
             <motion.button
               onClick={onRetry}
               whileTap={{ scale: 0.97 }}
-              className="px-8 py-3 rounded-xl bg-duo-orange text-white font-bold shadow-md hover:bg-duo-orange/90 transition-all"
+              className="btn btn-primary"
             >
               Cuba Semula
             </motion.button>

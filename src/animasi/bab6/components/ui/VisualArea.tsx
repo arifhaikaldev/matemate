@@ -9,7 +9,7 @@ interface Props {
 export function VisualArea({ children, title, className = '' }: Props) {
   return (
     <div
-      className={`bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-100 dark:border-gray-800 p-4 flex items-center justify-center min-h-[280px] ${className}`}
+      className={`bg-white dark:bg-gray-900 rounded-2xl border-2 border-duo-gray-light dark:border-white/10 p-4 flex items-center justify-center min-h-[280px] ${className}`}
     >
       <div className="w-full max-w-md">
         {title && (
