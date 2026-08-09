@@ -13,7 +13,7 @@ export function GateResult({ passed, score, requiredScore, onRetry, onContinue }
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="min-h-full w-full bg-white dark:bg-white/5 rounded-3xl p-6 shadow-sm border border-duo-gray-light dark:border-white/10 text-center space-y-4"
+      className="bg-white dark:bg-white/5 rounded-3xl p-6 shadow-sm border border-duo-gray-light dark:border-white/10 text-center space-y-4"
     >
       {passed ? (
         <>

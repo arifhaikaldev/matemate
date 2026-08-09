@@ -30,7 +30,7 @@ export function MCQuestionScreen({ moment, onAnswer }: Props) {
   }
 
   return (
-    <div className="min-h-full w-full bg-white dark:bg-white/5 rounded-3xl p-5 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-4">
+    <div className="bg-white dark:bg-white/5 rounded-3xl p-5 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-4">
       <div>
         <h2 className="text-sm font-bold text-duo-gray uppercase tracking-widest">
           {moment.title}

@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { ObservationScreen } from './components/screens/ObservationScreen'
 import { MCQuestionScreen } from './components/screens/MCQuestionScreen'
 import { NumberInputScreen } from './components/screens/NumberInputScreen'
 import { GateScreen } from './components/screens/GateScreen'
-import { ProgressBar } from './components/ui/ProgressBar'
 import { GateResult } from './components/ui/GateResult'
 import { useAnimasiProgress } from '../../hooks/useAnimasiProgress'
 import type { Bab6Content, Moment } from './types'
@@ -13,15 +12,12 @@ export function LessonEngine() {
   const [content, setContent] = useState<Bab6Content | null>(null)
   const [currentSubtopicIdx, setCurrentSubtopicIdx] = useState(0)
   const [momentResults, setMomentResults] = useState<Record<string, 'correct' | 'incorrect' | 'viewed'>>({})
-  const [visibleMomentIdx, setVisibleMomentIdx] = useState(0)
   const [gateActive, setGateActive] = useState(false)
   const [gateQuestions, setGateQuestions] = useState<Moment[]>([])
   const [gateIdx, setGateIdx] = useState(0)
   const [gateCorrect, setGateCorrect] = useState(0)
   const [gateDone, setGateDone] = useState(false)
-  const [scrollBlocked, setScrollBlocked] = useState(false)
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [showGateFailed, setShowGateFailed] = useState(false)
 
   const { saveProgress } = useAnimasiProgress()
 
@@ -46,7 +42,6 @@ export function LessonEngine() {
   }, [])
 
   const subtopic = content?.subtopics[currentSubtopicIdx]
-
   const allMoments = gateActive ? [...(subtopic?.moments ?? []), ...gateQuestions] : (subtopic?.moments ?? [])
 
   const handleAnswer = useCallback(
@@ -67,12 +62,10 @@ export function LessonEngine() {
   useEffect(() => {
     if (!gateActive || !subtopic?.gate || gateIdx < gateQuestions.length) return
     setGateDone(true)
-    const total = gateQuestions.length
-    const score = Math.round((gateCorrect / total) * 100)
+    const score = Math.round((gateCorrect / gateQuestions.length) * 100)
     if (score < subtopic.gate.requiredScore) {
-      setScrollBlocked(true)
+      setShowGateFailed(true)
     } else {
-      // Auto-advance to next subtopic after brief delay
       const timer = setTimeout(() => moveToNextSubtopic(), 1500)
       return () => clearTimeout(timer)
     }
@@ -86,12 +79,7 @@ export function LessonEngine() {
     setGateIdx(0)
     setGateCorrect(0)
     setGateDone(false)
-    setScrollBlocked(false)
-    // Scroll to the gate section
-    setTimeout(() => {
-      const idx = (subtopic.moments.length)
-      cardRefs.current[idx]?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
+    setShowGateFailed(false)
   }, [subtopic])
 
   const moveToNextSubtopic = useCallback(() => {
@@ -105,8 +93,7 @@ export function LessonEngine() {
     setGateIdx(0)
     setGateCorrect(0)
     setGateDone(false)
-    setScrollBlocked(false)
-    if (scrollRef.current) scrollRef.current.scrollTop = 0
+    setShowGateFailed(false)
   }, [content, currentSubtopicIdx])
 
   const retrySubtopic = useCallback(() => {
@@ -116,30 +103,7 @@ export function LessonEngine() {
     setGateIdx(0)
     setGateCorrect(0)
     setGateDone(false)
-    setScrollBlocked(false)
-    if (scrollRef.current) scrollRef.current.scrollTop = 0
-  }, [])
-
-  // IntersectionObserver for visible moment tracking
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            const idx = Number(entry.target.getAttribute('data-moment-idx'))
-            if (!isNaN(idx)) setVisibleMomentIdx(idx)
-          }
-        }
-      },
-      { threshold: 0.4 },
-    )
-    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[]
-    cards.forEach((c) => observer.observe(c))
-    return () => observer.disconnect()
-  }, [allMoments.length])
-
-  const scrollToMoment = useCallback((idx: number) => {
-    cardRefs.current[idx]?.scrollIntoView({ behavior: 'smooth' })
+    setShowGateFailed(false)
   }, [])
 
   if (!content) {
@@ -153,7 +117,7 @@ export function LessonEngine() {
   // End of all subtopics
   if (currentSubtopicIdx >= content.subtopics.length) {
     return (
-      <div className="flex items-center justify-center h-screen px-5">
+      <div className="flex items-center justify-center min-h-screen px-5">
         <div className="text-center space-y-4">
           <div className="w-20 h-20 rounded-full bg-duo-green/20 flex items-center justify-center mx-auto">
             <svg className="w-10 h-10 text-duo-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -174,47 +138,31 @@ export function LessonEngine() {
   const isGateIntro = (m: Moment) => m.type === 'gate'
   const isGateQuestion = (m: Moment) => gateActive && gateQuestions.includes(m)
   const isGateResultCard = gateDone && gateActive
+  const allMomentsAnswered = subtopic.moments.every(
+    (m) => !m.interaction || momentResults[m.id],
+  )
+  const gatePassed = gateDone && gateQuestions.length > 0 &&
+    Math.round((gateCorrect / gateQuestions.length) * 100) >= (subtopic.gate?.requiredScore ?? 80)
+  const canContinue = allMomentsAnswered && (!gateActive || gatePassed)
 
   return (
-    <div className="h-screen flex flex-col bg-white dark:bg-duo-charcoal">
+    <div className="min-h-screen bg-white dark:bg-duo-charcoal">
       {/* Header */}
-      <div className="flex-shrink-0 flex items-center justify-between px-5 h-12 border-b border-gray-100 dark:border-gray-800">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => {
-              if (currentSubtopicIdx > 0) {
-                moveToNextSubtopic()
-              }
-            }}
-            className="text-duo-gray hover:text-duo-charcoal dark:hover:text-gray-300 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <h1 className="text-sm font-bold text-duo-charcoal dark:text-gray-100 truncate">
-            {subtopic.title}
-          </h1>
-        </div>
+      <div className="sticky top-0 z-10 flex items-center justify-between px-5 h-12 border-b border-gray-100 dark:border-gray-800 bg-white/90 dark:bg-duo-charcoal/90 backdrop-blur-sm">
+        <h1 className="text-sm font-bold text-duo-charcoal dark:text-gray-100 truncate">
+          {subtopic.title}
+        </h1>
         <span className="text-xs font-bold text-duo-gray">
-          {visibleMomentIdx + 1}/{allMoments.length}
+          {currentSubtopicIdx + 1}/{content.subtopics.length}
         </span>
       </div>
 
-      {/* Scroll container */}
-      <div
-        ref={scrollRef}
-        className={`flex-1 overflow-y-scroll snap-y snap-mandatory ${scrollBlocked ? 'overflow-hidden' : ''}`}
-      >
-        {allMoments.map((moment, idx) => {
+      {/* Content */}
+      <div className="max-w-lg mx-auto w-full px-5 py-6 space-y-4">
+        {allMoments.map((moment) => {
           if (isGateIntro(moment) && !gateActive) {
             return (
-              <div
-                key={moment.id}
-                data-moment-idx={idx}
-                ref={(el) => { cardRefs.current[idx] = el }}
-                className="h-screen snap-start flex-shrink-0 flex items-center justify-center px-5"
-              >
+              <div key={moment.id}>
                 <GateScreen moment={moment} onComplete={startGate} />
               </div>
             )
@@ -222,12 +170,7 @@ export function LessonEngine() {
 
           if (isGateQuestion(moment)) {
             return (
-              <div
-                key={moment.id}
-                data-moment-idx={idx}
-                ref={(el) => { cardRefs.current[idx] = el }}
-                className="h-screen snap-start flex-shrink-0 overflow-y-auto"
-              >
+              <div key={moment.id}>
                 {moment.interaction?.choices ? (
                   <MCQuestionScreen moment={moment} onAnswer={(c) => handleAnswer(moment.id, c, 'gate')} />
                 ) : (
@@ -239,12 +182,7 @@ export function LessonEngine() {
 
           if (moment.interaction?.choices) {
             return (
-              <div
-                key={moment.id}
-                data-moment-idx={idx}
-                ref={(el) => { cardRefs.current[idx] = el }}
-                className="h-screen snap-start flex-shrink-0 overflow-y-auto"
-              >
+              <div key={moment.id}>
                 <MCQuestionScreen moment={moment} onAnswer={(c) => handleAnswer(moment.id, c, subtopic.id)} />
               </div>
             )
@@ -252,12 +190,7 @@ export function LessonEngine() {
 
           if (moment.interaction?.correctAnswer !== undefined) {
             return (
-              <div
-                key={moment.id}
-                data-moment-idx={idx}
-                ref={(el) => { cardRefs.current[idx] = el }}
-                className="h-screen snap-start flex-shrink-0 overflow-y-auto"
-              >
+              <div key={moment.id}>
                 <NumberInputScreen moment={moment} onAnswer={(c) => handleAnswer(moment.id, c, subtopic.id)} />
               </div>
             )
@@ -265,12 +198,7 @@ export function LessonEngine() {
 
           // Pure observation
           return (
-            <div
-              key={moment.id}
-              data-moment-idx={idx}
-              ref={(el) => { cardRefs.current[idx] = el }}
-              className="h-screen snap-start flex-shrink-0 overflow-y-auto"
-            >
+            <div key={moment.id}>
               <ObservationScreen moment={moment} onComplete={() => {}} />
             </div>
           )
@@ -278,76 +206,44 @@ export function LessonEngine() {
 
         {/* Gate Result Card */}
         {isGateResultCard && subtopic.gate && (
-          <div
-            key="gate-result"
-            data-moment-idx={allMoments.length}
-            ref={(el) => { cardRefs.current[allMoments.length] = el }}
-            className="h-screen snap-start flex-shrink-0 flex items-center justify-center"
+          <GateResult
+            passed={gatePassed}
+            score={Math.round((gateCorrect / gateQuestions.length) * 100)}
+            requiredScore={subtopic.gate.requiredScore}
+            onRetry={retrySubtopic}
+            onContinue={moveToNextSubtopic}
+          />
+        )}
+
+        {/* Gate failed retry button */}
+        {showGateFailed && !gatePassed && (
+          <motion.button
+            onClick={retrySubtopic}
+            whileTap={{ scale: 0.97 }}
+            className="btn btn-primary w-full"
           >
-            <GateResult
-              passed={Math.round((gateCorrect / gateQuestions.length) * 100) >= subtopic.gate.requiredScore}
-              score={Math.round((gateCorrect / gateQuestions.length) * 100)}
-              requiredScore={subtopic.gate.requiredScore}
-              onRetry={retrySubtopic}
-              onContinue={moveToNextSubtopic}
-            />
-          </div>
+            Cuba Semula
+          </motion.button>
         )}
 
         {/* Subtopic transition */}
-        {!gateActive && !isGateResultCard && subtopic.moments.every(
-          (m) => !m.interaction || momentResults[m.id],
-        ) && (
-          <div
-            key="subtopic-done"
-            data-moment-idx={allMoments.length}
-            className="h-screen snap-start flex-shrink-0 flex items-center justify-center px-5"
+        {canContinue && currentSubtopicIdx < content.subtopics.length - 1 && (
+          <motion.button
+            onClick={moveToNextSubtopic}
+            whileTap={{ scale: 0.97 }}
+            className="btn btn-primary w-full"
           >
-            <motion.button
-              onClick={moveToNextSubtopic}
-              whileTap={{ scale: 0.97 }}
-              className="px-8 py-3 rounded-xl bg-duo-purple text-white font-bold shadow-md text-base"
-            >
-              Teruskan ke Subtopik Seterusnya
-            </motion.button>
+            Teruskan ke Subtopik Seterusnya
+          </motion.button>
+        )}
+
+        {/* Last subtopic done */}
+        {canContinue && currentSubtopicIdx >= content.subtopics.length - 1 && (
+          <div className="text-center text-sm font-bold text-duo-green py-4">
+            Kesemua subtopik telah selesai!
           </div>
         )}
       </div>
-
-      {/* Progress bar */}
-      <ProgressBar
-        total={allMoments.length + (isGateResultCard ? 1 : 0)}
-        current={visibleMomentIdx}
-        results={momentResults}
-        momentIds={allMoments.map((m) => m.id)}
-        onDotClick={scrollToMoment}
-      />
-
-      {/* Scroll blocker overlay */}
-      {scrollBlocked && (
-        <div className="fixed inset-0 z-30 bg-black/50 flex items-center justify-center px-5">
-          <div className="bg-white dark:bg-duo-charcoal rounded-2xl p-6 max-w-sm w-full text-center space-y-4 shadow-xl">
-            <div className="w-12 h-12 rounded-full bg-duo-orange/20 flex items-center justify-center mx-auto">
-              <svg className="w-6 h-6 text-duo-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-lg font-black text-duo-charcoal dark:text-gray-100">Belum Lulus Gate</p>
-              <p className="text-sm text-duo-charcoal/60 dark:text-gray-400 mt-1">
-                Skor: {gateQuestions.length > 0 ? Math.round((gateCorrect / gateQuestions.length) * 100) : 0}% (perlukan {subtopic?.gate?.requiredScore ?? 80}%)
-              </p>
-            </div>
-            <motion.button
-              onClick={retrySubtopic}
-              whileTap={{ scale: 0.97 }}
-              className="w-full py-3 rounded-xl bg-duo-orange text-white font-bold shadow-md"
-            >
-              Cuba Semula
-            </motion.button>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

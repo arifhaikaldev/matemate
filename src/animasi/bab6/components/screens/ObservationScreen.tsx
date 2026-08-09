@@ -15,7 +15,7 @@ export function ObservationScreen({ moment, onComplete }: Props) {
       key={moment.id}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-full w-full bg-white dark:bg-white/5 rounded-3xl p-5 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-3"
+      className="bg-white dark:bg-white/5 rounded-3xl p-5 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-3"
     >
       <div>
         <h2 className="text-lg font-black text-duo-charcoal dark:text-gray-100">

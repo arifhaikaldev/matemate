@@ -13,7 +13,7 @@ export function GateScreen({ moment, onComplete }: Props) {
       key={moment.id}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="min-h-full w-full bg-white dark:bg-white/5 rounded-3xl p-6 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-4 text-center"
+      className="bg-white dark:bg-white/5 rounded-3xl p-6 shadow-sm border border-duo-gray-light dark:border-white/10 space-y-4 text-center"
     >
       <div className="w-16 h-16 rounded-full bg-duo-purple/20 dark:bg-duo-purple/10 flex items-center justify-center mx-auto">
         <svg className="w-8 h-8 text-duo-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
