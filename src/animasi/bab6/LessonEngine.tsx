@@ -304,29 +304,21 @@ export function LessonEngine() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
           >
-            {screenState.moment.type === 'observation' && (
-              <ObservationScreen
-                moment={screenState.moment}
-                onComplete={() => goNext()}
-              />
-            )}
-            {screenState.moment.type === 'multipleChoice' && (
+            {screenState.moment.interaction?.choices ? (
               <MCQuestionScreen
                 moment={screenState.moment}
                 onAnswer={(correct) =>
                   handleAnswer(screenState.moment.id, correct, screenState.subtopicId)
                 }
               />
-            )}
-            {screenState.moment.type === 'numberInput' && (
+            ) : screenState.moment.interaction?.correctAnswer !== undefined ? (
               <NumberInputScreen
                 moment={screenState.moment}
                 onAnswer={(correct) =>
                   handleAnswer(screenState.moment.id, correct, screenState.subtopicId)
                 }
               />
-            )}
-            {screenState.moment.type === 'gate' && (() => {
+            ) : screenState.moment.type === 'gate' ? (() => {
               const subtopic = content?.subtopics[currentSubtopicIdx]
               return (
                 <GateScreen
@@ -343,14 +335,19 @@ export function LessonEngine() {
                   }}
                 />
               )
-            })()}
+            })() : (
+              <ObservationScreen
+                moment={screenState.moment}
+                onComplete={() => goNext()}
+              />
+            )}
           </motion.div>
         )}
 
         {screenState.type === 'gate' && (
           <motion.div key="gate" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             {gateIdx < gateQuestions.length ? (
-              gateQuestions[gateIdx].type === 'multipleChoice' ? (
+              gateQuestions[gateIdx].interaction?.choices ? (
                 <MCQuestionScreen
                   moment={gateQuestions[gateIdx]}
                   onAnswer={(correct) => handleGateAnswer(gateQuestions[gateIdx].id, correct)}
