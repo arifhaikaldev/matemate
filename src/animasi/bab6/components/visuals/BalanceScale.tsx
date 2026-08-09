@@ -34,18 +34,15 @@ export function BalanceScale({ data }: Props) {
         transition={{ duration: 0.5, delay: 0.2 }}
       />
       {/* Beam (rotates when tilted) */}
-      <motion.line
-        x1={60} y1={60} x2={240} y2={60}
-        stroke="#475569" strokeWidth={6} strokeLinecap="round"
-        animate={{
-          rotate: tilted ? 15 : 0,
-          transformOrigin: '150px 60px',
-        }}
+      <motion.g
+        animate={{ rotate: tilted ? 15 : 0 }}
         transition={{ type: 'spring', stiffness: 100, damping: 15 }}
-      />
+      >
+        <line x1={60} y1={60} x2={240} y2={60} stroke="#475569" strokeWidth={6} strokeLinecap="round" />
+      </motion.g>
       {/* Left pan */}
       <motion.g
-        animate={tilted ? { y: 12 } : { y: 0 }}
+        animate={tilted ? { translateY: 12 } : { translateY: 0 }}
         transition={{ type: 'spring', stiffness: 100, damping: 15 }}
       >
         <line x1={60} y1={80} x2={60} y2={110} stroke="#475569" strokeWidth={3} />
@@ -58,7 +55,7 @@ export function BalanceScale({ data }: Props) {
       </motion.g>
       {/* Right pan */}
       <motion.g
-        animate={tilted ? { y: -12 } : { y: 0 }}
+        animate={tilted ? { translateY: -12 } : { translateY: 0 }}
         transition={{ type: 'spring', stiffness: 100, damping: 15 }}
       >
         <line x1={240} y1={80} x2={240} y2={110} stroke="#475569" strokeWidth={3} />

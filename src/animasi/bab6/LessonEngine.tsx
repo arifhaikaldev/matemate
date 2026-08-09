@@ -80,7 +80,7 @@ export function LessonEngine() {
         if (subtopic.gate) {
           // Build gate questions from all interactive moments in this subtopic
           const moments = subtopic.moments.filter(
-            (m) => m.type === 'multipleChoice' || m.type === 'numberInput',
+            (m) => m.type !== 'gate' && m.interaction,
           )
           setGateQuestions(moments)
           setGateIdx(0)
@@ -334,7 +334,7 @@ export function LessonEngine() {
                   onComplete={() => {
                     if (!subtopic) return
                     const moments = subtopic.moments.filter(
-                      (m) => m.id !== screenState.moment.id && (m.type === 'multipleChoice' || m.type === 'numberInput'),
+                      (m) => m.type !== 'gate' && m.interaction,
                     )
                     setGateQuestions(moments)
                     setGateIdx(0)
