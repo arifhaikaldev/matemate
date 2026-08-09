@@ -1,34 +1,27 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useRef, useCallback } from 'react'
+import { motion } from 'framer-motion'
 import { ObservationScreen } from './components/screens/ObservationScreen'
 import { MCQuestionScreen } from './components/screens/MCQuestionScreen'
 import { NumberInputScreen } from './components/screens/NumberInputScreen'
 import { GateScreen } from './components/screens/GateScreen'
-import { ProgressDots } from './components/ui/ProgressDots'
-import { NavButtons } from './components/ui/NavButtons'
+import { ProgressBar } from './components/ui/ProgressBar'
 import { GateResult } from './components/ui/GateResult'
 import { useAnimasiProgress } from '../../hooks/useAnimasiProgress'
-import type { Bab6Content, Subtopic, Moment } from './types'
-
-type ScreenState =
-  | { type: 'loading' }
-  | { type: 'intro' }
-  | { type: 'moment'; moment: Moment; subtopicId: string }
-  | { type: 'gate'; subtopic: Subtopic; score: number }
-  | { type: 'gateResult'; passed: boolean; subtopic: Subtopic; score: number }
-  | { type: 'completed' }
+import type { Bab6Content, Moment } from './types'
 
 export function LessonEngine() {
   const [content, setContent] = useState<Bab6Content | null>(null)
-  const [screenState, setScreenState] = useState<ScreenState>({ type: 'loading' })
-  const [currentMomentIdx, setCurrentMomentIdx] = useState(0)
   const [currentSubtopicIdx, setCurrentSubtopicIdx] = useState(0)
   const [momentResults, setMomentResults] = useState<Record<string, 'correct' | 'incorrect' | 'viewed'>>({})
-  const [answeredInSubtopic, setAnsweredInSubtopic] = useState(0)
-  const [correctInSubtopic, setCorrectInSubtopic] = useState(0)
+  const [visibleMomentIdx, setVisibleMomentIdx] = useState(0)
+  const [gateActive, setGateActive] = useState(false)
   const [gateQuestions, setGateQuestions] = useState<Moment[]>([])
   const [gateIdx, setGateIdx] = useState(0)
   const [gateCorrect, setGateCorrect] = useState(0)
+  const [gateDone, setGateDone] = useState(false)
+  const [scrollBlocked, setScrollBlocked] = useState(false)
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const { saveProgress } = useAnimasiProgress()
 
@@ -45,370 +38,315 @@ export function LessonEngine() {
           title: 'Persamaan Linear',
           subtopics: [s1, s2, s3],
         })
-        const firstMoment = s1.moments[0]
-        if (firstMoment) {
-          setScreenState({ type: 'moment', moment: firstMoment, subtopicId: '6.1' })
-        }
       } catch (e) {
         console.error('Failed to load Bab 6 content:', e)
-        setScreenState({ type: 'completed' })
       }
     }
     load()
   }, [])
 
-  const currentSubtopic = useMemo(() => {
-    if (!content) return null
-    return content.subtopics[currentSubtopicIdx] ?? null
+  const subtopic = content?.subtopics[currentSubtopicIdx]
+
+  const allMoments = gateActive ? [...(subtopic?.moments ?? []), ...gateQuestions] : (subtopic?.moments ?? [])
+
+  const handleAnswer = useCallback(
+    async (momentId: string, correct: boolean, _subtopicId: string) => {
+      setMomentResults((prev) => ({ ...prev, [momentId]: correct ? 'correct' : 'incorrect' }))
+      if (gateActive) {
+        if (correct) setGateCorrect((g) => g + 1)
+        setGateIdx((i) => i + 1)
+        await saveProgress({ momentId, subtopic: 'gate', completed: true, correct, hintsUsed: 0, masa_kemaskini: Date.now() })
+        return
+      }
+      await saveProgress({ momentId, subtopic: subtopic?.id ?? '', completed: true, correct, hintsUsed: 0, masa_kemaskini: Date.now() })
+    },
+    [gateActive, subtopic, saveProgress],
+  )
+
+  // Check gate completion
+  useEffect(() => {
+    if (!gateActive || !subtopic?.gate || gateIdx < gateQuestions.length) return
+    setGateDone(true)
+    const total = gateQuestions.length
+    const score = Math.round((gateCorrect / total) * 100)
+    if (score < subtopic.gate.requiredScore) {
+      setScrollBlocked(true)
+    } else {
+      // Auto-advance to next subtopic after brief delay
+      const timer = setTimeout(() => moveToNextSubtopic(), 1500)
+      return () => clearTimeout(timer)
+    }
+  }, [gateActive, gateIdx, gateQuestions, gateCorrect, subtopic])
+
+  const startGate = useCallback(() => {
+    if (!subtopic) return
+    const questions = subtopic.moments.filter((m) => m.interaction)
+    setGateQuestions(questions)
+    setGateActive(true)
+    setGateIdx(0)
+    setGateCorrect(0)
+    setGateDone(false)
+    setScrollBlocked(false)
+    // Scroll to the gate section
+    setTimeout(() => {
+      const idx = (subtopic.moments.length)
+      cardRefs.current[idx]?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }, [subtopic])
+
+  const moveToNextSubtopic = useCallback(() => {
+    if (!content) return
+    const nextIdx = currentSubtopicIdx + 1
+    if (nextIdx >= content.subtopics.length) return
+    setCurrentSubtopicIdx(nextIdx)
+    setMomentResults({})
+    setGateActive(false)
+    setGateQuestions([])
+    setGateIdx(0)
+    setGateCorrect(0)
+    setGateDone(false)
+    setScrollBlocked(false)
+    if (scrollRef.current) scrollRef.current.scrollTop = 0
   }, [content, currentSubtopicIdx])
 
-  const isGateMoment = (id: string) => id.includes('.A') || id.includes('gate')
+  const retrySubtopic = useCallback(() => {
+    setMomentResults({})
+    setGateActive(false)
+    setGateQuestions([])
+    setGateIdx(0)
+    setGateCorrect(0)
+    setGateDone(false)
+    setScrollBlocked(false)
+    if (scrollRef.current) scrollRef.current.scrollTop = 0
+  }, [])
 
-  // Navigate to next screen
-  const goNext = useCallback(() => {
-    if (!content) return
-
-    const subtopic = content.subtopics[currentSubtopicIdx]
-    if (!subtopic) return
-
-    if (screenState.type === 'moment') {
-      const nextIdx = currentMomentIdx + 1
-
-      // Check if we've finished this subtopic's moments
-      if (nextIdx >= subtopic.moments.length) {
-        // If this subtopic has a gate, show it
-        if (subtopic.gate) {
-          // Build gate questions from all interactive moments in this subtopic
-          const moments = subtopic.moments.filter(
-            (m) => m.type !== 'gate' && m.interaction,
-          )
-          setGateQuestions(moments)
-          setGateIdx(0)
-          setGateCorrect(0)
-          setScreenState({ type: 'gate', subtopic, score: calculateScore() })
-        } else {
-          // No gate, move to next subtopic
-          moveToSubtopic(currentSubtopicIdx + 1)
-        }
-        return
-      }
-
-      // If next moment is a gate, navigate to it so GateScreen handles the intro
-      const nextMoment = subtopic.moments[nextIdx]
-      if (isGateMoment(nextMoment.id)) {
-        setCurrentMomentIdx(nextIdx)
-        setScreenState({ type: 'moment', moment: nextMoment, subtopicId: subtopic.id })
-        return
-      }
-
-      setCurrentMomentIdx(nextIdx)
-      setScreenState({
-        type: 'moment',
-        moment: nextMoment,
-        subtopicId: subtopic.id,
-      })
-      return
-    }
-
-    if (screenState.type === 'gateResult') {
-      if (screenState.passed) {
-        moveToSubtopic(currentSubtopicIdx + 1)
-      } else {
-        // Retry: go back to start of subtopic
-        setCurrentMomentIdx(0)
-        setAnsweredInSubtopic(0)
-        setCorrectInSubtopic(0)
-        const firstMoment = subtopic.moments[0]
-        if (firstMoment) {
-          setScreenState({ type: 'moment', moment: firstMoment, subtopicId: subtopic.id })
-        }
-      }
-    }
-  }, [content, currentSubtopicIdx, currentMomentIdx, screenState, momentResults])
-
-  const calculateScore = useCallback(() => {
-    if (answeredInSubtopic === 0) return 0
-    return Math.round((correctInSubtopic / answeredInSubtopic) * 100)
-  }, [answeredInSubtopic, correctInSubtopic])
-
-  // Move to a specific subtopic
-  const moveToSubtopic = useCallback((idx: number) => {
-    if (!content) return
-    const subtopic = content.subtopics[idx]
-    if (!subtopic) {
-      setScreenState({ type: 'completed' })
-      return
-    }
-    setCurrentSubtopicIdx(idx)
-    setCurrentMomentIdx(0)
-    setAnsweredInSubtopic(0)
-    setCorrectInSubtopic(0)
-    const firstMoment = subtopic.moments[0]
-    if (firstMoment) {
-      setScreenState({ type: 'moment', moment: firstMoment, subtopicId: subtopic.id })
-    }
-  }, [content])
-
-  // Go back
-  const goBack = useCallback(() => {
-    if (!content || currentMomentIdx <= 0) return
-    const prevIdx = currentMomentIdx - 1
-    setCurrentMomentIdx(prevIdx)
-    const subtopic = content.subtopics[currentSubtopicIdx]
-    if (subtopic) {
-      setScreenState({
-        type: 'moment',
-        moment: subtopic.moments[prevIdx],
-        subtopicId: subtopic.id,
-      })
-    }
-  }, [content, currentMomentIdx, currentSubtopicIdx])
-
-  // Handle answer from screens
-  const handleAnswer = useCallback(
-    async (momentId: string, correct: boolean, subtopicId: string) => {
-      setMomentResults((prev) => ({ ...prev, [momentId]: correct ? 'correct' : 'incorrect' }))
-      setAnsweredInSubtopic((a) => a + 1)
-      if (correct) setCorrectInSubtopic((c) => c + 1)
-
-      await saveProgress({
-        momentId,
-        subtopic: subtopicId,
-        completed: true,
-        correct,
-        hintsUsed: 0,
-        masa_kemaskini: Date.now(),
-      })
-
-      // Auto-advance
-      setTimeout(() => {
-        if (!content) return
-        const subtopic = content.subtopics[currentSubtopicIdx]
-        if (!subtopic) return
-
-        const nextIdx = currentMomentIdx + 1
-
-        // Check if we need to go to next moment or gate
-        if (nextIdx < subtopic.moments.length) {
-          const nextMoment = subtopic.moments[nextIdx]
-          if (isGateMoment(nextMoment.id)) {
-            // Navigate to gate moment intro first
-            setCurrentMomentIdx(nextIdx)
-            setScreenState({ type: 'moment', moment: nextMoment, subtopicId: subtopic.id })
-          } else {
-            setCurrentMomentIdx(nextIdx)
-            setScreenState({
-              type: 'moment',
-              moment: nextMoment,
-              subtopicId: subtopic.id,
-            })
+  // IntersectionObserver for visible moment tracking
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const idx = Number(entry.target.getAttribute('data-moment-idx'))
+            if (!isNaN(idx)) setVisibleMomentIdx(idx)
           }
         }
-      }, correct ? 600 : 1400)
-    },
-    [content, currentSubtopicIdx, currentMomentIdx, answeredInSubtopic, correctInSubtopic, saveProgress],
-  )
+      },
+      { threshold: 0.4 },
+    )
+    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[]
+    cards.forEach((c) => observer.observe(c))
+    return () => observer.disconnect()
+  }, [allMoments.length])
 
-  // Handle gate answer
-  const handleGateAnswer = useCallback(
-    async (_momentId: string, correct: boolean) => {
-      if (correct) setGateCorrect((g) => g + 1)
-      setGateIdx((i) => i + 1)
+  const scrollToMoment = useCallback((idx: number) => {
+    cardRefs.current[idx]?.scrollIntoView({ behavior: 'smooth' })
+  }, [])
 
-      const nextIdx = gateIdx + 1
-      if (nextIdx >= gateQuestions.length) {
-        // Gate complete
-        const score = Math.round(
-          ((gateCorrect + (correct ? 1 : 0)) / gateQuestions.length) * 100,
-        )
-        const subtopic = content?.subtopics[currentSubtopicIdx]
-        if (subtopic && subtopic.gate) {
-          const passed = score >= subtopic.gate.requiredScore
-          setScreenState({ type: 'gateResult', passed, subtopic, score })
-        }
-      }
-    },
-    [gateIdx, gateQuestions, gateCorrect, content, currentSubtopicIdx],
-  )
-
-  // Loading state
-  if (screenState.type === 'loading') {
+  if (!content) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex items-center justify-center h-screen">
         <div className="w-8 h-8 border-4 border-duo-purple border-t-transparent rounded-full animate-spin" />
       </div>
     )
   }
 
-  if (screenState.type === 'completed') {
+  // End of all subtopics
+  if (currentSubtopicIdx >= content.subtopics.length) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center py-12 space-y-4"
-      >
-        <div className="w-20 h-20 rounded-full bg-duo-green/20 dark:bg-duo-green/10 flex items-center justify-center mx-auto">
-          <svg className="w-10 h-10 text-duo-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-          </svg>
+      <div className="flex items-center justify-center h-screen px-5">
+        <div className="text-center space-y-4">
+          <div className="w-20 h-20 rounded-full bg-duo-green/20 flex items-center justify-center mx-auto">
+            <svg className="w-10 h-10 text-duo-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-black text-duo-charcoal dark:text-gray-100">Tahniah! Bab 6 Selesai!</h2>
+          <p className="text-sm text-duo-charcoal/60 dark:text-gray-400 max-w-xs mx-auto">
+            Anda telah menguasai Persamaan Linear — satu pemboleh ubah, dua pemboleh ubah, dan persamaan serentak.
+          </p>
         </div>
-        <h2 className="text-2xl font-black text-duo-charcoal dark:text-gray-100">
-          Tahniah! Bab 6 Selesai!
-        </h2>
-        <p className="text-sm text-duo-charcoal/60 dark:text-gray-400 max-w-sm mx-auto">
-          Anda telah menguasai Persamaan Linear — termasuk satu pemboleh ubah, dua pemboleh ubah, dan persamaan serentak.
-        </p>
-      </motion.div>
+      </div>
     )
   }
 
+  if (!subtopic) return null
+
+  const isGateIntro = (m: Moment) => m.type === 'gate'
+  const isGateQuestion = (m: Moment) => gateActive && gateQuestions.includes(m)
+  const isGateResultCard = gateDone && gateActive
+
   return (
-    <div className="space-y-3">
+    <div className="h-screen flex flex-col bg-white dark:bg-duo-charcoal">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-base font-black text-duo-charcoal dark:text-gray-100">
-            Bab 6: {content?.title}
+      <div className="flex-shrink-0 flex items-center justify-between px-5 h-12 border-b border-gray-100 dark:border-gray-800">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => {
+              if (currentSubtopicIdx > 0) {
+                moveToNextSubtopic()
+              }
+            }}
+            className="text-duo-gray hover:text-duo-charcoal dark:hover:text-gray-300 transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <h1 className="text-sm font-bold text-duo-charcoal dark:text-gray-100 truncate">
+            {subtopic.title}
           </h1>
-          <p className="text-xs text-duo-gray font-medium">
-            {currentSubtopic?.title}
-          </p>
         </div>
-        {screenState.type === 'moment' && (
-          <span className="text-xs font-bold text-duo-gray bg-gray-100 dark:bg-gray-800 px-2.5 py-1 rounded-lg">
-            {currentMomentIdx + 1}/{currentSubtopic?.moments.length ?? 0}
-          </span>
+        <span className="text-xs font-bold text-duo-gray">
+          {visibleMomentIdx + 1}/{allMoments.length}
+        </span>
+      </div>
+
+      {/* Scroll container */}
+      <div
+        ref={scrollRef}
+        className={`flex-1 overflow-y-scroll snap-y snap-mandatory ${scrollBlocked ? 'overflow-hidden' : ''}`}
+      >
+        {allMoments.map((moment, idx) => {
+          if (isGateIntro(moment) && !gateActive) {
+            return (
+              <div
+                key={moment.id}
+                data-moment-idx={idx}
+                ref={(el) => { cardRefs.current[idx] = el }}
+                className="h-screen snap-start flex-shrink-0 flex items-center justify-center px-5"
+              >
+                <GateScreen moment={moment} onComplete={startGate} />
+              </div>
+            )
+          }
+
+          if (isGateQuestion(moment)) {
+            return (
+              <div
+                key={moment.id}
+                data-moment-idx={idx}
+                ref={(el) => { cardRefs.current[idx] = el }}
+                className="h-screen snap-start flex-shrink-0 overflow-y-auto"
+              >
+                {moment.interaction?.choices ? (
+                  <MCQuestionScreen moment={moment} onAnswer={(c) => handleAnswer(moment.id, c, 'gate')} />
+                ) : (
+                  <NumberInputScreen moment={moment} onAnswer={(c) => handleAnswer(moment.id, c, 'gate')} />
+                )}
+              </div>
+            )
+          }
+
+          if (moment.interaction?.choices) {
+            return (
+              <div
+                key={moment.id}
+                data-moment-idx={idx}
+                ref={(el) => { cardRefs.current[idx] = el }}
+                className="h-screen snap-start flex-shrink-0 overflow-y-auto"
+              >
+                <MCQuestionScreen moment={moment} onAnswer={(c) => handleAnswer(moment.id, c, subtopic.id)} />
+              </div>
+            )
+          }
+
+          if (moment.interaction?.correctAnswer !== undefined) {
+            return (
+              <div
+                key={moment.id}
+                data-moment-idx={idx}
+                ref={(el) => { cardRefs.current[idx] = el }}
+                className="h-screen snap-start flex-shrink-0 overflow-y-auto"
+              >
+                <NumberInputScreen moment={moment} onAnswer={(c) => handleAnswer(moment.id, c, subtopic.id)} />
+              </div>
+            )
+          }
+
+          // Pure observation
+          return (
+            <div
+              key={moment.id}
+              data-moment-idx={idx}
+              ref={(el) => { cardRefs.current[idx] = el }}
+              className="h-screen snap-start flex-shrink-0 overflow-y-auto"
+            >
+              <ObservationScreen moment={moment} onComplete={() => {}} />
+            </div>
+          )
+        })}
+
+        {/* Gate Result Card */}
+        {isGateResultCard && subtopic.gate && (
+          <div
+            key="gate-result"
+            data-moment-idx={allMoments.length}
+            ref={(el) => { cardRefs.current[allMoments.length] = el }}
+            className="h-screen snap-start flex-shrink-0 flex items-center justify-center"
+          >
+            <GateResult
+              passed={Math.round((gateCorrect / gateQuestions.length) * 100) >= subtopic.gate.requiredScore}
+              score={Math.round((gateCorrect / gateQuestions.length) * 100)}
+              requiredScore={subtopic.gate.requiredScore}
+              onRetry={retrySubtopic}
+              onContinue={moveToNextSubtopic}
+            />
+          </div>
+        )}
+
+        {/* Subtopic transition */}
+        {!gateActive && !isGateResultCard && subtopic.moments.every(
+          (m) => !m.interaction || momentResults[m.id],
+        ) && (
+          <div
+            key="subtopic-done"
+            data-moment-idx={allMoments.length}
+            className="h-screen snap-start flex-shrink-0 flex items-center justify-center px-5"
+          >
+            <motion.button
+              onClick={moveToNextSubtopic}
+              whileTap={{ scale: 0.97 }}
+              className="px-8 py-3 rounded-xl bg-duo-purple text-white font-bold shadow-md text-base"
+            >
+              Teruskan ke Subtopik Seterusnya
+            </motion.button>
+          </div>
         )}
       </div>
 
-      {/* Progress dots */}
-      {screenState.type === 'moment' && (
-        <ProgressDots
-          current={currentMomentIdx}
-          total={currentSubtopic?.moments.length ?? 0}
-          completed={Object.entries(momentResults)
-            .filter(([_, v]) => v === 'correct' || v === 'viewed')
-            .map(([k]) => {
-              const idx = currentSubtopic?.moments.findIndex((m) => m.id === k)
-              return idx !== undefined && idx >= 0 ? String(idx) : '-1'
-            })}
-        />
-      )}
+      {/* Progress bar */}
+      <ProgressBar
+        total={allMoments.length + (isGateResultCard ? 1 : 0)}
+        current={visibleMomentIdx}
+        results={momentResults}
+        momentIds={allMoments.map((m) => m.id)}
+        onDotClick={scrollToMoment}
+      />
 
-      {/* Screen content */}
-      <AnimatePresence mode="wait">
-        {screenState.type === 'moment' && (
-          <motion.div
-            key={screenState.moment.id}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-          >
-            {screenState.moment.interaction?.choices ? (
-              <MCQuestionScreen
-                moment={screenState.moment}
-                onAnswer={(correct) =>
-                  handleAnswer(screenState.moment.id, correct, screenState.subtopicId)
-                }
-              />
-            ) : screenState.moment.interaction?.correctAnswer !== undefined ? (
-              <NumberInputScreen
-                moment={screenState.moment}
-                onAnswer={(correct) =>
-                  handleAnswer(screenState.moment.id, correct, screenState.subtopicId)
-                }
-              />
-            ) : screenState.moment.type === 'gate' ? (() => {
-              const subtopic = content?.subtopics[currentSubtopicIdx]
-              return (
-                <GateScreen
-                  moment={screenState.moment}
-                  onComplete={() => {
-                    if (!subtopic) return
-                    const moments = subtopic.moments.filter(
-                      (m) => m.type !== 'gate' && m.interaction,
-                    )
-                    setGateQuestions(moments)
-                    setGateIdx(0)
-                    setGateCorrect(0)
-                    setScreenState({ type: 'gate', subtopic, score: calculateScore() })
-                  }}
-                />
-              )
-            })() : (
-              <ObservationScreen
-                moment={screenState.moment}
-                onComplete={() => goNext()}
-              />
-            )}
-          </motion.div>
-        )}
-
-        {screenState.type === 'gate' && (
-          <motion.div key="gate" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            {gateIdx < gateQuestions.length ? (
-              gateQuestions[gateIdx].interaction?.choices ? (
-                <MCQuestionScreen
-                  moment={gateQuestions[gateIdx]}
-                  onAnswer={(correct) => handleGateAnswer(gateQuestions[gateIdx].id, correct)}
-                />
-              ) : (
-                <NumberInputScreen
-                  moment={gateQuestions[gateIdx]}
-                  onAnswer={(correct) => handleGateAnswer(gateQuestions[gateIdx].id, correct)}
-                />
-              )
-            ) : (
-              <GateScreen
-                moment={{
-                  id: 'gate-screen',
-                  type: 'gate',
-                  title: `Gate ${screenState.subtopic.id}`,
-                  objective: `Selesaikan soalan masteri untuk ${screenState.subtopic.title}.`,
-                  visual: null,
-                  content: { instruction: '', notation: [] },
-                }}
-                onComplete={() => {
-                  setScreenState(screenState)
-                }}
-              />
-            )}
-          </motion.div>
-        )}
-
-        {screenState.type === 'gateResult' && (
-          <motion.div key="gateResult" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
-            <GateResult
-              passed={screenState.passed}
-              score={screenState.score}
-              requiredScore={screenState.subtopic.gate?.requiredScore ?? 80}
-              onRetry={() => {
-                setCurrentMomentIdx(0)
-                setAnsweredInSubtopic(0)
-                setCorrectInSubtopic(0)
-                const firstMoment = screenState.subtopic.moments[0]
-                if (firstMoment) {
-                  setScreenState({
-                    type: 'moment',
-                    moment: firstMoment,
-                    subtopicId: screenState.subtopic.id,
-                  })
-                }
-              }}
-              onContinue={() => moveToSubtopic(currentSubtopicIdx + 1)}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Navigation */}
-      {screenState.type === 'moment' && screenState.moment.type === 'observation' && (
-        <NavButtons
-          onBack={goBack}
-          onNext={goNext}
-          canGoBack={currentMomentIdx > 0}
-          canGoNext={true}
-        />
+      {/* Scroll blocker overlay */}
+      {scrollBlocked && (
+        <div className="fixed inset-0 z-30 bg-black/50 flex items-center justify-center px-5">
+          <div className="bg-white dark:bg-duo-charcoal rounded-2xl p-6 max-w-sm w-full text-center space-y-4 shadow-xl">
+            <div className="w-12 h-12 rounded-full bg-duo-orange/20 flex items-center justify-center mx-auto">
+              <svg className="w-6 h-6 text-duo-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-lg font-black text-duo-charcoal dark:text-gray-100">Belum Lulus Gate</p>
+              <p className="text-sm text-duo-charcoal/60 dark:text-gray-400 mt-1">
+                Skor: {gateQuestions.length > 0 ? Math.round((gateCorrect / gateQuestions.length) * 100) : 0}% (perlukan {subtopic?.gate?.requiredScore ?? 80}%)
+              </p>
+            </div>
+            <motion.button
+              onClick={retrySubtopic}
+              whileTap={{ scale: 0.97 }}
+              className="w-full py-3 rounded-xl bg-duo-orange text-white font-bold shadow-md"
+            >
+              Cuba Semula
+            </motion.button>
+          </div>
+        </div>
       )}
     </div>
   )
