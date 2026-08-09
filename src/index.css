@@ -17,6 +17,9 @@
   --color-duo-gray: #afb0b2;
   --color-duo-gray-light: #e5e5e5;
   --color-duo-bg: #fafafa;
+  --color-duo-purple: #7c3aed;
+  --color-duo-purple-dark: #6d28d9;
+  --color-duo-purple-light: #ede9fe;
 }
 
 @layer base {
