@@ -93,10 +93,11 @@ export function LessonEngine() {
         return
       }
 
-      // If next moment is in next subtopic (gate moment), move subtopic
+      // If next moment is a gate, navigate to it so GateScreen handles the intro
       const nextMoment = subtopic.moments[nextIdx]
-      if (nextIdx >= subtopic.moments.length - 1 && isGateMoment(nextMoment.id)) {
-        // Gate moments are handled separately
+      if (isGateMoment(nextMoment.id)) {
+        setCurrentMomentIdx(nextIdx)
+        setScreenState({ type: 'moment', moment: nextMoment, subtopicId: subtopic.id })
         return
       }
 
@@ -191,19 +192,9 @@ export function LessonEngine() {
         if (nextIdx < subtopic.moments.length) {
           const nextMoment = subtopic.moments[nextIdx]
           if (isGateMoment(nextMoment.id)) {
-            // Show gate assessment
-            const moments = subtopic.moments.filter(
-              (m) => m.type === 'multipleChoice' || m.type === 'numberInput',
-            )
-            setGateQuestions(moments)
-            setGateIdx(0)
-            setGateCorrect(0)
-            const score = Math.round(
-              ((correctInSubtopic + (correct ? 1 : 0)) /
-                (answeredInSubtopic + 1)) *
-                100,
-            )
-            setScreenState({ type: 'gate', subtopic, score })
+            // Navigate to gate moment intro first
+            setCurrentMomentIdx(nextIdx)
+            setScreenState({ type: 'moment', moment: nextMoment, subtopicId: subtopic.id })
           } else {
             setCurrentMomentIdx(nextIdx)
             setScreenState({
@@ -335,6 +326,24 @@ export function LessonEngine() {
                 }
               />
             )}
+            {screenState.moment.type === 'gate' && (() => {
+              const subtopic = content?.subtopics[currentSubtopicIdx]
+              return (
+                <GateScreen
+                  moment={screenState.moment}
+                  onComplete={() => {
+                    if (!subtopic) return
+                    const moments = subtopic.moments.filter(
+                      (m) => m.id !== screenState.moment.id && (m.type === 'multipleChoice' || m.type === 'numberInput'),
+                    )
+                    setGateQuestions(moments)
+                    setGateIdx(0)
+                    setGateCorrect(0)
+                    setScreenState({ type: 'gate', subtopic, score: calculateScore() })
+                  }}
+                />
+              )
+            })()}
           </motion.div>
         )}
 
