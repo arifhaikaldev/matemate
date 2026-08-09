@@ -1,0 +1,64 @@
+{
+  "lessonId": "6.2.3",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Dua Pemboleh Ubah",
+  "title": "Jadual Nilai dan Graf",
+  "learningGoal": "Melengkapkan jadual nilai dan memplot pasangan tertib pada satah Cartes.",
+  "estimatedMinutes": 8,
+  "difficulty": "medium",
+  "misconceptions": ["salah_pasang_x_y", "plot_salah"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Jadual Nilai",
+      "text": "Dari pasangan (x,y) kita boleh buat jadual. x di kiri, y di kanan. Setiap baris ialah satu pasangan tertib.",
+      "visual": { "kind": "tableOfValues", "equation": "2x + y = 6", "rows": [
+        { "x": 0, "y": 6 }, { "x": 1, "y": 4 }, { "x": 2, "y": 2 }
+      ]}
+    },
+    {
+      "type": "numberInput",
+      "question": "Lengkapkan jadual: x + y = 7. Jika x = 2, y = ?",
+      "answer": "5",
+      "explanation": "2 + y = 7. y = 5.",
+      "visual": { "kind": "tableOfValues", "equation": "x + y = 7", "rows": [
+        { "x": 2, "y": "?" }
+      ]}
+    },
+    {
+      "type": "observation",
+      "title": "Plot Titik pada Satah Cartes",
+      "text": "Setiap pasangan (x,y) menjadi satu titik. (0,6): gerak 0 pada paksi-x, 6 pada paksi-y. (1,4): gerak 1 kanan, 4 naik. (2,2): gerak 2 kanan, 2 naik.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 5, "yMin": -1, "yMax": 8, "points": [
+        { "x": 0, "y": 6, "label": "(0,6)" },
+        { "x": 1, "y": 4, "label": "(1,4)" },
+        { "x": 2, "y": 2, "label": "(2,2)" }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Untuk pasangan (3,1), ke manakah kita bergerak pada satah Cartes?",
+      "choices": ["3 ke kiri, 1 ke bawah", "3 ke kanan, 1 ke atas", "1 ke kanan, 3 ke atas", "3 ke kanan, 1 ke bawah"],
+      "correctIndex": 1,
+      "explanation": "(3,1) bermaksud x = 3 (tiga langkah ke kanan), y = 1 (satu langkah ke atas).",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 5, "yMin": -1, "yMax": 5, "points": [
+        { "x": 3, "y": 1, "label": "(3,1)", "highlight": true }
+      ]}
+    },
+    {
+      "type": "observation",
+      "title": "Daripada Titik ke Garis",
+      "text": "Apabila semua titik diplot, kita boleh lukis satu garis lurus yang melalui semua titik itu. Semua titik pada garis ini memenuhi persamaan 2x + y = 6.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 5, "yMin": -1, "yMax": 8, "points": [
+        { "x": 0, "y": 6 }, { "x": 1, "y": 4 }, { "x": 2, "y": 2 }, { "x": 3, "y": 0 }
+      ], "lines": [{ "points": [{ "x": 0, "y": 6 }, { "x": 3, "y": 0 }] }]}
+    },
+    {
+      "type": "mastery",
+      "question": "Hubungan antara persamaan, pasangan tertib, titik, dan garis ialah:",
+      "choices": ["Persamaan → Garis → Titik → Pasangan", "Pasangan → Persamaan → Garis → Titik", "Persamaan → Pasangan → Titik → Garis", "Titik → Garis → Persamaan → Pasangan"],
+      "correctIndex": 2,
+      "explanation": "Persamaan memberi pasangan tertib (x,y). Pasangan diplot sebagai titik. Titik-titik membentuk garis lurus."
+    }
+  ]
+}

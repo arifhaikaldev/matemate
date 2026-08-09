@@ -1,0 +1,54 @@
+{
+  "lessonId": "6.2.1",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Dua Pemboleh Ubah",
+  "title": "Kenal Persamaan Linear Dua Pemboleh Ubah",
+  "learningGoal": "Mengenal pasti persamaan linear dalam dua pemboleh ubah dan membezakannya daripada persamaan linear satu pemboleh ubah.",
+  "estimatedMinutes": 6,
+  "difficulty": "easy",
+  "misconceptions": ["salah_pasang_x_y"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Daripada Satu x kepada x dan y",
+      "text": "x + 2 = 5 hanya ada satu jawapan: x = 3. Tetapi x + y = 5 mempunyai banyak pasangan. Contoh: (0,5), (1,4), (2,3), (3,2), (4,1), (5,0).",
+      "visual": { "kind": "tableOfValues", "equation": "x + y = 5", "rows": [
+        { "x": 0, "y": 5 }, { "x": 1, "y": 4 }, { "x": 2, "y": 3 }, { "x": 3, "y": 2 }, { "x": 4, "y": 1 }, { "x": 5, "y": 0 }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah beza utama antara x + 2 = 5 dengan x + y = 5?",
+      "choices": ["x + 2 = 5 lebih susah", "x + y = 5 ada banyak pasangan penyelesaian", "x + 2 = 5 ada dua pemboleh ubah", "Tiada beza"],
+      "correctIndex": 1,
+      "explanation": "x + 2 = 5 hanya ada satu nilai x. x + y = 5 mempunyai banyak pasangan (x,y) yang memenuhi persamaan."
+    },
+    {
+      "type": "observation",
+      "title": "Ciri Persamaan Linear Dua Pemboleh Ubah",
+      "text": "3p - q = 6. p dan q masing-masing kuasa 1 (p¹, q¹). Bandingkan: 3p - q = 6 ✓. p² + q = 6 ✗ (p kuasa 2). pq = 6 ✗ (pendaraban dua pemboleh ubah).",
+      "visual": { "kind": "equationBlock", "equation": "3p \u2212 q = 6" }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Antara berikut, yang manakah persamaan linear dalam dua pemboleh ubah?",
+      "choices": ["2x + 3 = 7", "x² + y = 5", "3a - 2b = 8", "xy = 12"],
+      "correctIndex": 2,
+      "explanation": "3a - 2b = 8 mempunyai dua pemboleh ubah (a, b), kedua-dua kuasa 1. Yang lain ialah satu pemboleh ubah, kuasa 2, atau pendaraban dua pemboleh ubah."
+    },
+    {
+      "type": "numberInput",
+      "question": "Berapakah bilangan pemboleh ubah dalam persamaan 5m - 2n + 3 = 0?",
+      "answer": "2",
+      "explanation": "m dan n — dua pemboleh ubah.",
+      "visual": { "kind": "equationBlock", "equation": "5m \u2212 2n + 3 = 0" }
+    },
+    {
+      "type": "mastery",
+      "question": "Antara berikut, yang manakah BUKAN persamaan linear dalam dua pemboleh ubah?",
+      "choices": ["4x - y = 8", "a + b = 10", "p² + q = 7", "2r - 3s = 5"],
+      "correctIndex": 2,
+      "explanation": "p² + q = 7 bukan linear kerana p berkuasa 2. Persamaan linear memerlukan kuasa pemboleh ubah ialah 1."
+    }
+  ]
+}

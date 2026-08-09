@@ -15,6 +15,14 @@ const SUPPORTED_VISUAL_KINDS = new Set([
   'cubeBlock',
   'numberBracket',
   'squareRootProduct',
+  'balanceScale',
+  'coordinateGrid',
+  'equationBlock',
+  'trialTable',
+  'tableOfValues',
+  'algebraTile',
+  'orderedPair',
+  'substitutionGroup',
 ])
 
 const SUPPORTED_SCREEN_TYPES = new Set([

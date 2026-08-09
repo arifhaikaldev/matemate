@@ -1,0 +1,58 @@
+{
+  "lessonId": "6.1.2",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Satu Pemboleh Ubah",
+  "title": "Membentuk Persamaan Daripada Ayat",
+  "learningGoal": "Membentuk persamaan linear daripada pernyataan atau situasi yang diberi.",
+  "estimatedMinutes": 6,
+  "difficulty": "easy",
+  "misconceptions": ["tanda_salah"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Terjemah Ayat ke Persamaan",
+      "text": "'Satu nombor ditolak 8, bakinya ialah 2.' Nombor yang tidak diketahui = x. 'ditolak 8' = x - 8. 'bakinya 2' = 2. Maka: x - 8 = 2.",
+      "visual": { "kind": "equationBlock", "equation": "x \u2212 8 = 2", "steps": [
+        { "text": "Nombor = x", "operation": "Kenal pasti" },
+        { "text": "Tolak 8: x \u2212 8", "operation": "Operasi" },
+        { "text": "Baki 2: x \u2212 8 = 2", "operation": "Persamaan", "highlight": true }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah persamaan yang mewakili 'Satu nombor ditambah 5 hasilnya 12'?",
+      "choices": ["x - 5 = 12", "x + 5 = 12", "5x = 12", "x + 12 = 5"],
+      "correctIndex": 1,
+      "explanation": "'Nombor' = x, 'ditambah 5' = x + 5, 'hasilnya 12' = x + 5 = 12.",
+      "visual": { "kind": "equationBlock", "equation": "x + 5 = 12" }
+    },
+    {
+      "type": "numberInput",
+      "question": "Tulis persamaan untuk: 'Satu nombor didarab 3 sama dengan 21.'",
+      "answer": "3x=21",
+      "hint": "'Nombor' = x. 'Didarab 3' = 3x. 'Sama dengan 21' = 21.",
+      "explanation": "x didarab 3 = 3x. Maka persamaan ialah 3x = 21."
+    },
+    {
+      "type": "numberInput",
+      "question": "Tulis persamaan untuk: 'Satu nombor dibahagi 4 sama dengan 5.'",
+      "answer": "x/4=5",
+      "hint": "'Nombor' = x. 'Dibahagi 4' = x/4. 'Sama dengan 5' = 5.",
+      "explanation": "x dibahagi 4 = x/4. Maka x/4 = 5."
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Antara berikut, ayat yang manakah mewakili persamaan 2x - 3 = 7?",
+      "choices": ["Dua kali nombor ditambah 3 sama dengan 7", "Dua kali nombor tolak 3 sama dengan 7", "Nombor tolak 3 kali 2 sama dengan 7", "Tiga tolak dua kali nombor sama dengan 7"],
+      "correctIndex": 1,
+      "explanation": "2x = dua kali nombor, -3 = tolak 3, = 7. Maka: Dua kali nombor tolak 3 sama dengan 7."
+    },
+    {
+      "type": "mastery",
+      "question": "Tiga kali suatu nombor ditambah 4 ialah 19. Persamaan yang manakah tepat?",
+      "choices": ["x + 3 + 4 = 19", "3x + 4 = 19", "3(x + 4) = 19", "x/3 + 4 = 19"],
+      "correctIndex": 1,
+      "explanation": "Tiga kali nombor = 3x. Ditambah 4 = 3x + 4. Ialah 19 = 3x + 4 = 19."
+    }
+  ]
+}

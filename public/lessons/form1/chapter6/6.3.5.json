@@ -1,0 +1,62 @@
+{
+  "lessonId": "6.3.5",
+  "chapter": 6,
+  "topic": "Persamaan Linear Serentak",
+  "title": "Menyelesaikan Masalah Harian",
+  "learningGoal": "Menyelesaikan masalah harian yang melibatkan persamaan linear serentak.",
+  "estimatedMinutes": 8,
+  "difficulty": "hard",
+  "misconceptions": ["substitution_salah", "elimination_salah"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Masalah Harga Tiket",
+      "text": "2 tiket dewasa + 3 tiket kanak-kanak = RM97. 4 tiket dewasa + 1 tiket kanak-kanak = RM139. Dewasa = x, Kanak-kanak = y.",
+      "visual": { "kind": "equationBlock", "equation": "2x + 3y = 97", "steps": [
+        { "text": "2x + 3y = 97", "operation": "Syarat 1" },
+        { "text": "4x + y = 139", "operation": "Syarat 2", "highlight": true }
+      ]}
+    },
+    {
+      "type": "observation",
+      "title": "Guna Kaedah Penghapusan",
+      "text": "Darab P2 dengan 3: 12x + 3y = 417. Tolak P1: (12x + 3y) - (2x + 3y) = 417 - 97. 10x = 320. x = 32. Maka tiket dewasa RM32.",
+      "visual": { "kind": "equationBlock", "equation": "12x + 3y = 417", "steps": [
+        { "text": "2x + 3y = 97", "operation": "P1" },
+        { "text": "12x + 3y = 417", "operation": "P2 \u00D7 3" },
+        { "text": "10x = 320", "operation": "Tolak" },
+        { "text": "x = 32", "operation": "Jawapan", "highlight": true }
+      ]}
+    },
+    {
+      "type": "numberInput",
+      "question": "Jika x = 32 (dewasa RM32), cari y (tiket kanak-kanak): 2(32) + 3y = 97.",
+      "answer": "11",
+      "hint": "2(32) + 3y = 97. 64 + 3y = 97. 3y = 33.",
+      "explanation": "64 + 3y = 97. 3y = 33. y = 11. Tiket kanak-kanak RM11.",
+      "visual": { "kind": "equationBlock", "equation": "2(32) + 3y = 97" }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Semak: 4 tiket dewasa + 1 tiket kanak-kanak = ?",
+      "choices": ["RM139", "RM97", "RM150", "RM120"],
+      "correctIndex": 0,
+      "explanation": "4(32) + 11 = 128 + 11 = RM139. ✓ Semua betul.",
+      "visual": { "kind": "orderedPair", "x": 32, "y": 11, "label": "RM" }
+    },
+    {
+      "type": "observation",
+      "title": "Ringkasan: Pilih Kaedah",
+      "text": "Ada istilah yang mudah diasingkan? → Penggantian. Ada istilah yang sama? → Penghapusan. Kedua-dua boleh guna — pilih yang lebih mudah.",
+      "visual": { "kind": "equationBlock", "equation": "Pilih kaedah" }
+    },
+    {
+      "type": "mastery",
+      "question": "Jumlah harga 2 pen dan 3 buku = RM16. Jumlah harga 1 pen dan 4 buku = RM18. Cari harga sebuah buku.",
+      "choices": ["RM2", "RM3", "RM4", "RM5"],
+      "correctIndex": 2,
+      "explanation": "2p + 3b = 16 dan p + 4b = 18. Darab P2: 2p + 8b = 36. Tolak: 5b = 20, b = 4. Buku RM4. Pen: p + 16 = 18, p = 2.",
+      "visual": { "kind": "equationBlock", "equation": "2p + 3b = 16" }
+    }
+  ]
+}

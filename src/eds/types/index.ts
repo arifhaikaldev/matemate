@@ -8,6 +8,8 @@
 export type VisualKind =
   'direction' | 'elevator' | 'temperature' | 'numberLine' | 'fractionNumberLine'
   | 'squareGrid' | 'factorTree' | 'cubeBlock' | 'numberBracket' | 'squareRootProduct'
+  | 'balanceScale' | 'coordinateGrid' | 'equationBlock' | 'trialTable' | 'tableOfValues'
+  | 'algebraTile' | 'orderedPair' | 'substitutionGroup'
 
 export interface DirectionVisual {
   kind: 'direction'
@@ -84,6 +86,69 @@ export interface SquareRootProductVisual {
   showProduct?: boolean
 }
 
+export interface BalanceScaleVisual {
+  kind: 'balanceScale'
+  leftLabel?: string
+  rightLabel?: string
+  leftValue?: number
+  rightValue?: number
+  tilt: 'left' | 'right' | 'balanced'
+  showItems?: boolean
+}
+
+export interface CoordinateGridVisual {
+  kind: 'coordinateGrid'
+  xMin?: number
+  xMax?: number
+  yMin?: number
+  yMax?: number
+  points?: { x: number; y: number; label?: string; highlight?: boolean }[]
+  lines?: { equation?: string; points: { x: number; y: number }[]; color?: string; dashed?: boolean }[]
+  intersection?: { x: number; y: number; label?: string }
+  showGrid?: boolean
+}
+
+export interface EquationBlockVisual {
+  kind: 'equationBlock'
+  equation: string
+  steps?: { text: string; highlight?: boolean; operation?: string }[]
+  showAnswer?: boolean
+  answer?: string
+}
+
+export interface TrialTableVisual {
+  kind: 'trialTable'
+  equation: string
+  trials: { guess: number; result: string; correct: boolean }[]
+}
+
+export interface TableOfValuesVisual {
+  kind: 'tableOfValues'
+  equation?: string
+  rows: { x: number | string; y: number | string; highlight?: boolean }[]
+}
+
+export interface AlgebraTileVisual {
+  kind: 'algebraTile'
+  left: { xCount: number; constant?: number; label?: string }
+  right: { xCount: number; constant?: number; label?: string }
+  showEquals?: boolean
+}
+
+export interface OrderedPairVisual {
+  kind: 'orderedPair'
+  x: number | string
+  y: number | string
+  label?: string
+}
+
+export interface SubstitutionGroupVisual {
+  kind: 'substitutionGroup'
+  equation: string
+  substitution: string
+  result: string
+}
+
 export type Visual =
   | DirectionVisual
   | ElevatorVisual
@@ -95,6 +160,14 @@ export type Visual =
   | CubeBlockVisual
   | NumberBracketVisual
   | SquareRootProductVisual
+  | BalanceScaleVisual
+  | CoordinateGridVisual
+  | EquationBlockVisual
+  | TrialTableVisual
+  | TableOfValuesVisual
+  | AlgebraTileVisual
+  | OrderedPairVisual
+  | SubstitutionGroupVisual
 
 // ---- Screens -----------------------------------------------
 

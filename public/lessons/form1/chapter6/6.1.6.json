@@ -1,0 +1,67 @@
+{
+  "lessonId": "6.1.6",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Satu Pemboleh Ubah",
+  "title": "Menyelesaikan Masalah Harian",
+  "learningGoal": "Menyelesaikan masalah harian yang melibatkan persamaan linear dalam satu pemboleh ubah.",
+  "estimatedMinutes": 7,
+  "difficulty": "hard",
+  "misconceptions": ["tanda_salah", "takut_negatif"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Masalah Umur",
+      "text": "Umur sekarang = x. 10 tahun kemudian = x + 10. Tiga kali umur sekarang = 3x. Jika 10 tahun kemudian sama dengan tiga kali umur sekarang: x + 10 = 3x.",
+      "visual": { "kind": "equationBlock", "equation": "x + 10 = 3x", "steps": [
+        { "text": "x + 10 = 3x", "operation": "Persamaan" },
+        { "text": "10 = 2x", "operation": "Tolak x", "highlight": true },
+        { "text": "x = 5", "operation": "Bahagi 2", "highlight": true }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Berdasarkan masalah umur tadi, berapakah umur sekarang?",
+      "choices": ["3 tahun", "5 tahun", "10 tahun", "15 tahun"],
+      "correctIndex": 1,
+      "explanation": "x = 5. Semak: 5 + 10 = 15. Tiga kali 5 = 15. Maka umur sekarang 5 tahun.",
+      "visual": { "kind": "equationBlock", "equation": "x + 10 = 3x", "steps": [
+        { "text": "x + 10 = 3x", "operation": "Asal" },
+        { "text": "10 = 2x", "operation": "Tolak x" },
+        { "text": "x = 5", "operation": "Jawapan", "highlight": true }
+      ]}
+    },
+    {
+      "type": "observation",
+      "title": "Masalah Wang",
+      "text": "Ahmad ada RMx. Dia belanja RM8, bakinya RM17. x - 8 = 17. Maka x = 25. Ahmad mula dengan RM25.",
+      "visual": { "kind": "equationBlock", "equation": "x \u2212 8 = 17", "steps": [
+        { "text": "x \u2212 8 = 17", "operation": "Persamaan" },
+        { "text": "x = 17 + 8", "operation": "Tambah 8" },
+        { "text": "x = 25", "operation": "Jawapan", "highlight": true }
+      ]}
+    },
+    {
+      "type": "numberInput",
+      "question": "Satu bakul mengandungi beberapa biji epal. Selepas dimakan 7 biji, bakinya 18 biji. Cari bilangan epal asal.",
+      "answer": "25",
+      "hint": "Bilangan epal asal = x. Dimakan 7 = x - 7. Baki 18: x - 7 = 18.",
+      "explanation": "x - 7 = 18. x = 18 + 7 = 25. Mula-mula ada 25 biji epal.",
+      "visual": { "kind": "equationBlock", "equation": "x \u2212 7 = 18" }
+    },
+    {
+      "type": "numberInput",
+      "question": "Harga 5 buah buku yang sama ialah RM45. Cari harga sebuah buku.",
+      "answer": "9",
+      "hint": "Harga sebuah buku = x. 5x = 45.",
+      "explanation": "5x = 45. x = 45 ÷ 5 = 9. Harga sebuah buku RM9.",
+      "visual": { "kind": "equationBlock", "equation": "5x = 45" }
+    },
+    {
+      "type": "mastery",
+      "question": "Saya fikir satu nombor. Saya darab dengan 3, tambah 4, hasilnya 25. Apakah nombor itu?",
+      "choices": ["5", "6", "7", "8"],
+      "correctIndex": 2,
+      "explanation": "3x + 4 = 25. 3x = 21. x = 7. Nombor yang difikirkan ialah 7."
+    }
+  ]
+}

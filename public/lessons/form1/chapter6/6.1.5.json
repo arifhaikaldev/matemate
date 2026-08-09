@@ -1,0 +1,65 @@
+{
+  "lessonId": "6.1.5",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Satu Pemboleh Ubah",
+  "title": "I Do, We Do, You Do — Kesilapan Lazim",
+  "learningGoal": "Menyelesaikan persamaan linear secara sistematik dan mengenal pasti kesilapan lazim.",
+  "estimatedMinutes": 8,
+  "difficulty": "medium",
+  "misconceptions": ["persamaan_satu_belah", "tanda_salah"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "I Do — Ikut Saya",
+      "text": "Perhatikan cara selesaikan 5x + 3 = 18. Langkah 1: Tolak 3 daripada kedua-dua belah → 5x = 15. Langkah 2: Bahagi kedua-dua belah dengan 5 → x = 3. Semak: 5(3) + 3 = 15 + 3 = 18 ✓.",
+      "visual": { "kind": "equationBlock", "equation": "5x + 3 = 18", "steps": [
+        { "text": "5x + 3 = 18", "operation": "Asal" },
+        { "text": "5x = 15", "operation": "Tolak 3" },
+        { "text": "x = 3", "operation": "Bahagi 5", "highlight": true }
+      ]}
+    },
+    {
+      "type": "numberInput",
+      "question": "Selesaikan: 4x + 9 = 1. Kira 1 - 9 dahulu, kemudian cari x.",
+      "answer": "-2",
+      "hint": "4x = 1 - 9 = -8. Maka x = -8 ÷ 4.",
+      "explanation": "4x + 9 = 1. 4x = 1 - 9 = -8. x = -8 ÷ 4 = -2.",
+      "visual": { "kind": "equationBlock", "equation": "4x + 9 = 1" }
+    },
+    {
+      "type": "numberInput",
+      "question": "Selesaikan sendiri: 6x - 5 = 13. Tunjukkan nilai x.",
+      "answer": "3",
+      "hint": "Tambah 5 dahulu, kemudian bahagi 6.",
+      "explanation": "6x - 5 = 13. 6x = 13 + 5 = 18. x = 18 ÷ 6 = 3."
+    },
+    {
+      "type": "observation",
+      "title": "Kesilapan: Buat Satu Belah Sahaja",
+      "text": "Kesilapan lazim: 2x + 1 = 7. Keluarkan 1 dari kiri sahaja: 2x = 7. ✗ Penimbang senget! Betul: 2x + 1 - 1 = 7 - 1. Maka 2x = 6.",
+      "visual": { "kind": "balanceScale", "leftLabel": "2x + 1", "rightLabel": "7", "tilt": "right", "showItems": false }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Mengapakah 2x = 7 + 1 ialah salah?",
+      "choices": ["Sebab +1 sepatutnya jadi -1", "Sebab 7 + 1 = 8 bukan 6", "Sebab kita tak boleh pindah nombor", "Sebab x jadi besar"],
+      "correctIndex": 0,
+      "explanation": "Operasi songsang tambah ialah tolak. 2x + 1 = 7 bermaksud tolak 1: 2x = 7 - 1, bukan 7 + 1.",
+      "visual": { "kind": "equationBlock", "equation": "2x + 1 = 7", "steps": [
+        { "text": "Salah: 2x = 7 + 1", "operation": "\u2716", "highlight": true },
+        { "text": "Betul: 2x = 7 \u2212 1", "operation": "\u2714", "highlight": true }
+      ]}
+    },
+    {
+      "type": "mastery",
+      "question": "Antara berikut, yang manakah langkah pertama yang BETUL untuk 3x - 4 = 8?",
+      "choices": ["3x = 8 - 4", "3x = 8 + 4", "x - 4 = 8/3", "3x = 8 × 4"],
+      "correctIndex": 1,
+      "explanation": "Operasi songsang tolak ialah tambah. Maka 3x - 4 + 4 = 8 + 4. Maka 3x = 8 + 4 = 12.",
+      "visual": { "kind": "equationBlock", "equation": "3x \u2212 4 = 8", "steps": [
+        { "text": "3x \u2212 4 = 8", "operation": "Asal" },
+        { "text": "3x = 8 + 4", "operation": "Tambah 4", "highlight": true }
+      ]}
+    }
+  ]
+}

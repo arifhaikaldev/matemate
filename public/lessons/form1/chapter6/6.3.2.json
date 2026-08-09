@@ -1,0 +1,68 @@
+{
+  "lessonId": "6.3.2",
+  "chapter": 6,
+  "topic": "Persamaan Linear Serentak",
+  "title": "Tiga Kemungkinan Penyelesaian",
+  "learningGoal": "Membezakan tiga jenis penyelesaian persamaan serentak: satu, tiada, dan tak terhingga.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": ["tak_faham_persilangan"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Satu Penyelesaian",
+      "text": "Dua garis bersilang pada satu titik. Ini bermaksud ada satu pasangan (x,y) yang memenuhi kedua-dua persamaan. Contoh: x + y = 5 dan x - y = 1.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 6, "yMin": -1, "yMax": 6, "lines": [
+        { "points": [{ "x": 0, "y": 5 }, { "x": 5, "y": 0 }], "color": "duo-blue" },
+        { "points": [{ "x": 0, "y": -1 }, { "x": 5, "y": 4 }], "color": "duo-green" }
+      ], "intersection": { "x": 3, "y": 2, "label": "(3,2)" }}
+    },
+    {
+      "type": "observation",
+      "title": "Tiada Penyelesaian",
+      "text": "Dua garis selari tidak akan bersilang. Tiada titik yang memenuhi kedua-dua persamaan. Contoh: x + y = 5 dan x + y = 8.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 6, "yMin": -1, "yMax": 10, "lines": [
+        { "points": [{ "x": 0, "y": 5 }, { "x": 5, "y": 0 }], "color": "duo-blue" },
+        { "points": [{ "x": 0, "y": 8 }, { "x": 5, "y": 3 }], "color": "duo-red" }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apabila dua garis selari, berapa penyelesaian yang ada?",
+      "choices": ["Satu", "Dua", "Tiada", "Tak terhingga"],
+      "correctIndex": 2,
+      "explanation": "Garis selari tidak bersilang. Maka tiada titik yang memenuhi kedua-dua persamaan — tiada penyelesaian.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 6, "yMin": -1, "yMax": 8, "lines": [
+        { "points": [{ "x": 0, "y": 4 }, { "x": 4, "y": 0 }], "color": "duo-blue" },
+        { "points": [{ "x": 0, "y": 6 }, { "x": 4, "y": 2 }], "color": "duo-red" }
+      ]}
+    },
+    {
+      "type": "observation",
+      "title": "Penyelesaian Tak Terhingga",
+      "text": "Dua garis bertindih — semua titik pada garis adalah penyelesaian. Ini berlaku apabila kedua-dua persamaan sebenarnya sama. Contoh: x + y = 3 dan 2x + 2y = 6.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 5, "yMin": -1, "yMax": 5, "lines": [
+        { "points": [{ "x": 0, "y": 3 }, { "x": 3, "y": 0 }], "color": "duo-blue" },
+        { "points": [{ "x": 0, "y": 3 }, { "x": 3, "y": 0 }], "color": "duo-green", "dashed": true }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Bila dua garis bertindih, berapa penyelesaian yang ada?",
+      "choices": ["Satu", "Dua", "Tiada", "Tak terhingga"],
+      "correctIndex": 3,
+      "explanation": "Garis bertindih bermaksud setiap titik pada garis itu memenuhi kedua-dua persamaan. Maka ada tak terhingga penyelesaian."
+    },
+    {
+      "type": "mastery",
+      "question": "Dua garis bersilang pada satu titik bermaksud...",
+      "choices": ["Tiada penyelesaian", "Satu penyelesaian", "Dua penyelesaian", "Tak terhingga penyelesaian"],
+      "correctIndex": 1,
+      "explanation": "Bersilang → satu titik persamaan → satu penyelesaian. Selari → tiada. Bertindih → tak terhingga.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 6, "yMin": -1, "yMax": 6, "lines": [
+        { "points": [{ "x": 0, "y": 5 }, { "x": 5, "y": 0 }], "color": "duo-blue" },
+        { "points": [{ "x": 0, "y": -1 }, { "x": 5, "y": 4 }], "color": "duo-green" }
+      ], "intersection": { "x": 3, "y": 2, "label": "(3,2)" }}
+    }
+  ]
+}

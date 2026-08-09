@@ -118,5 +118,45 @@
         ]
       }
     ]
+  },
+  {
+    "chapter": 6,
+    "tajuk": "Persamaan Linear",
+    "tingkatan": 1,
+    "subtopik": [
+      {
+        "no": "6.1",
+        "tajuk": "Persamaan Linear dalam Satu Pemboleh Ubah",
+        "lessons": [
+          { "lessonId": "6.1.1", "tajuk": "Maksud Kesamaan dan Persamaan Linear", "fail": "form1/chapter6/6.1.1.json", "difficulty": "easy", "estimatedMinutes": 6 },
+          { "lessonId": "6.1.2", "tajuk": "Membentuk Persamaan Daripada Ayat", "fail": "form1/chapter6/6.1.2.json", "difficulty": "easy", "estimatedMinutes": 6 },
+          { "lessonId": "6.1.3", "tajuk": "Persamaan Satu Langkah", "fail": "form1/chapter6/6.1.3.json", "difficulty": "medium", "estimatedMinutes": 7 },
+          { "lessonId": "6.1.4", "tajuk": "Persamaan Dua Langkah dan Nombor Negatif", "fail": "form1/chapter6/6.1.4.json", "difficulty": "medium", "estimatedMinutes": 8 },
+          { "lessonId": "6.1.5", "tajuk": "I Do, We Do, You Do — Kesilapan Lazim", "fail": "form1/chapter6/6.1.5.json", "difficulty": "medium", "estimatedMinutes": 8 },
+          { "lessonId": "6.1.6", "tajuk": "Menyelesaikan Masalah Harian", "fail": "form1/chapter6/6.1.6.json", "difficulty": "hard", "estimatedMinutes": 7 }
+        ]
+      },
+      {
+        "no": "6.2",
+        "tajuk": "Persamaan Linear dalam Dua Pemboleh Ubah",
+        "lessons": [
+          { "lessonId": "6.2.1", "tajuk": "Kenal Persamaan Linear Dua Pemboleh Ubah", "fail": "form1/chapter6/6.2.1.json", "difficulty": "easy", "estimatedMinutes": 6 },
+          { "lessonId": "6.2.2", "tajuk": "Bentuk Persamaan dan Pasangan Penyelesaian", "fail": "form1/chapter6/6.2.2.json", "difficulty": "medium", "estimatedMinutes": 7 },
+          { "lessonId": "6.2.3", "tajuk": "Jadual Nilai dan Graf", "fail": "form1/chapter6/6.2.3.json", "difficulty": "medium", "estimatedMinutes": 8 },
+          { "lessonId": "6.2.4", "tajuk": "Melukis dan Mentafsir Graf", "fail": "form1/chapter6/6.2.4.json", "difficulty": "hard", "estimatedMinutes": 8 }
+        ]
+      },
+      {
+        "no": "6.3",
+        "tajuk": "Persamaan Linear Serentak",
+        "lessons": [
+          { "lessonId": "6.3.1", "tajuk": "Satu Situasi, Dua Syarat", "fail": "form1/chapter6/6.3.1.json", "difficulty": "medium", "estimatedMinutes": 7 },
+          { "lessonId": "6.3.2", "tajuk": "Tiga Kemungkinan Penyelesaian", "fail": "form1/chapter6/6.3.2.json", "difficulty": "medium", "estimatedMinutes": 7 },
+          { "lessonId": "6.3.3", "tajuk": "Kaedah Penggantian", "fail": "form1/chapter6/6.3.3.json", "difficulty": "hard", "estimatedMinutes": 7 },
+          { "lessonId": "6.3.4", "tajuk": "Kaedah Penghapusan", "fail": "form1/chapter6/6.3.4.json", "difficulty": "hard", "estimatedMinutes": 8 },
+          { "lessonId": "6.3.5", "tajuk": "Menyelesaikan Masalah Harian", "fail": "form1/chapter6/6.3.5.json", "difficulty": "hard", "estimatedMinutes": 8 }
+        ]
+      }
+    ]
   }
 ]

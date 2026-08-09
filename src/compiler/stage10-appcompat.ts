@@ -26,6 +26,14 @@ const RENDERABLE_VISUAL_KINDS = new Set([
   'cubeBlock',
   'numberBracket',
   'squareRootProduct',
+  'balanceScale',
+  'coordinateGrid',
+  'equationBlock',
+  'trialTable',
+  'tableOfValues',
+  'algebraTile',
+  'orderedPair',
+  'substitutionGroup',
 ])
 
 export function validateAppCompatibility(lesson: ValidatedLesson): StageResult {

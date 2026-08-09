@@ -1,0 +1,62 @@
+{
+  "lessonId": "6.3.1",
+  "chapter": 6,
+  "topic": "Persamaan Linear Serentak",
+  "title": "Satu Situasi, Dua Syarat",
+  "learningGoal": "Membentuk dua persamaan linear daripada satu situasi dan memahami maksud persamaan serentak.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": ["tak_faham_persilangan"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Situasi Faizah",
+      "text": "Faizah mempunyai ayam dan itik. Jumlah haiwan ialah 7. Ayam = x, Itik = y. Maka x + y = 7.",
+      "visual": { "kind": "algebraTile", "left": { "xCount": 1, "label": "Ayam (x)" }, "right": { "xCount": 1, "label": "Itik (y)" }, "showEquals": false }
+    },
+    {
+      "type": "observation",
+      "title": "Syarat Kedua",
+      "text": "Kos: ayam RM2, itik RM1, jumlah RM12. Maka 2x + y = 12. Sekarang kita ada dua syarat: x + y = 7 DAN 2x + y = 12.",
+      "visual": { "kind": "equationBlock", "equation": "2x + y = 12", "steps": [
+        { "text": "x + y = 7", "operation": "Syarat 1" },
+        { "text": "2x + y = 12", "operation": "Syarat 2", "highlight": true }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Berapakah bilangan syarat yang perlu dipenuhi serentak?",
+      "choices": ["1", "2", "3", "Tiada"],
+      "correctIndex": 1,
+      "explanation": "Kita ada dua syarat: jumlah haiwan (x + y = 7) dan jumlah kos (2x + y = 12). Kedua-dua mesti dipenuhi."
+    },
+    {
+      "type": "observation",
+      "title": "Maksud 'Serentak'",
+      "text": "Garis 1 (biru) = semua kemungkinan x + y = 7. Garis 2 (hijau) = semua kemungkinan 2x + y = 12. Titik persilangan ialah titik yang memenuhi kedua-dua persamaan serentak.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 8, "yMin": -1, "yMax": 14, "lines": [
+        { "points": [{ "x": 0, "y": 7 }, { "x": 7, "y": 0 }], "color": "duo-blue" },
+        { "points": [{ "x": 0, "y": 12 }, { "x": 6, "y": 0 }], "color": "duo-green" }
+      ], "intersection": { "x": 5, "y": 2, "label": "(5,2)" }}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Apakah penyelesaian bagi persamaan serentak x + y = 7 dan 2x + y = 12?",
+      "choices": ["(2,5)", "(5,2)", "(7,0)", "(0,12)"],
+      "correctIndex": 1,
+      "explanation": "Semak: 5 + 2 = 7 ✓. 2(5) + 2 = 10 + 2 = 12 ✓. Maka (5,2) memenuhi kedua-dua persamaan.",
+      "visual": { "kind": "orderedPair", "x": 5, "y": 2, "label": "Penyelesaian" }
+    },
+    {
+      "type": "mastery",
+      "question": "Apakah maksud penyelesaian persamaan serentak pada graf?",
+      "choices": ["Garis terpanjang", "Titik persilangan dua garis", "Titik pada paksi-x", "Kawasan antara dua garis"],
+      "correctIndex": 1,
+      "explanation": "Penyelesaian persamaan serentak ialah titik persilangan dua garis — titik yang memenuhi kedua-dua persamaan.",
+      "visual": { "kind": "coordinateGrid", "xMin": -1, "xMax": 8, "yMin": -1, "yMax": 14, "lines": [
+        { "points": [{ "x": 0, "y": 7 }, { "x": 7, "y": 0 }], "color": "duo-blue" },
+        { "points": [{ "x": 0, "y": 12 }, { "x": 6, "y": 0 }], "color": "duo-green" }
+      ], "intersection": { "x": 5, "y": 2, "label": "(5,2)" }}
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "lessonId": "6.1.3",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Satu Pemboleh Ubah",
+  "title": "Persamaan Satu Langkah",
+  "learningGoal": "Menyelesaikan persamaan linear satu langkah menggunakan kaedah cuba jaya, pematahbalikan, dan konsep kesamaan.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": ["persamaan_satu_belah", "tanda_salah"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Cuba Jaya",
+      "text": "Untuk x + 5 = 12, kita boleh cuba nilai x. Cuba x = 5: 5 + 5 = 10 ✗. Cuba x = 6: 6 + 5 = 11 ✗. Cuba x = 7: 7 + 5 = 12 ✓. Apabila betul, penimbang menjadi seimbang.",
+      "visual": { "kind": "trialTable", "equation": "x + 5 = 12", "trials": [
+        { "guess": 5, "result": "5 + 5 = 10", "correct": false },
+        { "guess": 6, "result": "6 + 5 = 11", "correct": false },
+        { "guess": 7, "result": "7 + 5 = 12", "correct": true }
+      ]}
+    },
+    {
+      "type": "observation",
+      "title": "Pematahbalikan (Inverse)",
+      "text": "x + 5 = 12. Operasi songsang tambah ialah tolak. Tolak 5 pada kedua-dua belah: x + 5 - 5 = 12 - 5. Maka x = 7.",
+      "visual": { "kind": "equationBlock", "equation": "x + 5 = 12", "steps": [
+        { "text": "x + 5 = 12", "operation": "Asal" },
+        { "text": "x + 5 \u2212 5 = 12 \u2212 5", "operation": "Tolak 5", "highlight": true },
+        { "text": "x = 7", "operation": "Jawapan" }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Selesaikan: x + 8 = 15. Apakah nilai x?",
+      "choices": ["7", "8", "15", "23"],
+      "correctIndex": 0,
+      "explanation": "x + 8 = 15. x + 8 - 8 = 15 - 8. x = 7.",
+      "visual": { "kind": "balanceScale", "leftLabel": "x + 8", "rightLabel": "15", "leftValue": 15, "rightValue": 15, "tilt": "balanced" }
+    },
+    {
+      "type": "observation",
+      "title": "Persamaan Darab",
+      "text": "3x = 15. Visual: [x] [x] [x] = 15. Bahagi 15 kepada 3 kumpulan: 15 ÷ 3 = 5 setiap kumpulan. Maka x = 5.",
+      "visual": { "kind": "algebraTile", "left": { "xCount": 3 }, "right": { "xCount": 0, "constant": 15 } }
+    },
+    {
+      "type": "numberInput",
+      "question": "Selesaikan: 4x = 20. Apakah nilai x?",
+      "answer": "5",
+      "hint": "Gunakan pematahbalikan. Darab songsang ialah bahagi.",
+      "explanation": "4x = 20. Bahagi kedua-dua belah dengan 4: x = 20 ÷ 4 = 5.",
+      "visual": { "kind": "equationBlock", "equation": "4x = 20", "steps": [
+        { "text": "4x = 20", "operation": "Asal" },
+        { "text": "x = 20 \u00F7 4", "operation": "Bahagi 4" },
+        { "text": "x = 5", "operation": "Jawapan", "highlight": true }
+      ]}
+    },
+    {
+      "type": "mastery",
+      "question": "Selesaikan: x - 3 = 9. Apakah nilai x?",
+      "choices": ["6", "9", "12", "3"],
+      "correctIndex": 2,
+      "explanation": "x - 3 = 9. Tambah 3 pada kedua-dua belah: x - 3 + 3 = 9 + 3. x = 12.",
+      "visual": { "kind": "equationBlock", "equation": "x \u2212 3 = 9", "steps": [
+        { "text": "x \u2212 3 = 9", "operation": "Asal" },
+        { "text": "x = 9 + 3", "operation": "Tambah 3" },
+        { "text": "x = 12", "operation": "Jawapan", "highlight": true }
+      ]}
+    }
+  ]
+}

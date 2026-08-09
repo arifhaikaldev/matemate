@@ -1,0 +1,77 @@
+{
+  "lessonId": "6.1.4",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Satu Pemboleh Ubah",
+  "title": "Persamaan Dua Langkah dan Nombor Negatif",
+  "learningGoal": "Menyelesaikan persamaan linear dua langkah yang melibatkan nombor positif dan negatif.",
+  "estimatedMinutes": 8,
+  "difficulty": "medium",
+  "misconceptions": ["tanda_salah", "takut_negatif"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Gabung Jadi Dua Langkah",
+      "text": "2x + 1 = 7. Visual: [x] [x] [1] = [7]. Langkah 1: Buang 1 daripada kedua-dua belah. [x] [x] = [6]. Langkah 2: Bahagi 2. [x] = [3].",
+      "visual": { "kind": "algebraTile", "left": { "xCount": 2, "constant": 1 }, "right": { "xCount": 0, "constant": 7 } }
+    },
+    {
+      "type": "observation",
+      "title": "Notasi Dua Langkah",
+      "text": "Dua langkah ini bukan kemahiran baharu — hanya gabungan dua kemahiran satu langkah. Langkah 1: tolak 1. Langkah 2: bahagi 2.",
+      "visual": { "kind": "equationBlock", "equation": "2x + 1 = 7", "steps": [
+        { "text": "2x + 1 = 7", "operation": "Asal" },
+        { "text": "2x = 6", "operation": "Tolak 1", "highlight": true },
+        { "text": "x = 3", "operation": "Bahagi 2", "highlight": true }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Selesaikan: 3x + 2 = 11. Apakah nilai x?",
+      "choices": ["2", "3", "4", "5"],
+      "correctIndex": 1,
+      "explanation": "3x + 2 = 11. 3x = 9. x = 9 ÷ 3 = 3.",
+      "visual": { "kind": "equationBlock", "equation": "3x + 2 = 11", "steps": [
+        { "text": "3x + 2 = 11", "operation": "Asal" },
+        { "text": "3x = 9", "operation": "Tolak 2" },
+        { "text": "x = 3", "operation": "Bahagi 3", "highlight": true }
+      ]}
+    },
+    {
+      "type": "observation",
+      "title": "Nombor Negatif pada Garis Nombor",
+      "text": "1 - 9 = ? Pada garis nombor: Mula dari 1, gerak 9 langkah ke kiri. Sampai di -8. Maka 1 - 9 = -8.",
+      "visual": { "kind": "numberLine", "min": -10, "max": 5, "highlights": [1, -8], "tickInterval": 1 }
+    },
+    {
+      "type": "observation",
+      "title": "Persamaan dengan Jawapan Negatif",
+      "text": "4x + 10 = 2. Langkah 1: 4x = 2 - 10. Langkah 2: 4x = -8 (gunakan garis nombor). Langkah 3: x = -8 ÷ 4 = -2. Semak: 4(-2) + 10 = -8 + 10 = 2 ✓.",
+      "visual": { "kind": "equationBlock", "equation": "4x + 10 = 2", "steps": [
+        { "text": "4x + 10 = 2", "operation": "Asal" },
+        { "text": "4x = 2 \u2212 10", "operation": "Tolak 10" },
+        { "text": "4x = \u22128", "operation": "Kiraan negatif" },
+        { "text": "x = \u22122", "operation": "Bahagi 4", "highlight": true }
+      ]}
+    },
+    {
+      "type": "numberInput",
+      "question": "Selesaikan: 2x + 6 = 2. Apakah nilai x?",
+      "answer": "-2",
+      "hint": "Tolak 6: 2x = 2 - 6 = -4. Bahagi 2: x = -2.",
+      "explanation": "2x + 6 = 2. 2x = 2 - 6 = -4. x = -4 ÷ 2 = -2.",
+      "visual": { "kind": "equationBlock", "equation": "2x + 6 = 2" }
+    },
+    {
+      "type": "mastery",
+      "question": "Selesaikan: 5x - 3 = 12. Apakah nilai x?",
+      "choices": ["2", "3", "4", "5"],
+      "correctIndex": 1,
+      "explanation": "5x - 3 = 12. Tambah 3: 5x = 15. Bahagi 5: x = 3.",
+      "visual": { "kind": "equationBlock", "equation": "5x \u2212 3 = 12", "steps": [
+        { "text": "5x \u2212 3 = 12", "operation": "Asal" },
+        { "text": "5x = 15", "operation": "Tambah 3" },
+        { "text": "x = 3", "operation": "Bahagi 5", "highlight": true }
+      ]}
+    }
+  ]
+}

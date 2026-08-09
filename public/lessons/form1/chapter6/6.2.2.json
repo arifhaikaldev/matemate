@@ -1,0 +1,57 @@
+{
+  "lessonId": "6.2.2",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Dua Pemboleh Ubah",
+  "title": "Bentuk Persamaan dan Pasangan Penyelesaian",
+  "learningGoal": "Membentuk persamaan linear dalam dua pemboleh ubah daripada situasi dan menentukan pasangan tertib yang memenuhi persamaan.",
+  "estimatedMinutes": 7,
+  "difficulty": "medium",
+  "misconceptions": ["salah_pasang_x_y"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Bentuk daripada Situasi",
+      "text": "'Beza antara dua nombor ialah 18.' Nombor pertama = p. Nombor kedua = q. Beza = p - q. Nilai beza = 18. Maka: p - q = 18.",
+      "visual": { "kind": "equationBlock", "equation": "p \u2212 q = 18" }
+    },
+    {
+      "type": "numberInput",
+      "question": "Jumlah dua nombor ialah 15. Jika nombor pertama = x dan nombor kedua = y, tulis persamaannya.",
+      "answer": "x+y=15",
+      "explanation": "Jumlah x dan y = 15. Maka x + y = 15."
+    },
+    {
+      "type": "observation",
+      "title": "Cari Pasangan Penyelesaian",
+      "text": "2x + y = 6. Pilih x = 0: 2(0) + y = 6, y = 6. Maka (0,6). Kemudian x = 1: 2(1) + y = 6, y = 4. Maka (1,4). Kemudian x = 2: 2(2) + y = 6, y = 2. Maka (2,2).",
+      "visual": { "kind": "tableOfValues", "equation": "2x + y = 6", "rows": [
+        { "x": 0, "y": 6, "highlight": false },
+        { "x": 1, "y": 4, "highlight": false },
+        { "x": 2, "y": 2, "highlight": true }
+      ]}
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Untuk persamaan x + y = 8, jika x = 3, berapakah y?",
+      "choices": ["3", "5", "8", "11"],
+      "correctIndex": 1,
+      "explanation": "3 + y = 8. Maka y = 8 - 3 = 5. Pasangan: (3,5).",
+      "visual": { "kind": "orderedPair", "x": 3, "y": 5, "label": "Jawapan" }
+    },
+    {
+      "type": "numberInput",
+      "question": "Untuk persamaan 3x - y = 4, jika x = 2, cari nilai y.",
+      "answer": "2",
+      "hint": "Gantikan x = 2: 3(2) - y = 4. Maka 6 - y = 4. y = 6 - 4.",
+      "explanation": "3(2) - y = 4. 6 - y = 4. y = 6 - 4 = 2. Pasangan: (2,2)."
+    },
+    {
+      "type": "mastery",
+      "question": "Untuk persamaan 2x + y = 10, jika x = 4, berapakah nilai y?",
+      "choices": ["2", "4", "6", "8"],
+      "correctIndex": 0,
+      "explanation": "2(4) + y = 10. 8 + y = 10. y = 10 - 8 = 2. Pasangan: (4,2).",
+      "visual": { "kind": "orderedPair", "x": 4, "y": 2 }
+    }
+  ]
+}

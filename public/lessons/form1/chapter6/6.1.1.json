@@ -1,0 +1,53 @@
+{
+  "lessonId": "6.1.1",
+  "chapter": 6,
+  "topic": "Persamaan Linear dalam Satu Pemboleh Ubah",
+  "title": "Maksud Kesamaan dan Persamaan Linear",
+  "learningGoal": "Memahami bahawa = bermaksud kedua-dua belah mempunyai nilai yang sama dan mengenal pasti persamaan linear dalam satu pemboleh ubah.",
+  "estimatedMinutes": 6,
+  "difficulty": "easy",
+  "misconceptions": ["persamaan_satu_belah", "salah_pasang_x_y"],
+  "screens": [
+    {
+      "type": "observation",
+      "title": "Maksud Sama Dengan",
+      "text": "Tanda = bermaksud kedua-dua belah mempunyai nilai yang sama. 5 kg = 5 kg. Penimbang seimbang kerana kedua-dua belah sama berat.",
+      "visual": { "kind": "balanceScale", "leftLabel": "Kiri", "rightLabel": "Kanan", "leftValue": 5, "rightValue": 5, "tilt": "balanced" }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Jika kita tambah 3 kg pada bekas kiri sahaja, apa yang akan berlaku?",
+      "choices": ["Tetap seimbang", "Senget ke kiri", "Senget ke kanan", "Penimbang hilang"],
+      "correctIndex": 1,
+      "explanation": "Apabila kiri menjadi lebih berat (8 kg), penimbang akan senget ke kiri.",
+      "visual": { "kind": "balanceScale", "leftLabel": "Kiri", "rightLabel": "Kanan", "leftValue": 8, "rightValue": 5, "tilt": "left" }
+    },
+    {
+      "type": "observation",
+      "title": "Dari Penimbang ke Algebra",
+      "text": "Kita boleh tulis situasi penimbang sebagai persamaan. 5 = 5. Jika tambah 3 pada kiri: 5 + 3 ≠ 5. Untuk seimbang: x + 3 = 8. Ini masih menggunakan idea keseimbangan yang sama.",
+      "visual": { "kind": "equationBlock", "equation": "x + 3 = 8", "steps": [{ "text": "x + 3 = 8", "highlight": true }] }
+    },
+    {
+      "type": "observation",
+      "title": "Apa Itu Persamaan Linear?",
+      "text": "Persamaan linear dalam satu pemboleh ubah hanya mempunyai satu pemboleh ubah (seperti x) dan kuasa pemboleh ubah itu ialah 1.",
+      "visual": { "kind": "equationBlock", "equation": "3x + 2 = 5  →  Linear (x\u00B9)" }
+    },
+    {
+      "type": "multipleChoice",
+      "question": "Adakah 5y × y = 20 ialah persamaan linear?",
+      "choices": ["Ya", "Bukan, kerana terdapat y × y", "Ya, sebab ada y", "Bukan, sebab ada nombor 20"],
+      "correctIndex": 1,
+      "explanation": "y × y = y\u00B2. Kuasa pemboleh ubah ialah 2, bukan 1. Maka ia bukan persamaan linear.",
+      "visual": { "kind": "equationBlock", "equation": "5y \u00D7 y = 20", "steps": [{ "text": "y \u00D7 y = y\u00B2", "highlight": true, "operation": "Bukan linear" }] }
+    },
+    {
+      "type": "mastery",
+      "question": "Antara berikut, yang manakah persamaan linear dalam satu pemboleh ubah?",
+      "choices": ["2x + 3 = 7", "x\u00B2 + 1 = 5", "xy = 10", "3x + 2y = 8"],
+      "correctIndex": 0,
+      "explanation": "2x + 3 = 7 hanya ada satu pemboleh ubah (x) dan kuasanya 1. Yang lain ada x\u00B2, xy, atau dua pemboleh ubah."
+    }
+  ]
+}

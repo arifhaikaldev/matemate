@@ -81,6 +81,95 @@ const SquareRootProductVisualSchema = z.object({
   showProduct: z.boolean().optional(),
 })
 
+const BalanceScaleVisualSchema = z.object({
+  kind: z.literal('balanceScale'),
+  leftLabel: z.string().optional(),
+  rightLabel: z.string().optional(),
+  leftValue: z.number().optional(),
+  rightValue: z.number().optional(),
+  tilt: z.enum(['left', 'right', 'balanced']),
+  showItems: z.boolean().optional(),
+})
+
+const CoordinateGridVisualSchema = z.object({
+  kind: z.literal('coordinateGrid'),
+  xMin: z.number().optional(),
+  xMax: z.number().optional(),
+  yMin: z.number().optional(),
+  yMax: z.number().optional(),
+  points: z.array(z.object({
+    x: z.number(),
+    y: z.number(),
+    label: z.string().optional(),
+    highlight: z.boolean().optional(),
+  })).optional(),
+  lines: z.array(z.object({
+    equation: z.string().optional(),
+    points: z.array(z.object({ x: z.number(), y: z.number() })),
+    color: z.string().optional(),
+    dashed: z.boolean().optional(),
+  })).optional(),
+  intersection: z.object({
+    x: z.number(),
+    y: z.number(),
+    label: z.string().optional(),
+  }).optional(),
+  showGrid: z.boolean().optional(),
+})
+
+const EquationBlockVisualSchema = z.object({
+  kind: z.literal('equationBlock'),
+  equation: z.string(),
+  steps: z.array(z.object({
+    text: z.string(),
+    highlight: z.boolean().optional(),
+    operation: z.string().optional(),
+  })).optional(),
+  showAnswer: z.boolean().optional(),
+  answer: z.string().optional(),
+})
+
+const TrialTableVisualSchema = z.object({
+  kind: z.literal('trialTable'),
+  equation: z.string(),
+  trials: z.array(z.object({
+    guess: z.number(),
+    result: z.string(),
+    correct: z.boolean(),
+  })),
+})
+
+const TableOfValuesVisualSchema = z.object({
+  kind: z.literal('tableOfValues'),
+  equation: z.string().optional(),
+  rows: z.array(z.object({
+    x: z.union([z.number(), z.string()]),
+    y: z.union([z.number(), z.string()]),
+    highlight: z.boolean().optional(),
+  })),
+})
+
+const AlgebraTileVisualSchema = z.object({
+  kind: z.literal('algebraTile'),
+  left: z.object({ xCount: z.number(), constant: z.number().optional(), label: z.string().optional() }),
+  right: z.object({ xCount: z.number(), constant: z.number().optional(), label: z.string().optional() }),
+  showEquals: z.boolean().optional(),
+})
+
+const OrderedPairVisualSchema = z.object({
+  kind: z.literal('orderedPair'),
+  x: z.union([z.number(), z.string()]),
+  y: z.union([z.number(), z.string()]),
+  label: z.string().optional(),
+})
+
+const SubstitutionGroupVisualSchema = z.object({
+  kind: z.literal('substitutionGroup'),
+  equation: z.string(),
+  substitution: z.string(),
+  result: z.string(),
+})
+
 const VisualSchema = z.discriminatedUnion('kind', [
   DirectionVisualSchema,
   ElevatorVisualSchema,
@@ -92,6 +181,14 @@ const VisualSchema = z.discriminatedUnion('kind', [
   CubeBlockVisualSchema,
   NumberBracketVisualSchema,
   SquareRootProductVisualSchema,
+  BalanceScaleVisualSchema,
+  CoordinateGridVisualSchema,
+  EquationBlockVisualSchema,
+  TrialTableVisualSchema,
+  TableOfValuesVisualSchema,
+  AlgebraTileVisualSchema,
+  OrderedPairVisualSchema,
+  SubstitutionGroupVisualSchema,
 ])
 
 // ── Screen schemas ───────────────────────────────────────────────────────────
