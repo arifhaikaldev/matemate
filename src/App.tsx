@@ -43,7 +43,7 @@ export function App() {
         <Route path="/prototype/bab6-1" element={<MathMateLesson data={bab61 as any} />} />
 
         {/* Interactive lessons (direct integration) */}
-        <Route path="/interactive" element={<InteractivePage />} />
+        <Route path="/interactive/*" element={<InteractivePage />} />
 
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />
