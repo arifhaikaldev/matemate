@@ -1,5 +1,5 @@
-import { createContext, useContext, useReducer, type ReactNode } from 'react'
-import type { Lesson, LessonStatus } from '../types'
+import { createContext, useContext, useReducer, type ReactNode, type Dispatch } from 'react'
+import type { Lesson, LessonStatus, PageConfig } from '../types'
 
 interface LessonState {
   lessons: Lesson[]
@@ -63,9 +63,9 @@ const initialState: LessonState = {
 
 interface LessonContextValue {
   state: LessonState
-  dispatch: React.Dispatch<LessonAction>
+  dispatch: Dispatch<LessonAction>
   currentLesson: Lesson | null
-  currentPage: import('../types').PageConfig | null
+  currentPage: PageConfig | null
   isLastPage: boolean
   isFirstPage: boolean
   progressPercent: number

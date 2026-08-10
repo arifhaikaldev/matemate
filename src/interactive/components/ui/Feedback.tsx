@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export function Feedback({
   type,
@@ -9,11 +9,7 @@ export function Feedback({
   message: string
   onDismiss?: () => void
 }) {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    setVisible(true)
-  }, [])
+  const [visible] = useState(true)
 
   const bg = type === 'correct' ? 'var(--teal-tint)' : 'var(--coral-tint)'
   const accent = type === 'correct' ? 'var(--teal)' : 'var(--coral)'

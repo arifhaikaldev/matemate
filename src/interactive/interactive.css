@@ -1,6 +1,4 @@
-@import "tailwindcss";
-
-:root {
+.interactive-app {
   --bg: #fafaf8;
   --card: #ffffff;
   --card-secondary: #f4f3ef;
@@ -15,7 +13,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  .interactive-app {
     --bg: #171613;
     --card: #211f1b;
     --card-secondary: #2a2822;
@@ -30,73 +28,75 @@
   }
 }
 
-body {
-  margin: 0;
+.interactive-app {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.equation-tile {
-  @apply px-3 py-2 rounded-lg cursor-pointer select-none text-center font-medium text-lg transition-all;
+.interactive-app .equation-tile {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  transition: all 0.15s;
   background: var(--teal-tint);
   color: var(--teal);
   border: 2px solid transparent;
 }
-.equation-tile:hover {
+.interactive-app .equation-tile:hover {
   border-color: var(--teal);
   transform: translateY(-2px);
 }
-.equation-tile.dragging {
+.interactive-app .equation-tile.dragging {
   opacity: 0.5;
 }
 
-.card-3d {
-  @apply rounded-xl p-5 transition-all duration-200;
+.interactive-app .card-3d {
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.2s;
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
-.bounce-enter {
-  animation: bounceIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+.interactive-app .bounce-enter {
+  animation: interactive-bounceIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-@keyframes bounceIn {
+@keyframes interactive-bounceIn {
   0% { transform: scale(0.8); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 
-.fade-in {
-  animation: fadeIn 0.3s ease-out;
+.interactive-app .fade-in {
+  animation: interactive-fadeIn 0.3s ease-out;
 }
-@keyframes fadeIn {
+@keyframes interactive-fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.slide-up {
-  animation: slideUp 0.3s ease-out;
+.interactive-app .slide-up {
+  animation: interactive-slideUp 0.3s ease-out;
 }
-@keyframes slideUp {
+@keyframes interactive-slideUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.shake {
-  animation: shake 0.4s ease-in-out;
+.interactive-app .shake {
+  animation: interactive-shake 0.4s ease-in-out;
 }
-@keyframes shake {
+@keyframes interactive-shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-6px); }
   50% { transform: translateX(6px); }
   75% { transform: translateX(-4px); }
 }
 
-.katex { font-size: 1.2em !important; }
-
-.katex-display { margin: 0.5em 0 !important; }
+.interactive-app .katex { font-size: 1.2em !important; }
+.interactive-app .katex-display { margin: 0.5em 0 !important; }

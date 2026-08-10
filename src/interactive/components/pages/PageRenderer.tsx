@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type FormEvent } from 'react'
 import { useLesson } from '../../context/LessonContext'
 import type { PageConfig } from '../../types'
 import { MysteryBox } from '../shared/MysteryBox'
@@ -324,7 +324,7 @@ function NumberSolveInput({
   const [attempted, setAttempted] = useState(false)
   const [correct, setCorrect] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     setAttempted(true)
     const num = parseFloat(value)

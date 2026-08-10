@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { MathDisplay, MathInline } from '../ui/MathDisplay'
 import { Feedback } from '../ui/Feedback'
 
@@ -129,7 +129,7 @@ export function PracticeSolve({
 
   const current = equations[currentIndex]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     setAttempted(true)
     if (parseFloat(inputValue) === current.answer) {
