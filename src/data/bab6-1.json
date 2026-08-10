@@ -1,0 +1,629 @@
+{
+  "Bab": {
+    "Nama": "Bab 6: Persamaan Linear",
+    "Jenis": "Teaching Module",
+    "Prinsip_Pengajaran": {
+      "Matlamat": "Membina pemahaman konsep sebelum memperkenalkan formalism dan prosedur.",
+      "Urutan_Utama": [
+        "Pengalaman",
+        "Ramalan",
+        "Kesukaran",
+        "Keperluan",
+        "Pendedahan Konsep",
+        "Pembinaan Makna",
+        "Formalisme",
+        "Prosedur",
+        "Variasi",
+        "Semakan Pemahaman"
+      ],
+      "Prinsip": [
+        "Jangan mulakan dengan definisi jika konsep boleh diperkenalkan melalui masalah.",
+        "Mulakan dengan sesuatu yang sudah boleh difahami oleh pelajar.",
+        "Wujudkan keperluan terhadap konsep sebelum memperkenalkan simbol atau istilah.",
+        "Setiap simbol matematik mesti mempunyai makna yang boleh diterangkan secara bahasa atau visual.",
+        "Jangan bergantung kepada hafalan prosedur seperti 'pindah ke sebelah lain'.",
+        "Gunakan manipulasi yang mempunyai sebab, bukan sekadar peraturan.",
+        "Bezakan kebolehan mendapatkan jawapan dengan kebolehan memahami maksud.",
+        "Selepas konsep diperkenalkan, berikan soalan mudah sebelum meningkatkan kesukaran.",
+        "Gunakan variasi supaya pelajar memahami struktur konsep dan bukan menghafal bentuk soalan.",
+        "Semakan mesti menguji maksud dan sebab, bukan jawapan sahaja."
+      ]
+    },
+    "Subtopik": [
+      {
+        "ID": "6.1",
+        "Nama_Subtopik": "Persamaan Linear dalam Satu Pemboleh Ubah",
+        "Matlamat_Utama": "Pelajar memahami persamaan linear dalam satu pemboleh ubah sebagai cara mewakili hubungan yang mempunyai nilai tidak diketahui dan menggunakan persamaan tersebut untuk mencari nilai yang memenuhi hubungan tersebut.",
+        "Persoalan_Utama": [
+          {
+            "ID": "6.1.1",
+            "Persoalan": "Apakah persamaan linear dalam satu pemboleh ubah?",
+            "Standard_Pembelajaran": "Mengenal pasti persamaan linear dalam satu pemboleh ubah dan menghuraikan ciri-ciri persamaan tersebut.",
+            "Pengetahuan_Asas_Diperlukan": [
+              "Maksud nombor",
+              "Operasi tambah, tolak, darab dan bahagi",
+              "Maksud simbol atau huruf sebagai nilai yang boleh berubah",
+              "Maksud tanda sama dengan"
+            ],
+            "Objektif_Pemahaman": [
+              "Pelajar memahami bahawa persamaan mewakili dua kuantiti yang sama nilai.",
+              "Pelajar memahami bahawa pemboleh ubah mewakili nilai yang belum diketahui atau boleh berubah.",
+              "Pelajar dapat mengenal pasti persamaan linear dalam satu pemboleh ubah berdasarkan strukturnya.",
+              "Pelajar dapat menerangkan mengapa sesuatu persamaan itu linear."
+            ],
+            "Pengalaman_Permulaan": {
+              "Hook": {
+                "Situasi": "Satu kotak misteri mempunyai sejumlah objek. Kita tahu jumlah keseluruhan dan sebahagian daripada objek tersebut.",
+                "Tujuan": "Mewujudkan idea tentang nilai yang belum diketahui tanpa memperkenalkan istilah algebra."
+              },
+              "Try": {
+                "Soalan": "Jika 5 ditambah dengan sesuatu nombor menghasilkan 12, apakah nombor itu?",
+                "Tahap": "Sangat mudah",
+                "Respons_Diharapkan": "7"
+              },
+              "Prediction": {
+                "Soalan": "Bolehkah kita menulis situasi ini dengan satu simbol untuk nombor yang belum diketahui?",
+                "Tujuan": "Membolehkan pelajar melihat keperluan menggunakan pemboleh ubah."
+              },
+              "Problem": {
+                "Situasi": "Apabila situasi menjadi lebih panjang atau nilai yang tidak diketahui tidak mudah diteka, kita memerlukan cara ringkas untuk mewakilinya.",
+                "Soalan": "Bagaimana kita boleh menulis 'satu nombor ditambah 5 menghasilkan 12' secara ringkas?"
+              },
+              "Reveal": {
+                "Idea": "Kita boleh menggunakan huruf untuk mewakili nombor yang belum diketahui.",
+                "Representasi": "x + 5 = 12"
+              }
+            },
+            "Build": {
+              "Langkah": [
+                {
+                  "Step": 1,
+                  "Representation": "Satu nombor yang belum diketahui",
+                  "Meaning": "x bermaksud nombor yang belum kita ketahui."
+                },
+                {
+                  "Step": 2,
+                  "Representation": "x + 5",
+                  "Meaning": "Ambil nombor itu dan tambah 5."
+                },
+                {
+                  "Step": 3,
+                  "Representation": "x + 5 = 12",
+                  "Meaning": "Selepas menambah 5 kepada nombor itu, hasilnya ialah 12."
+                },
+                {
+                  "Step": 4,
+                  "Representation": "x + 5 = 12",
+                  "Meaning": "Bahagian kiri dan kanan mempunyai nilai yang sama."
+                }
+              ]
+            },
+            "Formalism": {
+              "Istilah": "Persamaan linear dalam satu pemboleh ubah",
+              "Definisi": "Persamaan yang mempunyai satu pemboleh ubah dan kuasa pemboleh ubah tersebut ialah 1.",
+              "Contoh": [
+                "3x + 2 = 5",
+                "x - 8 = 2",
+                "5x = 20"
+              ],
+              "Bukan_Contoh": [
+                "x² + 2 = 5",
+                "xy + 2 = 5"
+              ]
+            },
+            "Connect": {
+              "Konsep_Sedia_Ada": "Operasi nombor dan hubungan sama dengan",
+              "Hubungan": "Persamaan bukan objek baharu yang terputus daripada aritmetik; ia menggunakan operasi nombor untuk mewakili nilai yang belum diketahui."
+            },
+            "Practice": {
+              "Tahap_1": [
+                {
+                  "Soalan": "Adakah x + 4 = 9 mempunyai satu pemboleh ubah?",
+                  "Fokus": "Mengenal pasti pemboleh ubah."
+                },
+                {
+                  "Soalan": "Adakah 3x + 2 = 5 ialah persamaan linear dalam satu pemboleh ubah?",
+                  "Fokus": "Mengenal pasti ciri."
+                }
+              ],
+              "Tahap_2": [
+                {
+                  "Soalan": "Terangkan mengapa 3x + 2 = 5 ialah persamaan linear dalam satu pemboleh ubah.",
+                  "Jawapan_Asas": "Mempunyai satu pemboleh ubah, x, dan kuasa x ialah 1."
+                }
+              ]
+            },
+            "Vary": {
+              "Tujuan": "Memastikan pelajar mengenal struktur dan bukan menghafal satu bentuk.",
+              "Variasi": [
+                "x + 5 = 10",
+                "2x = 14",
+                "3x - 4 = 11",
+                "7 = x + 2",
+                "10 - x = 4"
+              ]
+            },
+            "Check": {
+              "Soalan_Makna": [
+                "Apakah maksud x dalam persamaan ini?",
+                "Apakah maksud tanda =?",
+                "Mengapa persamaan ini dipanggil linear?",
+                "Bagaimana anda tahu persamaan ini mempunyai satu pemboleh ubah?"
+              ],
+              "Kriteria_Lulus": "Pelajar boleh menerangkan struktur persamaan menggunakan bahasa sendiri tanpa hanya menyebut definisi."
+            },
+            "Aktiviti_Sumber": "Aktiviti Penerokaan 1: Mengenal ungkapan dan persamaan algebra dengan mengelaskan ayat matematik pada kad.",
+            "Contoh_Sumber": {
+              "Soalan": "Terangkan sama ada persamaan 3x + 2 = 5 ialah persamaan linear dalam satu pemboleh ubah atau bukan.",
+              "Jawapan": "Ya, kerana persamaan ini mempunyai satu pemboleh ubah x dan kuasa bagi x ialah 1."
+            },
+            "Kesilapan_Biasa": [
+              "Menganggap semua ungkapan yang mempunyai x ialah persamaan.",
+              "Menganggap tanda sama dengan bermaksud 'jawapan datang selepas tanda sama dengan'.",
+              "Menghafal perkataan linear tanpa memahami kuasa pemboleh ubah.",
+              "Menganggap huruf x sentiasa bermaksud darab."
+            ]
+          },
+          {
+            "ID": "6.1.2",
+            "Persoalan": "Bagaimanakah anda membentuk persamaan linear berdasarkan situasi yang diberi dan sebaliknya?",
+            "Standard_Pembelajaran": "Membentuk persamaan linear dalam satu pemboleh ubah berdasarkan suatu pernyataan atau situasi, dan sebaliknya.",
+            "Objektif_Pemahaman": [
+              "Pelajar boleh menukar situasi sebenar kepada hubungan matematik.",
+              "Pelajar memahami bahawa setiap bahagian persamaan mewakili maklumat tertentu dalam situasi.",
+              "Pelajar boleh bergerak dua arah: situasi → persamaan dan persamaan → situasi."
+            ],
+            "Pengalaman_Permulaan": {
+              "Hook": {
+                "Situasi": "Satu nombor ditolak dengan 8 menghasilkan 2.",
+                "Soalan": "Apakah nombor tersebut?"
+              },
+              "Try": {
+                "Soalan": "Bolehkah anda selesaikan secara mental?",
+                "Jawapan": "10"
+              },
+              "Problem": {
+                "Situasi": "Bagaimana jika nombor tersebut tidak mudah dicari secara mental, atau situasinya menjadi lebih panjang?",
+                "Keperluan": "Kita memerlukan representasi yang mengekalkan semua maklumat dalam situasi."
+              },
+              "Reveal": {
+                "Idea": "Kita boleh mewakili nombor yang belum diketahui dengan x dan menterjemahkan operasi yang berlaku kepadanya.",
+                "Representasi": "x - 8 = 2"
+              }
+            },
+            "Build": {
+              "Langkah": [
+                {
+                  "Step": 1,
+                  "Maklumat": "Satu nombor",
+                  "Representasi": "x",
+                  "Meaning": "x mewakili nombor yang belum diketahui."
+                },
+                {
+                  "Step": 2,
+                  "Maklumat": "Ditolak dengan 8",
+                  "Representasi": "x - 8",
+                  "Meaning": "8 ditolak daripada nombor tersebut."
+                },
+                {
+                  "Step": 3,
+                  "Maklumat": "Bakinya ialah 2",
+                  "Representasi": "x - 8 = 2",
+                  "Meaning": "Hasil selepas menolak 8 ialah 2."
+                }
+              ]
+            },
+            "Formalism": {
+              "Kemahiran": "Menterjemah bahasa kepada algebra.",
+              "Corak": [
+                {
+                  "Bahasa": "Satu nombor ditambah 5",
+                  "Algebra": "x + 5"
+                },
+                {
+                  "Bahasa": "Satu nombor ditolak 8",
+                  "Algebra": "x - 8"
+                },
+                {
+                  "Bahasa": "Tiga kali satu nombor",
+                  "Algebra": "3x"
+                },
+                {
+                  "Bahasa": "Satu nombor dibahagi 4",
+                  "Algebra": "x / 4"
+                }
+              ]
+            },
+            "Connect": {
+              "Konsep_Sedia_Ada": "Bahasa harian dan operasi aritmetik",
+              "Hubungan": "Algebra ialah cara memampatkan hubungan yang sudah difahami dalam bahasa biasa."
+            },
+            "Practice": {
+              "Tahap_1": [
+                "Satu nombor ditambah 4 menghasilkan 10.",
+                "Satu nombor ditolak 7 menghasilkan 3."
+              ],
+              "Tahap_2": [
+                "Tiga kali satu nombor ditambah 2 menghasilkan 17."
+              ],
+              "Tahap_3": [
+                "Tukar persamaan 2x + 5 = 15 kepada satu cerita atau situasi yang sepadan."
+              ]
+            },
+            "Vary": {
+              "Arah_1": "Situasi → Persamaan",
+              "Arah_2": "Persamaan → Situasi",
+              "Contoh_Sumber": "Satu nombor ditolak dengan 8, bakinya ialah 2.",
+              "Persamaan": "x - 8 = 2"
+            },
+            "Check": {
+              "Soalan_Makna": [
+                "Apakah yang diwakili oleh x?",
+                "Mengapa kita menggunakan tanda sama dengan?",
+                "Bahagian mana dalam persamaan mewakili 'ditolak 8'?",
+                "Bolehkah anda menerangkan persamaan ini tanpa menggunakan simbol?"
+              ]
+            },
+            "Aktiviti_Sumber": "Contoh pembentukan persamaan daripada pernyataan matematik.",
+            "Kesilapan_Biasa": [
+              "Menulis operasi yang salah kerana membaca ayat secara kiri-ke-kanan tanpa memahami makna.",
+              "Tidak menentukan perkara yang diwakili oleh pemboleh ubah.",
+              "Menggunakan simbol tanpa menghubungkannya dengan maklumat dalam situasi."
+            ]
+          },
+          {
+            "ID": "6.1.3",
+            "Persoalan": "Bagaimanakah anda menyelesaikan persamaan linear dalam satu pemboleh ubah?",
+            "Standard_Pembelajaran": "Menyelesaikan persamaan linear dalam satu pemboleh ubah.",
+            "Objektif_Pemahaman": [
+              "Pelajar memahami penyelesaian sebagai nilai yang menjadikan kedua-dua belah persamaan sama.",
+              "Pelajar memahami mengapa operasi yang sama perlu dilakukan pada kedua-dua belah.",
+              "Pelajar boleh menggunakan konsep kesamaan, cuba jaya dan pematahbalikan.",
+              "Pelajar tidak bergantung kepada peraturan mekanikal seperti 'pindah sebelah tukar tanda'."
+            ],
+            "Pengalaman_Permulaan": {
+              "Hook": {
+                "Situasi": "Sebuah kotak mengandungi nombor yang tidak diketahui. Jika 1 ditambah kepada nombor itu, hasilnya 7.",
+                "Representasi": "x + 1 = 7"
+              },
+              "Try": {
+                "Soalan": "Apakah nombor dalam kotak?",
+                "Jawapan": "6"
+              },
+              "Problem": {
+                "Situasi": "Bagaimana kita boleh mendapatkan x secara sistematik tanpa meneka?",
+                "Soalan": "Apa yang perlu kita lakukan untuk membuang +1 daripada x + 1?"
+              },
+              "Reveal": {
+                "Idea": "Kita boleh melakukan operasi yang sama pada kedua-dua belah supaya hubungan kesamaan kekal.",
+                "Representasi": [
+                  "x + 1 = 7",
+                  "x + 1 - 1 = 7 - 1",
+                  "x = 6"
+                ]
+              }
+            },
+            "Build": {
+              "Konsep_Teras": "Keseimbangan",
+              "Representasi_Visual": "Kedua-dua belah persamaan boleh dianggap sebagai dua sisi yang mempunyai nilai sama.",
+              "Langkah": [
+                {
+                  "Step": 1,
+                  "Equation": "2x + 1 = 7",
+                  "Meaning": "Dua kumpulan x ditambah 1 mempunyai nilai 7."
+                },
+                {
+                  "Step": 2,
+                  "Action": "Tolak 1 daripada kedua-dua belah.",
+                  "Reason": "Kita mahu mengasingkan 2x."
+                },
+                {
+                  "Step": 3,
+                  "Equation": "2x = 6",
+                  "Meaning": "Dua kumpulan yang sama menghasilkan 6."
+                },
+                {
+                  "Step": 4,
+                  "Action": "Bahagi kedua-dua belah dengan 2.",
+                  "Reason": "Kita mahu mengetahui nilai satu kumpulan x."
+                },
+                {
+                  "Step": 5,
+                  "Equation": "x = 3",
+                  "Meaning": "Satu kumpulan mempunyai nilai 3."
+                }
+              ]
+            },
+            "Kaedah": [
+              {
+                "Nama": "Cuba Jaya",
+                "Peranan": "Membina intuisi tentang maksud penyelesaian.",
+                "Contoh": "Cari nombor yang apabila didarab 2 dan ditambah 1 menghasilkan 7."
+              },
+              {
+                "Nama": "Konsep Kesamaan",
+                "Peranan": "Menunjukkan sebab operasi yang sama dilakukan pada kedua-dua belah."
+              },
+              {
+                "Nama": "Pematahbalikan",
+                "Peranan": "Membalikkan operasi mengikut urutan untuk mendapatkan nilai asal."
+              }
+            ],
+            "Formalism": {
+              "Contoh": "2x + 1 = 7",
+              "Penyelesaian": [
+                "2x = 7 - 1",
+                "2x = 6",
+                "x = 6 / 2",
+                "x = 3"
+              ],
+              "Nota_Pedagogi": "Jangan memperkenalkan 'pindah 1 ke sebelah kanan menjadi -1' sebagai konsep utama. Jika digunakan kemudian sebagai bentuk ringkas, kaitkan semula dengan operasi yang sama pada kedua-dua belah."
+            },
+            "Connect": {
+              "Konsep_Sedia_Ada": [
+                "Operasi aritmetik",
+                "Keseimbangan",
+                "Operasi songsang"
+              ],
+              "Hubungan": "Menyelesaikan persamaan ialah proses membalikkan operasi yang dikenakan kepada pemboleh ubah sambil mengekalkan kesamaan."
+            },
+            "Practice": {
+              "Tahap_1": [
+                "x + 3 = 8",
+                "x - 4 = 6"
+              ],
+              "Tahap_2": [
+                "2x = 10",
+                "3x + 2 = 11"
+              ],
+              "Tahap_3": [
+                "5x - 7 = 18"
+              ]
+            },
+            "Vary": {
+              "Bentuk": [
+                "x + a = b",
+                "x - a = b",
+                "ax = b",
+                "ax + b = c",
+                "a - x = b"
+              ],
+              "Tujuan": "Mengelakkan pelajar menghafal satu susunan simbol sahaja."
+            },
+            "Check": {
+              "Soalan_Prosedur": [
+                "Apakah operasi pertama yang anda lakukan?",
+                "Mengapa anda melakukan operasi itu?"
+              ],
+              "Soalan_Makna": [
+                "Apakah maksud 2x dalam soalan ini?",
+                "Mengapa kita perlu membahagi dengan 2?",
+                "Bagaimana anda tahu x = 3 betul?",
+                "Jika x = 3, adakah kedua-dua belah benar-benar sama?"
+              ],
+              "Kriteria_Lulus": "Pelajar boleh menerangkan sebab setiap operasi, bukan sekadar menghasilkan jawapan."
+            },
+            "Aktiviti_Sumber": "Perbincangan mengenai penggunaan kaedah pematahbalikan untuk semua jenis persamaan linear.",
+            "Contoh_Sumber": {
+              "Soalan": "Selesaikan 2x + 1 = 7.",
+              "Kaedah": [
+                "Cuba jaya",
+                "Konsep kesamaan",
+                "Pematahbalikan"
+              ],
+              "Jawapan": "x = 3"
+            },
+            "Kesilapan_Biasa": [
+              "Menghafal 'pindah sebelah tukar tanda'.",
+              "Melakukan operasi pada satu belah sahaja.",
+              "Tidak memahami mengapa operasi songsang digunakan.",
+              "Tidak menyemak jawapan dengan menggantikan nilai ke dalam persamaan asal."
+            ]
+          },
+          {
+            "ID": "6.1.4",
+            "Persoalan": "Bagaimanakah anda menyelesaikan masalah yang melibatkan persamaan linear dalam satu pemboleh ubah?",
+            "Standard_Pembelajaran": "Menyelesaikan masalah yang melibatkan persamaan linear dalam satu pemboleh ubah.",
+            "Objektif_Pemahaman": [
+              "Pelajar boleh mengenal pasti kuantiti yang tidak diketahui.",
+              "Pelajar boleh menukar hubungan dalam situasi kepada persamaan.",
+              "Pelajar boleh menyelesaikan persamaan.",
+              "Pelajar boleh mentafsir jawapan dalam konteks asal."
+            ],
+            "Pengalaman_Permulaan": {
+              "Hook": "Selepas 10 tahun, umur Jalil akan menjadi tiga kali umurnya sekarang.",
+              "Try": {
+                "Soalan": "Adakah umur Jalil sekarang lebih besar atau lebih kecil daripada 10?",
+                "Tujuan": "Membina intuisi sebelum simbol."
+              },
+              "Prediction": {
+                "Soalan": "Apakah maklumat yang kita tahu dan apakah yang kita tidak tahu?"
+              },
+              "Problem": {
+                "Need": "Hubungan umur melibatkan perkara yang tidak diketahui, jadi kita memerlukan pemboleh ubah."
+              },
+              "Reveal": {
+                "Representation": "x + 10 = 3x",
+                "Meaning": "Umur sekarang + 10 tahun = tiga kali umur sekarang."
+              }
+            },
+            "Build": {
+              "Langkah": [
+                "Tentukan kuantiti tidak diketahui.",
+                "Gunakan pemboleh ubah untuk mewakilinya.",
+                "Terjemahkan hubungan dalam situasi kepada persamaan.",
+                "Selesaikan persamaan.",
+                "Tafsir nilai dalam konteks.",
+                "Semak sama ada jawapan munasabah."
+              ]
+            },
+            "Formalism": {
+              "Contoh": "x + 10 = 3x",
+              "Penyelesaian": [
+                "10 = 2x",
+                "x = 5"
+              ],
+              "Tafsiran": "Umur Jalil sekarang ialah 5 tahun."
+            },
+            "Check": {
+              "Soalan": [
+                "Apakah yang diwakili oleh x?",
+                "Mengapa x + 10 mewakili umur selepas 10 tahun?",
+                "Mengapa umur selepas 10 tahun sama dengan 3x?",
+                "Adakah jawapan 5 masuk akal?",
+                "Bagaimana anda boleh mengesahkan jawapan?"
+              ]
+            },
+            "Aktiviti_Sumber": "Zon Aplikasi Matematik: Menyelesaikan masalah umur Jalil."
+          }
+        ]
+      }
+    ],
+    "Enjin_Pengajaran_MathMate": {
+      "Peraturan_Umum": [
+        {
+          "Rule": 1,
+          "Nama": "Start With Need",
+          "Description": "Jangan memperkenalkan istilah atau formula sebelum pelajar mengalami masalah yang memerlukan konsep tersebut."
+        },
+        {
+          "Rule": 2,
+          "Nama": "Concrete Before Abstract",
+          "Description": "Gunakan situasi, objek, visual atau hubungan yang boleh dibayangkan sebelum simbol matematik."
+        },
+        {
+          "Rule": 3,
+          "Nama": "Prediction Before Explanation",
+          "Description": "Minta pelajar membuat ramalan atau percubaan ringkas sebelum memberikan penerangan."
+        },
+        {
+          "Rule": 4,
+          "Nama": "Meaning Before Notation",
+          "Description": "Terangkan maksud hubungan terlebih dahulu, kemudian tukarkan kepada simbol."
+        },
+        {
+          "Rule": 5,
+          "Nama": "Reason Before Procedure",
+          "Description": "Terangkan mengapa sesuatu operasi dilakukan sebelum menunjukkan langkah algoritma."
+        },
+        {
+          "Rule": 6,
+          "Nama": "Formalism Last",
+          "Description": "Definisi dan terminologi formal diberikan selepas pelajar mempunyai model mental asas."
+        },
+        {
+          "Rule": 7,
+          "Nama": "Immediate Success",
+          "Description": "Selepas konsep diperkenalkan, berikan satu soalan yang sangat mudah supaya pelajar menggunakan konsep dengan segera."
+        },
+        {
+          "Rule": 8,
+          "Nama": "Surface Variation",
+          "Description": "Ubah konteks, susunan simbol dan nombor tetapi kekalkan struktur konsep."
+        },
+        {
+          "Rule": 9,
+          "Nama": "Meaning Check",
+          "Description": "Sekurang-kurangnya satu soalan mesti menguji maksud atau sebab, bukan pengiraan."
+        },
+        {
+          "Rule": 10,
+          "Nama": "Transfer",
+          "Description": "Pelajar mesti dapat bergerak antara situasi, bahasa, visual, simbol dan prosedur."
+        }
+      ],
+      "Representasi": [
+        "Situasi sebenar",
+        "Bahasa biasa",
+        "Visual",
+        "Jadual",
+        "Simbol algebra",
+        "Graf",
+        "Prosedur"
+      ],
+      "Pola_Pergerakan": {
+        "Default": "Situasi → Visual → Bahasa → Simbol → Prosedur",
+        "Untuk_Konsep_Sukar": "Situasi → Manipulasi → Pemerhatian → Ramalan → Konsep → Simbol → Prosedur",
+        "Untuk_Pengukuhan": "Simbol → Maksud → Visual → Situasi → Variasi"
+      },
+      "Jenis_Soalan": [
+        {
+          "Type": "Recognition",
+          "Purpose": "Adakah pelajar mengenal struktur?"
+        },
+        {
+          "Type": "Meaning",
+          "Purpose": "Adakah pelajar tahu maksud simbol dan hubungan?"
+        },
+        {
+          "Type": "Prediction",
+          "Purpose": "Adakah pelajar boleh menjangka apa yang berlaku sebelum dikira?"
+        },
+        {
+          "Type": "Construction",
+          "Purpose": "Adakah pelajar boleh membina representasi sendiri?"
+        },
+        {
+          "Type": "Procedure",
+          "Purpose": "Adakah pelajar boleh menjalankan kaedah?"
+        },
+        {
+          "Type": "Variation",
+          "Purpose": "Adakah pelajar memahami konsep merentasi bentuk soalan?"
+        },
+        {
+          "Type": "Explanation",
+          "Purpose": "Adakah pelajar boleh menerangkan mengapa jawapan atau kaedah itu betul?"
+        },
+        {
+          "Type": "Transfer",
+          "Purpose": "Adakah pelajar boleh menggunakan konsep dalam situasi baharu?"
+        }
+      ],
+      "Definition_Of_Understanding": {
+        "Tidak_Cukup": [
+          "Mendapat jawapan betul.",
+          "Menghafal definisi.",
+          "Mengikuti langkah contoh.",
+          "Menggunakan formula dengan tepat."
+        ],
+        "Bukti_Pemahaman": [
+          "Boleh menerangkan maksud konsep.",
+          "Boleh menerangkan mengapa prosedur berfungsi.",
+          "Boleh bergerak antara representasi.",
+          "Boleh mengenal konsep dalam bentuk baharu.",
+          "Boleh menjelaskan kesilapan.",
+          "Boleh menggunakan konsep dalam situasi yang belum pernah dilihat."
+        ]
+      },
+      "Struktur_Sesi_Standard": [
+        "HOOK",
+        "TRY",
+        "PREDICT",
+        "PROBLEM",
+        "REVEAL",
+        "BUILD",
+        "NAME",
+        "CONNECT",
+        "EASY PRACTICE",
+        "VARIATION",
+        "MEANING CHECK",
+        "TRANSFER",
+        "MASTERY CHECK"
+      ],
+      "Adaptive_Behaviour": {
+        "Jika_Pelajar_Gagal_Soalan_Prosedur": "Jangan terus berikan langkah. Kembali satu tahap kepada representasi atau maksud.",
+        "Jika_Pelajar_Gagal_Soalan_Makna": "Kembali kepada situasi atau visual yang menghasilkan konsep tersebut.",
+        "Jika_Pelajar_Betul_Tetapi_Tidak_Boleh_Menerangkan": "Anggap konsep belum dikuasai sepenuhnya dan beri soalan representasi/makna.",
+        "Jika_Pelajar_Boleh_Menerangkan_Tetapi_Gagal_Mengira": "Kekalkan model mental dan beri latihan prosedur bertahap.",
+        "Jika_Pelajar_Berjaya_Berulang_Kali": "Naikkan variasi dan pindahkan konsep ke konteks baharu."
+      },
+      "Prinsip_Terakhir": {
+        "Core_Idea": "MathMate tidak sepatutnya hanya mengajar pelajar bagaimana mendapatkan jawapan. MathMate perlu membina model mental tentang objek matematik tersebut.",
+        "Soalan_Utama_Sistem": "Apa yang pelajar fikir sedang berlaku?",
+        "Soalan_Sekunder": "Bolehkah pelajar mendapatkan jawapan?",
+        "Keutamaan": "Pemahaman mendahului prosedur; prosedur digunakan untuk menguatkan pemahaman."
+      }
+    }
+  }
+}

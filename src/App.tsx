@@ -12,6 +12,8 @@ import { Form1Bab6Page } from './pages/Form1Bab6Page'
 import { LessonPage } from './pages/LessonPage'
 import { AnimasiBab6Page } from './pages/AnimasiBab6Page'
 import { PedagogiBab6Page } from './pages/PedagogiBab6Page'
+import MathMateLesson from './components/MathMateLesson'
+import bab61 from './data/bab6-1.json'
 
 export function App() {
   return (
@@ -35,6 +37,9 @@ export function App() {
 <Route path="/lesson/:lessonId" element={<LessonPage />} />
 <Route path="/animasi/bab6" element={<AnimasiBab6Page />} />
 <Route path="/form1/bab6-pedagogi" element={<PedagogiBab6Page />} />
+
+        {/* Prototype: 6.1 Lesson Builder */}
+        <Route path="/prototype/bab6-1" element={<MathMateLesson data={bab61 as any} />} />
 
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />
