@@ -29,7 +29,6 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,json,woff2}'],
-        navigateFallbackDenylist: [/^\/interactive/],
         runtimeCaching: [
           {
             urlPattern: /\/content\/.+\.json$/,
@@ -50,12 +49,4 @@ export default defineConfig({
       },
     }),
   ],
-  server: {
-    proxy: {
-      '/interactive': {
-        target: 'http://localhost:5174',
-        changeOrigin: true,
-      },
-    },
-  },
 })

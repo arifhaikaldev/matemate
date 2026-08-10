@@ -42,8 +42,8 @@ export function App() {
         {/* Prototype: 6.1 Lesson Builder */}
         <Route path="/prototype/bab6-1" element={<MathMateLesson data={bab61 as any} />} />
 
-        {/* Interactive prototype (separate SPA via iframe) */}
-        <Route path="/interactive/*" element={<InteractivePage />} />
+        {/* Interactive lessons (direct integration) */}
+        <Route path="/interactive" element={<InteractivePage />} />
 
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />

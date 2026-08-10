@@ -89,7 +89,7 @@ export function SortCards({
               <button
                 key={item.id}
                 onClick={() => {
-                  if (!isCorrect) setAssignments((prev) => ({ ...prev, [item.id]: '' }))
+                  if (!isCorrect) setAssignments((prev) => ({ ...prev, [item.id]: categories[0].id }))
                 }}
                 className={`px-4 py-3 rounded-xl font-bold text-lg transition-all duration-200 ${
                   wrongItems.has(item.id) ? 'shake' : ''
@@ -130,9 +130,23 @@ export function SortCards({
               {items
                 .filter((item) => assignments[item.id] === cat.id)
                 .map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => handleAssign(item.id, cat.id)}
+<div
+                      key={item.id}
+                      onClick={() => {
+                        if (!isCorrect) {
+                          const currentIdx = categories.findIndex(c => c.id === assignments[item.id])
+                          const nextIdx = currentIdx + 1
+                          if (nextIdx < categories.length) {
+                            handleAssign(item.id, categories[nextIdx].id)
+                          } else {
+                            setAssignments((prev) => {
+                              const next = { ...prev }
+                              delete next[item.id]
+                              return next
+                            })
+                          }
+                        }
+                      }}
                     className={`px-3 py-2 rounded-lg font-bold text-center transition-all duration-200 ${
                       wrongItems.has(item.id) ? 'shake' : ''
                     }`}
