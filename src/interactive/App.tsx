@@ -15,7 +15,7 @@ function LessonSidebar({
   onSelect: (index: number) => void
 }) {
   return (
-    <nav className="w-full lg:w-72 flex-shrink-0" style={{ background: 'var(--card)' }}>
+    <nav className="hidden lg:block w-full lg:w-72 flex-shrink-0" style={{ background: 'var(--card)' }}>
       <div className="lg:sticky lg:top-0 p-4 space-y-1">
         <h2
           className="text-sm font-bold uppercase tracking-wider mb-3 px-3"
@@ -58,20 +58,53 @@ function LessonSidebar({
 }
 
 function LessonContent() {
-  const { state, dispatch, currentLesson, currentPage, isFirstPage } = useLesson()
+  const { state, dispatch, currentLesson, currentPage, isFirstPage, isLastPage } = useLesson()
 
   if (!currentLesson) return null
 
   return (
     <div className="flex flex-col min-h-screen" style={{ background: 'var(--bg)' }}>
+      {/* Mobile top bar — compact lesson ID badge + page indicator */}
+      <div
+        className="lg:hidden flex items-center gap-2 px-3 py-2 border-b"
+        style={{ borderColor: 'var(--border)', background: 'var(--card)' }}
+      >
+        <button
+          onClick={() => dispatch({ type: 'SELECT_LESSON', index: -1 })}
+          className="p-1.5 rounded-lg text-sm font-medium"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          ←
+        </button>
+        <span
+          className="text-xs font-bold px-2.5 py-0.5 rounded-full"
+          style={{ background: 'var(--teal-tint)', color: 'var(--teal)' }}
+        >
+          {currentLesson.id}
+        </span>
+        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+          {state.currentPageIndex + 1}/{currentLesson.pages.length}
+        </span>
+        <div className="flex-1" />
+        <button
+          onClick={() => dispatch({ type: 'SELECT_LESSON', index: -1 })}
+          className="p-1.5 rounded-lg text-sm font-medium"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          ☰
+        </button>
+      </div>
+
       <header className="p-4 lg:p-6 border-b" style={{ borderColor: 'var(--border)' }}>
-        <h1 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-          {currentLesson.title}
-        </h1>
-        <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
-          Halaman {state.currentPageIndex + 1} daripada {currentLesson.pages.length}
-        </p>
-        <div className="mt-3">
+        <div className="hidden lg:block">
+          <h1 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+            {currentLesson.title}
+          </h1>
+          <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
+            Halaman {state.currentPageIndex + 1} daripada {currentLesson.pages.length}
+          </p>
+        </div>
+        <div className="lg:mt-3">
           <ProgressBar percent={((state.currentPageIndex + 1) / currentLesson.pages.length) * 100} />
         </div>
       </header>
@@ -110,6 +143,15 @@ function LessonContent() {
         >
           Senarai
         </button>
+        {!isLastPage && (
+          <button
+            onClick={() => dispatch({ type: 'NEXT_PAGE' })}
+            className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 hover:opacity-70"
+            style={{ color: 'var(--teal)' }}
+          >
+            Skip →
+          </button>
+        )}
       </footer>
     </div>
   )
