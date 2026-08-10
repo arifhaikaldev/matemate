@@ -36,10 +36,10 @@ export function NumberBlocks({
         {instruction}
       </p>
 
-      <div className="card-3d inline-block mx-auto p-6 text-center">
+      <div className="card-3d inline-block mx-auto p-6 max-w-full text-center">
         <div className="flex items-center justify-center gap-3 flex-wrap">
           {/* Visible blocks */}
-          <div className="flex gap-1">
+          <div className="flex gap-1 flex-wrap justify-center">
             {Array.from({ length: visibleNumber }).map((_, i) => (
               <div
                 key={i}
@@ -68,7 +68,7 @@ export function NumberBlocks({
           <span className="text-2xl font-bold" style={{ color: 'var(--text-muted)' }}>=</span>
 
           {/* Total blocks */}
-          <div className="flex gap-1">
+          <div className="flex gap-1 flex-wrap justify-center">
             {Array.from({ length: visibleNumber + correctAnswer }).map((_, i) => (
               <div
                 key={i}
