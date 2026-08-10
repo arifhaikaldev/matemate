@@ -12,6 +12,7 @@ import { Form1Bab6Page } from './pages/Form1Bab6Page'
 import { LessonPage } from './pages/LessonPage'
 import { AnimasiBab6Page } from './pages/AnimasiBab6Page'
 import { PedagogiBab6Page } from './pages/PedagogiBab6Page'
+import { InteractivePage } from './pages/InteractivePage'
 import MathMateLesson from './components/MathMateLesson'
 import bab61 from './data/bab6-1.json'
 
@@ -40,6 +41,9 @@ export function App() {
 
         {/* Prototype: 6.1 Lesson Builder */}
         <Route path="/prototype/bab6-1" element={<MathMateLesson data={bab61 as any} />} />
+
+        {/* Interactive prototype (separate SPA via iframe) */}
+        <Route path="/interactive/*" element={<InteractivePage />} />
 
         {/* 404 fallback */}
         <Route path="*" element={<NotFound />} />

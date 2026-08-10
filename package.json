@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build:interactive": "cd matemate-interactive && npm run build && cp -r dist ../dist/interactive",
+    "build": "tsc -b && vite build && npm run build:interactive",
     "preview": "vite preview",
     "lint": "eslint src --max-warnings 0",
     "lint:fix": "eslint src --fix",
