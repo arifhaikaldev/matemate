@@ -29,14 +29,16 @@ const sixTwoThree: Lesson = {
       initialX: 2,
       initialY: 5,
     },
-    // PAGE 3 — BUILD: Pair table
+    // PAGE 3 — BUILD: Pair slider (dynamic)
     {
       id: '6.2.3-3',
-      type: 'build-pair-table',
+      type: 'build-pair-slider',
       instruction:
-        'Lengkapkan jadual nilai untuk persamaan 2x + y = 6 dengan mencari nilai y bagi setiap x:',
-      tableEquation: '2x + y = 6',
-      tableXValues: [0, 1, 2],
+        'Gerakkan slider untuk melihat bagaimana nilai y berubah apabila x berubah dalam persamaan 2x + y = 6. Simpan pasangan yang anda temui.',
+      pairSliderEquation: '2x + y = 6',
+      sliderMin: 0,
+      sliderMax: 3,
+      sliderDefault: 0,
     },
     // PAGE 4 — FORMALISM: Ordered pair quiz
     {
@@ -53,15 +55,16 @@ const sixTwoThree: Lesson = {
       ],
       orderedPairCorrectId: 'a',
     },
-    // PAGE 5 — PRACTICE: Find pairs
+    // PAGE 5 — PRACTICE: Find pairs (3 tasks)
     {
       id: '6.2.3-5',
       type: 'practice-pairs',
       instruction:
-        'Cari pasangan penyelesaian bagi x + y = 10. Masukkan nilai x dan y yang memenuhi:',
+        'Cari pasangan penyelesaian bagi setiap persamaan:',
       practicePairEquation: 'x + y = 10',
-      practicePairQuestions: [
-        { pairs: [{ x: 3, y: 7 }], correct: true },
+      pairTasks: [
+        { equation: 'x + y = 10', pairsNeeded: 3 },
+        { equation: '2x + y = 6', pairsNeeded: 3 },
       ],
     },
     // PAGE 6 — MASTERY: Meaning check

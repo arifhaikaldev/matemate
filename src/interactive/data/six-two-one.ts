@@ -77,33 +77,40 @@ const sixTwoOne: Lesson = {
     // PAGE 5 — PRACTICE: Identify and explain
     {
       id: '6.2.1-5',
-      type: 'formalism-sort',
+      type: 'meaning-check',
       instruction:
-        'Klasifikasikan persamaan berikut dan kenal pasti pemboleh ubahnya:',
-      sortItems: [
-        { id: 'v1', latex: '3p - q = 6', label: '3p - q = 6' },
-        { id: 'v2', latex: '2x + 3y = 12', label: '2x + 3y = 12' },
-        { id: 'v3', latex: 'x^2 + y = 5', label: 'x² + y = 5' },
-        { id: 'v4', latex: 'xy = 7', label: 'xy = 7' },
+        'Jawab soalan-soalan berikut untuk menguji pemahaman anda:',
+      questions: [
+        {
+          question: 'Adakah 3p - q = 6 persamaan linear dalam dua pemboleh ubah?',
+          choices: [
+            { id: 'a', label: 'Ya, kerana ia mempunyai dua pemboleh ubah (p dan q) dan kuasa setiap pemboleh ubah ialah 1' },
+            { id: 'b', label: 'Tidak, kerana ia mempunyai tanda tolak' },
+            { id: 'c', label: 'Ya, kerana ia mempunyai tanda sama dengan' },
+          ],
+          correctId: 'a',
+        },
+        {
+          question: 'Apakah pemboleh ubah dalam persamaan 2x + 3y = 12?',
+          choices: [
+            { id: 'a', label: 'x dan y' },
+            { id: 'b', label: '2 dan 3' },
+            { id: 'c', label: '12 sahaja' },
+            { id: 'd', label: '2, 3, dan 12' },
+          ],
+          correctId: 'a',
+        },
+        {
+          question: 'Terangkan maksud x + y = 7 dalam bahasa biasa:',
+          choices: [
+            { id: 'a', label: 'Bilangan x ditambah bilangan y sentiasa menghasilkan 7' },
+            { id: 'b', label: 'x dan y ialah 7' },
+            { id: 'c', label: 'x darab y sama dengan 7' },
+            { id: 'd', label: 'x dan y berbeza 7' },
+          ],
+          correctId: 'a',
+        },
       ],
-      sortCategories: [
-        { id: 'linear', label: 'Linear (dua pemboleh ubah)' },
-        { id: 'bukan-linear', label: 'Bukan Linear' },
-      ],
-      correctMap: {
-        v1: 'linear',
-        v2: 'linear',
-        v3: 'bukan-linear',
-        v4: 'bukan-linear',
-      },
-      meaningQuestion: 'Terangkan maksud x + y = 7 dalam bahasa biasa.',
-      meaningChoices: [
-        { id: 'a', label: 'Bilangan x ditambah bilangan y sentiasa menghasilkan 7' },
-        { id: 'b', label: 'x dan y ialah 7' },
-        { id: 'c', label: 'x darab y sama dengan 7' },
-        { id: 'd', label: 'x dan y berbeza 7' },
-      ],
-      meaningAnswer: 'a',
     },
     // PAGE 6 — MASTERY: Meaning check
     {

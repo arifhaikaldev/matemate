@@ -33,7 +33,7 @@ export function PairInput({
       setVal1('')
       setVal2('')
       setAttempted(false)
-      if (pairs.length >= 2) {
+      if (pairs.length >= 3) {
         setSucceeded(true)
         setTimeout(onSuccess, 1200)
       }

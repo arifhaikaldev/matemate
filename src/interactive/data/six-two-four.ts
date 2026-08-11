@@ -7,17 +7,17 @@ const sixTwoFour: Lesson = {
     // PAGE 1 — HOOK: Table to plot
     {
       id: '6.2.4-1',
-      type: 'hook-dual-slider',
+      type: 'hook-table-to-plot',
       instruction:
         'Kita telah menemui banyak pasangan penyelesaian. Bagaimana kita boleh melihat semua hubungan ini sekaligus?',
-      quantityLabel1: 'x',
-      quantityLabel2: 'y',
-      totalLabel: 'Jumlah',
-      sliderMin: 0,
-      sliderMax: 5,
-      sliderDefault: 0,
-      relationshipType: 'sum',
-      totalValue: 7,
+      plotEquation: 'x + y = 7',
+      tablePairs: [
+        { x: 0, y: 7 },
+        { x: 1, y: 6 },
+        { x: 2, y: 5 },
+        { x: 3, y: 4 },
+        { x: 4, y: 3 },
+      ],
     },
     // PAGE 2 — TRY: Pattern recognition
     {
@@ -78,21 +78,44 @@ const sixTwoFour: Lesson = {
       ],
       graphAxes: { xMin: -1, xMax: 5, yMin: -1, yMax: 6 },
     },
-    // PAGE 6 — MASTERY: Meaning check
+    // PAGE 6 — MASTERY: Meaning check (3 questions)
     {
       id: '6.2.4-6',
-      type: 'mastery-explain',
+      type: 'meaning-check',
       instruction:
         'Jawab soalan berikut untuk menguji pemahaman anda tentang graf:',
-      masteryQuestion:
-        'Apakah maksud satu titik pada graf persamaan linear?',
-      masteryChoices: [
-        { id: 'a', label: 'Satu pasangan penyelesaian (x,y) yang memenuhi persamaan' },
-        { id: 'b', label: 'Garis yang menghubungkan dua nombor' },
-        { id: 'c', label: 'Nilai x dan y yang sama' },
-        { id: 'd', label: 'Titik persilangan dengan paksi-y' },
+      questions: [
+        {
+          question: 'Apakah maksud satu titik pada graf persamaan linear?',
+          choices: [
+            { id: 'a', label: 'Satu pasangan penyelesaian (x,y) yang memenuhi persamaan' },
+            { id: 'b', label: 'Garis yang menghubungkan dua nombor' },
+            { id: 'c', label: 'Nilai x dan y yang sama' },
+            { id: 'd', label: 'Titik persilangan dengan paksi-y' },
+          ],
+          correctId: 'a',
+        },
+        {
+          question: 'Mengapakah titik (1,3) memenuhi persamaan y = x + 2?',
+          choices: [
+            { id: 'a', label: 'Kerana 3 = 1 + 2, jadi nilai y sama dengan x + 2' },
+            { id: 'b', label: 'Kerana 1 dan 3 adalah nombor ganjil' },
+            { id: 'c', label: 'Kerana garis melalui (0,0)' },
+            { id: 'd', label: 'Kerana 1 + 3 = 4' },
+          ],
+          correctId: 'a',
+        },
+        {
+          question: 'Apakah maksud garis lurus pada graf persamaan linear?',
+          choices: [
+            { id: 'a', label: 'Keseluruhan set semua pasangan penyelesaian (x,y) yang memenuhi persamaan' },
+            { id: 'b', label: 'Garis yang menghubungkan dua titik sahaja' },
+            { id: 'c', label: 'Bentuk paling ringkas persamaan' },
+            { id: 'd', label: 'Garis yang tidak mempunyai makna matematik' },
+          ],
+          correctId: 'a',
+        },
       ],
-      masteryCorrectId: 'a',
     },
   ],
 }

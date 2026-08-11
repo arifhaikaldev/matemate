@@ -18,10 +18,10 @@ const sixThreeThree: Lesson = {
       ],
       correctChoiceId: 'no',
     },
-    // PAGE 2 — TRY: Identify unknowns
+    // PAGE 2 — TRY: Identify two unknowns
     {
       id: '6.3.3-2',
-      type: 'prediction-identify',
+      type: 'prediction-identify-two',
       instruction:
         'Kita ada dua maklumat: 2 dewasa + 3 kanak-kanak = RM97, dan 4 dewasa + 1 kanak-kanak = RM139. Apakah dua kuantiti yang belum diketahui?',
       options: [
@@ -30,14 +30,14 @@ const sixThreeThree: Lesson = {
         { id: 'jumlah-tiket', label: 'Jumlah tiket' },
         { id: 'jumlah-wang', label: 'Jumlah wang' },
       ],
-      correctId: 'harga-dewasa',
+      correctIds: ['harga-dewasa', 'harga-kanak'],
     },
-    // PAGE 3 — CONSTRUCTION: Build equations
+    // PAGE 3 — CONSTRUCTION: Build both equations
     {
       id: '6.3.3-3',
       type: 'build-equation-tiles',
       instruction:
-        'Bina persamaan pertama: "2 tiket dewasa + 3 tiket kanak-kanak = RM97"',
+        'Bina kedua-dua persamaan berdasarkan maklumat yang diberikan:',
       sentence: '2 tiket dewasa + 3 tiket kanak-kanak = RM97',
       availableTiles: [
         { id: '2', label: '2', latex: '2' },
@@ -53,6 +53,10 @@ const sixThreeThree: Lesson = {
         { id: '-', label: '-', latex: '-' },
       ],
       targetEquation: '2x + 3y = 97',
+      tasks: [
+        { sentence: '2 tiket dewasa + 3 tiket kanak-kanak = RM97', targetEquation: '2x + 3y = 97' },
+        { sentence: '4 tiket dewasa + 1 tiket kanak-kanak = RM139', targetEquation: '4x + y = 139' },
+      ],
     },
     // PAGE 4 — SOLVE: Guided solve
     {
@@ -100,18 +104,74 @@ const sixThreeThree: Lesson = {
       ],
       verifyQuestion: 'Adakah harga ini memenuhi kedua-dua situasi?',
     },
-    // PAGE 6 — TRANSFER: New problem
+    // PAGE 6 — TRANSFER: New problem with workflow
     {
       id: '6.3.3-6',
       type: 'transfer-context-workflow',
       instruction:
         'Selesaikan masalah baharu: 3 buku + 2 pensel = RM26, 1 buku + 5 pensel = RM26. Cari harga buku dan pensel.',
       workflowSteps: [
-        { instruction: 'Langkah 1: Kenal pasti kuantiti yang tidak diketahui (harga buku dan pensel).', type: 'identify' },
-        { instruction: 'Langkah 2: Bentukkan dua persamaan: 3x + 2y = 26 dan x + 5y = 26.', type: 'solve' },
-        { instruction: 'Langkah 3: Selesaikan untuk mendapatkan x = 6, y = 4.', type: 'solve' },
-        { instruction: 'Langkah 4: Semak: buku = RM6, pensel = RM4. Kedua-dua persamaan dipenuhi.', type: 'verify' },
-        { instruction: 'Langkah 5: Selesai! Anda telah menyelesaikan masalah persamaan linear serentak.', type: 'success' },
+        {
+          instruction: 'Langkah 1: Pilih dua kuantiti yang tidak diketahui.',
+          type: 'identify',
+          options: [
+            { id: 'harga-buku', label: 'Harga buku' },
+            { id: 'harga-pensel', label: 'Harga pensel' },
+            { id: 'jumlah-buku', label: 'Jumlah buku' },
+            { id: 'jumlah-wang', label: 'Jumlah wang' },
+          ],
+          correctIds: ['harga-buku', 'harga-pensel'],
+          verifyMessage: 'Cuba fikir: apakah dua harga barang yang tidak diketahui?',
+        },
+        {
+          instruction: 'Langkah 2: Bina persamaan pertama: 3 buku + 2 pensel = RM26.',
+          type: 'build',
+          buildTiles: [
+            { id: '3', label: '3', latex: '3' },
+            { id: 'x', label: 'x', latex: 'x' },
+            { id: '2', label: '2', latex: '2' },
+            { id: 'y', label: 'y', latex: 'y' },
+            { id: '+', label: '+', latex: '+' },
+            { id: '=', label: '=', latex: '=' },
+            { id: '26', label: '26', latex: '26' },
+            { id: '5', label: '5', latex: '5' },
+          ],
+          buildTarget: '3x+2y=26',
+          verifyMessage: 'Tidak tepat. 3 buku + 2 pensel = 3x + 2y = 26',
+        },
+        {
+          instruction: 'Langkah 3: Bina persamaan kedua: 1 buku + 5 pensel = RM26.',
+          type: 'build',
+          buildTiles: [
+            { id: '1', label: '1', latex: '1' },
+            { id: 'x', label: 'x', latex: 'x' },
+            { id: '5', label: '5', latex: '5' },
+            { id: 'y', label: 'y', latex: 'y' },
+            { id: '+', label: '+', latex: '+' },
+            { id: '=', label: '=', latex: '=' },
+            { id: '26', label: '26', latex: '26' },
+            { id: '3', label: '3', latex: '3' },
+          ],
+          buildTarget: 'x+5y=26',
+          verifyMessage: 'Tidak tepat. 1 buku + 5 pensel = x + 5y = 26',
+        },
+        {
+          instruction: 'Langkah 4: Selesaikan untuk mencari harga buku (x).',
+          type: 'solve',
+          answerLabel: 'x',
+          answer: 6,
+          verifyMessage: 'Cuba lagi. Guna kaedah penghapusan atau penggantian.',
+        },
+        {
+          instruction: 'Langkah 5: Semak: 3(6) + 2(4) = 18 + 8 = 26 dan 6 + 5(4) = 6 + 20 = 26.',
+          type: 'verify',
+          verifyEquation: '3(6) + 2(4) = 26, 6 + 5(4) = 26',
+          verifyMessage: 'Semak semula pengiraan. Kedua-dua persamaan harus dipenuhi.',
+        },
+        {
+          instruction: 'Lengkap! Buku = RM6, Pensel = RM4. Kedua-dua persamaan dipenuhi.',
+          type: 'success',
+        },
       ],
     },
   ],

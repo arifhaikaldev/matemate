@@ -4,10 +4,10 @@ const sixThreeTwo: Lesson = {
   id: '6.3.2',
   title: 'Menyelesaikan persamaan linear serentak',
   pages: [
-    // PAGE 1 — HOOK: Graph intersection, need algebra
+    // PAGE 1 — HOOK: Graph intersection without labels, method choice
     {
       id: '6.3.2-1',
-      type: 'graph-intersection',
+      type: 'hook-method-choice',
       instruction:
         'Dua garis bersilang, tetapi koordinat tepat tidak kelihatan. Bagaimana kita boleh mencari titik persilangan dengan tepat?',
       graphLines: [
@@ -16,6 +16,13 @@ const sixThreeTwo: Lesson = {
       ],
       intersectionPoint: { x: 1, y: -2 },
       graphAxes: { xMin: -3, xMax: 5, yMin: -4, yMax: 4 },
+      methodChoices: [
+        { id: 'algebra', label: 'Guna algebra' },
+        { id: 'zoom', label: 'Zum pada graf' },
+        { id: 'guess', label: 'Cuba teka' },
+        { id: 'random', label: 'Lukis garis rawak' },
+      ],
+      correctMethodId: 'algebra',
     },
     // PAGE 2 — TRY: Substitution prediction
     {

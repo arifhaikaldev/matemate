@@ -22,6 +22,7 @@ interface Props {
   onPointClick?: (point: Point) => void
   showTable?: boolean
   tablePoints?: Point[]
+  hideIntersectionLabel?: boolean
 }
 
 function parseLinearFn(eq: string): (x: number) => number | null {
@@ -109,6 +110,7 @@ export function GraphPlot({
   onPointClick,
   showTable = false,
   tablePoints = [],
+  hideIntersectionLabel = false,
 }: Props) {
   const svgRef = useRef<SVGSVGElement>(null)
   const [placedPoints, setPlacedPoints] = useState<Point[]>([])
@@ -349,20 +351,22 @@ export function GraphPlot({
               <circle
                 cx={toSvg(intersectionPoint.x, intersectionPoint.y).sx}
                 cy={toSvg(intersectionPoint.x, intersectionPoint.y).sy}
-                r={8}
+                r={hideIntersectionLabel ? 5 : 8}
                 fill="var(--coral)"
                 stroke="white"
                 strokeWidth={3}
               />
-              <text
-                x={toSvg(intersectionPoint.x, intersectionPoint.y).sx + 14}
-                y={toSvg(intersectionPoint.x, intersectionPoint.y).sy - 8}
-                fontSize={13}
-                fontWeight="bold"
-                fill="var(--coral)"
-              >
-                ({intersectionPoint.x},{intersectionPoint.y})
-              </text>
+              {!hideIntersectionLabel && (
+                <text
+                  x={toSvg(intersectionPoint.x, intersectionPoint.y).sx + 14}
+                  y={toSvg(intersectionPoint.x, intersectionPoint.y).sy - 8}
+                  fontSize={13}
+                  fontWeight="bold"
+                  fill="var(--coral)"
+                >
+                  ({intersectionPoint.x},{intersectionPoint.y})
+                </text>
+              )}
             </g>
           )}
         </svg>

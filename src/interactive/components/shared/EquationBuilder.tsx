@@ -3,12 +3,18 @@ import { MathInline } from '../ui/MathDisplay'
 import { Feedback } from '../ui/Feedback'
 import type { Tile } from '../../types'
 
+interface Task {
+  sentence?: string
+  targetEquation: string
+}
+
 interface Props {
   instruction: string
   tiles: Tile[]
   targetEquation: string
   onSuccess: () => void
   sentence?: string
+  tasks?: Task[]
 }
 
 export function EquationBuilder({
@@ -17,7 +23,13 @@ export function EquationBuilder({
   targetEquation,
   onSuccess,
   sentence,
+  tasks,
 }: Props) {
+  const taskList: Task[] = tasks?.length
+    ? tasks
+    : [{ targetEquation, sentence }]
+  const [taskIndex, setTaskIndex] = useState(0)
+  const currentTask = taskList[taskIndex]
   const [workspace, setWorkspace] = useState<Tile[]>([])
   const [attempted, setAttempted] = useState(false)
   const [correct, setCorrect] = useState(false)
@@ -51,16 +63,27 @@ export function EquationBuilder({
   const checkAnswer = () => {
     setAttempted(true)
     const normalizedWorkspace = workspaceLatex.replace(/\s+/g, '')
-    const normalizedTarget = targetEquation.replace(/\s+/g, '')
+    const normalizedTarget = currentTask.targetEquation.replace(/\s+/g, '')
 
     if (normalizedWorkspace === normalizedTarget) {
-      setCorrect(true)
-      setTimeout(onSuccess, 1200)
+      if (taskIndex < taskList.length - 1) {
+        setCorrect(true)
+        setTimeout(() => {
+          setTaskIndex((i) => i + 1)
+          setWorkspace([])
+          setAttempted(false)
+          setCorrect(false)
+          setWrongTiles(new Set())
+        }, 1000)
+      } else {
+        setCorrect(true)
+        setTimeout(onSuccess, 1200)
+      }
     } else {
       // Highlight tiles that don't match target
       const wrong = new Set<string>()
       for (const t of workspace) {
-        if (!targetEquation.includes(t.latex || t.label)) {
+        if (!currentTask.targetEquation.includes(t.latex || t.label)) {
           wrong.add(t.id)
         }
       }
@@ -78,12 +101,30 @@ export function EquationBuilder({
         {instruction}
       </p>
 
-      {sentence && (
+      {taskList.length > 1 && (
+        <div className="flex items-center gap-2 justify-center">
+          {taskList.map((_, i) => (
+            <div
+              key={i}
+              className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all"
+              style={{
+                background: i < taskIndex ? 'var(--teal-tint)' : i === taskIndex ? 'var(--coral-tint)' : 'var(--card-secondary)',
+                border: `2px solid ${i < taskIndex ? 'var(--teal)' : i === taskIndex ? 'var(--coral)' : 'var(--border)'}`,
+                color: i < taskIndex ? 'var(--teal)' : i === taskIndex ? 'var(--coral)' : 'var(--text-muted)',
+              }}
+            >
+              {i + 1}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {currentTask.sentence && (
         <div
           className="card-3d p-4 text-center font-medium"
           style={{ color: 'var(--text-secondary)' }}
         >
-          {sentence}
+          {currentTask.sentence}
         </div>
       )}
 

@@ -39,12 +39,12 @@ const sixTwoTwo: Lesson = {
         { language: 'Beza ialah 18', algebra: 'p - q = 18' },
       ],
     },
-    // PAGE 4 — CONSTRUCTION: Build equations
+    // PAGE 4 — CONSTRUCTION: Build equations (3 tasks)
     {
       id: '6.2.2-4',
       type: 'build-equation-tiles',
       instruction:
-        'Bina persamaan untuk: "Jumlah dua nombor ialah 20."',
+        'Bina persamaan bagi setiap ayat berikut.',
       sentence: 'Jumlah dua nombor ialah 20',
       availableTiles: [
         { id: 'p', label: 'p', latex: 'p' },
@@ -56,8 +56,15 @@ const sixTwoTwo: Lesson = {
         { id: '18', label: '18', latex: '18' },
         { id: '15', label: '15', latex: '15' },
         { id: '3', label: '3', latex: '3' },
+        { id: 'x', label: 'x', latex: 'x' },
+        { id: 'y', label: 'y', latex: 'y' },
       ],
       targetEquation: 'p + q = 20',
+      tasks: [
+        { sentence: 'Jumlah dua nombor ialah 20', targetEquation: 'p + q = 20' },
+        { sentence: 'Beza dua nombor ialah 18', targetEquation: 'p - q = 18' },
+        { sentence: 'Tiga kali satu nombor ditambah satu nombor lain ialah 15', targetEquation: '3p + q = 15' },
+      ],
     },
     // PAGE 5 — REVERSE TRANSFER: Story match
     {

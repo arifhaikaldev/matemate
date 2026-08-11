@@ -31,6 +31,9 @@ import { PracticePairs } from '../shared/PracticePairs'
 import { StoryBuilder } from '../shared/StoryBuilder'
 import { ContextWorkflow } from '../shared/ContextWorkflow'
 import { VerifyCheck } from '../shared/VerifyCheck'
+import { IdentifyTwoUnknowns } from '../shared/IdentifyTwoUnknowns'
+import { TableToPlot } from '../shared/TableToPlot'
+import { PairSlider } from '../shared/PairSlider'
 
 export function PageRenderer() {
   const { currentPage, dispatch, currentLesson } = useLesson()
@@ -158,6 +161,7 @@ function PageContent({
           targetEquation={page.targetEquation as string}
           onSuccess={onSuccess}
           sentence={page.sentence}
+          tasks={page.tasks}
         />
       )
 
@@ -260,6 +264,16 @@ question={page.question ?? page.instruction}
         />
       )
 
+    case 'prediction-identify-two':
+      return (
+        <IdentifyTwoUnknowns
+          instruction={page.instruction}
+          options={page.options || []}
+          correctIds={page.correctIds || []}
+          onSuccess={onSuccess}
+        />
+      )
+
     case 'build-map-to-algebra':
       return (
         <MapToAlgebra
@@ -332,38 +346,25 @@ question={page.question ?? page.instruction}
         />
       )
 
+    case 'hook-table-to-plot':
+      return (
+        <TableToPlot
+          instruction={page.instruction}
+          tablePairs={page.tablePairs!}
+          equation={page.plotEquation!}
+          onSuccess={onSuccess}
+        />
+      )
+
     case 'try-yes-no':
       return (
-        <div className="fade-in space-y-6">
-          <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
-            {page.instruction}
-          </p>
-          {page.yesNoQuestion && (
-            <p className="font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
-              {page.yesNoQuestion}
-            </p>
-          )}
-          <div className="flex gap-3 justify-center flex-wrap">
-            {(page.choices || []).map((c) => (
-              <button
-                key={c.id}
-                onClick={() => {
-                  if (c.id === page.correctChoiceId) {
-                    setTimeout(onSuccess, 800)
-                  }
-                }}
-                className="px-6 py-4 rounded-xl font-medium text-lg transition-all duration-200"
-                style={{
-                  background: 'var(--card-secondary)',
-                  border: '2px solid var(--border)',
-                  color: 'var(--text-primary)',
-                }}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <YesNoPage
+          instruction={page.instruction}
+          question={page.yesNoQuestion}
+          choices={page.choices || []}
+          correctChoiceId={page.correctChoiceId}
+          onSuccess={onSuccess}
+        />
       )
 
     case 'reveal-two-variable':
@@ -483,6 +484,18 @@ question={page.question ?? page.instruction}
         />
       )
 
+    case 'build-pair-slider':
+      return (
+        <PairSlider
+          instruction={page.instruction}
+          equation={page.pairSliderEquation!}
+          sliderMin={page.sliderMin}
+          sliderMax={page.sliderMax}
+          sliderDefault={page.sliderDefault}
+          onSuccess={onSuccess}
+        />
+      )
+
     case 'build-graph':
     case 'practice-graph':
       return (
@@ -513,6 +526,7 @@ question={page.question ?? page.instruction}
           instruction={page.instruction}
           practicePairEquation={page.practicePairEquation!}
           onSuccess={onSuccess}
+          pairTasks={page.pairTasks}
         />
       )
 
@@ -535,6 +549,9 @@ question={page.question ?? page.instruction}
           axes={page.graphAxes}
         />
       )
+
+    case 'hook-method-choice':
+      return <MethodChoicePage page={page} onSuccess={onSuccess} />
 
     case 'connect-methods':
       return (
@@ -586,36 +603,13 @@ question={page.question ?? page.instruction}
 
     case 'mastery-explain':
       return (
-        <div className="fade-in space-y-6">
-          <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
-            {page.instruction}
-          </p>
-          <div className="card-3d p-5" style={{ borderColor: 'var(--coral)', background: 'var(--coral-tint)' }}>
-            <p className="font-medium text-lg" style={{ color: 'var(--text-primary)' }}>
-              {page.masteryQuestion}
-            </p>
-          </div>
-          <div className="flex flex-col gap-3">
-            {(page.masteryChoices || []).map((c) => (
-              <button
-                key={c.id}
-                onClick={() => {
-                  if (c.id === page.masteryCorrectId) {
-                    setTimeout(onSuccess, 1000)
-                  }
-                }}
-                className="w-full p-4 rounded-xl text-left font-medium transition-all duration-200"
-                style={{
-                  background: 'var(--card-secondary)',
-                  border: '2px solid var(--border)',
-                  color: 'var(--text-primary)',
-                }}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <MasteryExplainPage
+          instruction={page.instruction}
+          question={page.masteryQuestion}
+          choices={page.masteryChoices || []}
+          correctId={page.masteryCorrectId}
+          onSuccess={onSuccess}
+        />
       )
 
     default:
@@ -695,6 +689,238 @@ function NumberSolveInput({
           <div className="card-3d inline-block p-4">
             <p className="text-xl font-bold" style={{ color: 'var(--teal)' }}>
               {correctAnswer} - 8 = 2
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function YesNoPage({
+  instruction,
+  question,
+  choices,
+  correctChoiceId,
+  onSuccess,
+}: {
+  instruction: string
+  question?: string
+  choices: { id: string; label: string }[]
+  correctChoiceId?: string
+  onSuccess: () => void
+}) {
+  const [selected, setSelected] = useState<string | null>(null)
+  const [attempted, setAttempted] = useState(false)
+  const [succeeded, setSucceeded] = useState(false)
+
+  const handleSelect = (id: string) => {
+    if (succeeded) return
+    setSelected(id)
+    setAttempted(true)
+    if (id === correctChoiceId) {
+      setSucceeded(true)
+      setTimeout(onSuccess, 800)
+    }
+  }
+
+  return (
+    <div className="fade-in space-y-6">
+      <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+        {instruction}
+      </p>
+      {question && (
+        <p className="font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
+          {question}
+        </p>
+      )}
+      <div className="flex gap-3 justify-center flex-wrap">
+        {choices.map((c) => (
+          <button
+            key={c.id}
+            onClick={() => handleSelect(c.id)}
+            className={`px-6 py-4 rounded-xl font-medium text-lg transition-all duration-200 ${
+              attempted && selected === c.id && c.id !== correctChoiceId ? 'shake' : ''
+            }`}
+            style={{
+              background:
+                selected === c.id
+                  ? succeeded
+                    ? 'var(--teal-tint)'
+                    : 'var(--coral-tint)'
+                  : 'var(--card-secondary)',
+              border: `2px solid ${
+                selected === c.id
+                  ? succeeded
+                    ? 'var(--teal)'
+                    : 'var(--coral)'
+                  : 'var(--border)'
+              }`,
+              color: 'var(--text-primary)',
+            }}
+          >
+            {c.label}
+          </button>
+        ))}
+      </div>
+      {attempted && selected !== correctChoiceId && (
+        <Feedback type="incorrect" message="Jawapan tidak tepat. Cuba fikirkan semula." />
+      )}
+    </div>
+  )
+}
+
+function MasteryExplainPage({
+  instruction,
+  question,
+  choices,
+  correctId,
+  onSuccess,
+}: {
+  instruction: string
+  question?: string
+  choices: { id: string; label: string }[]
+  correctId?: string
+  onSuccess: () => void
+}) {
+  const [selected, setSelected] = useState<string | null>(null)
+  const [attempted, setAttempted] = useState(false)
+  const [succeeded, setSucceeded] = useState(false)
+
+  const handleSelect = (id: string) => {
+    if (succeeded) return
+    setSelected(id)
+    setAttempted(true)
+    if (id === correctId) {
+      setSucceeded(true)
+      setTimeout(onSuccess, 1000)
+    }
+  }
+
+  return (
+    <div className="fade-in space-y-6">
+      <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+        {instruction}
+      </p>
+      <div className="card-3d p-5" style={{ borderColor: 'var(--coral)', background: 'var(--coral-tint)' }}>
+        <p className="font-medium text-lg" style={{ color: 'var(--text-primary)' }}>
+          {question}
+        </p>
+      </div>
+      <div className="flex flex-col gap-3">
+        {choices.map((c) => (
+          <button
+            key={c.id}
+            onClick={() => handleSelect(c.id)}
+            className={`w-full p-4 rounded-xl text-left font-medium transition-all duration-200 ${
+              attempted && selected === c.id && c.id !== correctId ? 'shake' : ''
+            }`}
+            style={{
+              background:
+                selected === c.id
+                  ? succeeded
+                    ? 'var(--teal-tint)'
+                    : 'var(--coral-tint)'
+                  : 'var(--card-secondary)',
+              border: `2px solid ${
+                selected === c.id
+                  ? succeeded
+                    ? 'var(--teal)'
+                    : 'var(--coral)'
+                  : 'var(--border)'
+              }`,
+              color: 'var(--text-primary)',
+            }}
+          >
+            {c.label}
+          </button>
+        ))}
+      </div>
+      {attempted && selected !== correctId && (
+        <Feedback type="incorrect" message="Jawapan tidak tepat. Cuba fikirkan semula konsep ini." />
+      )}
+    </div>
+  )
+}
+
+function MethodChoicePage({
+  page,
+  onSuccess,
+}: {
+  page: PageConfig
+  onSuccess: () => void
+}) {
+  const [selected, setSelected] = useState<string | null>(null)
+  const [attempted, setAttempted] = useState(false)
+  const [succeeded, setSucceeded] = useState(false)
+
+  const handleSelect = (id: string) => {
+    if (succeeded) return
+    setSelected(id)
+    setAttempted(true)
+    if (id === page.correctMethodId) {
+      setSucceeded(true)
+      setTimeout(onSuccess, 1200)
+    }
+  }
+
+  return (
+    <div className="fade-in space-y-6">
+      <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+        {page.instruction}
+      </p>
+
+      <GraphPlot
+        instruction=""
+        lines={page.graphLines}
+        intersectionPoint={page.intersectionPoint}
+        hideIntersectionLabel={!succeeded}
+        onSuccess={onSuccess}
+        axes={page.graphAxes}
+      />
+
+      <p className="font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
+        Apakah cara terbaik untuk mencari koordinat persilangan yang tepat?
+      </p>
+      <div className="flex gap-3 justify-center flex-wrap">
+        {(page.methodChoices || []).map((c) => (
+          <button
+            key={c.id}
+            onClick={() => handleSelect(c.id)}
+            className={`px-6 py-4 rounded-xl font-medium text-lg transition-all duration-200 ${
+              attempted && selected === c.id && c.id !== page.correctMethodId ? 'shake' : ''
+            }`}
+            style={{
+              background:
+                selected === c.id
+                  ? c.id === page.correctMethodId
+                    ? 'var(--teal-tint)'
+                    : 'var(--coral-tint)'
+                  : 'var(--card-secondary)',
+              border: `2px solid ${
+                selected === c.id
+                  ? c.id === page.correctMethodId
+                    ? 'var(--teal)'
+                    : 'var(--coral)'
+                  : 'var(--border)'
+              }`,
+              color: 'var(--text-primary)',
+            }}
+          >
+            {c.label}
+          </button>
+        ))}
+      </div>
+
+      {attempted && selected !== page.correctMethodId && (
+        <Feedback type="incorrect" message="Membaca graf sahaja tidak cukup tepat. Kita perlukan kaedah yang memberikan nilai tepat." />
+      )}
+
+      {succeeded && (
+        <div className="slide-up text-center">
+          <div className="card-3d inline-block p-4" style={{ borderColor: 'var(--teal)' }}>
+            <p className="font-bold" style={{ color: 'var(--teal)' }}>
+              Betul! Algebra boleh mencari koordinat persilangan yang tepat.
             </p>
           </div>
         </div>

@@ -70,7 +70,7 @@ function LessonSidebar({
 }
 
 function LessonContent() {
-  const { state, dispatch, currentLesson, currentPage, isFirstPage, isLastPage } = useLesson()
+  const { state, dispatch, currentLesson, currentPage, isFirstPage } = useLesson()
 
   if (!currentLesson) return null
 
@@ -147,15 +147,6 @@ function LessonContent() {
         >
           Senarai
         </button>
-        {!isLastPage && (
-          <button
-            onClick={() => dispatch({ type: 'NEXT_PAGE' })}
-            className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 hover:opacity-70"
-            style={{ color: 'var(--teal)' }}
-          >
-            Skip →
-          </button>
-        )}
       </footer>
     </div>
   )

@@ -3,6 +3,7 @@ export type PageType =
   | 'hook-number-solve'
   | 'hook-timeline-predict'
   | 'hook-dual-slider'
+  | 'hook-table-to-plot'
   | 'hook-two-equations'
   | 'try-number-blocks'
   | 'try-phrase-arrange'
@@ -14,6 +15,7 @@ export type PageType =
   | 'try-substitution-predict'
   | 'prediction-symbol'
   | 'prediction-identify'
+  | 'prediction-identify-two'
   | 'prediction-pair-change'
   | 'reveal-concept'
   | 'reveal-language-to-algebra'
@@ -27,6 +29,7 @@ export type PageType =
   | 'build-guided-solve'
   | 'build-map-to-algebra'
   | 'build-pair-table'
+  | 'build-pair-slider'
   | 'build-graph'
   | 'build-substitution'
   | 'practice-solve'
@@ -44,6 +47,7 @@ export type PageType =
   | 'interpret-verify'
   | 'mastery-explain'
   | 'graph-intersection'
+  | 'hook-method-choice'
   | 'connect-methods'
   | 'verify-check'
 
@@ -146,6 +150,7 @@ export interface PageConfig {
   availableTiles?: Tile[]
   targetEquation?: string | string[]
   sentence?: string
+  tasks?: { sentence?: string; targetEquation: string }[]
 
   // build-guided-solve / practice-solve / solve-context
   initialEquation?: string
@@ -177,6 +182,7 @@ export interface PageConfig {
   // prediction-identify
   identifyOptions?: Choice[]
   correctIdentify?: string
+  correctIds?: string[]
 
   // transfer-story-match
   storyOptions?: { id: string; text: string }[]
@@ -211,6 +217,10 @@ export interface PageConfig {
   relationshipType?: 'sum' | 'difference'
   totalValue?: number
   differenceValue?: number
+
+  // hook-table-to-plot
+  tablePairs?: { x: number; y: number }[]
+  plotEquation?: string
 
   // try-yes-no
   observationPairs?: { x: number; y: number }[]
@@ -250,6 +260,9 @@ export interface PageConfig {
   tableEquation?: string
   tableXValues?: number[]
 
+  // build-pair-slider
+  pairSliderEquation?: string
+
   // build-graph / practice-graph
   graphEquationForBuild?: string
   graphRequiredPoints?: { x: number; y: number }[]
@@ -262,6 +275,7 @@ export interface PageConfig {
   // practice-pairs
   practicePairEquation?: string
   practicePairQuestions?: { pairs: { x: number; y: number }[]; correct: boolean }[]
+  pairTasks?: { equation: string; pairsNeeded: number }[]
 
   // variation-graph-cases
   graphCases?: {
@@ -276,7 +290,18 @@ export interface PageConfig {
   storyBuildEquation?: string
 
   // transfer-context-workflow
-  workflowSteps?: { instruction: string; type: string }[]
+  workflowSteps?: {
+    instruction: string
+    type: string
+    options?: { id: string; label: string }[]
+    correctIds?: string[]
+    buildTiles?: Tile[]
+    buildTarget?: string
+    answer?: number
+    answerLabel?: string
+    verifyEquation?: string
+    verifyMessage?: string
+  }[]
 
   // graph-intersection
   graphLines?: { equation: string; color: string }[]
@@ -285,6 +310,10 @@ export interface PageConfig {
   // connect-methods
   connectMethods?: { name: string; description: string }[]
   commonSolution?: string
+
+  // hook-method-choice
+  methodChoices?: Choice[]
+  correctMethodId?: string
 
   // verify-check
   verifyCalculations?: { latex: string; label: string }[]
