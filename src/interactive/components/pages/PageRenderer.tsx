@@ -15,6 +15,22 @@ import { MeaningCheck } from '../shared/MeaningCheck'
 import { Timeline, IdentifyUnknown, AgeVerify } from '../shared/Timeline'
 import { StoryMatch } from '../shared/StoryMatch'
 import { Feedback } from '../ui/Feedback'
+import { DualSlider } from '../shared/DualSlider'
+import { PairInput } from '../shared/PairInput'
+import { PairTable } from '../shared/PairTable'
+import { OrderedPairQuiz } from '../shared/OrderedPairQuiz'
+import { GraphPlot } from '../shared/GraphPlot'
+import { CostCheck } from '../shared/CostCheck'
+import { GraphCases } from '../shared/GraphCases'
+import { SubstitutionBuilder } from '../shared/SubstitutionBuilder'
+import { RevealTwoVariable } from '../shared/RevealTwoVariable'
+import { ConnectMethods } from '../shared/ConnectMethods'
+import { PredictionPairChange } from '../shared/PredictionPairChange'
+import { PatternRecognize } from '../shared/PatternRecognize'
+import { PracticePairs } from '../shared/PracticePairs'
+import { StoryBuilder } from '../shared/StoryBuilder'
+import { ContextWorkflow } from '../shared/ContextWorkflow'
+import { VerifyCheck } from '../shared/VerifyCheck'
 
 export function PageRenderer() {
   const { currentPage, dispatch, currentLesson } = useLesson()
@@ -296,6 +312,311 @@ question={page.question ?? page.instruction}
         </div>
       )
     }
+
+    // === 6.2.x NEW PAGE TYPES ===
+
+    case 'hook-dual-slider':
+      return (
+        <DualSlider
+          instruction={page.instruction}
+          quantityLabel1={page.quantityLabel1!}
+          quantityLabel2={page.quantityLabel2!}
+          totalLabel={page.totalLabel}
+          sliderMin={page.sliderMin}
+          sliderMax={page.sliderMax}
+          sliderDefault={page.sliderDefault}
+          relationshipType={page.relationshipType}
+          totalValue={page.totalValue}
+          differenceValue={page.differenceValue}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'try-yes-no':
+      return (
+        <div className="fade-in space-y-6">
+          <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+            {page.instruction}
+          </p>
+          {page.yesNoQuestion && (
+            <p className="font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
+              {page.yesNoQuestion}
+            </p>
+          )}
+          <div className="flex gap-3 justify-center flex-wrap">
+            {(page.choices || []).map((c) => (
+              <button
+                key={c.id}
+                onClick={() => {
+                  if (c.id === page.correctChoiceId) {
+                    setTimeout(onSuccess, 800)
+                  }
+                }}
+                className="px-6 py-4 rounded-xl font-medium text-lg transition-all duration-200"
+                style={{
+                  background: 'var(--card-secondary)',
+                  border: '2px solid var(--border)',
+                  color: 'var(--text-primary)',
+                }}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'reveal-two-variable':
+      return (
+        <RevealTwoVariable
+          instruction={page.instruction}
+          equation={page.equation!}
+          variableMeanings={page.variableMeanings!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'reveal-two-equations':
+      return (
+        <MapToAlgebra
+          instruction={page.instruction}
+          mappingPairs={page.mappingPairs!}
+          onComplete={onSuccess}
+        />
+      )
+
+    case 'reveal-graph-points':
+      return (
+        <GraphPlot
+          instruction={page.instruction}
+          equation={page.graphEquation}
+          points={page.graphPoints}
+          showLine={true}
+          onSuccess={onSuccess}
+          axes={page.graphAxes}
+        />
+      )
+
+    case 'try-pair-input':
+      return (
+        <PairInput
+          instruction={page.instruction}
+          pairTarget={page.pairTarget!}
+          pairOperation={page.pairOperation!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'try-pattern-recognize':
+      return (
+        <PatternRecognize
+          instruction={page.instruction}
+          patternPoints={page.patternPoints!}
+          patternOptions={page.patternOptions!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'try-substitution-predict':
+      return (
+        <div className="fade-in space-y-6">
+          <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+            {page.instruction}
+          </p>
+          <div className="card-3d p-5 text-center">
+            <p className="font-bold text-lg" style={{ color: 'var(--teal)' }}>
+              x = {page.substitutionExpression}
+            </p>
+          </div>
+          <div className="flex gap-3 justify-center flex-wrap">
+            {(page.choices || []).map((c) => (
+              <button
+                key={c.id}
+                onClick={() => {
+                  if (c.id === page.correctChoiceId) {
+                    setTimeout(onSuccess, 800)
+                  }
+                }}
+                className="px-6 py-4 rounded-xl font-medium text-lg transition-all duration-200"
+                style={{
+                  background: 'var(--card-secondary)',
+                  border: '2px solid var(--border)',
+                  color: 'var(--text-primary)',
+                }}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+
+    case 'prediction-pair-change':
+      return (
+        <PredictionPairChange
+          instruction={page.instruction}
+          pairEquation={page.pairEquation!}
+          initialX={page.initialX!}
+          initialY={page.initialY!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'formalism-ordered-pair':
+      return (
+        <OrderedPairQuiz
+          instruction={page.instruction}
+          orderedPairEquation={page.orderedPairEquation!}
+          orderedPairOptions={page.orderedPairOptions!}
+          orderedPairCorrectId={page.orderedPairCorrectId!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'build-pair-table':
+      return (
+        <PairTable
+          instruction={page.instruction}
+          tableEquation={page.tableEquation!}
+          tableXValues={page.tableXValues}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'build-graph':
+    case 'practice-graph':
+      return (
+        <GraphPlot
+          instruction={page.instruction}
+          equation={page.graphEquationForBuild}
+          requiredPoints={page.graphRequiredPoints}
+          editable={true}
+          showLine={true}
+          onSuccess={onSuccess}
+          axes={page.graphAxes}
+        />
+      )
+
+    case 'build-substitution':
+      return (
+        <SubstitutionBuilder
+          instruction={page.instruction}
+          substitutionSystem={page.substitutionSystem!}
+          substitutionSteps={page.substitutionSteps!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'practice-pairs':
+      return (
+        <PracticePairs
+          instruction={page.instruction}
+          practicePairEquation={page.practicePairEquation!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'variation-graph-cases':
+      return (
+        <GraphCases
+          instruction={page.instruction}
+          graphCases={page.graphCases!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'graph-intersection':
+      return (
+        <GraphPlot
+          instruction={page.instruction}
+          lines={page.graphLines}
+          intersectionPoint={page.intersectionPoint}
+          onSuccess={onSuccess}
+          axes={page.graphAxes}
+        />
+      )
+
+    case 'connect-methods':
+      return (
+        <ConnectMethods
+          instruction={page.instruction}
+          connectMethods={page.connectMethods!}
+          commonSolution={page.commonSolution || ''}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'transfer-story-build':
+      return (
+        <StoryBuilder
+          instruction={page.instruction}
+          storyBuildEquation={page.storyBuildEquation!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'transfer-context-workflow':
+      return (
+        <ContextWorkflow
+          instruction={page.instruction}
+          workflowSteps={page.workflowSteps!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'verify-check':
+      return (
+        <VerifyCheck
+          instruction={page.instruction}
+          verifyCalculations={page.verifyCalculations!}
+          verifyQuestion={page.verifyQuestion!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'try-cost-check':
+      return (
+        <CostCheck
+          instruction={page.instruction}
+          costPairs={page.costPairs!}
+          totalCost={page.totalCost!}
+          onSuccess={onSuccess}
+        />
+      )
+
+    case 'mastery-explain':
+      return (
+        <div className="fade-in space-y-6">
+          <p className="text-lg leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+            {page.instruction}
+          </p>
+          <div className="card-3d p-5" style={{ borderColor: 'var(--coral)', background: 'var(--coral-tint)' }}>
+            <p className="font-medium text-lg" style={{ color: 'var(--text-primary)' }}>
+              {page.masteryQuestion}
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
+            {(page.masteryChoices || []).map((c) => (
+              <button
+                key={c.id}
+                onClick={() => {
+                  if (c.id === page.masteryCorrectId) {
+                    setTimeout(onSuccess, 1000)
+                  }
+                }}
+                className="w-full p-4 rounded-xl text-left font-medium transition-all duration-200"
+                style={{
+                  background: 'var(--card-secondary)',
+                  border: '2px solid var(--border)',
+                  color: 'var(--text-primary)',
+                }}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )
 
     default:
       return (

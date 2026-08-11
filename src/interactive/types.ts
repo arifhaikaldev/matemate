@@ -2,29 +2,50 @@ export type PageType =
   | 'hook-mystery-box'
   | 'hook-number-solve'
   | 'hook-timeline-predict'
+  | 'hook-dual-slider'
+  | 'hook-two-equations'
   | 'try-number-blocks'
   | 'try-phrase-arrange'
   | 'try-balance-operate'
   | 'try-cost-check'
+  | 'try-yes-no'
+  | 'try-pair-input'
+  | 'try-pattern-recognize'
+  | 'try-substitution-predict'
   | 'prediction-symbol'
   | 'prediction-identify'
+  | 'prediction-pair-change'
   | 'reveal-concept'
   | 'reveal-language-to-algebra'
   | 'reveal-balance'
   | 'reveal-two-equations'
+  | 'reveal-two-variable'
+  | 'reveal-graph-points'
   | 'formalism-sort'
+  | 'formalism-ordered-pair'
   | 'build-equation-tiles'
   | 'build-guided-solve'
   | 'build-map-to-algebra'
+  | 'build-pair-table'
+  | 'build-graph'
+  | 'build-substitution'
   | 'practice-solve'
+  | 'practice-pairs'
+  | 'practice-graph'
   | 'variation-classify'
   | 'variation-build'
+  | 'variation-graph-cases'
   | 'transfer-story-match'
   | 'transfer-model-solve'
+  | 'transfer-story-build'
+  | 'transfer-context-workflow'
   | 'meaning-check'
   | 'solve-context'
   | 'interpret-verify'
   | 'mastery-explain'
+  | 'graph-intersection'
+  | 'connect-methods'
+  | 'verify-check'
 
 export interface EquationPart {
   component: string
@@ -179,6 +200,95 @@ export interface PageConfig {
   // try-cost-check
   costPairs?: { x: number; y: number; cost: number }[]
   totalCost?: number
+
+  // hook-dual-slider
+  quantityLabel1?: string
+  quantityLabel2?: string
+  totalLabel?: string
+  sliderMin?: number
+  sliderMax?: number
+  sliderDefault?: number
+  relationshipType?: 'sum' | 'difference'
+  totalValue?: number
+  differenceValue?: number
+
+  // try-yes-no
+  observationPairs?: { x: number; y: number }[]
+  yesNoQuestion?: string
+
+  // try-pair-input
+  pairTarget?: number
+  pairOperation?: string
+
+  // try-pattern-recognize
+  patternPoints?: { x: number; y: number }[]
+  patternOptions?: Choice[]
+
+  // try-substitution-predict
+  substitutionEquation?: string
+  substitutionExpression?: string
+
+  // prediction-pair-change
+  pairEquation?: string
+  initialX?: number
+  initialY?: number
+
+  // reveal-two-variable
+  variableMeanings?: { symbol: string; meaning: string }[]
+  equation?: string
+
+  // reveal-graph-points
+  graphEquation?: string
+  graphPoints?: { x: number; y: number; label: string }[]
+
+  // formalism-ordered-pair
+  orderedPairEquation?: string
+  orderedPairOptions?: Choice[]
+  orderedPairCorrectId?: string
+
+  // build-pair-table
+  tableEquation?: string
+  tableXValues?: number[]
+
+  // build-graph / practice-graph
+  graphEquationForBuild?: string
+  graphRequiredPoints?: { x: number; y: number }[]
+  graphAxes?: { xMin: number; xMax: number; yMin: number; yMax: number }
+
+  // build-substitution
+  substitutionSystem?: { eq1: string; eq2: string }
+  substitutionSteps?: { instruction: string; equation: string }[]
+
+  // practice-pairs
+  practicePairEquation?: string
+  practicePairQuestions?: { pairs: { x: number; y: number }[]; correct: boolean }[]
+
+  // variation-graph-cases
+  graphCases?: {
+    id: string
+    label: string
+    description: string
+    equations: string[]
+    correctMeaning: string
+  }[]
+
+  // transfer-story-build
+  storyBuildEquation?: string
+
+  // transfer-context-workflow
+  workflowSteps?: { instruction: string; type: string }[]
+
+  // graph-intersection
+  graphLines?: { equation: string; color: string }[]
+  intersectionPoint?: { x: number; y: number }
+
+  // connect-methods
+  connectMethods?: { name: string; description: string }[]
+  commonSolution?: string
+
+  // verify-check
+  verifyCalculations?: { latex: string; label: string }[]
+  verifyQuestion?: string
 }
 
 export interface Lesson {

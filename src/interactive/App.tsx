@@ -14,6 +14,12 @@ function LessonSidebar({
   currentLessonId: string
   onSelect: (index: number) => void
 }) {
+  const sections = [
+    { label: '6.1 Persamaan Linear dalam Satu Pemboleh Ubah', ids: ['6.1.1', '6.1.2', '6.1.3', '6.1.4'] },
+    { label: '6.2 Persamaan Linear dalam Dua Pemboleh Ubah', ids: ['6.2.1', '6.2.2', '6.2.3', '6.2.4'] },
+    { label: '6.3 Persamaan Linear Serentak', ids: ['6.3.1', '6.3.2', '6.3.3'] },
+  ]
+
   return (
     <nav className="hidden lg:block w-full lg:w-72 flex-shrink-0" style={{ background: 'var(--card)' }}>
       <div className="lg:sticky lg:top-0 p-4 space-y-1">
@@ -23,34 +29,40 @@ function LessonSidebar({
         >
           Bab 6: Persamaan Linear
         </h2>
-        <p
-          className="text-xs font-medium mb-3 px-3"
-          style={{ color: 'var(--text-secondary)' }}
-        >
-          6.1 Persamaan Linear dalam Satu Pemboleh Ubah
-        </p>
-        {lessons.map((lesson, i) => (
-          <button
-            key={lesson.id}
-            onClick={() => onSelect(i)}
-            className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
-            style={{
-              background:
-                lesson.id === currentLessonId
-                  ? 'var(--teal-tint)'
-                  : 'transparent',
-              color:
-                lesson.id === currentLessonId
-                  ? 'var(--teal)'
-                  : 'var(--text-secondary)',
-              borderLeft:
-                lesson.id === currentLessonId
-                  ? '3px solid var(--teal)'
-                  : '3px solid transparent',
-            }}
-          >
-            {lesson.id} — {lesson.title}
-          </button>
+        {sections.map((section) => (
+          <div key={section.label} className="mb-3">
+            <p
+              className="text-xs font-medium mb-2 px-3"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              {section.label}
+            </p>
+            {lessons
+              .filter((l) => section.ids.includes(l.id))
+              .map((lesson) => (
+                <button
+                  key={lesson.id}
+                  onClick={() => onSelect(lessons.indexOf(lesson))}
+                  className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                  style={{
+                    background:
+                      lesson.id === currentLessonId
+                        ? 'var(--teal-tint)'
+                        : 'transparent',
+                    color:
+                      lesson.id === currentLessonId
+                        ? 'var(--teal)'
+                        : 'var(--text-secondary)',
+                    borderLeft:
+                      lesson.id === currentLessonId
+                        ? '3px solid var(--teal)'
+                        : '3px solid transparent',
+                  }}
+                >
+                  {lesson.id} — {lesson.title}
+                </button>
+              ))}
+          </div>
         ))}
       </div>
     </nav>
@@ -85,14 +97,6 @@ function LessonContent() {
         <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
           {state.currentPageIndex + 1}/{currentLesson.pages.length}
         </span>
-        <div className="flex-1" />
-        <button
-          onClick={() => dispatch({ type: 'SELECT_LESSON', index: -1 })}
-          className="p-1.5 rounded-lg text-sm font-medium"
-          style={{ color: 'var(--text-secondary)' }}
-        >
-          ☰
-        </button>
       </div>
 
       <header className="p-4 lg:p-6 border-b" style={{ borderColor: 'var(--border)' }}>
@@ -160,12 +164,18 @@ function LessonContent() {
 function LessonSelector() {
   const { dispatch } = useLesson()
 
+  const sections = [
+    { label: '6.1 Persamaan Linear dalam Satu Pemboleh Ubah', ids: ['6.1.1', '6.1.2', '6.1.3', '6.1.4'] },
+    { label: '6.2 Persamaan Linear dalam Dua Pemboleh Ubah', ids: ['6.2.1', '6.2.2', '6.2.3', '6.2.4'] },
+    { label: '6.3 Persamaan Linear Serentak', ids: ['6.3.1', '6.3.2', '6.3.3'] },
+  ]
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4 py-12"
       style={{ background: 'var(--bg)' }}
     >
-      <div className="max-w-lg w-full space-y-6">
+      <div className="max-w-lg w-full space-y-8">
         <div className="text-center space-y-2">
           <h1
             className="text-3xl font-bold"
@@ -179,42 +189,49 @@ function LessonSelector() {
           >
             Bab 6: Persamaan Linear
           </p>
-          <p
-            className="text-sm"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            6.1 Persamaan Linear dalam Satu Pemboleh Ubah
-          </p>
         </div>
 
-        <div className="space-y-3">
-          {lessons.map((lesson, i) => (
-            <button
-              key={lesson.id}
-              onClick={() => dispatch({ type: 'SELECT_LESSON', index: i })}
-              className="w-full card-3d p-5 text-left transition-all duration-200 hover:scale-[1.02]"
+        {sections.map((section) => (
+          <div key={section.label} className="space-y-2">
+            <p
+              className="text-xs font-bold uppercase tracking-wider px-1"
+              style={{ color: 'var(--text-muted)' }}
             >
-              <span
-                className="text-xs font-bold uppercase tracking-wider"
-                style={{ color: 'var(--teal)' }}
-              >
-                {lesson.id}
-              </span>
-              <h3
-                className="font-bold mt-1"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                {lesson.title}
-              </h3>
-              <p
-                className="text-sm mt-1"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                {lesson.pages.length} halaman interaktif
-              </p>
-            </button>
-          ))}
-        </div>
+              {section.label}
+            </p>
+            {lessons
+              .filter((l) => section.ids.includes(l.id))
+              .map((lesson) => {
+                const globalIndex = lessons.indexOf(lesson)
+                return (
+                  <button
+                    key={lesson.id}
+                    onClick={() => dispatch({ type: 'SELECT_LESSON', index: globalIndex })}
+                    className="w-full card-3d p-5 text-left transition-all duration-200 hover:scale-[1.02]"
+                  >
+                    <span
+                      className="text-xs font-bold uppercase tracking-wider"
+                      style={{ color: 'var(--teal)' }}
+                    >
+                      {lesson.id}
+                    </span>
+                    <h3
+                      className="font-bold mt-1"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {lesson.title}
+                    </h3>
+                    <p
+                      className="text-sm mt-1"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      {lesson.pages.length} halaman interaktif
+                    </p>
+                  </button>
+                )
+              })}
+          </div>
+        ))}
       </div>
     </div>
   )
